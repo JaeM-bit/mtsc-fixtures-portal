@@ -741,9 +741,11 @@ if (els.downloadJson) {
   }
 );
 
-els.exportCsv.addEventListener("click", () => {
-  downloadCsv(applyFilters());
-});
+if (els.exportCsv) {
+  els.exportCsv.addEventListener("click", () => {
+    downloadCsv(applyFilters());
+  });
+}
 
 els.printReport.addEventListener("click", () => {
   window.print();
