@@ -3,7 +3,6 @@ const state = {
   revised: [],
   rows: [],
   monthlyPlanned: [],
-  leagueResults: [],
 };
 
 const seasonStart = "2026-04-01";
@@ -253,7 +252,6 @@ function buildPublishedPayload(rows, monthlyPlanned, uploadedAt = new Date().toI
     uploadedAt,
     rows,
     monthlyPlanned,
-    leagueResults: [],
   };
 }
 
@@ -263,16 +261,6 @@ function getCell(sheet, rowIndex, columnIndex) {
 
 function cellText(cell) {
   return String(cell.w || cell.v || "").trim();
-}
-
-function excelFillToCss(cell) {
-  const color = cell?.s?.fill?.fgColor?.rgb || cell?.s?.fill?.fgColor?.theme || "";
-  if (!color) return "";
-  if (typeof color === "string" && /^[0-9A-Fa-f]{6,8}$/.test(color)) {
-    const hex = color.slice(-6);
-    return `background-color: #${hex}`;
-  }
-  return "";
 }
 
 function mapByDateColumns(sheet) {
@@ -355,41 +343,6 @@ function readMonthlyPlanned(sheet) {
   return rows;
 }
 
-function readLeagueResults(sheet) {
-  const sheetRange = XLSX.utils.decode_range(sheet["!ref"] || "A1:AE21");
-  const range = {
-    s: { r: Math.max(1, sheetRange.s.r), c: Math.max(10, sheetRange.s.c) },
-    e: { r: Math.min(20, sheetRange.e.r), c: Math.min(24, sheetRange.e.c) },
-  };
-  const rows = [];
-  const excludedTeams = new Set([
-    "milford nl60",
-    "milford nl70",
-    "milford nats men",
-  ]);
-
-  for (let rowIndex = range.s.r; rowIndex <= range.e.r; rowIndex += 1) {
-    const cells = [];
-    const styles = [];
-    let hasValue = false;
-
-    for (let columnIndex = range.s.c; columnIndex <= range.e.c; columnIndex += 1) {
-      const cell = getCell(sheet, rowIndex, columnIndex);
-      const value = cellText(cell);
-      if (value) hasValue = true;
-      cells.push(value);
-      styles.push(excelFillToCss(cell));
-    }
-
-    const rowKey = normaliseKey(cells.join(" "));
-    if (hasValue && ![...excludedTeams].some((team) => rowKey.includes(team))) {
-      rows.push({ cells, styles });
-    }
-  }
-
-  return rows;
-}
-
 function assignStableIds(rows) {
   const counts = new Map();
   return rows.map((row, index) => {
@@ -407,26 +360,17 @@ function makeMatchBase(row) {
     .join("|");
 }
 
-function findSheetName(workbook, predicate) {
-  return workbook.SheetNames.find((name) => predicate(normaliseKey(name)));
-}
-
 function sheetToRows(workbook) {
-  const byDateSheetName = findSheetName(workbook, (name) => name === "by date");
-  const leagueResultsSheetName =
-    findSheetName(workbook, (name) => name.includes("league") && name.includes("result")) ||
-    findSheetName(workbook, (name) => name.includes("league"));
+  const byDateSheetName = workbook.SheetNames.find((name) => normaliseKey(name) === "by date");
 
   if (!byDateSheetName) {
     throw new Error('No "by date" tab found in this workbook.');
   }
 
   const sheet = workbook.Sheets[byDateSheetName];
-  const leagueResultsSheet = leagueResultsSheetName ? workbook.Sheets[leagueResultsSheetName] : null;
   return {
     rows: mapByDateColumns(sheet),
     monthlyPlanned: readMonthlyPlanned(sheet),
-    leagueResults: leagueResultsSheet ? readLeagueResults(leagueResultsSheet) : [],
   };
 }
 
@@ -578,13 +522,12 @@ function renderKpis() {
 function renderReport() {
   if (!state.rows.length) {
     els.reportBody.innerHTML =
-      '<p class="empty-copy">Load fixtures to see monthly planned matches, league results, and matches for the next 7 days.</p>';
+      '<p class="empty-copy">Load fixtures to see monthly planned matches and matches for the next 7 days.</p>';
     return;
   }
 
   els.reportBody.innerHTML = `
     ${renderMonthlyPlanned()}
-    ${renderLeagueResults()}
     ${renderNextSevenDays()}
   `;
 }
@@ -659,52 +602,6 @@ function renderNextSevenDays() {
   `;
 }
 
-function renderLeagueResults() {
-  if (!state.leagueResults.length) {
-    return `
-      <div class="summary-item summary-item-wide">
-        <strong>League results</strong>
-        <p>No league results have been published yet. Re-upload the workbook, download the updated fixtures.json, then commit and push it.</p>
-      </div>
-    `;
-  }
-
-  const rows = state.leagueResults
-    .map(
-      (row) => `
-        <tr>${getLeagueResultCells(row)
-          .map(
-            (cell, index) =>
-              `<td${getLeagueResultStyles(row)[index] ? ` style="${getLeagueResultStyles(row)[index]}"` : ""}>${escapeHtml(cell || "")}</td>`
-          )
-          .join("")}</tr>
-      `
-    )
-    .join("");
-
-  return `
-    <div class="summary-item summary-item-wide">
-      <strong>League results</strong>
-      <div class="results-table-wrap">
-        <table class="results-table">
-          <tbody>${rows}</tbody>
-        </table>
-      </div>
-    </div>
-  `;
-}
-
-function getLeagueResultCells(row) {
-  if (Array.isArray(row)) return row;
-  if (row && Array.isArray(row.cells)) return row.cells;
-  return [];
-}
-
-function getLeagueResultStyles(row) {
-  if (row && Array.isArray(row.styles)) return row.styles;
-  return [];
-}
-
 function countBy(keyOrFn) {
   const getKey = typeof keyOrFn === "function" ? keyOrFn : (row) => row[keyOrFn];
   return state.rows.reduce((map, row) => {
@@ -741,9 +638,8 @@ function setRows(currentRows, revisedRows = state.revised, monthlyPlanned = stat
   renderAll();
 }
 
-function savePublishedData(rows, monthlyPlanned, leagueResults = []) {
+function savePublishedData(rows, monthlyPlanned) {
   const payload = buildPublishedPayload(rows, monthlyPlanned);
-  payload.leagueResults = leagueResults;
   localStorage.setItem(storageKey, JSON.stringify(payload));
   return payload;
 }
@@ -829,12 +725,7 @@ if (els.currentFile) {
     try {
       els.fileStatus.textContent = `Loading ${file.name}...`;
       const workbookData = await readWorkbook(file);
-      const published = savePublishedData(
-        workbookData.rows,
-        workbookData.monthlyPlanned,
-        workbookData.leagueResults || []
-      );
-      state.leagueResults = published.leagueResults || [];
+      const published = savePublishedData(workbookData.rows, workbookData.monthlyPlanned);
       setRows(published.rows, [], published.monthlyPlanned);
       displayUploadStatus(published.uploadedAt);
       if (els.downloadJson) {
@@ -881,7 +772,6 @@ async function initialisePublishedData() {
   const publishedData = sharedData || loadPublishedData();
 
   if (publishedData) {
-    state.leagueResults = publishedData.leagueResults || [];
     setRows(publishedData.rows || [], [], publishedData.monthlyPlanned || []);
     displayUploadStatus(publishedData.uploadedAt);
     if (els.downloadJson) {
