@@ -265,6 +265,16 @@ function cellText(cell) {
   return String(cell.w || cell.v || "").trim();
 }
 
+function excelFillToCss(cell) {
+  const color = cell?.s?.fill?.fgColor?.rgb || cell?.s?.fill?.fgColor?.theme || "";
+  if (!color) return "";
+  if (typeof color === "string" && /^[0-9A-Fa-f]{6,8}$/.test(color)) {
+    const hex = color.slice(-6);
+    return `background-color: #${hex}`;
+  }
+  return "";
+}
+
 function mapByDateColumns(sheet) {
   const range = XLSX.utils.decode_range(sheet["!ref"] || "A1:H1");
   const rows = [];
@@ -360,6 +370,7 @@ function readLeagueResults(sheet) {
 
   for (let rowIndex = range.s.r; rowIndex <= range.e.r; rowIndex += 1) {
     const cells = [];
+    const styles = [];
     let hasValue = false;
 
     for (let columnIndex = range.s.c; columnIndex <= range.e.c; columnIndex += 1) {
@@ -367,11 +378,12 @@ function readLeagueResults(sheet) {
       const value = cellText(cell);
       if (value) hasValue = true;
       cells.push(value);
+      styles.push(excelFillToCss(cell));
     }
 
     const rowKey = normaliseKey(cells.join(" "));
     if (hasValue && ![...excludedTeams].some((team) => rowKey.includes(team))) {
-      rows.push(cells);
+      rows.push({ cells, styles });
     }
   }
 
@@ -660,7 +672,12 @@ function renderLeagueResults() {
   const rows = state.leagueResults
     .map(
       (row) => `
-        <tr>${row.map((cell) => `<td>${escapeHtml(cell || "")}</td>`).join("")}</tr>
+        <tr>${row.cells
+          .map(
+            (cell, index) =>
+              `<td${row.styles[index] ? ` style="${row.styles[index]}"` : ""}>${escapeHtml(cell || "")}</td>`
+          )
+          .join("")}</tr>
       `
     )
     .join("");
