@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MTSC Fixtures Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      defer
+      src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
+    ></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="#dashboard" aria-label="MTSC Fixtures Portal">
+        <img class="brand-mark" src="assets/mtsc.png" alt="" />
+        <span>MTSC Fixtures Portal</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#fixtures">Fixtures</a>
+        <a href="#reports">Reports</a>
+      </nav>
+    </header>
+
+    <main id="dashboard">
+      <section class="toolbar captain-toolbar" aria-label="Fixtures overview">
+        <div>
+          <p class="eyebrow">Read-only captain view</p>
+          <h1>Dorset Summer League 2026 Matches</h1>
+        </div>
+      </section>
+
+      <section class="status-line" aria-live="polite">
+        <span id="fileStatus">No published fixture data available yet.</span>
+        <span id="parseStatus"></span>
+      </section>
+
+      <section class="kpi-grid" aria-label="Fixture summary">
+        <article>
+          <span>Total matches</span>
+          <strong id="totalMatches">0</strong>
+        </article>
+        <article>
+          <span>Milford teams</span>
+          <strong id="teamCount">0</strong>
+        </article>
+        <article>
+          <span>Home next 14 days</span>
+          <strong id="homeNextCount">0</strong>
+        </article>
+        <article>
+          <span>Away next 14 days</span>
+          <strong id="awayNextCount">0</strong>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <aside class="filters" aria-label="Fixture filters">
+          <div class="filter-block">
+            <label for="searchInput">Search any team</label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Milford or opponent team"
+            />
+          </div>
+          <div class="filter-block">
+            <label for="teamFilter">Milford Team</label>
+            <select id="teamFilter">
+              <option value="">All Milford teams</option>
+            </select>
+          </div>
+          <div class="filter-block">
+            <label for="nextDaysInput">Matches in next days</label>
+            <input
+              id="nextDaysInput"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="Any date"
+            />
+          </div>
+          <button class="button full" id="exportCsv" type="button">
+            Export filtered CSV
+          </button>
+        </aside>
+
+        <section class="data-area" id="fixtures">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Fixtures</p>
+              <h2>All matches</h2>
+            </div>
+            <span id="visibleCount">0 shown</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Day</th>
+                  <th>Time</th>
+                  <th>Milford Team</th>
+                  <th>Away Team</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="fixturesBody">
+                <tr>
+                  <td colspan="6" class="empty-state">
+                    No published fixture data available yet.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="report-grid single-report">
+        <article class="report-panel" id="reports">
+          <div class="section-head compact">
+            <div>
+              <p class="eyebrow">Reports</p>
+              <h2>Captain summary</h2>
+            </div>
+            <button class="button small" id="printReport" type="button">Print</button>
+          </div>
+          <div id="reportBody" class="summary-list">
+            <p class="empty-copy">
+              Load fixtures to see monthly planned matches and matches for the next 7 days.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>Designed for fixture secretaries and team captains.</span>
+      <span>All processing happens in the browser.</span>
+    </footer>
+  </body>
+</html>
