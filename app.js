@@ -349,7 +349,7 @@ function readLeagueResults(sheet) {
   const sheetRange = XLSX.utils.decode_range(sheet["!ref"] || "A1:AE21");
   const range = {
     s: { r: Math.max(1, sheetRange.s.r), c: Math.max(10, sheetRange.s.c) },
-    e: { r: Math.min(20, sheetRange.e.r), c: Math.min(30, sheetRange.e.c) },
+    e: { r: Math.min(20, sheetRange.e.r), c: Math.min(24, sheetRange.e.c) },
   };
   const rows = [];
 
