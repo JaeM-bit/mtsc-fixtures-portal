@@ -695,8 +695,11 @@ function downloadJson(payload) {
   const link = document.createElement("a");
   link.href = url;
   link.download = "fixtures.json";
+  link.style.display = "none";
+  document.body.appendChild(link);
   link.click();
-  URL.revokeObjectURL(url);
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 if (els.currentFile) {
@@ -725,6 +728,7 @@ if (els.downloadJson) {
       ? JSON.parse(els.downloadJson.dataset.payload)
       : buildPublishedPayload(state.current, state.monthlyPlanned);
     downloadJson(payload);
+    els.parseStatus.textContent = "fixtures.json download started.";
   });
 }
 
