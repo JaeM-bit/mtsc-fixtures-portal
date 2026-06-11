@@ -352,11 +352,13 @@ function readLeagueResults(sheet) {
     e: { r: Math.min(20, sheetRange.e.r), c: Math.min(24, sheetRange.e.c) },
   };
   const rows = [];
+  const excludedTeams = new Set([
+    "milford nl60",
+    "milford nl70",
+    "milford nats men",
+  ]);
 
   for (let rowIndex = range.s.r; rowIndex <= range.e.r; rowIndex += 1) {
-    const visibleRowNumber = rowIndex + 1;
-    if (visibleRowNumber >= 4 && visibleRowNumber <= 6) continue;
-
     const cells = [];
     let hasValue = false;
 
@@ -367,7 +369,10 @@ function readLeagueResults(sheet) {
       cells.push(value);
     }
 
-    if (hasValue) rows.push(cells);
+    const rowKey = normaliseKey(cells.join(" "));
+    if (hasValue && ![...excludedTeams].some((team) => rowKey.includes(team))) {
+      rows.push(cells);
+    }
   }
 
   return rows;
