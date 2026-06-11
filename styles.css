@@ -109,8 +109,8 @@ main {
 }
 
 .hero-logo {
-  width: min(360px, 90%);
-  max-height: 150px;
+  width: clamp(120px, 16vw, 170px);
+  height: clamp(120px, 16vw, 170px);
   object-fit: contain;
   padding: 12px;
   border-radius: 999px;
