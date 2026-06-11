@@ -647,7 +647,7 @@ function renderLeagueResults() {
     return `
       <div class="summary-item summary-item-wide">
         <strong>League results</strong>
-        <p>No league results found in tab "league results" cells K2:AE21.</p>
+        <p>No league results have been published yet. Re-upload the workbook, download the updated fixtures.json, then commit and push it.</p>
       </div>
     `;
   }
