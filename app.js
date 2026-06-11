@@ -672,10 +672,10 @@ function renderLeagueResults() {
   const rows = state.leagueResults
     .map(
       (row) => `
-        <tr>${row.cells
+        <tr>${getLeagueResultCells(row)
           .map(
             (cell, index) =>
-              `<td${row.styles[index] ? ` style="${row.styles[index]}"` : ""}>${escapeHtml(cell || "")}</td>`
+              `<td${getLeagueResultStyles(row)[index] ? ` style="${getLeagueResultStyles(row)[index]}"` : ""}>${escapeHtml(cell || "")}</td>`
           )
           .join("")}</tr>
       `
@@ -692,6 +692,17 @@ function renderLeagueResults() {
       </div>
     </div>
   `;
+}
+
+function getLeagueResultCells(row) {
+  if (Array.isArray(row)) return row;
+  if (row && Array.isArray(row.cells)) return row.cells;
+  return [];
+}
+
+function getLeagueResultStyles(row) {
+  if (row && Array.isArray(row.styles)) return row.styles;
+  return [];
 }
 
 function countBy(keyOrFn) {
