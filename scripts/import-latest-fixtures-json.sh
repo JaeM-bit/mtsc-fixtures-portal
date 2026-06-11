@@ -25,10 +25,12 @@ console.log(\`Valid fixtures JSON: \${data.rows.length} fixture rows, \${data.mo
 
 mkdir -p "$(dirname "$target_file")"
 cp "$latest_file" "$target_file"
+rm -f "$latest_file"
 
 echo "Copied:"
 echo "$latest_file"
 echo "to:"
 echo "$target_file"
+echo "Deleted source file from Downloads."
 echo
 echo "Next: commit and push data/fixtures.json in GitHub Desktop."
