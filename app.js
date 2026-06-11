@@ -8,6 +8,7 @@ const state = {
 const seasonStart = "2026-04-01";
 const seasonEnd = "2026-08-31";
 const storageKey = "mtsc-fixtures-published-data";
+const publishedJsonUrl = "data/fixtures.json";
 
 const sampleRows = [
   {
@@ -94,6 +95,7 @@ const els = {
   currentFile: document.querySelector("#currentFile"),
   fileStatus: document.querySelector("#fileStatus"),
   parseStatus: document.querySelector("#parseStatus"),
+  downloadJson: document.querySelector("#downloadJson"),
   totalMatches: document.querySelector("#totalMatches"),
   teamCount: document.querySelector("#teamCount"),
   homeNextCount: document.querySelector("#homeNextCount"),
@@ -232,6 +234,14 @@ function displayUploadStatus(uploadedAt) {
   if (!uploadedAt) return;
   els.fileStatus.textContent = `File Uploaded on ${formatUploadDateTime(new Date(uploadedAt))}`;
   els.parseStatus.textContent = "";
+}
+
+function buildPublishedPayload(rows, monthlyPlanned, uploadedAt = new Date().toISOString()) {
+  return {
+    uploadedAt,
+    rows,
+    monthlyPlanned,
+  };
 }
 
 function getCell(sheet, rowIndex, columnIndex) {
@@ -613,13 +623,23 @@ function setRows(currentRows, revisedRows = state.revised, monthlyPlanned = stat
 }
 
 function savePublishedData(rows, monthlyPlanned) {
-  const payload = {
-    uploadedAt: new Date().toISOString(),
-    rows,
-    monthlyPlanned,
-  };
+  const payload = buildPublishedPayload(rows, monthlyPlanned);
   localStorage.setItem(storageKey, JSON.stringify(payload));
   return payload;
+}
+
+async function loadSharedPublishedData() {
+  try {
+    const response = await fetch(`${publishedJsonUrl}?v=${Date.now()}`, {
+      cache: "no-store",
+    });
+    if (!response.ok) return null;
+    const payload = await response.json();
+    if (!payload || !Array.isArray(payload.rows)) return null;
+    return payload;
+  } catch {
+    return null;
+  }
 }
 
 function loadPublishedData() {
@@ -667,6 +687,18 @@ function downloadCsv(rows) {
   URL.revokeObjectURL(url);
 }
 
+function downloadJson(payload) {
+  const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], {
+    type: "application/json;charset=utf-8",
+  });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "fixtures.json";
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 if (els.currentFile) {
   els.currentFile.addEventListener("change", async (event) => {
     const [file] = event.target.files;
@@ -677,9 +709,22 @@ if (els.currentFile) {
       const published = savePublishedData(workbookData.rows, workbookData.monthlyPlanned);
       setRows(published.rows, [], published.monthlyPlanned);
       displayUploadStatus(published.uploadedAt);
+      if (els.downloadJson) {
+        els.downloadJson.disabled = false;
+        els.downloadJson.dataset.payload = JSON.stringify(published);
+      }
     } catch (error) {
       els.fileStatus.textContent = error.message;
     }
+  });
+}
+
+if (els.downloadJson) {
+  els.downloadJson.addEventListener("click", () => {
+    const payload = els.downloadJson.dataset.payload
+      ? JSON.parse(els.downloadJson.dataset.payload)
+      : buildPublishedPayload(state.current, state.monthlyPlanned);
+    downloadJson(payload);
   });
 }
 
@@ -700,8 +745,18 @@ els.printReport.addEventListener("click", () => {
   window.print();
 });
 
-const publishedData = loadPublishedData();
-if (publishedData) {
-  setRows(publishedData.rows || [], [], publishedData.monthlyPlanned || []);
-  displayUploadStatus(publishedData.uploadedAt);
+async function initialisePublishedData() {
+  const sharedData = await loadSharedPublishedData();
+  const publishedData = sharedData || loadPublishedData();
+
+  if (publishedData) {
+    setRows(publishedData.rows || [], [], publishedData.monthlyPlanned || []);
+    displayUploadStatus(publishedData.uploadedAt);
+    if (els.downloadJson) {
+      els.downloadJson.disabled = false;
+      els.downloadJson.dataset.payload = JSON.stringify(publishedData);
+    }
+  }
 }
+
+initialisePublishedData();
