@@ -3,6 +3,7 @@ const state = {
   revised: [],
   rows: [],
   monthlyPlanned: [],
+  leagueResults: [],
 };
 
 const seasonStart = "2026-04-01";
@@ -252,6 +253,7 @@ function buildPublishedPayload(rows, monthlyPlanned, uploadedAt = new Date().toI
     uploadedAt,
     rows,
     monthlyPlanned,
+    leagueResults: [],
   };
 }
 
@@ -343,6 +345,27 @@ function readMonthlyPlanned(sheet) {
   return rows;
 }
 
+function readLeagueResults(sheet) {
+  const range = XLSX.utils.decode_range("K2:AE21");
+  const rows = [];
+
+  for (let rowIndex = range.s.r; rowIndex <= range.e.r; rowIndex += 1) {
+    const cells = [];
+    let hasValue = false;
+
+    for (let columnIndex = range.s.c; columnIndex <= range.e.c; columnIndex += 1) {
+      const cell = getCell(sheet, rowIndex, columnIndex);
+      const value = cellText(cell);
+      if (value) hasValue = true;
+      cells.push(value);
+    }
+
+    if (hasValue) rows.push(cells);
+  }
+
+  return rows;
+}
+
 function assignStableIds(rows) {
   const counts = new Map();
   return rows.map((row, index) => {
@@ -362,15 +385,20 @@ function makeMatchBase(row) {
 
 function sheetToRows(workbook) {
   const byDateSheetName = workbook.SheetNames.find((name) => normaliseKey(name) === "by date");
+  const leagueResultsSheetName = workbook.SheetNames.find(
+    (name) => normaliseKey(name) === "league results"
+  );
 
   if (!byDateSheetName) {
     throw new Error('No "by date" tab found in this workbook.');
   }
 
   const sheet = workbook.Sheets[byDateSheetName];
+  const leagueResultsSheet = leagueResultsSheetName ? workbook.Sheets[leagueResultsSheetName] : null;
   return {
     rows: mapByDateColumns(sheet),
     monthlyPlanned: readMonthlyPlanned(sheet),
+    leagueResults: leagueResultsSheet ? readLeagueResults(leagueResultsSheet) : [],
   };
 }
 
@@ -522,12 +550,13 @@ function renderKpis() {
 function renderReport() {
   if (!state.rows.length) {
     els.reportBody.innerHTML =
-      '<p class="empty-copy">Load fixtures to see monthly planned matches and matches for the next 7 days.</p>';
+      '<p class="empty-copy">Load fixtures to see monthly planned matches, league results, and matches for the next 7 days.</p>';
     return;
   }
 
   els.reportBody.innerHTML = `
     ${renderMonthlyPlanned()}
+    ${renderLeagueResults()}
     ${renderNextSevenDays()}
   `;
 }
@@ -602,6 +631,36 @@ function renderNextSevenDays() {
   `;
 }
 
+function renderLeagueResults() {
+  if (!state.leagueResults.length) {
+    return `
+      <div class="summary-item summary-item-wide">
+        <strong>League results</strong>
+        <p>No league results found in tab "league results" cells K2:AE21.</p>
+      </div>
+    `;
+  }
+
+  const rows = state.leagueResults
+    .map(
+      (row) => `
+        <tr>${row.map((cell) => `<td>${escapeHtml(cell || "")}</td>`).join("")}</tr>
+      `
+    )
+    .join("");
+
+  return `
+    <div class="summary-item summary-item-wide">
+      <strong>League results</strong>
+      <div class="results-table-wrap">
+        <table class="results-table">
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
 function countBy(keyOrFn) {
   const getKey = typeof keyOrFn === "function" ? keyOrFn : (row) => row[keyOrFn];
   return state.rows.reduce((map, row) => {
@@ -638,8 +697,9 @@ function setRows(currentRows, revisedRows = state.revised, monthlyPlanned = stat
   renderAll();
 }
 
-function savePublishedData(rows, monthlyPlanned) {
+function savePublishedData(rows, monthlyPlanned, leagueResults = []) {
   const payload = buildPublishedPayload(rows, monthlyPlanned);
+  payload.leagueResults = leagueResults;
   localStorage.setItem(storageKey, JSON.stringify(payload));
   return payload;
 }
@@ -725,8 +785,13 @@ if (els.currentFile) {
     try {
       els.fileStatus.textContent = `Loading ${file.name}...`;
       const workbookData = await readWorkbook(file);
-      const published = savePublishedData(workbookData.rows, workbookData.monthlyPlanned);
+      const published = savePublishedData(
+        workbookData.rows,
+        workbookData.monthlyPlanned,
+        workbookData.leagueResults || []
+      );
       setRows(published.rows, [], published.monthlyPlanned);
+      state.leagueResults = published.leagueResults || [];
       displayUploadStatus(published.uploadedAt);
       if (els.downloadJson) {
         els.downloadJson.disabled = false;
@@ -773,6 +838,7 @@ async function initialisePublishedData() {
 
   if (publishedData) {
     setRows(publishedData.rows || [], [], publishedData.monthlyPlanned || []);
+    state.leagueResults = publishedData.leagueResults || [];
     displayUploadStatus(publishedData.uploadedAt);
     if (els.downloadJson) {
       els.downloadJson.disabled = false;

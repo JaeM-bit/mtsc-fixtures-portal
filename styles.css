@@ -441,11 +441,33 @@ td {
   margin-bottom: 6px;
 }
 
+.summary-item-wide {
+  grid-column: 1 / -1;
+}
+
 .change-item p,
 .summary-item p {
   margin-bottom: 0;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.results-table-wrap {
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.results-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+  vertical-align: top;
 }
 
 .next-fixtures {
