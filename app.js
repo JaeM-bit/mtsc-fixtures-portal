@@ -100,6 +100,8 @@ const els = {
   teamCount: document.querySelector("#teamCount"),
   homeNextCount: document.querySelector("#homeNextCount"),
   awayNextCount: document.querySelector("#awayNextCount"),
+  homeNextRange: document.querySelector("#homeNextRange"),
+  awayNextRange: document.querySelector("#awayNextRange"),
   searchInput: document.querySelector("#searchInput"),
   teamFilter: document.querySelector("#teamFilter"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
@@ -228,6 +230,15 @@ function formatUploadDateTime(date) {
     hour: "2-digit",
     minute: "2-digit",
   });
+}
+
+function formatKpiWindow(start, end) {
+  const formatter = new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+  return `${formatter.format(start)} to ${formatter.format(end)}`;
 }
 
 function displayUploadStatus(uploadedAt) {
@@ -503,6 +514,9 @@ function renderKpis() {
   els.teamCount.textContent = milfordTeams.size;
   els.homeNextCount.textContent = homeMatches.length;
   els.awayNextCount.textContent = awayMatches.length;
+  const windowText = formatKpiWindow(today, future);
+  if (els.homeNextRange) els.homeNextRange.textContent = windowText;
+  if (els.awayNextRange) els.awayNextRange.textContent = windowText;
 }
 
 function renderReport() {

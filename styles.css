@@ -277,6 +277,14 @@ h2 {
   line-height: 1;
 }
 
+.kpi-range {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 .workspace {
   display: grid;
   grid-template-columns: 270px minmax(0, 1fr);
