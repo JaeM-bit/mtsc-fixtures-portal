@@ -409,6 +409,11 @@ td {
   color: #124f86;
 }
 
+.badge.played {
+  background: #dff2df;
+  color: #1f6b2a;
+}
+
 .report-grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   margin-top: 16px;

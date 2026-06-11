@@ -482,7 +482,7 @@ function renderFixtures() {
           <td>${row.time || "-"}</td>
           <td>${escapeHtml(row.team || "-")}</td>
           <td>${escapeHtml(row.opponent || "-")}</td>
-          <td><span class="badge">${labelStatus(row)}</span></td>
+          <td><span class="badge ${statusBadgeClass(row)}">${labelStatus(row)}</span></td>
         </tr>
       `
     )
@@ -491,6 +491,11 @@ function renderFixtures() {
 
 function labelStatus(row) {
   return row.status || "Published";
+}
+
+function statusBadgeClass(row) {
+  const status = normaliseKey(labelStatus(row));
+  return status === "played" ? "played" : "";
 }
 
 function renderKpis() {
