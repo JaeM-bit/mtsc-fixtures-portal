@@ -97,7 +97,20 @@ main {
 }
 
 .captain-toolbar {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(260px, 1fr) minmax(220px, 1fr);
+}
+
+.hero-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110px;
+}
+
+.hero-logo {
+  width: min(320px, 80%);
+  max-height: 130px;
+  object-fit: contain;
 }
 
 .eyebrow {
