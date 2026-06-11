@@ -409,7 +409,8 @@ function applyFilters() {
   const useNextDays = els.nextDaysInput.value !== "" && Number.isFinite(nextDays);
   const today = startOfDay(new Date());
   const endDate = new Date(today);
-  endDate.setDate(today.getDate() + Math.max(0, nextDays));
+  endDate.setDate(today.getDate() + Math.max(0, nextDays - 1));
+  endDate.setHours(23, 59, 59, 999);
 
   return state.rows.filter((row) => {
     const haystack = normaliseKey(
@@ -487,9 +488,10 @@ function renderKpis() {
       .flatMap((row) => [row.team, row.opponent])
       .filter((team) => normaliseKey(team).startsWith("milford"))
   );
-  const today = new Date();
-  const future = new Date();
-  future.setDate(today.getDate() + 14);
+  const today = startOfDay(new Date());
+  const future = new Date(today);
+  future.setDate(today.getDate() + 13);
+  future.setHours(23, 59, 59, 999);
   const upcoming = state.rows.filter((row) => {
     const date = new Date(`${row.date}T12:00:00`);
     return !Number.isNaN(date.getTime()) && date >= today && date <= future;
