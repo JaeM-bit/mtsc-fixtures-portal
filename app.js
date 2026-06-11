@@ -354,6 +354,9 @@ function readLeagueResults(sheet) {
   const rows = [];
 
   for (let rowIndex = range.s.r; rowIndex <= range.e.r; rowIndex += 1) {
+    const visibleRowNumber = rowIndex + 1;
+    if (visibleRowNumber >= 4 && visibleRowNumber <= 6) continue;
+
     const cells = [];
     let hasValue = false;
 
