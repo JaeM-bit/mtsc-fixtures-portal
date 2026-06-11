@@ -415,8 +415,8 @@ td {
 }
 
 .report-grid.single-report {
-  grid-template-columns: minmax(320px, 0.5fr);
-  justify-content: start;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
 }
 
 .change-list,
@@ -446,9 +446,8 @@ td {
 }
 
 .summary-item-wide .results-table-wrap {
-  width: calc(100vw - 32px);
-  margin-left: calc(50% - 50vw + 16px);
-  margin-right: calc(50% - 50vw + 16px);
+  width: 100%;
+  margin: 0;
 }
 
 .change-item p,
