@@ -823,8 +823,8 @@ if (els.currentFile) {
         workbookData.monthlyPlanned,
         workbookData.leagueResults || []
       );
-      setRows(published.rows, [], published.monthlyPlanned);
       state.leagueResults = published.leagueResults || [];
+      setRows(published.rows, [], published.monthlyPlanned);
       displayUploadStatus(published.uploadedAt);
       if (els.downloadJson) {
         els.downloadJson.disabled = false;
@@ -870,8 +870,8 @@ async function initialisePublishedData() {
   const publishedData = sharedData || loadPublishedData();
 
   if (publishedData) {
-    setRows(publishedData.rows || [], [], publishedData.monthlyPlanned || []);
     state.leagueResults = publishedData.leagueResults || [];
+    setRows(publishedData.rows || [], [], publishedData.monthlyPlanned || []);
     displayUploadStatus(publishedData.uploadedAt);
     if (els.downloadJson) {
       els.downloadJson.disabled = false;
