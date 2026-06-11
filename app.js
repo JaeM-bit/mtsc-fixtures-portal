@@ -346,7 +346,11 @@ function readMonthlyPlanned(sheet) {
 }
 
 function readLeagueResults(sheet) {
-  const range = XLSX.utils.decode_range("K2:AE21");
+  const sheetRange = XLSX.utils.decode_range(sheet["!ref"] || "A1:AE21");
+  const range = {
+    s: { r: Math.max(1, sheetRange.s.r), c: Math.max(10, sheetRange.s.c) },
+    e: { r: Math.min(20, sheetRange.e.r), c: Math.min(30, sheetRange.e.c) },
+  };
   const rows = [];
 
   for (let rowIndex = range.s.r; rowIndex <= range.e.r; rowIndex += 1) {
@@ -383,11 +387,15 @@ function makeMatchBase(row) {
     .join("|");
 }
 
+function findSheetName(workbook, predicate) {
+  return workbook.SheetNames.find((name) => predicate(normaliseKey(name)));
+}
+
 function sheetToRows(workbook) {
-  const byDateSheetName = workbook.SheetNames.find((name) => normaliseKey(name) === "by date");
-  const leagueResultsSheetName = workbook.SheetNames.find(
-    (name) => normaliseKey(name) === "league results"
-  );
+  const byDateSheetName = findSheetName(workbook, (name) => name === "by date");
+  const leagueResultsSheetName =
+    findSheetName(workbook, (name) => name.includes("league") && name.includes("result")) ||
+    findSheetName(workbook, (name) => name.includes("league"));
 
   if (!byDateSheetName) {
     throw new Error('No "by date" tab found in this workbook.');
