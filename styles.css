@@ -278,16 +278,17 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-.kpi-label {
+.kpi-grid .kpi-label,
+.summary-grid .kpi-label {
   display: block;
   color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.2;
+  font-size: 0.84rem !important;
+  line-height: 1.2 !important;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.kpi-title {
+.kpi-grid .kpi-title {
   text-transform: none;
 }
 
