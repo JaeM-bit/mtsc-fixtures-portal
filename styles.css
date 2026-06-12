@@ -367,6 +367,22 @@ h2 {
   color: var(--ink);
 }
 
+.analytics-card {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.analytics-card strong {
+  display: block;
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
 .data-area,
 .report-panel {
   min-width: 0;
