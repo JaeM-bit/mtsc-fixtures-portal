@@ -102,7 +102,7 @@ main {
 
 .hero-logo-wrap {
   position: relative;
-  width: clamp(136px, 17vw, 190px);
+  width: clamp(150px, 18vw, 210px);
   aspect-ratio: 1 / 1;
   justify-self: center;
   flex: 0 0 auto;
@@ -115,14 +115,13 @@ main {
 .hero-logo {
   display: block;
   position: absolute;
-  inset: 14px;
-  width: calc(100% - 28px);
-  height: calc(100% - 28px);
+  inset: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
   max-width: none;
   max-height: none;
   object-fit: contain;
   object-position: center;
-  border-radius: 50%;
 }
 
 .eyebrow {
