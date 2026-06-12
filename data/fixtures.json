@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-12T09:44:52.109Z",
+  "uploadedAt": "2026-06-12T09:52:21.463Z",
   "rows": [
     {
       "id": "milford m1|hale gardens m1#1",
@@ -1129,24 +1129,13 @@
     }
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "1030 Swanage L1  vs.  Milford L2",
-    "totalWins": "",
-    "highestAvgPointsPerMatch": 0,
+    "totalMatchesPlayed": "35",
+    "totalWins": "21",
+    "highestAvgPointsPerMatch": 6,
     "highestAvgTeams": [
-      "Winton L1",
-      "Christchurch L1",
-      "Christchurch MXD2",
-      "DL Ringwood MXD1",
-      "Shillingstone M1",
-      "Milford L2",
-      "Southbourne MXD2",
-      "Pythouse MXD2",
-      "Dorchester M45",
-      "Swanage L2",
-      "West Hants MXD1",
-      "Hale Gardens M2",
-      "St Leonards L60",
-      "East Dorset L4"
+      "Milford L1",
+      "Milford MXD4",
+      "Milford M2"
     ]
   }
 }
