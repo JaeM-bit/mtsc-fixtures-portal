@@ -282,8 +282,8 @@ h2 {
 .summary-grid .kpi-label {
   display: block;
   color: var(--muted);
-  font-size: 0.84rem !important;
-  line-height: 1.2 !important;
+  font-size: 0.78rem !important;
+  line-height: 1.15 !important;
   font-weight: 800;
   text-transform: uppercase;
 }
