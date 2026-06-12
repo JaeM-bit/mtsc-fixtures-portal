@@ -280,9 +280,11 @@ h2 {
 
 .kpi-grid .kpi-label,
 .summary-grid .kpi-label {
-  display: block;
+  display: flex;
+  align-items: flex-end;
   color: var(--muted);
-  font-size: 0.78rem !important;
+  min-height: 2.2em;
+  font-size: 0.76rem !important;
   line-height: 1.15 !important;
   font-weight: 800;
   text-transform: uppercase;
