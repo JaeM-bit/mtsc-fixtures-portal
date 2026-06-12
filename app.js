@@ -406,18 +406,29 @@ function makeMatchBase(row) {
     .join("|");
 }
 
+function findSheetName(workbook, predicate) {
+  return workbook.SheetNames.find((name) => predicate(normaliseKey(name)));
+}
+
 function sheetToRows(workbook) {
-  const byDateSheetName = workbook.SheetNames.find((name) => normaliseKey(name) === "by date");
+  const byDateSheetName = findSheetName(workbook, (name) => name === "by date");
+  const leagueResultsSheetName =
+    findSheetName(workbook, (name) => name.includes("league") && name.includes("result")) ||
+    findSheetName(workbook, (name) => name.includes("league"));
 
   if (!byDateSheetName) {
     throw new Error('No "by date" tab found in this workbook.');
   }
+  if (!leagueResultsSheetName) {
+    throw new Error('No "League Results" tab found in this workbook.');
+  }
 
   const sheet = workbook.Sheets[byDateSheetName];
+  const leagueResultsSheet = workbook.Sheets[leagueResultsSheetName];
   return {
     rows: mapByDateColumns(sheet),
     monthlyPlanned: readMonthlyPlanned(sheet),
-    reportSummary: readReportSummary(sheet),
+    reportSummary: readReportSummary(leagueResultsSheet),
   };
 }
 
