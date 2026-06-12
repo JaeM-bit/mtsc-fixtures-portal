@@ -297,6 +297,7 @@ h2 {
 #totalMatchesLabel {
   font-size: 0.84rem !important;
   line-height: 1.15 !important;
+  text-transform: uppercase !important;
 }
 
 .kpi-grid strong {
