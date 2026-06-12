@@ -424,9 +424,7 @@ function applyFilters() {
   endDate.setHours(23, 59, 59, 999);
 
   return state.rows.filter((row) => {
-    const haystack = normaliseKey(
-      [row.date, row.day, row.time, row.team, row.opponent, row.status].join(" ")
-    );
+    const haystack = rowSearchText(row);
     const rowDate = new Date(`${row.date}T12:00:00`);
     const matchesNextDays =
       !useNextDays ||
@@ -487,6 +485,20 @@ function renderFixtures() {
       `
     )
     .join("");
+}
+
+function rowSearchText(row) {
+  return normaliseKey(
+    [
+      formatDate(row.date),
+      row.date,
+      row.day,
+      row.time,
+      row.team,
+      row.opponent,
+      labelStatus(row),
+    ].join(" ")
+  );
 }
 
 function labelStatus(row) {
