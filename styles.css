@@ -286,6 +286,10 @@ h2 {
   text-transform: uppercase;
 }
 
+.kpi-title {
+  text-transform: none;
+}
+
 .kpi-grid strong {
   display: block;
   margin-top: 18px;
