@@ -10,12 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=36" />
+    <link rel="stylesheet" href="styles.css?v=37" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=35"></script>
+    <script defer src="app.js?v=36"></script>
   </head>
   <body>
     <header class="app-header">
@@ -60,23 +60,6 @@
           <strong id="totalMatches">0</strong>
         </article>
         <article>
-          <span class="kpi-label kpi-title">Milford Teams</span>
-          <strong id="teamCount">0</strong>
-        </article>
-        <article>
-          <span class="kpi-label kpi-title">Home Next 14 Days</span>
-          <strong id="homeNextCount">0</strong>
-          <span class="kpi-range" id="homeNextRange"></span>
-        </article>
-        <article>
-          <span class="kpi-label kpi-title">Away Next 14 Days</span>
-          <strong id="awayNextCount">0</strong>
-          <span class="kpi-range" id="awayNextRange"></span>
-        </article>
-      </section>
-
-      <section class="summary-grid" aria-label="Published match summary">
-        <article>
           <span class="kpi-label">Total Matches Played</span>
           <strong id="summaryMatchesPlayed">-</strong>
         </article>
@@ -88,6 +71,27 @@
           <span class="kpi-label">Highest Total Avg Net Points/Match</span>
           <strong id="summaryHighestAvg">-</strong>
           <span class="summary-teams" id="summaryHighestTeams"></span>
+        </article>
+      </section>
+
+      <section class="summary-grid" aria-label="Published match summary">
+        <article>
+          <span class="kpi-label kpi-title">Milford Teams</span>
+          <strong id="teamCount">0</strong>
+        </article>
+        <article>
+          <span class="kpi-label kpi-title">Total Wins</span>
+          <strong id="summaryWinsRepeat">-</strong>
+        </article>
+        <article>
+          <span class="kpi-label kpi-title">Home Matches Next 14 Days</span>
+          <strong id="homeNextCount">0</strong>
+          <span class="kpi-range" id="homeNextRange"></span>
+        </article>
+        <article>
+          <span class="kpi-label kpi-title">Away Matches Next 14 Days</span>
+          <strong id="awayNextCount">0</strong>
+          <span class="kpi-range" id="awayNextRange"></span>
         </article>
       </section>
 

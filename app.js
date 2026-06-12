@@ -110,6 +110,7 @@ const els = {
   awayNextRange: document.querySelector("#awayNextRange"),
   summaryMatchesPlayed: document.querySelector("#summaryMatchesPlayed"),
   summaryWins: document.querySelector("#summaryWins"),
+  summaryWinsRepeat: document.querySelector("#summaryWinsRepeat"),
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
   summaryHighestTeams: document.querySelector("#summaryHighestTeams"),
   searchInput: document.querySelector("#searchInput"),
@@ -595,6 +596,9 @@ function renderKpis() {
   }
   if (els.summaryWins) {
     els.summaryWins.textContent = state.reportSummary.totalWins || "-";
+  }
+  if (els.summaryWinsRepeat) {
+    els.summaryWinsRepeat.textContent = state.reportSummary.totalWins || "-";
   }
   if (els.summaryHighestAvg) {
     els.summaryHighestAvg.textContent = state.reportSummary.highestAvgPointsPerMatch || "-";
