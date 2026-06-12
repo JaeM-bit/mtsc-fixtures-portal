@@ -10,12 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=33" />
+    <link rel="stylesheet" href="styles.css?v=34" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=32"></script>
+    <script defer src="app.js?v=33"></script>
   </head>
   <body>
     <header class="app-header">
@@ -44,22 +44,22 @@
         <span id="parseStatus"></span>
       </section>
 
-    <section class="kpi-grid" aria-label="Fixture summary">
+      <section class="kpi-grid" aria-label="Fixture summary">
         <article>
-          <span>Total matches</span>
+          <span class="kpi-label">Total matches</span>
           <strong id="totalMatches">0</strong>
         </article>
         <article>
-          <span>Milford teams</span>
+          <span class="kpi-label">Milford teams</span>
           <strong id="teamCount">0</strong>
         </article>
         <article>
-          <span>Home next 14 days</span>
+          <span class="kpi-label">Home next 14 days</span>
           <strong id="homeNextCount">0</strong>
           <span class="kpi-range" id="homeNextRange"></span>
         </article>
         <article>
-          <span>Away next 14 days</span>
+          <span class="kpi-label">Away next 14 days</span>
           <strong id="awayNextCount">0</strong>
           <span class="kpi-range" id="awayNextRange"></span>
         </article>
@@ -67,15 +67,15 @@
 
       <section class="summary-grid" aria-label="Published match summary">
         <article>
-          <span>Total Matches Played</span>
+          <span class="kpi-label">Total Matches Played</span>
           <strong id="summaryMatchesPlayed">-</strong>
         </article>
         <article>
-          <span>Total Wins</span>
+          <span class="kpi-label">Total Wins</span>
           <strong id="summaryWins">-</strong>
         </article>
         <article>
-          <span>Highest Total Avg Points/Match</span>
+          <span class="kpi-label">Highest Total Avg Points/Match</span>
           <strong id="summaryHighestAvg">-</strong>
           <span class="summary-teams" id="summaryHighestTeams"></span>
         </article>

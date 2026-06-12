@@ -278,12 +278,12 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-.kpi-grid span,
-.summary-grid > article > span:first-child {
+.kpi-label {
   display: block;
   color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .kpi-grid strong {
