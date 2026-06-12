@@ -412,9 +412,7 @@ function findSheetName(workbook, predicate) {
 
 function sheetToRows(workbook) {
   const byDateSheetName = findSheetName(workbook, (name) => name === "by date");
-  const leagueResultsSheetName =
-    findSheetName(workbook, (name) => name.includes("league") && name.includes("result")) ||
-    findSheetName(workbook, (name) => name.includes("league"));
+  const leagueResultsSheetName = findSheetName(workbook, (name) => name === "league results");
 
   if (!byDateSheetName) {
     throw new Error('No "by date" tab found in this workbook.');
