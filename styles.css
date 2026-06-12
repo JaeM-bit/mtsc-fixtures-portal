@@ -294,6 +294,11 @@ h2 {
   text-transform: none;
 }
 
+#totalMatchesLabel {
+  font-size: 0.84rem !important;
+  line-height: 1.15 !important;
+}
+
 .kpi-grid strong {
   display: block;
   margin-top: 18px;
