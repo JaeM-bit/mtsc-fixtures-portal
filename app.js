@@ -3,6 +3,12 @@ const state = {
   revised: [],
   rows: [],
   monthlyPlanned: [],
+  reportSummary: {
+    totalMatchesPlayed: "",
+    totalWins: "",
+    highestAvgPointsPerMatch: "",
+    highestAvgTeams: [],
+  },
 };
 
 const seasonStart = "2026-04-01";
@@ -102,6 +108,10 @@ const els = {
   awayNextCount: document.querySelector("#awayNextCount"),
   homeNextRange: document.querySelector("#homeNextRange"),
   awayNextRange: document.querySelector("#awayNextRange"),
+  summaryMatchesPlayed: document.querySelector("#summaryMatchesPlayed"),
+  summaryWins: document.querySelector("#summaryWins"),
+  summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
+  summaryHighestTeams: document.querySelector("#summaryHighestTeams"),
   searchInput: document.querySelector("#searchInput"),
   teamFilter: document.querySelector("#teamFilter"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
@@ -247,11 +257,17 @@ function displayUploadStatus(uploadedAt) {
   els.parseStatus.textContent = "";
 }
 
-function buildPublishedPayload(rows, monthlyPlanned, uploadedAt = new Date().toISOString()) {
+function buildPublishedPayload(
+  rows,
+  monthlyPlanned,
+  reportSummary = state.reportSummary,
+  uploadedAt = new Date().toISOString()
+) {
   return {
     uploadedAt,
     rows,
     monthlyPlanned,
+    reportSummary,
   };
 }
 
@@ -343,6 +359,36 @@ function readMonthlyPlanned(sheet) {
   return rows;
 }
 
+function readReportSummary(sheet) {
+  const totalMatchesPlayed = cellText(getCell(sheet, 20, 19));
+  const totalWins = cellText(getCell(sheet, 20, 20));
+  const ranked = [];
+
+  for (let rowIndex = 6; rowIndex <= 19; rowIndex += 1) {
+    const team = cellText(getCell(sheet, rowIndex, 10));
+    const avgText = cellText(getCell(sheet, rowIndex, 25));
+    const avgValue = Number(String(avgText).replace(/,/g, ""));
+    if (!team || !Number.isFinite(avgValue)) continue;
+    ranked.push({ team, avgValue });
+  }
+
+  const highestAvgPointsPerMatch =
+    ranked.length > 0 ? Math.max(...ranked.map((item) => item.avgValue)) : "";
+  const highestAvgTeams =
+    ranked.length > 0
+      ? ranked
+          .filter((item) => item.avgValue === highestAvgPointsPerMatch)
+          .map((item) => item.team)
+      : [];
+
+  return {
+    totalMatchesPlayed,
+    totalWins,
+    highestAvgPointsPerMatch,
+    highestAvgTeams,
+  };
+}
+
 function assignStableIds(rows) {
   const counts = new Map();
   return rows.map((row, index) => {
@@ -371,6 +417,7 @@ function sheetToRows(workbook) {
   return {
     rows: mapByDateColumns(sheet),
     monthlyPlanned: readMonthlyPlanned(sheet),
+    reportSummary: readReportSummary(sheet),
   };
 }
 
@@ -534,6 +581,21 @@ function renderKpis() {
   const windowText = formatKpiWindow(today, future);
   if (els.homeNextRange) els.homeNextRange.textContent = windowText;
   if (els.awayNextRange) els.awayNextRange.textContent = windowText;
+  if (els.summaryMatchesPlayed) {
+    els.summaryMatchesPlayed.textContent = state.reportSummary.totalMatchesPlayed || "-";
+  }
+  if (els.summaryWins) {
+    els.summaryWins.textContent = state.reportSummary.totalWins || "-";
+  }
+  if (els.summaryHighestAvg) {
+    els.summaryHighestAvg.textContent = state.reportSummary.highestAvgPointsPerMatch || "-";
+  }
+  if (els.summaryHighestTeams) {
+    const teams = state.reportSummary.highestAvgTeams || [];
+    els.summaryHighestTeams.innerHTML = teams.length
+      ? teams.map((team) => escapeHtml(team)).join("<br />")
+      : "";
+  }
 }
 
 function renderReport() {
@@ -647,16 +709,22 @@ function renderAll() {
   renderReport();
 }
 
-function setRows(currentRows, revisedRows = state.revised, monthlyPlanned = state.monthlyPlanned) {
+function setRows(
+  currentRows,
+  revisedRows = state.revised,
+  monthlyPlanned = state.monthlyPlanned,
+  reportSummary = state.reportSummary
+) {
   state.current = ensureIds(currentRows);
   state.revised = ensureIds(revisedRows);
   state.monthlyPlanned = monthlyPlanned;
+  state.reportSummary = reportSummary || state.reportSummary;
   state.rows = compareRows(state.current, state.revised);
   renderAll();
 }
 
-function savePublishedData(rows, monthlyPlanned) {
-  const payload = buildPublishedPayload(rows, monthlyPlanned);
+function savePublishedData(rows, monthlyPlanned, reportSummary = state.reportSummary) {
+  const payload = buildPublishedPayload(rows, monthlyPlanned, reportSummary);
   localStorage.setItem(storageKey, JSON.stringify(payload));
   return payload;
 }
@@ -742,8 +810,12 @@ if (els.currentFile) {
     try {
       els.fileStatus.textContent = `Loading ${file.name}...`;
       const workbookData = await readWorkbook(file);
-      const published = savePublishedData(workbookData.rows, workbookData.monthlyPlanned);
-      setRows(published.rows, [], published.monthlyPlanned);
+      const published = savePublishedData(
+        workbookData.rows,
+        workbookData.monthlyPlanned,
+        workbookData.reportSummary || state.reportSummary
+      );
+      setRows(published.rows, [], published.monthlyPlanned, published.reportSummary);
       displayUploadStatus(published.uploadedAt);
       if (els.downloadJson) {
         els.downloadJson.disabled = false;
@@ -759,7 +831,7 @@ if (els.downloadJson) {
   els.downloadJson.addEventListener("click", () => {
     const payload = els.downloadJson.dataset.payload
       ? JSON.parse(els.downloadJson.dataset.payload)
-      : buildPublishedPayload(state.current, state.monthlyPlanned);
+      : buildPublishedPayload(state.current, state.monthlyPlanned, state.reportSummary);
     downloadJson(payload);
     els.parseStatus.textContent = "fixtures.json download started.";
   });
@@ -789,7 +861,12 @@ async function initialisePublishedData() {
   const publishedData = sharedData || loadPublishedData();
 
   if (publishedData) {
-    setRows(publishedData.rows || [], [], publishedData.monthlyPlanned || []);
+    setRows(
+      publishedData.rows || [],
+      [],
+      publishedData.monthlyPlanned || [],
+      publishedData.reportSummary || state.reportSummary
+    );
     displayUploadStatus(publishedData.uploadedAt);
     if (els.downloadJson) {
       els.downloadJson.disabled = false;
