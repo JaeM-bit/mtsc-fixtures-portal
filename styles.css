@@ -278,7 +278,8 @@ h2 {
   box-shadow: var(--shadow);
 }
 
-.kpi-grid span {
+.kpi-grid span,
+.summary-grid > article > span:first-child {
   display: block;
   color: var(--muted);
   font-size: 0.9rem;
