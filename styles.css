@@ -383,6 +383,12 @@ h2 {
   line-height: 1;
 }
 
+.analytics-note {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
 .data-area,
 .report-panel {
   min-width: 0;
