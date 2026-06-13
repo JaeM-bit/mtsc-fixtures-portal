@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-13T09:41:58.045Z",
+  "uploadedAt": "2026-06-13T17:47:12.927Z",
   "rows": [
     {
       "id": "milford m1|hale gardens m1#1",
@@ -430,7 +430,7 @@
       "opponent": "Dorchester M1",
       "venue": "",
       "division": "",
-      "status": "Booked",
+      "status": "played",
       "changeStatus": "unchanged"
     },
     {
@@ -442,7 +442,7 @@
       "opponent": "Milford MXD4",
       "venue": "",
       "division": "",
-      "status": "Booked",
+      "status": "played",
       "changeStatus": "unchanged"
     },
     {
@@ -1129,8 +1129,8 @@
     }
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "35",
-    "totalWins": "21",
+    "totalMatchesPlayed": "37",
+    "totalWins": "23",
     "highestAvgPointsPerMatch": 6,
     "highestAvgTeams": [
       "Milford L1",
