@@ -119,7 +119,6 @@ const els = {
   fixturesBody: document.querySelector("#fixturesBody"),
   visibleCount: document.querySelector("#visibleCount"),
   reportBody: document.querySelector("#reportBody"),
-  printReport: document.querySelector("#printReport"),
 };
 
 function normaliseKey(value) {
@@ -860,10 +859,6 @@ if (els.exportCsv) {
     downloadCsv(applyFilters());
   });
 }
-
-els.printReport.addEventListener("click", () => {
-  window.print();
-});
 
 async function initialisePublishedData() {
   const sharedData = await loadSharedPublishedData();
