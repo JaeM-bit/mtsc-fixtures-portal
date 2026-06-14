@@ -4,6 +4,7 @@ import { dirname } from "node:path";
 const siteId = process.env.PLAUSIBLE_SITE_ID;
 const apiKey = process.env.PLAUSIBLE_API_KEY;
 const outputPath = new URL("../data/analytics.json", import.meta.url);
+const captainPagePath = "/";
 
 if (!siteId || !apiKey) {
   throw new Error("PLAUSIBLE_SITE_ID and PLAUSIBLE_API_KEY must be set.");
@@ -19,6 +20,7 @@ const response = await fetch("https://plausible.io/api/v2/query", {
     site_id: siteId,
     metrics: ["pageviews"],
     date_range: "28d",
+    filters: [["is", "event:page", [captainPagePath]]],
   }),
 });
 
@@ -37,4 +39,6 @@ await writeFile(
   `${JSON.stringify({ averageViewsPerWeek, updatedAt, pageviews, periodDays: 28 }, null, 2)}\n`
 );
 
-console.log(`Updated analytics: ${averageViewsPerWeek} views/week from ${pageviews} pageviews.`);
+console.log(
+  `Updated analytics for ${captainPagePath}: ${averageViewsPerWeek} views/week from ${pageviews} pageviews.`
+);
