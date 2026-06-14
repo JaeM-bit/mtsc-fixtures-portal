@@ -3,6 +3,10 @@ const state = {
   revised: [],
   rows: [],
   monthlyPlanned: [],
+  analytics: {
+    averageViewsPerWeek: "",
+    updatedAt: "",
+  },
   reportSummary: {
     totalMatchesPlayed: "",
     totalWins: "",
@@ -15,6 +19,7 @@ const seasonStart = "2026-04-01";
 const seasonEnd = "2026-08-31";
 const storageKey = "mtsc-fixtures-published-data";
 const publishedJsonUrl = "data/fixtures.json";
+const analyticsJsonUrl = "data/analytics.json";
 
 const sampleRows = [
   {
@@ -112,6 +117,8 @@ const els = {
   summaryWins: document.querySelector("#summaryWins"),
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
   summaryHighestTeams: document.querySelector("#summaryHighestTeams"),
+  weeklyViewsAverage: document.querySelector("#weeklyViewsAverage"),
+  weeklyViewsAverageNote: document.querySelector("#weeklyViewsAverageNote"),
   searchInput: document.querySelector("#searchInput"),
   teamFilter: document.querySelector("#teamFilter"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
@@ -604,6 +611,7 @@ function renderKpis() {
       ? teams.map((team) => escapeHtml(team)).join("<br />")
       : "";
   }
+  renderAnalytics();
 }
 
 function renderReport() {
@@ -778,6 +786,25 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function formatCompactNumber(value) {
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue)) return "-";
+  return new Intl.NumberFormat("en-GB", {
+    maximumFractionDigits: 0,
+  }).format(Math.round(numericValue));
+}
+
+function formatIsoDateLabel(value) {
+  if (!value) return "";
+  const date = new Date(`${value}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return String(value);
+  return date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+}
+
 function downloadCsv(rows) {
   const headers = ["Date", "Day", "Time", "Milford Team", "Away Team", "Status"];
   const lines = rows.map((row) =>
@@ -809,6 +836,33 @@ function downloadJson(payload) {
   link.click();
   link.remove();
   window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+async function loadAnalyticsData() {
+  try {
+    const response = await fetch(`${analyticsJsonUrl}?v=${Date.now()}`, {
+      cache: "no-store",
+    });
+    if (!response.ok) return null;
+    const payload = await response.json();
+    if (!payload || typeof payload !== "object") return null;
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
+function renderAnalytics() {
+  if (els.weeklyViewsAverage) {
+    els.weeklyViewsAverage.textContent = formatCompactNumber(
+      state.analytics.averageViewsPerWeek
+    );
+  }
+  if (els.weeklyViewsAverageNote) {
+    els.weeklyViewsAverageNote.textContent = state.analytics.updatedAt
+      ? `Updated ${formatIsoDateLabel(state.analytics.updatedAt)}`
+      : "Awaiting Plausible sync";
+  }
 }
 
 if (els.currentFile) {
@@ -879,4 +933,15 @@ async function initialisePublishedData() {
   }
 }
 
+async function initialiseAnalytics() {
+  const analyticsData = await loadAnalyticsData();
+  if (!analyticsData) return;
+  state.analytics = {
+    averageViewsPerWeek: analyticsData.averageViewsPerWeek || "",
+    updatedAt: analyticsData.updatedAt || "",
+  };
+  renderAnalytics();
+}
+
 initialisePublishedData();
+initialiseAnalytics();
