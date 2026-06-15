@@ -61,7 +61,7 @@ const todayResponse = await fetch("https://plausible.io/api/v2/query", {
   body: JSON.stringify({
     site_id: siteId,
     metrics: ["pageviews"],
-    date_range: "today",
+    date_range: "day",
     filters: [captainPageFilter],
   }),
 });
