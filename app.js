@@ -4,6 +4,7 @@ const state = {
   rows: [],
   monthlyPlanned: [],
   analytics: {
+    viewsToday: "",
     averageViewsPerWeek: "",
     updatedAt: "",
   },
@@ -117,8 +118,8 @@ const els = {
   summaryWins: document.querySelector("#summaryWins"),
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
   summaryHighestTeams: document.querySelector("#summaryHighestTeams"),
+  viewsToday: document.querySelector("#viewsToday"),
   weeklyViewsAverage: document.querySelector("#weeklyViewsAverage"),
-  weeklyViewsAverageNote: document.querySelector("#weeklyViewsAverageNote"),
   searchInput: document.querySelector("#searchInput"),
   teamFilter: document.querySelector("#teamFilter"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
@@ -853,15 +854,13 @@ async function loadAnalyticsData() {
 }
 
 function renderAnalytics() {
+  if (els.viewsToday) {
+    els.viewsToday.textContent = formatCompactNumber(state.analytics.viewsToday);
+  }
   if (els.weeklyViewsAverage) {
     els.weeklyViewsAverage.textContent = formatCompactNumber(
       state.analytics.averageViewsPerWeek
     );
-  }
-  if (els.weeklyViewsAverageNote) {
-    els.weeklyViewsAverageNote.textContent = state.analytics.updatedAt
-      ? `Updated ${formatIsoDateLabel(state.analytics.updatedAt)}`
-      : "Awaiting Plausible sync";
   }
 }
 
@@ -937,6 +936,7 @@ async function initialiseAnalytics() {
   const analyticsData = await loadAnalyticsData();
   if (!analyticsData) return;
   state.analytics = {
+    viewsToday: analyticsData.viewsToday || "",
     averageViewsPerWeek: analyticsData.averageViewsPerWeek || "",
     updatedAt: analyticsData.updatedAt || "",
   };
