@@ -3,6 +3,7 @@ const state = {
   revised: [],
   rows: [],
   monthlyPlanned: [],
+  monthlyPlayed: [],
   analytics: {
     viewsToday: "",
     uniqueVisitorsToday: "",
@@ -370,6 +371,25 @@ function readMonthlyPlanned(sheet) {
   return rows;
 }
 
+function readMonthlyPlayed(sheet) {
+  const rows = [];
+
+  for (let rowIndex = 107; rowIndex <= 112; rowIndex += 1) {
+    const month = monthLabelFromCell(getCell(sheet, rowIndex, 1));
+    const playedText = cellText(getCell(sheet, rowIndex, 4));
+    const played = Number(String(playedText).replace(/,/g, ""));
+
+    if (month || playedText) {
+      rows.push({
+        month: month || "Unspecified",
+        played: Number.isFinite(played) ? played : 0,
+      });
+    }
+  }
+
+  return rows;
+}
+
 function readReportSummary(sheet) {
   const totalMatchesPlayed = cellText(getCell(sheet, 20, 19));
   const totalWins = cellText(getCell(sheet, 20, 20));
@@ -437,6 +457,7 @@ function sheetToRows(workbook) {
   return {
     rows: mapByDateColumns(sheet),
     monthlyPlanned: readMonthlyPlanned(sheet),
+    monthlyPlayed: readMonthlyPlayed(sheet),
     reportSummary: readReportSummary(leagueResultsSheet),
   };
 }
@@ -642,15 +663,20 @@ function renderMonthlyPlanned() {
     `;
   }
 
+  const playedByMonth = new Map(
+    (state.monthlyPlayed || []).map((row) => [row.month, row.played])
+  );
   const items = state.monthlyPlanned
-    .map(
-      (row) => `
+    .map((row) => {
+      const played = playedByMonth.get(row.month) ?? 0;
+      return `
         <li>
           <span>${escapeHtml(row.month)}</span>
           <strong>${escapeHtml(row.count)}</strong>
+          <span class="monthly-played">Played ${escapeHtml(played)}</span>
         </li>
-      `
-    )
+      `;
+    })
     .join("");
 
   return `
@@ -939,6 +965,7 @@ async function initialisePublishedData() {
       publishedData.monthlyPlanned || [],
       publishedData.reportSummary || state.reportSummary
     );
+    state.monthlyPlayed = publishedData.monthlyPlayed || [];
     displayUploadStatus(publishedData.uploadedAt);
     if (els.downloadJson) {
       els.downloadJson.disabled = false;
