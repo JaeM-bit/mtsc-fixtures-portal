@@ -360,12 +360,15 @@ function readMonthlyPlanned(sheet) {
   for (let rowIndex = 107; rowIndex <= 111; rowIndex += 1) {
     const month = monthLabelFromCell(getCell(sheet, rowIndex, 1));
     const countText = cellText(getCell(sheet, rowIndex, 7));
+    const playedText = cellText(getCell(sheet, rowIndex, 4));
     const count = Number(String(countText).replace(/,/g, ""));
+    const played = Number(String(playedText).replace(/,/g, ""));
 
     if (month || countText) {
       rows.push({
         month: month || "Unspecified",
         count: Number.isFinite(count) ? count : 0,
+        played: Number.isFinite(played) ? played : "",
       });
     }
   }
@@ -665,11 +668,13 @@ function renderMonthlyPlanned() {
   const items = state.monthlyPlanned
     .map((row, index) => {
       const playedRow = playedRows[index];
-      const played = Number.isFinite(playedRow)
-        ? playedRow
-        : Number.isFinite(playedRow?.played)
-          ? playedRow.played
-          : 0;
+      const played = Number.isFinite(row.played)
+        ? row.played
+        : Number.isFinite(playedRow)
+          ? playedRow
+          : Number.isFinite(playedRow?.played)
+            ? playedRow.played
+            : 0;
       return `
         <li>
           <span>${escapeHtml(row.month)}</span>
