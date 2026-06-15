@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-13T17:48:36.400Z",
+  "uploadedAt": "2026-06-15T11:17:38.124Z",
   "rows": [
     {
       "id": "milford m1|hale gardens m1#1",
@@ -1129,8 +1129,8 @@
     }
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "37",
-    "totalWins": "23",
+    "totalMatchesPlayed": "38",
+    "totalWins": "24",
     "highestAvgPointsPerMatch": 6,
     "highestAvgTeams": [
       "Milford L1",
