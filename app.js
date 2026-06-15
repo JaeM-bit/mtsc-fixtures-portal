@@ -272,6 +272,7 @@ function displayUploadStatus(uploadedAt) {
 function buildPublishedPayload(
   rows,
   monthlyPlanned,
+  monthlyPlayed = state.monthlyPlayed,
   reportSummary = state.reportSummary,
   uploadedAt = new Date().toISOString()
 ) {
@@ -279,6 +280,7 @@ function buildPublishedPayload(
     uploadedAt,
     rows,
     monthlyPlanned,
+    monthlyPlayed,
     reportSummary,
   };
 }
@@ -375,15 +377,11 @@ function readMonthlyPlayed(sheet) {
   const rows = [];
 
   for (let rowIndex = 107; rowIndex <= 112; rowIndex += 1) {
-    const month = monthLabelFromCell(getCell(sheet, rowIndex, 1));
     const playedText = cellText(getCell(sheet, rowIndex, 4));
     const played = Number(String(playedText).replace(/,/g, ""));
 
-    if (month || playedText) {
-      rows.push({
-        month: month || "Unspecified",
-        played: Number.isFinite(played) ? played : 0,
-      });
+    if (playedText) {
+      rows.push(Number.isFinite(played) ? played : 0);
     }
   }
 
@@ -663,12 +661,15 @@ function renderMonthlyPlanned() {
     `;
   }
 
-  const playedByMonth = new Map(
-    (state.monthlyPlayed || []).map((row) => [row.month, row.played])
-  );
+  const playedRows = Array.isArray(state.monthlyPlayed) ? state.monthlyPlayed : [];
   const items = state.monthlyPlanned
-    .map((row) => {
-      const played = playedByMonth.get(row.month) ?? 0;
+    .map((row, index) => {
+      const playedRow = playedRows[index];
+      const played = Number.isFinite(playedRow)
+        ? playedRow
+        : Number.isFinite(playedRow?.played)
+          ? playedRow.played
+          : 0;
       return `
         <li>
           <span>${escapeHtml(row.month)}</span>
@@ -760,18 +761,25 @@ function setRows(
   currentRows,
   revisedRows = state.revised,
   monthlyPlanned = state.monthlyPlanned,
+  monthlyPlayed = state.monthlyPlayed,
   reportSummary = state.reportSummary
 ) {
   state.current = ensureIds(currentRows);
   state.revised = ensureIds(revisedRows);
   state.monthlyPlanned = monthlyPlanned;
+  state.monthlyPlayed = monthlyPlayed;
   state.reportSummary = reportSummary || state.reportSummary;
   state.rows = compareRows(state.current, state.revised);
   renderAll();
 }
 
-function savePublishedData(rows, monthlyPlanned, reportSummary = state.reportSummary) {
-  const payload = buildPublishedPayload(rows, monthlyPlanned, reportSummary);
+function savePublishedData(
+  rows,
+  monthlyPlanned,
+  monthlyPlayed = state.monthlyPlayed,
+  reportSummary = state.reportSummary
+) {
+  const payload = buildPublishedPayload(rows, monthlyPlanned, monthlyPlayed, reportSummary);
   localStorage.setItem(storageKey, JSON.stringify(payload));
   return payload;
 }
@@ -915,9 +923,16 @@ if (els.currentFile) {
       const published = savePublishedData(
         workbookData.rows,
         workbookData.monthlyPlanned,
+        workbookData.monthlyPlayed,
         workbookData.reportSummary || state.reportSummary
       );
-      setRows(published.rows, [], published.monthlyPlanned, published.reportSummary);
+      setRows(
+        published.rows,
+        [],
+        published.monthlyPlanned,
+        published.monthlyPlayed,
+        published.reportSummary
+      );
       displayUploadStatus(published.uploadedAt);
       if (els.downloadJson) {
         els.downloadJson.disabled = false;
@@ -933,7 +948,12 @@ if (els.downloadJson) {
   els.downloadJson.addEventListener("click", () => {
     const payload = els.downloadJson.dataset.payload
       ? JSON.parse(els.downloadJson.dataset.payload)
-      : buildPublishedPayload(state.current, state.monthlyPlanned, state.reportSummary);
+      : buildPublishedPayload(
+          state.current,
+          state.monthlyPlanned,
+          state.monthlyPlayed,
+          state.reportSummary
+        );
     downloadJson(payload);
     els.parseStatus.textContent = "fixtures.json download started.";
   });
@@ -963,9 +983,9 @@ async function initialisePublishedData() {
       publishedData.rows || [],
       [],
       publishedData.monthlyPlanned || [],
+      publishedData.monthlyPlayed || [],
       publishedData.reportSummary || state.reportSummary
     );
-    state.monthlyPlayed = publishedData.monthlyPlayed || [];
     displayUploadStatus(publishedData.uploadedAt);
     if (els.downloadJson) {
       els.downloadJson.disabled = false;
