@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-15T11:17:38.124Z",
+  "uploadedAt": "2026-06-15T11:19:51.205Z",
   "rows": [
     {
       "id": "milford m1|hale gardens m1#1",
@@ -418,7 +418,7 @@
       "opponent": "Milford M2",
       "venue": "",
       "division": "",
-      "status": "Booked",
+      "status": "played",
       "changeStatus": "unchanged"
     },
     {
