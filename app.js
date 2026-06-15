@@ -5,7 +5,7 @@ const state = {
   monthlyPlanned: [],
   analytics: {
     viewsToday: "",
-    averageViewsPerWeek: "",
+    totalViewsThisWeek: "",
     updatedAt: "",
   },
   reportSummary: {
@@ -859,7 +859,7 @@ function renderAnalytics() {
   }
   if (els.weeklyViewsAverage) {
     els.weeklyViewsAverage.textContent = formatCompactNumber(
-      state.analytics.averageViewsPerWeek
+      state.analytics.totalViewsThisWeek
     );
   }
 }
@@ -937,7 +937,7 @@ async function initialiseAnalytics() {
   if (!analyticsData) return;
   state.analytics = {
     viewsToday: analyticsData.viewsToday || "",
-    averageViewsPerWeek: analyticsData.averageViewsPerWeek || "",
+    totalViewsThisWeek: analyticsData.totalViewsThisWeek || "",
     updatedAt: analyticsData.updatedAt || "",
   };
   renderAnalytics();

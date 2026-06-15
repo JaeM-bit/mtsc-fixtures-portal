@@ -31,6 +31,16 @@ if (!todayResponse.ok) {
 const todayPayload = await todayResponse.json();
 const viewsToday = Number(todayPayload?.results?.[0]?.metrics?.[0] || 0);
 
+const now = new Date();
+const weekStart = new Date(now);
+const day = weekStart.getDay();
+const daysSinceMonday = (day + 6) % 7;
+weekStart.setDate(weekStart.getDate() - daysSinceMonday);
+weekStart.setHours(6, 0, 0, 0);
+if (now < weekStart) {
+  weekStart.setDate(weekStart.getDate() - 7);
+}
+
 const weekResponse = await fetch("https://plausible.io/api/v2/query", {
   method: "POST",
   headers: {
@@ -40,7 +50,11 @@ const weekResponse = await fetch("https://plausible.io/api/v2/query", {
   body: JSON.stringify({
     site_id: siteId,
     metrics: ["pageviews"],
-    date_range: "28d",
+    date_range: "custom",
+    date: [
+      weekStart.toISOString().slice(0, 10),
+      now.toISOString().slice(0, 10),
+    ],
     filters: [["is", "event:page", [captainPagePath]]],
   }),
 });
@@ -51,19 +65,18 @@ if (!weekResponse.ok) {
 
 const weekPayload = await weekResponse.json();
 const pageviews = Number(weekPayload?.results?.[0]?.metrics?.[0] || 0);
-const averageViewsPerWeek = Math.round(pageviews / 4);
 const updatedAt = new Date().toISOString().slice(0, 10);
 
 await mkdir(dirname(outputPath.pathname), { recursive: true });
 await writeFile(
   outputPath,
   `${JSON.stringify(
-    { viewsToday, averageViewsPerWeek, updatedAt, pageviews, periodDays: 28 },
+    { viewsToday, totalViewsThisWeek: pageviews, updatedAt, pageviews },
     null,
     2
   )}\n`
 );
 
 console.log(
-  `Updated analytics for ${captainPagePath}: ${viewsToday} views today and ${averageViewsPerWeek} views/week from ${pageviews} pageviews.`
+  `Updated analytics for ${captainPagePath}: ${viewsToday} views today and ${pageviews} views this week.`
 );
