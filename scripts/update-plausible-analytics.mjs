@@ -5,11 +5,6 @@ const siteId = process.env.PLAUSIBLE_SITE_ID;
 const apiKey = process.env.PLAUSIBLE_API_KEY;
 const outputPath = new URL("../data/analytics.json", import.meta.url);
 const reportingTimeZone = "Europe/London";
-const captainPageFilter = [
-  "matches",
-  "event:page",
-  ["^/mtsc-fixtures-portal(?:/.*)?$"],
-];
 
 function formatYmd(date) {
   return [
@@ -71,7 +66,6 @@ async function queryPlausible(dateRange, metric) {
       site_id: siteId,
       metrics: [metric],
       date_range: dateRange,
-      filters: [captainPageFilter],
     }),
   });
 
