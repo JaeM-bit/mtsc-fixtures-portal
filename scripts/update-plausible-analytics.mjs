@@ -4,7 +4,7 @@ import { dirname } from "node:path";
 const siteId = process.env.PLAUSIBLE_SITE_ID;
 const apiKey = process.env.PLAUSIBLE_API_KEY;
 const outputPath = new URL("../data/analytics.json", import.meta.url);
-const captainPagePath = "/";
+const captainPagePath = "/mtsc-fixtures-portal/";
 const reportingTimeZone = "Europe/London";
 
 function pad(value) {
