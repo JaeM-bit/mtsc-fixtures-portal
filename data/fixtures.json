@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-15T11:19:51.205Z",
+  "uploadedAt": "2026-06-15T22:51:14.350Z",
   "rows": [
     {
       "id": "milford m1|hale gardens m1#1",
@@ -454,7 +454,7 @@
       "opponent": "Winton MXD1",
       "venue": "",
       "division": "",
-      "status": "Booked",
+      "status": "played",
       "changeStatus": "unchanged"
     },
     {
@@ -1129,8 +1129,8 @@
     }
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "38",
-    "totalWins": "24",
+    "totalMatchesPlayed": "39",
+    "totalWins": "25",
     "highestAvgPointsPerMatch": 6,
     "highestAvgTeams": [
       "Milford L1",
