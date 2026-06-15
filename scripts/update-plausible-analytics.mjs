@@ -52,65 +52,58 @@ if (!siteId || !apiKey) {
   throw new Error("PLAUSIBLE_SITE_ID and PLAUSIBLE_API_KEY must be set.");
 }
 
-const todayResponse = await fetch("https://plausible.io/api/v2/query", {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${apiKey}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    site_id: siteId,
-    metrics: ["pageviews"],
-    date_range: "day",
-    filters: [captainPageFilter],
-  }),
-});
-
-if (!todayResponse.ok) {
-  throw new Error(
-    `Plausible API request failed for today with status ${todayResponse.status}: ${await todayResponse.text()}`
-  );
-}
-
-const todayPayload = await todayResponse.json();
-const viewsToday = Number(todayPayload?.results?.[0]?.metrics?.[0] || 0);
-
 const { start: weekStart, end: weekEnd } = getMondayToSundayWindow(
   reportingTimeZone
 );
 
-const weekResponse = await fetch("https://plausible.io/api/v2/query", {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${apiKey}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    site_id: siteId,
-    metrics: ["pageviews"],
-    date_range: [weekStart, weekEnd],
-    filters: [captainPageFilter],
-  }),
-});
+async function queryPlausible(dateRange, metric) {
+  const response = await fetch("https://plausible.io/api/v2/query", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      site_id: siteId,
+      metrics: [metric],
+      date_range: dateRange,
+      filters: [captainPageFilter],
+    }),
+  });
 
-if (!weekResponse.ok) {
-  throw new Error(
-    `Plausible API request failed for week with status ${weekResponse.status}: ${await weekResponse.text()}`
-  );
+  if (!response.ok) {
+    throw new Error(
+      `Plausible API request failed for ${metric} with status ${response.status}: ${await response.text()}`
+    );
+  }
+
+  const payload = await response.json();
+  return Number(payload?.results?.[0]?.metrics?.[0] || 0);
 }
 
-const weekPayload = await weekResponse.json();
-const pageviews = Number(weekPayload?.results?.[0]?.metrics?.[0] || 0);
+const viewsToday = await queryPlausible("day", "pageviews");
+const uniqueVisitorsToday = await queryPlausible("day", "visitors");
+const pageviews = await queryPlausible([weekStart, weekEnd], "pageviews");
+const uniqueVisitorsThisWeek = await queryPlausible([weekStart, weekEnd], "visitors");
 const updatedAt = new Date().toISOString().slice(0, 10);
 
 await mkdir(dirname(outputPath.pathname), { recursive: true });
 await writeFile(
   outputPath,
   `${JSON.stringify(
-    { viewsToday, totalViewsThisWeek: pageviews, updatedAt, pageviews },
+    {
+      viewsToday,
+      uniqueVisitorsToday,
+      totalViewsThisWeek: pageviews,
+      uniqueVisitorsThisWeek,
+      updatedAt,
+      pageviews,
+    },
     null,
     2
   )}\n`
 );
 
-console.log(`Updated captain analytics: ${viewsToday} views today and ${pageviews} views this week.`);
+console.log(
+  `Updated captain analytics: ${viewsToday} pageviews today, ${uniqueVisitorsToday} visitors today, ${pageviews} pageviews this week, ${uniqueVisitorsThisWeek} visitors this week.`
+);

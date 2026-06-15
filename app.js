@@ -5,7 +5,9 @@ const state = {
   monthlyPlanned: [],
   analytics: {
     viewsToday: "",
+    uniqueVisitorsToday: "",
     totalViewsThisWeek: "",
+    uniqueVisitorsThisWeek: "",
     updatedAt: "",
   },
   reportSummary: {
@@ -119,7 +121,9 @@ const els = {
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
   summaryHighestTeams: document.querySelector("#summaryHighestTeams"),
   viewsToday: document.querySelector("#viewsToday"),
+  uniqueVisitorsToday: document.querySelector("#uniqueVisitorsToday"),
   weeklyViewsAverage: document.querySelector("#weeklyViewsAverage"),
+  uniqueVisitorsThisWeek: document.querySelector("#uniqueVisitorsThisWeek"),
   searchInput: document.querySelector("#searchInput"),
   teamFilter: document.querySelector("#teamFilter"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
@@ -857,9 +861,19 @@ function renderAnalytics() {
   if (els.viewsToday) {
     els.viewsToday.textContent = formatCompactNumber(state.analytics.viewsToday);
   }
+  if (els.uniqueVisitorsToday) {
+    els.uniqueVisitorsToday.textContent = formatCompactNumber(
+      state.analytics.uniqueVisitorsToday
+    );
+  }
   if (els.weeklyViewsAverage) {
     els.weeklyViewsAverage.textContent = formatCompactNumber(
       state.analytics.totalViewsThisWeek
+    );
+  }
+  if (els.uniqueVisitorsThisWeek) {
+    els.uniqueVisitorsThisWeek.textContent = formatCompactNumber(
+      state.analytics.uniqueVisitorsThisWeek
     );
   }
 }
@@ -937,7 +951,9 @@ async function initialiseAnalytics() {
   if (!analyticsData) return;
   state.analytics = {
     viewsToday: analyticsData.viewsToday || "",
+    uniqueVisitorsToday: analyticsData.uniqueVisitorsToday || "",
     totalViewsThisWeek: analyticsData.totalViewsThisWeek || "",
+    uniqueVisitorsThisWeek: analyticsData.uniqueVisitorsThisWeek || "",
     updatedAt: analyticsData.updatedAt || "",
   };
   renderAnalytics();
