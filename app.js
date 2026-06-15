@@ -379,7 +379,7 @@ function readMonthlyPlanned(sheet) {
 function readMonthlyPlayed(sheet) {
   const rows = [];
 
-  for (let rowIndex = 107; rowIndex <= 112; rowIndex += 1) {
+  for (let rowIndex = 107; rowIndex <= 111; rowIndex += 1) {
     const playedText = cellText(getCell(sheet, rowIndex, 4));
     const played = Number(String(playedText).replace(/,/g, ""));
 
