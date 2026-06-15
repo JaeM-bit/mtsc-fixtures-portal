@@ -792,6 +792,7 @@ function escapeHtml(value) {
 }
 
 function formatCompactNumber(value) {
+  if (value === "" || value === null || value === undefined) return "-";
   const numericValue = Number(value);
   if (!Number.isFinite(numericValue)) return "-";
   return new Intl.NumberFormat("en-GB", {
