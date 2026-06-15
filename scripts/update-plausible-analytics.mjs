@@ -4,8 +4,12 @@ import { dirname } from "node:path";
 const siteId = process.env.PLAUSIBLE_SITE_ID;
 const apiKey = process.env.PLAUSIBLE_API_KEY;
 const outputPath = new URL("../data/analytics.json", import.meta.url);
-const captainPagePath = "/mtsc-fixtures-portal/";
 const reportingTimeZone = "Europe/London";
+const captainPageFilter = ["or", [
+  ["is", "event:page", ["/mtsc-fixtures-portal/"]],
+  ["is", "event:page", ["/mtsc-fixtures-portal/index.html"]],
+  ["is", "event:page", ["/"]],
+]];
 
 function formatYmd(date) {
   return [
@@ -62,12 +66,14 @@ const todayResponse = await fetch("https://plausible.io/api/v2/query", {
     site_id: siteId,
     metrics: ["pageviews"],
     date_range: "today",
-    filters: [["is", "event:page", [captainPagePath]]],
+    filters: [captainPageFilter],
   }),
 });
 
 if (!todayResponse.ok) {
-  throw new Error(`Plausible API request failed with status ${todayResponse.status}.`);
+  throw new Error(
+    `Plausible API request failed for today with status ${todayResponse.status}: ${await todayResponse.text()}`
+  );
 }
 
 const todayPayload = await todayResponse.json();
@@ -87,12 +93,14 @@ const weekResponse = await fetch("https://plausible.io/api/v2/query", {
     site_id: siteId,
     metrics: ["pageviews"],
     date_range: [weekStart, weekEnd],
-    filters: [["is", "event:page", [captainPagePath]]],
+    filters: [captainPageFilter],
   }),
 });
 
 if (!weekResponse.ok) {
-  throw new Error(`Plausible API request failed with status ${weekResponse.status}.`);
+  throw new Error(
+    `Plausible API request failed for week with status ${weekResponse.status}: ${await weekResponse.text()}`
+  );
 }
 
 const weekPayload = await weekResponse.json();
@@ -109,6 +117,4 @@ await writeFile(
   )}\n`
 );
 
-console.log(
-  `Updated analytics for ${captainPagePath}: ${viewsToday} views today and ${pageviews} views this week.`
-);
+console.log(`Updated captain analytics: ${viewsToday} views today and ${pageviews} views this week.`);
