@@ -5,11 +5,7 @@ const siteId = process.env.PLAUSIBLE_SITE_ID;
 const apiKey = process.env.PLAUSIBLE_API_KEY;
 const outputPath = new URL("../data/analytics.json", import.meta.url);
 const reportingTimeZone = "Europe/London";
-const captainPageFilter = ["or", [
-  ["is", "event:page", ["/mtsc-fixtures-portal/"]],
-  ["is", "event:page", ["/mtsc-fixtures-portal/index.html"]],
-  ["is", "event:page", ["/"]],
-]];
+const captainPageFilter = ["contains", "event:page", ["/mtsc-fixtures-portal/"]];
 
 function formatYmd(date) {
   return [
