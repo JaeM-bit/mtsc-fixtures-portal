@@ -2,7 +2,7 @@ name: Update Plausible Analytics
 
 on:
   schedule:
-    - cron: "17 6 * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
