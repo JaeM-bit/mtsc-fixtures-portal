@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-15T23:02:04.846Z",
+  "uploadedAt": "2026-06-17T10:48:13.376Z",
   "rows": [
     {
       "id": "milford m1|hale gardens m1#1",
@@ -722,6 +722,18 @@
       "changeStatus": "unchanged"
     },
     {
+      "id": "milford l2|southbourne l1#1",
+      "date": "2026-07-21",
+      "day": "Tue",
+      "time": "18:30",
+      "team": "Milford L2",
+      "opponent": "Southbourne L1",
+      "venue": "",
+      "division": "",
+      "status": "Booked",
+      "changeStatus": "unchanged"
+    },
+    {
       "id": "east dorset lawn mxd1|milford mxd1#1",
       "date": "2026-07-23",
       "day": "Thu",
@@ -812,18 +824,6 @@
       "time": "18:30",
       "team": "Milford L3",
       "opponent": "East Dorset L3",
-      "venue": "",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
-    },
-    {
-      "id": "milford l2|southbourne l1#1",
-      "date": "2026-08-01",
-      "day": "Sat",
-      "time": "10:30",
-      "team": "Milford L2",
-      "opponent": "Southbourne L1",
       "venue": "",
       "division": "",
       "status": "Booked",
@@ -1121,12 +1121,20 @@
     },
     {
       "month": "Jul",
-      "count": 19
+      "count": 20
     },
     {
       "month": "Aug",
-      "count": 21
+      "count": 20
     }
+  ],
+  "monthlyPlayed": [
+    17,
+    15,
+    6,
+    0,
+    0,
+    0
   ],
   "reportSummary": {
     "totalMatchesPlayed": "39",
