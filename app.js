@@ -682,7 +682,7 @@ function renderMonthlyPlanned() {
       return `
         <li>
           <span class="monthly-month">${escapeHtml(row.month)}</span>
-          <strong class="monthly-planned-count">${escapeHtml(row.count)}</strong>
+          <span class="monthly-planned-count">${escapeHtml(row.count)}</span>
           <span class="monthly-played monthly-played-count">${escapeHtml(played)}</span>
         </li>
       `;

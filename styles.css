@@ -641,6 +641,7 @@ td {
 .monthly-played-count {
   color: var(--text);
   display: block;
+  margin: 0;
   font-variant-numeric: tabular-nums;
   justify-self: end;
   text-align: right;
