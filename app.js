@@ -657,8 +657,12 @@ function renderReport() {
 function renderMonthlyPlanned() {
   if (!state.monthlyPlanned.length) {
     return `
-      <div class="summary-item">
-        <strong>Matches currently planned by month</strong>
+      <div class="summary-item monthly-summary">
+        <div class="monthly-summary-head">
+          <strong>Matches by Month</strong>
+          <span>Planned</span>
+          <span>Played</span>
+        </div>
         <p>No monthly planned totals found in by date cells B108:B112 and H108:H112.</p>
       </div>
     `;
@@ -679,15 +683,19 @@ function renderMonthlyPlanned() {
         <li>
           <span>${escapeHtml(row.month)}</span>
           <strong>${escapeHtml(row.count)}</strong>
-          <span class="monthly-played">Played ${escapeHtml(played)}</span>
+          <span class="monthly-played">${escapeHtml(played)}</span>
         </li>
       `;
     })
     .join("");
 
   return `
-    <div class="summary-item">
-      <strong>Matches currently planned by month</strong>
+    <div class="summary-item monthly-summary">
+      <div class="monthly-summary-head">
+        <strong>Matches by Month</strong>
+        <span>Planned</span>
+        <span>Played</span>
+      </div>
       <ul class="monthly-planned">${items}</ul>
     </div>
   `;

@@ -591,11 +591,37 @@ td {
   list-style: none;
 }
 
-.monthly-planned li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.monthly-summary-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px 72px;
   gap: 16px;
+  align-items: end;
+  margin-bottom: 6px;
+  font-family: inherit;
+}
+
+.monthly-summary-head strong,
+.monthly-summary-head span {
+  margin: 0;
+  font-family: inherit;
+}
+
+.monthly-summary-head strong {
+  display: block;
+}
+
+.monthly-summary-head span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.monthly-planned li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px 72px;
+  gap: 16px;
+  align-items: center;
   padding: 9px 0;
   border-top: 1px solid var(--line);
 }
@@ -608,6 +634,11 @@ td {
 .monthly-planned span {
   color: var(--muted);
   font-weight: 700;
+}
+
+.monthly-planned .monthly-played,
+.monthly-planned strong {
+  text-align: right;
 }
 
 footer {
