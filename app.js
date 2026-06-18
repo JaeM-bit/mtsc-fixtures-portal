@@ -696,7 +696,9 @@ function renderMonthlyPlanned() {
         <span>Planned</span>
         <span>Played</span>
       </div>
-      <ul class="monthly-planned">${items}</ul>
+      <table class="monthly-planned" aria-label="Matches by month">
+        <tbody>${items}</tbody>
+      </table>
     </div>
   `;
 }

@@ -583,14 +583,6 @@ td {
   font-style: normal;
 }
 
-.monthly-planned {
-  display: grid;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .monthly-summary-head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 72px 72px;
@@ -617,34 +609,34 @@ td {
   text-align: right;
 }
 
-.monthly-planned li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 72px 72px;
-  gap: 16px;
-  align-items: center;
-  padding: 9px 0;
+.monthly-planned {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.monthly-planned tbody tr {
   border-top: 1px solid var(--line);
 }
 
-.monthly-planned li:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
 .monthly-month {
+  padding: 9px 0;
   color: var(--muted);
   font-weight: 700;
-  justify-self: start;
+  text-align: left;
 }
 
 .monthly-planned-count,
 .monthly-played-count {
+  padding: 9px 0;
   color: var(--text);
-  display: block;
   margin: 0;
   font-variant-numeric: tabular-nums;
-  justify-self: end;
   text-align: right;
+}
+
+.monthly-planned td {
+  padding: 0;
 }
 
 footer {
