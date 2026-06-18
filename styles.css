@@ -631,14 +631,14 @@ td {
   padding-top: 0;
 }
 
-.monthly-planned > span:first-child {
+.monthly-month {
   color: var(--muted);
   font-weight: 700;
   justify-self: start;
 }
 
-.monthly-planned .monthly-played,
-.monthly-planned strong {
+.monthly-planned-count,
+.monthly-played-count {
   color: var(--text);
   display: block;
   font-variant-numeric: tabular-nums;
