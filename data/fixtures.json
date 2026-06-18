@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-17T10:48:13.376Z",
+  "uploadedAt": "2026-06-18T08:52:14.837Z",
   "rows": [
     {
       "id": "milford m1|hale gardens m1#1",
@@ -466,7 +466,7 @@
       "opponent": "Sway L1",
       "venue": "",
       "division": "",
-      "status": "Booked",
+      "status": "played",
       "changeStatus": "unchanged"
     },
     {
@@ -1109,36 +1109,40 @@
   "monthlyPlanned": [
     {
       "month": "Apr",
-      "count": 17
+      "count": 17,
+      "played": 17
     },
     {
       "month": "May",
-      "count": 15
+      "count": 15,
+      "played": 15
     },
     {
       "month": "Jun",
-      "count": 17
+      "count": 17,
+      "played": 7
     },
     {
       "month": "Jul",
-      "count": 20
+      "count": 20,
+      "played": 0
     },
     {
       "month": "Aug",
-      "count": 20
+      "count": 20,
+      "played": 0
     }
   ],
   "monthlyPlayed": [
     17,
     15,
-    6,
-    0,
+    7,
     0,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "39",
-    "totalWins": "25",
+    "totalMatchesPlayed": "40",
+    "totalWins": "26",
     "highestAvgPointsPerMatch": 6,
     "highestAvgTeams": [
       "Milford L1",
