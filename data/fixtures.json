@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-19T10:44:50+01:00",
+  "uploadedAt": "2026-06-19T10:45:12+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -311,7 +311,7 @@
       "time": "18:30",
       "team": "Milford L4",
       "opponent": "Sway L1",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-06-18",
@@ -752,7 +752,7 @@
     {
       "month": "Jun",
       "count": 17,
-      "played": 7
+      "played": 8
     },
     {
       "month": "Jul",
@@ -768,7 +768,7 @@
   "monthlyPlayed": [
     17,
     15,
-    7,
+    8,
     0,
     0
   ],
