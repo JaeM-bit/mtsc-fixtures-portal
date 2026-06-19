@@ -2,15 +2,14 @@
 from __future__ import annotations
 
 import json
-import os
 import re
+import subprocess
 import sys
 import time
 import zipfile
-from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 import xml.etree.ElementTree as ET
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
@@ -336,23 +335,60 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
         }
 
 
-def write_payload(payload: Dict[str, object]) -> None:
+def write_payload(payload: Dict[str, object]) -> bool:
     TARGET_FILE.parent.mkdir(parents=True, exist_ok=True)
     new_text = json.dumps(payload, indent=2) + "\n"
     existing = TARGET_FILE.read_text(encoding="utf-8") if TARGET_FILE.exists() else None
     if existing == new_text:
-        return
+        return False
     TARGET_FILE.write_text(new_text, encoding="utf-8")
     print(
         f"Updated data/fixtures.json ({len(payload['rows'])} rows, {len(payload['monthlyPlanned'])} monthly rows)."
     )
+    return True
+
+
+def run_git(*args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", *args],
+        cwd=PROJECT_DIR,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+
+def commit_and_push(message: str) -> None:
+    add_result = run_git("add", "data/fixtures.json")
+    if add_result.returncode != 0:
+        raise RuntimeError(add_result.stderr.strip() or add_result.stdout.strip() or "git add failed")
+
+    status_result = run_git("status", "--porcelain", "--", "data/fixtures.json")
+    if status_result.returncode != 0:
+        raise RuntimeError(status_result.stderr.strip() or status_result.stdout.strip() or "git status failed")
+
+    if not status_result.stdout.strip():
+        print("No fixtures.json changes to commit.")
+        return
+
+    commit_result = run_git("commit", "-m", message)
+    if commit_result.returncode != 0:
+        raise RuntimeError(commit_result.stderr.strip() or commit_result.stdout.strip() or "git commit failed")
+
+    push_result = run_git("push", "origin", "main")
+    if push_result.returncode != 0:
+        raise RuntimeError(push_result.stderr.strip() or push_result.stdout.strip() or "git push failed")
+
+    print("Committed and pushed data/fixtures.json to origin/main.")
 
 
 def generate_once(workbook_path: Path) -> None:
     if not workbook_path.exists():
         raise FileNotFoundError(f"Workbook not found: {workbook_path}")
     payload = build_payload(workbook_path)
-    write_payload(payload)
+    changed = write_payload(payload)
+    if changed:
+        commit_and_push("Update fixtures.json from workbook")
 
 
 def watch(workbook_path: Path) -> None:
@@ -360,7 +396,10 @@ def watch(workbook_path: Path) -> None:
 
     print(f"Watching workbook: {workbook_path}")
     print(f"Output: {TARGET_FILE}")
-    generate_once(workbook_path)
+    try:
+        generate_once(workbook_path)
+    except Exception as error:
+        print(f"Failed to update fixtures.json: {error}")
 
     while True:
         try:
