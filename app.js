@@ -697,6 +697,11 @@ function renderMonthlyPlanned() {
         <span>Played</span>
       </div>
       <table class="monthly-planned" aria-label="Matches by month">
+        <colgroup>
+          <col class="monthly-month-col" />
+          <col class="monthly-count-col" />
+          <col class="monthly-count-col" />
+        </colgroup>
         <tbody>${items}</tbody>
       </table>
     </div>
