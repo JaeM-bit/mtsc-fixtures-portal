@@ -610,27 +610,17 @@ td {
 }
 
 .monthly-planned {
-  width: 100%;
-  min-width: 0;
-  border-collapse: collapse;
-  table-layout: fixed;
+  display: grid;
+  gap: 0;
 }
 
-.monthly-month-col {
-  width: auto;
-}
-
-.monthly-count-col {
-  width: 78px;
-}
-
-.monthly-planned tbody tr {
-  border-top: 1px solid var(--line);
-}
-
-.monthly-planned td {
+.monthly-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px 72px;
+  gap: 16px;
+  align-items: center;
   padding: 9px 0;
-  vertical-align: middle;
+  border-top: 1px solid var(--line);
 }
 
 .monthly-month {

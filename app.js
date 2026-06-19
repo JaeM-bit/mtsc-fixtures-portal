@@ -680,11 +680,11 @@ function renderMonthlyPlanned() {
             ? playedRow.played
             : 0;
       return `
-        <tr>
-          <td class="monthly-month">${escapeHtml(row.month)}</td>
-          <td class="monthly-planned-count">${escapeHtml(row.count)}</td>
-          <td class="monthly-played monthly-played-count">${escapeHtml(played)}</td>
-        </tr>
+        <div class="monthly-row">
+          <div class="monthly-month">${escapeHtml(row.month)}</div>
+          <div class="monthly-planned-count">${escapeHtml(row.count)}</div>
+          <div class="monthly-played monthly-played-count">${escapeHtml(played)}</div>
+        </div>
       `;
     })
     .join("");
@@ -696,14 +696,7 @@ function renderMonthlyPlanned() {
         <span>Planned</span>
         <span>Played</span>
       </div>
-      <table class="monthly-planned" aria-label="Matches by month">
-        <colgroup>
-          <col class="monthly-month-col" />
-          <col class="monthly-count-col" />
-          <col class="monthly-count-col" />
-        </colgroup>
-        <tbody>${items}</tbody>
-      </table>
+      <div class="monthly-planned" aria-label="Matches by month">${items}</div>
     </div>
   `;
 }
