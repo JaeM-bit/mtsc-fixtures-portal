@@ -1,0 +1,401 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import json
+import os
+import re
+import sys
+import time
+import zipfile
+from dataclasses import dataclass
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, Iterable, List, Optional, Tuple
+import xml.etree.ElementTree as ET
+
+PROJECT_DIR = Path(__file__).resolve().parents[1]
+TARGET_FILE = PROJECT_DIR / "data" / "fixtures.json"
+SEASON_START = "2026-04-01"
+SEASON_END = "2026-08-31"
+
+
+def local_name(tag: str) -> str:
+    return tag.rsplit("}", 1)[-1] if "}" in tag else tag
+
+
+def cell_ref_to_col(ref: str) -> str:
+    match = re.match(r"([A-Z]+)", ref or "")
+    return match.group(1) if match else ""
+
+
+def read_zip_text(zf: zipfile.ZipFile, name: str) -> str:
+    with zf.open(name) as handle:
+        return handle.read().decode("utf-8")
+
+
+def parse_xml(zf: zipfile.ZipFile, name: str) -> ET.Element:
+    return ET.fromstring(read_zip_text(zf, name))
+
+
+def text_from_element(element: ET.Element) -> str:
+    return "".join(element.itertext()).strip()
+
+
+def extract_cell_text(cell: ET.Element, shared_strings: List[str]) -> str:
+    cell_type = cell.attrib.get("t", "")
+    value = None
+
+    for child in cell:
+      if local_name(child.tag) == "v":
+        value = (child.text or "").strip()
+        break
+
+    if cell_type == "s" and value is not None:
+        try:
+            return shared_strings[int(value)]
+        except (ValueError, IndexError):
+            return ""
+
+    if cell_type == "inlineStr":
+        texts = [text_from_element(child) for child in cell if local_name(child.tag) == "is"]
+        return " ".join(part for part in texts if part).strip()
+
+    if value is not None:
+        return value
+
+    if cell_type in {"str", "d"}:
+        return text_from_element(cell)
+
+    return text_from_element(cell)
+
+
+def parse_shared_strings(zf: zipfile.ZipFile) -> List[str]:
+    try:
+        root = parse_xml(zf, "xl/sharedStrings.xml")
+    except KeyError:
+        return []
+
+    shared_strings: List[str] = []
+    for si in root.iter():
+        if local_name(si.tag) != "si":
+            continue
+        text = "".join(
+            (node.text or "")
+            for node in si.iter()
+            if local_name(node.tag) == "t"
+        ).strip()
+        shared_strings.append(text)
+    return shared_strings
+
+
+def parse_workbook_sheets(zf: zipfile.ZipFile) -> Dict[str, str]:
+    workbook = parse_xml(zf, "xl/workbook.xml")
+    rels = parse_xml(zf, "xl/_rels/workbook.xml.rels")
+
+    rel_map: Dict[str, str] = {}
+    for rel in rels.iter():
+        if local_name(rel.tag) != "Relationship":
+            continue
+        rid = rel.attrib.get("Id")
+        target = rel.attrib.get("Target")
+        if not rid or not target:
+            continue
+        if not target.startswith("xl/"):
+            target = f"xl/{target.lstrip('/')}"
+        rel_map[rid] = target
+
+    sheets: Dict[str, str] = {}
+    rel_ns = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"
+    for sheet in workbook.iter():
+        if local_name(sheet.tag) != "sheet":
+            continue
+        name = sheet.attrib.get("name", "")
+        rid = sheet.attrib.get(rel_ns) or sheet.attrib.get("r:id")
+        if name and rid and rid in rel_map:
+            sheets[name] = rel_map[rid]
+    return sheets
+
+
+def parse_sheet_rows(
+    zf: zipfile.ZipFile, sheet_path: str, shared_strings: List[str]
+) -> Dict[int, Dict[str, str]]:
+    root = parse_xml(zf, sheet_path)
+    rows: Dict[int, Dict[str, str]] = {}
+
+    for row in root.iter():
+        if local_name(row.tag) != "row":
+            continue
+        row_num = int(row.attrib.get("r", "0") or 0)
+        row_cells: Dict[str, str] = {}
+
+        for cell in row:
+            if local_name(cell.tag) != "c":
+                continue
+            ref = cell.attrib.get("r", "")
+            col = cell_ref_to_col(ref)
+            if not col:
+                continue
+            row_cells[col] = extract_cell_text(cell, shared_strings)
+
+        rows[row_num] = row_cells
+
+    return rows
+
+
+def parse_number(value: str) -> Optional[float]:
+    text = (value or "").strip()
+    if not text:
+        return None
+    try:
+        return float(text.replace(",", ""))
+    except ValueError:
+        return None
+
+
+def excel_serial_to_date(serial: float) -> str:
+    base = datetime(1899, 12, 30)
+    whole_days = int(serial)
+    date_value = base + timedelta(days=whole_days)
+    return date_value.strftime("%Y-%m-%d")
+
+
+def excel_serial_to_time(serial: float) -> str:
+    fraction = serial % 1
+    total_minutes = round(fraction * 24 * 60)
+    hours, minutes = divmod(total_minutes, 60)
+    if hours == 0 and minutes == 0:
+        return ""
+    return f"{hours:02d}:{minutes:02d}"
+
+
+def parse_date_cell(value: str) -> str:
+    text = (value or "").strip()
+    if not text:
+        return ""
+
+    number = parse_number(text)
+    if number is not None:
+        return excel_serial_to_date(number)
+
+    if re.match(r"^\d{4}-\d{2}-\d{2}$", text):
+        return text
+
+    match = re.match(r"^(\d{1,2})[/-](\d{1,2})[/-](\d{2,4})$", text)
+    if match:
+        day, month, year = match.groups()
+        if len(year) == 2:
+            year = f"20{year}"
+        return f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+
+    try:
+        parsed = datetime.fromisoformat(text)
+        return parsed.strftime("%Y-%m-%d")
+    except ValueError:
+        return text
+
+
+def parse_time_cell(value: str) -> str:
+    text = (value or "").strip()
+    if not text:
+        return ""
+
+    if re.match(r"^\d{1,2}:\d{2}$", text):
+        hour, minute = text.split(":")
+        return f"{int(hour):02d}:{minute}"
+
+    compact = re.match(r"^(\d{1,2})(\d{2})$", text)
+    if compact:
+        return f"{int(compact.group(1)):02d}:{compact.group(2)}"
+
+    number = parse_number(text)
+    if number is not None:
+        return excel_serial_to_time(number)
+
+    return text
+
+
+def is_in_season(date_value: str) -> bool:
+    return SEASON_START <= date_value <= SEASON_END
+
+
+def sheet_row_values(rows: Dict[int, Dict[str, str]], row_num: int) -> Dict[str, str]:
+    return rows.get(row_num, {})
+
+
+def read_monthly_totals(by_date_rows: Dict[int, Dict[str, str]]) -> Tuple[List[Dict[str, object]], List[float]]:
+    planned: List[Dict[str, object]] = []
+    played_rows: List[float] = []
+
+    for row_num in range(108, 113):
+        row = sheet_row_values(by_date_rows, row_num)
+        month = (row.get("B") or "").strip()
+        planned_value = parse_number(row.get("H", ""))
+        played_value = parse_number(row.get("E", ""))
+
+        if month or row.get("H") or row.get("E"):
+            planned.append(
+                {
+                    "month": month or "Unspecified",
+                    "count": int(planned_value) if planned_value is not None else 0,
+                    "played": int(played_value) if played_value is not None else "",
+                }
+            )
+            played_rows.append(int(played_value) if played_value is not None else 0)
+
+    return planned, played_rows
+
+
+def read_report_summary(league_rows: Dict[int, Dict[str, str]]) -> Dict[str, object]:
+    total_matches_played = (sheet_row_values(league_rows, 21).get("T") or "").strip()
+    total_wins = (sheet_row_values(league_rows, 21).get("U") or "").strip()
+    ranked: List[Tuple[str, float]] = []
+
+    for row_num in range(7, 21):
+        row = sheet_row_values(league_rows, row_num)
+        team = (row.get("K") or "").strip()
+        avg_value = parse_number(row.get("Z", ""))
+        if team and avg_value is not None:
+            ranked.append((team, avg_value))
+
+    highest_avg_points = max((avg for _, avg in ranked), default="")
+    highest_avg_teams = [team for team, avg in ranked if avg == highest_avg_points] if ranked else []
+
+    return {
+        "totalMatchesPlayed": total_matches_played,
+        "totalWins": total_wins,
+        "highestAvgPointsPerMatch": highest_avg_points,
+        "highestAvgTeams": highest_avg_teams,
+    }
+
+
+def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]]:
+    rows: List[Dict[str, str]] = []
+
+    for row_num in sorted(by_date_rows):
+        if row_num < 2 or row_num > 93:
+            continue
+        row = by_date_rows[row_num]
+        date_value = parse_date_cell(row.get("C", ""))
+        day_value = (row.get("D") or "").strip()
+        time_value = parse_time_cell(row.get("F", ""))
+        home_team = (row.get("G") or "").strip()
+        away_team = (row.get("H") or "").strip()
+        status_value = (row.get("L") or "").strip()
+        status = status_value or "Published"
+
+        has_match_data = any([date_value, day_value, time_value, home_team, away_team, status_value])
+        if not has_match_data:
+            continue
+        if date_value and not is_in_season(date_value):
+            continue
+
+        rows.append(
+            {
+                "date": date_value,
+                "day": day_value,
+                "time": time_value,
+                "team": home_team,
+                "opponent": away_team,
+                "status": status,
+            }
+        )
+
+    return rows
+
+
+def build_payload(workbook_path: Path) -> Dict[str, object]:
+    with zipfile.ZipFile(workbook_path) as zf:
+        shared_strings = parse_shared_strings(zf)
+        sheets = parse_workbook_sheets(zf)
+
+        by_date_sheet = next(
+            (path for name, path in sheets.items() if name.strip().lower() == "by date"),
+            None,
+        )
+        league_sheet = next(
+            (path for name, path in sheets.items() if name.strip().lower() == "league results"),
+            None,
+        )
+
+        if not by_date_sheet:
+            raise RuntimeError('No "By Date" sheet found in the workbook.')
+        if not league_sheet:
+            raise RuntimeError('No "League Results" sheet found in the workbook.')
+
+        by_date_rows = parse_sheet_rows(zf, by_date_sheet, shared_strings)
+        league_rows = parse_sheet_rows(zf, league_sheet, shared_strings)
+        monthly_planned, monthly_played = read_monthly_totals(by_date_rows)
+        report_summary = read_report_summary(league_rows)
+
+        return {
+            "uploadedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
+            "rows": read_matches(by_date_rows),
+            "monthlyPlanned": monthly_planned,
+            "monthlyPlayed": monthly_played,
+            "reportSummary": report_summary,
+        }
+
+
+def write_payload(payload: Dict[str, object]) -> None:
+    TARGET_FILE.parent.mkdir(parents=True, exist_ok=True)
+    new_text = json.dumps(payload, indent=2) + "\n"
+    existing = TARGET_FILE.read_text(encoding="utf-8") if TARGET_FILE.exists() else None
+    if existing == new_text:
+        return
+    TARGET_FILE.write_text(new_text, encoding="utf-8")
+    print(
+        f"Updated data/fixtures.json ({len(payload['rows'])} rows, {len(payload['monthlyPlanned'])} monthly rows)."
+    )
+
+
+def generate_once(workbook_path: Path) -> None:
+    if not workbook_path.exists():
+        raise FileNotFoundError(f"Workbook not found: {workbook_path}")
+    payload = build_payload(workbook_path)
+    write_payload(payload)
+
+
+def watch(workbook_path: Path) -> None:
+    last_mtime: Optional[float] = None
+
+    print(f"Watching workbook: {workbook_path}")
+    print(f"Output: {TARGET_FILE}")
+    generate_once(workbook_path)
+
+    while True:
+        try:
+            mtime = workbook_path.stat().st_mtime
+        except FileNotFoundError:
+            if last_mtime is not None:
+                print(f"Workbook missing: {workbook_path}")
+                last_mtime = None
+            time.sleep(2)
+            continue
+
+        if last_mtime is None:
+            last_mtime = mtime
+        elif mtime > last_mtime:
+            last_mtime = mtime
+            try:
+                generate_once(workbook_path)
+            except Exception as error:
+                print(f"Failed to update fixtures.json: {error}")
+
+        time.sleep(2)
+
+
+def main() -> int:
+    if len(sys.argv) < 2:
+        print("Usage: watch-workbook.py /path/to/workbook.xlsm", file=sys.stderr)
+        return 1
+
+    workbook_path = Path(sys.argv[1]).expanduser().resolve()
+    try:
+        watch(workbook_path)
+    except KeyboardInterrupt:
+        return 0
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
