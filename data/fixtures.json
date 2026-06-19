@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-18T09:00:26.366Z",
+  "uploadedAt": "2026-06-19T07:43:19.253Z",
   "rows": [
     {
       "id": "milford m1|hale gardens m1#1",
@@ -478,7 +478,7 @@
       "opponent": "East Dorset L2",
       "venue": "",
       "division": "",
-      "status": "Booked",
+      "status": "played",
       "changeStatus": "unchanged"
     },
     {
@@ -1120,7 +1120,7 @@
     {
       "month": "Jun",
       "count": 17,
-      "played": 7
+      "played": 8
     },
     {
       "month": "Jul",
@@ -1136,12 +1136,12 @@
   "monthlyPlayed": [
     17,
     15,
-    7,
+    8,
     0,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "40",
+    "totalMatchesPlayed": "41",
     "totalWins": "26",
     "highestAvgPointsPerMatch": 6,
     "highestAvgTeams": [
