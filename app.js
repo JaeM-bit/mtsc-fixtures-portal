@@ -680,11 +680,11 @@ function renderMonthlyPlanned() {
             ? playedRow.played
             : 0;
       return `
-        <li>
-          <span class="monthly-month">${escapeHtml(row.month)}</span>
-          <span class="monthly-planned-count">${escapeHtml(row.count)}</span>
-          <span class="monthly-played monthly-played-count">${escapeHtml(played)}</span>
-        </li>
+        <tr>
+          <td class="monthly-month">${escapeHtml(row.month)}</td>
+          <td class="monthly-planned-count">${escapeHtml(row.count)}</td>
+          <td class="monthly-played monthly-played-count">${escapeHtml(played)}</td>
+        </tr>
       `;
     })
     .join("");

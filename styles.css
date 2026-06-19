@@ -619,8 +619,12 @@ td {
   border-top: 1px solid var(--line);
 }
 
-.monthly-month {
+.monthly-planned td {
   padding: 9px 0;
+  vertical-align: middle;
+}
+
+.monthly-month {
   color: var(--muted);
   font-weight: 700;
   text-align: left;
@@ -628,15 +632,10 @@ td {
 
 .monthly-planned-count,
 .monthly-played-count {
-  padding: 9px 0;
   color: var(--text);
   margin: 0;
   font-variant-numeric: tabular-nums;
   text-align: right;
-}
-
-.monthly-planned td {
-  padding: 0;
 }
 
 footer {
