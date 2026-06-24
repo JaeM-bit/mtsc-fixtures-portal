@@ -99,10 +99,10 @@ main {
 .toolbar-link {
   width: fit-content;
   margin: 0 0 12px;
-  background: rgba(255, 255, 255, 0.98);
-  color: var(--court);
+  background: rgba(221, 241, 226, 0.98);
+  color: var(--court-dark);
   box-shadow: none;
-  border: 1px solid rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(140, 189, 159, 0.92);
 }
 
 .captain-toolbar {
