@@ -88,17 +88,17 @@ main {
   gap: clamp(22px, 5vw, 64px);
   align-items: center;
   min-height: 165px;
-  padding: clamp(18px, 3vw, 30px);
+  padding: clamp(14px, 2.2vw, 24px);
   border-radius: 8px;
   background:
-    linear-gradient(110deg, rgba(20, 63, 50, 0.94), rgba(31, 104, 77, 0.88)),
+    linear-gradient(110deg, rgba(32, 87, 68, 0.92), rgba(52, 128, 93, 0.86)),
     url("assets/club-hero.png") center / cover;
   color: var(--white);
 }
 
 .toolbar-link {
   width: fit-content;
-  margin-bottom: 14px;
+  margin: 0 0 12px;
   background: rgba(255, 255, 255, 0.94);
   color: var(--court-dark);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
