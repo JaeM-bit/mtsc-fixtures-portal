@@ -98,11 +98,14 @@ main {
 
 .toolbar-link {
   width: fit-content;
-  margin: 0 0 12px;
-  background: rgba(221, 241, 226, 0.98);
-  color: var(--court-dark);
+  margin: 0 0 6px;
+  padding: 8px 14px;
+  min-height: 34px;
+  background: #ecf9ef;
+  color: #1d4f39;
+  border: 1px solid #b8d9c2;
   box-shadow: none;
-  border: 1px solid rgba(140, 189, 159, 0.92);
+  font-weight: 700;
 }
 
 .captain-toolbar {
