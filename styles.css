@@ -87,18 +87,18 @@ main {
   grid-template-columns: minmax(280px, 1fr) minmax(300px, 430px);
   gap: clamp(22px, 5vw, 64px);
   align-items: center;
-  min-height: 165px;
-  padding: clamp(14px, 2.2vw, 24px);
+  min-height: 155px;
+  padding: 18px;
   border-radius: 8px;
   background:
-    linear-gradient(110deg, rgba(32, 87, 68, 0.92), rgba(52, 128, 93, 0.86)),
+    linear-gradient(110deg, rgba(46, 112, 85, 0.9), rgba(71, 151, 111, 0.84)),
     url("assets/club-hero.png") center / cover;
   color: var(--white);
 }
 
 .toolbar-link {
   width: fit-content;
-  margin: 0 0 12px;
+  margin: 0;
   background: rgba(255, 255, 255, 0.94);
   color: var(--court-dark);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
