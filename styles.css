@@ -96,6 +96,14 @@ main {
   color: var(--white);
 }
 
+.toolbar-link {
+  width: fit-content;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--court-dark);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
 .captain-toolbar {
   grid-template-columns: minmax(260px, 1fr) minmax(220px, 1fr);
 }
