@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-25T11:19:01+01:00",
+  "uploadedAt": "2026-06-25T11:30:15+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -741,26 +741,31 @@
   "monthlyPlanned": [
     {
       "month": "Apr",
+      "originalPlanned": 18,
       "count": 17,
       "played": 17
     },
     {
       "month": "May",
+      "originalPlanned": 16,
       "count": 15,
       "played": 15
     },
     {
       "month": "Jun",
+      "originalPlanned": 22,
       "count": 16,
       "played": 10
     },
     {
       "month": "Jul",
+      "originalPlanned": 18,
       "count": 21,
       "played": 0
     },
     {
       "month": "Aug",
+      "originalPlanned": 18,
       "count": 21,
       "played": 0
     }
