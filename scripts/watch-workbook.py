@@ -228,13 +228,15 @@ def read_monthly_totals(by_date_rows: Dict[int, Dict[str, str]]) -> Tuple[List[D
     for row_num in range(108, 113):
         row = sheet_row_values(by_date_rows, row_num)
         month = (row.get("B") or "").strip()
+        original_value = parse_number(row.get("C", ""))
         planned_value = parse_number(row.get("H", ""))
         played_value = parse_number(row.get("E", ""))
 
-        if month or row.get("H") or row.get("E"):
+        if month or row.get("C") or row.get("H") or row.get("E"):
             planned.append(
                 {
                     "month": month or "Unspecified",
+                    "originalPlanned": int(original_value) if original_value is not None else "",
                     "count": int(planned_value) if planned_value is not None else 0,
                     "played": int(played_value) if played_value is not None else "",
                 }

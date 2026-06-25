@@ -597,7 +597,7 @@ td {
 
 .monthly-summary-head {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 72px 72px;
+  grid-template-columns: minmax(0, 1fr) 92px 92px 72px;
   gap: 16px;
   align-items: end;
   margin-bottom: 6px;
@@ -628,7 +628,7 @@ td {
 
 .monthly-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 72px 72px;
+  grid-template-columns: minmax(0, 1fr) 92px 92px 72px;
   gap: 16px;
   align-items: center;
   padding: 9px 0;
@@ -641,6 +641,7 @@ td {
   text-align: left;
 }
 
+.monthly-original-count,
 .monthly-planned-count,
 .monthly-played-count {
   color: var(--text);

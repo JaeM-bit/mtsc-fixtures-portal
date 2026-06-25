@@ -359,14 +359,17 @@ function readMonthlyPlanned(sheet) {
 
   for (let rowIndex = 107; rowIndex <= 111; rowIndex += 1) {
     const month = monthLabelFromCell(getCell(sheet, rowIndex, 1));
+    const originalText = cellText(getCell(sheet, rowIndex, 2));
     const countText = cellText(getCell(sheet, rowIndex, 7));
     const playedText = cellText(getCell(sheet, rowIndex, 4));
+    const original = Number(String(originalText).replace(/,/g, ""));
     const count = Number(String(countText).replace(/,/g, ""));
     const played = Number(String(playedText).replace(/,/g, ""));
 
-    if (month || countText) {
+    if (month || originalText || countText || playedText) {
       rows.push({
         month: month || "Unspecified",
+        originalPlanned: Number.isFinite(original) ? original : "",
         count: Number.isFinite(count) ? count : 0,
         played: Number.isFinite(played) ? played : "",
       });
@@ -660,10 +663,11 @@ function renderMonthlyPlanned() {
       <div class="summary-item monthly-summary">
         <div class="monthly-summary-head">
           <strong>Matches by Month</strong>
-          <span>Planned</span>
+          <span>Originally Planned</span>
+          <span>Currently Planned</span>
           <span>Played</span>
         </div>
-        <p>No monthly planned totals found in by date cells B108:B112 and H108:H112.</p>
+        <p>No monthly totals found in by date cells C108:C112, E108:E112 and H108:H112.</p>
       </div>
     `;
   }
@@ -672,17 +676,22 @@ function renderMonthlyPlanned() {
   const items = state.monthlyPlanned
     .map((row, index) => {
       const playedRow = playedRows[index];
-      const played = Number.isFinite(row.played)
-        ? row.played
-        : Number.isFinite(playedRow)
-          ? playedRow
-          : Number.isFinite(playedRow?.played)
-            ? playedRow.played
-            : 0;
+      const original = formatCompactNumber(row.originalPlanned);
+      const planned = formatCompactNumber(row.count);
+      const played = formatCompactNumber(
+        Number.isFinite(row.played)
+          ? row.played
+          : Number.isFinite(playedRow)
+            ? playedRow
+            : Number.isFinite(playedRow?.played)
+              ? playedRow.played
+              : ""
+      );
       return `
         <div class="monthly-row">
           <div class="monthly-month">${escapeHtml(row.month)}</div>
-          <div class="monthly-planned-count">${escapeHtml(row.count)}</div>
+          <div class="monthly-original-count">${escapeHtml(original)}</div>
+          <div class="monthly-planned-count">${escapeHtml(planned)}</div>
           <div class="monthly-played monthly-played-count">${escapeHtml(played)}</div>
         </div>
       `;
@@ -693,7 +702,8 @@ function renderMonthlyPlanned() {
     <div class="summary-item monthly-summary">
       <div class="monthly-summary-head">
         <strong>Matches by Month</strong>
-        <span>Planned</span>
+        <span>Originally Planned</span>
+        <span>Currently Planned</span>
         <span>Played</span>
       </div>
       <div class="monthly-planned" aria-label="Matches by month">${items}</div>
