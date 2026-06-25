@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-25T17:17:58+01:00",
+  "uploadedAt": "2026-06-25T17:18:11+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -420,7 +420,7 @@
     {
       "date": "2026-07-05",
       "day": "Sun",
-      "time": "13:00",
+      "time": "11:00",
       "team": "DL Poole M1",
       "opponent": "Milford M1",
       "status": "Booked"
