@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-27T13:52:12+01:00",
+  "uploadedAt": "2026-06-27T13:55:51+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -687,7 +687,7 @@
       "time": "",
       "team": "Wimborne Minster L1",
       "opponent": "Milford L5",
-      "status": "Booked"
+      "status": "rebook"
     },
     {
       "date": "2026-08-26",
