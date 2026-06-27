@@ -368,7 +368,7 @@ h2 {
 }
 
 .summary-ranking-points {
-  color: var(--accent);
+  color: var(--text);
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
