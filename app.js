@@ -869,7 +869,8 @@ function formatAveragePoints(value) {
   const numericValue = Number(value);
   if (!Number.isFinite(numericValue)) return "-";
   return new Intl.NumberFormat("en-GB", {
-    maximumFractionDigits: 2,
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
   }).format(numericValue);
 }
 
