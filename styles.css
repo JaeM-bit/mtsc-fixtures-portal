@@ -302,6 +302,11 @@ h2 {
   text-transform: uppercase;
 }
 
+.kpi-label-two-line {
+  line-height: 1.08 !important;
+  min-height: 3.05em !important;
+}
+
 .kpi-grid .kpi-title {
   text-transform: none;
 }
