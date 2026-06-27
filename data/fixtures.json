@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-27T09:50:48+01:00",
+  "uploadedAt": "2026-06-27T09:51:56+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -343,7 +343,7 @@
       "time": "18:30",
       "team": "St Leonards M1",
       "opponent": "Milford M2",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-06-27",
@@ -755,7 +755,7 @@
       "month": "Jun",
       "originalPlanned": 22,
       "count": 16,
-      "played": 10
+      "played": 11
     },
     {
       "month": "Jul",
@@ -773,18 +773,17 @@
   "monthlyPlayed": [
     17,
     15,
-    10,
+    11,
     0,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "43",
+    "totalMatchesPlayed": "44",
     "totalWins": "28",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford L1",
-      "Milford MXD4",
-      "Milford M2"
+      "Milford MXD4"
     ]
   }
 }
