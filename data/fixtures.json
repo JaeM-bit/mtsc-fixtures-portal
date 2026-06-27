@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-27T23:40:00+01:00",
+  "uploadedAt": "2026-06-27T23:41:19+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -570,6 +570,14 @@
       "status": "Booked"
     },
     {
+      "date": "2026-08-02",
+      "day": "Sun",
+      "time": "11:00",
+      "team": "Wimborne Minster L1",
+      "opponent": "Milford L5",
+      "status": "rebook"
+    },
+    {
       "date": "2026-08-04",
       "day": "Tue",
       "time": "18:30",
@@ -682,14 +690,6 @@
       "status": "Booked"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Wimborne Minster L1",
-      "opponent": "Milford L5",
-      "status": "rebook"
-    },
-    {
       "date": "2026-08-26",
       "day": "Wed",
       "time": "13:00",
@@ -766,7 +766,7 @@
     {
       "month": "Aug",
       "originalPlanned": 18,
-      "count": 20,
+      "count": 21,
       "played": 0
     }
   ],
