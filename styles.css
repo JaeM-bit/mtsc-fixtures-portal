@@ -339,6 +339,46 @@ h2 {
   font-weight: 700;
 }
 
+.summary-ranking-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.summary-ranking-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.summary-ranking-team,
+.summary-ranking-points {
+  font-size: 0.92rem;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.summary-ranking-team {
+  color: var(--text);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary-ranking-points {
+  color: var(--accent);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.summary-ranking-empty {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .kpi-range {
   display: block;
   margin-top: 6px;

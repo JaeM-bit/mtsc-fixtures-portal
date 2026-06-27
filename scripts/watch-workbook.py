@@ -258,14 +258,19 @@ def read_report_summary(league_rows: Dict[int, Dict[str, str]]) -> Dict[str, obj
         if team and avg_value is not None:
             ranked.append((team, avg_value))
 
-    highest_avg_points = max((avg for _, avg in ranked), default="")
-    highest_avg_teams = [team for team, avg in ranked if avg == highest_avg_points] if ranked else []
+    ranked.sort(key=lambda item: (-item[1], item[0].lower()))
+    top_rankings = ranked[:4]
+    highest_avg_points = top_rankings[0][1] if top_rankings else ""
+    highest_avg_teams = [team for team, avg in top_rankings if avg == highest_avg_points] if top_rankings else []
 
     return {
         "totalMatchesPlayed": total_matches_played,
         "totalWins": total_wins,
         "highestAvgPointsPerMatch": highest_avg_points,
         "highestAvgTeams": highest_avg_teams,
+        "highestAvgRankings": [
+            {"team": team, "avgValue": avg} for team, avg in top_rankings
+        ],
     }
 
 

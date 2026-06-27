@@ -16,6 +16,7 @@ const state = {
     totalWins: "",
     highestAvgPointsPerMatch: "",
     highestAvgTeams: [],
+    highestAvgRankings: [],
   },
 };
 
@@ -120,7 +121,6 @@ const els = {
   summaryMatchesPlayed: document.querySelector("#summaryMatchesPlayed"),
   summaryWins: document.querySelector("#summaryWins"),
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
-  summaryHighestTeams: document.querySelector("#summaryHighestTeams"),
   viewsToday: document.querySelector("#viewsToday"),
   uniqueVisitorsToday: document.querySelector("#uniqueVisitorsToday"),
   weeklyViewsAverage: document.querySelector("#weeklyViewsAverage"),
@@ -407,20 +407,19 @@ function readReportSummary(sheet) {
     ranked.push({ team, avgValue });
   }
 
-  const highestAvgPointsPerMatch =
-    ranked.length > 0 ? Math.max(...ranked.map((item) => item.avgValue)) : "";
-  const highestAvgTeams =
-    ranked.length > 0
-      ? ranked
-          .filter((item) => item.avgValue === highestAvgPointsPerMatch)
-          .map((item) => item.team)
-      : [];
+  ranked.sort((a, b) => b.avgValue - a.avgValue || a.team.localeCompare(b.team));
+  const highestAvgRankings = ranked.slice(0, 4);
+  const highestAvgPointsPerMatch = highestAvgRankings[0]?.avgValue ?? "";
+  const highestAvgTeams = highestAvgRankings
+    .filter((item) => item.avgValue === highestAvgPointsPerMatch)
+    .map((item) => item.team);
 
   return {
     totalMatchesPlayed,
     totalWins,
     highestAvgPointsPerMatch,
     highestAvgTeams,
+    highestAvgRankings,
   };
 }
 
@@ -633,13 +632,21 @@ function renderKpis() {
     els.summaryWins.textContent = state.reportSummary.totalWins || "-";
   }
   if (els.summaryHighestAvg) {
-    els.summaryHighestAvg.textContent = state.reportSummary.highestAvgPointsPerMatch || "-";
-  }
-  if (els.summaryHighestTeams) {
-    const teams = state.reportSummary.highestAvgTeams || [];
-    els.summaryHighestTeams.innerHTML = teams.length
-      ? teams.map((team) => escapeHtml(team)).join("<br />")
-      : "";
+    const rankings = Array.isArray(state.reportSummary.highestAvgRankings)
+      ? state.reportSummary.highestAvgRankings.slice(0, 4)
+      : [];
+    els.summaryHighestAvg.innerHTML = rankings.length
+      ? rankings
+          .map(
+            (item) => `
+              <div class="summary-ranking-row">
+                <span class="summary-ranking-team">${escapeHtml(item.team || "-")}</span>
+                <span class="summary-ranking-points">${escapeHtml(formatAveragePoints(item.avgValue))}</span>
+              </div>
+            `
+          )
+          .join("")
+      : '<div class="summary-ranking-empty">-</div>';
   }
   renderAnalytics();
 }
@@ -855,6 +862,15 @@ function formatCompactNumber(value) {
   return new Intl.NumberFormat("en-GB", {
     maximumFractionDigits: 0,
   }).format(Math.round(numericValue));
+}
+
+function formatAveragePoints(value) {
+  if (value === "" || value === null || value === undefined) return "-";
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue)) return "-";
+  return new Intl.NumberFormat("en-GB", {
+    maximumFractionDigits: 2,
+  }).format(numericValue);
 }
 
 function formatIsoDateLabel(value) {
