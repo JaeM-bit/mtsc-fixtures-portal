@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-28T13:22:56+01:00",
+  "uploadedAt": "2026-06-28T13:26:30+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -367,7 +367,7 @@
       "time": "10:30",
       "team": "Milford M3",
       "opponent": "St Leonards M2",
-      "status": "played"
+      "status": "Booked"
     },
     {
       "date": "2026-06-28",
@@ -755,7 +755,7 @@
       "month": "Jun",
       "originalPlanned": 22,
       "count": 16,
-      "played": 14
+      "played": 13
     },
     {
       "month": "Jul",
@@ -773,7 +773,7 @@
   "monthlyPlayed": [
     17,
     15,
-    14,
+    13,
     0,
     0
   ],
