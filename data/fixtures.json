@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-28T13:27:14+01:00",
+  "uploadedAt": "2026-06-28T15:23:24+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -778,8 +778,8 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "46",
-    "totalWins": "29",
+    "totalMatchesPlayed": "47",
+    "totalWins": "30",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford L1",
@@ -799,8 +799,8 @@
         "avgValue": 3.5
       },
       {
-        "team": "Milford L3",
-        "avgValue": 3.0
+        "team": "Milford MXD2",
+        "avgValue": 3.5
       }
     ]
   }
