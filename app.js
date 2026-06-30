@@ -890,8 +890,8 @@ function formatRankingPercent(value) {
   if (!Number.isFinite(numericValue)) return "-";
   return new Intl.NumberFormat("en-GB", {
     style: "percent",
-    minimumFractionDigits: 1,
-    maximumFractionDigits: 1,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
   }).format(numericValue);
 }
 
