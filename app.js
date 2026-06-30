@@ -641,7 +641,7 @@ function renderKpis() {
       ? `
           <div class="summary-ranking-head">
             <span>Team</span>
-            <span>Net Avg</span>
+            <span>Net Avg<br />Points</span>
             <span>% Played</span>
           </div>
           ${rankings
