@@ -642,7 +642,7 @@ function renderKpis() {
           <div class="summary-ranking-head">
             <span>Team</span>
             <span>Net Avg</span>
-            <span>% of Matches Played</span>
+            <span>% Played</span>
           </div>
           ${rankings
             .map(
