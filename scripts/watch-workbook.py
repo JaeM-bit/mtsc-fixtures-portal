@@ -249,19 +249,20 @@ def read_monthly_totals(by_date_rows: Dict[int, Dict[str, str]]) -> Tuple[List[D
 def read_report_summary(league_rows: Dict[int, Dict[str, str]]) -> Dict[str, object]:
     total_matches_played = (sheet_row_values(league_rows, 21).get("T") or "").strip()
     total_wins = (sheet_row_values(league_rows, 21).get("U") or "").strip()
-    ranked: List[Tuple[str, float]] = []
+    ranked: List[Tuple[str, float, Optional[float]]] = []
 
     for row_num in range(7, 21):
         row = sheet_row_values(league_rows, row_num)
         team = (row.get("K") or "").strip()
         avg_value = parse_number(row.get("Z", ""))
+        percent_value = parse_number(row.get("AC", ""))
         if team and avg_value is not None:
-            ranked.append((team, avg_value))
+            ranked.append((team, avg_value, percent_value))
 
     ranked.sort(key=lambda item: (-item[1], item[0].lower()))
     top_rankings = ranked[:4]
     highest_avg_points = top_rankings[0][1] if top_rankings else ""
-    highest_avg_teams = [team for team, avg in top_rankings if avg == highest_avg_points] if top_rankings else []
+    highest_avg_teams = [team for team, avg, _ in top_rankings if avg == highest_avg_points] if top_rankings else []
 
     return {
         "totalMatchesPlayed": total_matches_played,
@@ -269,7 +270,12 @@ def read_report_summary(league_rows: Dict[int, Dict[str, str]]) -> Dict[str, obj
         "highestAvgPointsPerMatch": highest_avg_points,
         "highestAvgTeams": highest_avg_teams,
         "highestAvgRankings": [
-            {"team": team, "avgValue": avg} for team, avg in top_rankings
+            {
+                "team": team,
+                "avgValue": avg,
+                "percentValue": percent,
+            }
+            for team, avg, percent in top_rankings
         ],
     }
 

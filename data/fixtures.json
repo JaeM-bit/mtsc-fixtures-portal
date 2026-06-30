@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-30T10:22:26+01:00",
+  "uploadedAt": "2026-06-30T10:35:16+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -788,19 +788,23 @@
     "highestAvgRankings": [
       {
         "team": "Milford L1",
-        "avgValue": 6.0
+        "avgValue": 6.0,
+        "percentValue": 0.2857142857142857
       },
       {
         "team": "Milford MXD4",
-        "avgValue": 6.0
+        "avgValue": 6.0,
+        "percentValue": 0.7142857142857143
       },
       {
         "team": "Milford L4",
-        "avgValue": 3.5
+        "avgValue": 3.5,
+        "percentValue": 0.6666666666666666
       },
       {
         "team": "Milford MXD2",
-        "avgValue": 3.5
+        "avgValue": 3.5,
+        "percentValue": 0.5714285714285714
       }
     ]
   }

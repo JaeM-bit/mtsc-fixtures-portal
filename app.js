@@ -402,9 +402,11 @@ function readReportSummary(sheet) {
   for (let rowIndex = 6; rowIndex <= 19; rowIndex += 1) {
     const team = cellText(getCell(sheet, rowIndex, 10));
     const avgText = cellText(getCell(sheet, rowIndex, 25));
+    const percentText = cellText(getCell(sheet, rowIndex, 28));
     const avgValue = Number(String(avgText).replace(/,/g, ""));
+    const percentValue = Number(String(percentText).replace(/,/g, ""));
     if (!team || !Number.isFinite(avgValue)) continue;
-    ranked.push({ team, avgValue });
+    ranked.push({ team, avgValue, percentValue: Number.isFinite(percentValue) ? percentValue : "" });
   }
 
   ranked.sort((a, b) => b.avgValue - a.avgValue || a.team.localeCompare(b.team));
@@ -636,16 +638,24 @@ function renderKpis() {
       ? state.reportSummary.highestAvgRankings.slice(0, 4)
       : [];
     els.summaryHighestAvg.innerHTML = rankings.length
-      ? rankings
-          .map(
-            (item) => `
-              <div class="summary-ranking-row">
-                <span class="summary-ranking-team">${escapeHtml(item.team || "-")}</span>
-                <span class="summary-ranking-points">${escapeHtml(formatAveragePoints(item.avgValue))}</span>
-              </div>
-            `
-          )
-          .join("")
+      ? `
+          <div class="summary-ranking-head">
+            <span>Team</span>
+            <span>Net Avg</span>
+            <span>% of Matches Played</span>
+          </div>
+          ${rankings
+            .map(
+              (item) => `
+                <div class="summary-ranking-row">
+                  <span class="summary-ranking-team">${escapeHtml(item.team || "-")}</span>
+                  <span class="summary-ranking-points">${escapeHtml(formatAveragePoints(item.avgValue))}</span>
+                  <span class="summary-ranking-percent">${escapeHtml(formatRankingPercent(item.percentValue))}</span>
+                </div>
+              `
+            )
+            .join("")}
+        `
       : '<div class="summary-ranking-empty">-</div>';
   }
   renderAnalytics();
@@ -869,6 +879,17 @@ function formatAveragePoints(value) {
   const numericValue = Number(value);
   if (!Number.isFinite(numericValue)) return "-";
   return new Intl.NumberFormat("en-GB", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  }).format(numericValue);
+}
+
+function formatRankingPercent(value) {
+  if (value === "" || value === null || value === undefined) return "-";
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue)) return "-";
+  return new Intl.NumberFormat("en-GB", {
+    style: "percent",
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   }).format(numericValue);
