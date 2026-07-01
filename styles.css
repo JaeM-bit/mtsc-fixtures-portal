@@ -270,7 +270,8 @@ h2 {
 
 #portalFeatures {
   text-align: left;
-  font-weight: 700;
+  font-size: 0.92rem;
+  font-weight: 400;
   color: var(--muted);
   white-space: pre-line;
 }
