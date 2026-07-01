@@ -96,9 +96,17 @@ main {
   color: var(--white);
 }
 
+.toolbar > div:first-child {
+  position: relative;
+  padding-top: 42px;
+}
+
 .toolbar-link {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: fit-content;
-  margin: 0 0 6px;
+  margin: 0;
   padding: 8px 14px;
   min-height: 34px;
   background: #ecf9ef;
