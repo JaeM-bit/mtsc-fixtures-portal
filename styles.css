@@ -96,24 +96,8 @@ main {
   color: var(--white);
 }
 
-.toolbar > div:first-child {
-  position: relative;
-  padding-top: 54px;
-}
-
 .toolbar-link {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: fit-content;
-  margin: 0;
-  padding: 8px 14px;
-  min-height: 34px;
-  background: #f1fbf3;
-  color: #1c523b;
-  border: 1px solid #cfe7d5;
-  box-shadow: none;
-  font-weight: 700;
 }
 
 .captain-toolbar {
