@@ -98,7 +98,7 @@ main {
 
 .toolbar > div:first-child {
   position: relative;
-  padding-top: 42px;
+  padding-top: 54px;
 }
 
 .toolbar-link {
@@ -109,9 +109,9 @@ main {
   margin: 0;
   padding: 8px 14px;
   min-height: 34px;
-  background: #ecf9ef;
-  color: #1d4f39;
-  border: 1px solid #b8d9c2;
+  background: #f1fbf3;
+  color: #1c523b;
+  border: 1px solid #cfe7d5;
   box-shadow: none;
   font-weight: 700;
 }
