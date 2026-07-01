@@ -280,6 +280,10 @@ def read_report_summary(league_rows: Dict[int, Dict[str, str]]) -> Dict[str, obj
     }
 
 
+def read_portal_features(portal_rows: Dict[int, Dict[str, str]]) -> str:
+    return (sheet_row_values(portal_rows, 1).get("A") or "").strip()
+
+
 def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]]:
     rows: List[Dict[str, str]] = []
 
@@ -330,6 +334,10 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
             (path for name, path in sheets.items() if name.strip().lower() == "league results"),
             None,
         )
+        portal_features_sheet = next(
+            (path for name, path in sheets.items() if name.strip().lower() == "portal features"),
+            None,
+        )
 
         if not by_date_sheet:
             raise RuntimeError('No "By Date" sheet found in the workbook.')
@@ -338,6 +346,7 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
 
         by_date_rows = parse_sheet_rows(zf, by_date_sheet, shared_strings)
         league_rows = parse_sheet_rows(zf, league_sheet, shared_strings)
+        portal_rows = parse_sheet_rows(zf, portal_features_sheet, shared_strings) if portal_features_sheet else {}
         monthly_planned, monthly_played = read_monthly_totals(by_date_rows)
         report_summary = read_report_summary(league_rows)
 
@@ -347,6 +356,7 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
             "monthlyPlanned": monthly_planned,
             "monthlyPlayed": monthly_played,
             "reportSummary": report_summary,
+            "portalFeatures": read_portal_features(portal_rows) if portal_rows else "",
         }
 
 

@@ -11,6 +11,7 @@ const state = {
     uniqueVisitorsThisWeek: "",
     updatedAt: "",
   },
+  portalFeatures: "",
   reportSummary: {
     totalMatchesPlayed: "",
     totalWins: "",
@@ -122,6 +123,7 @@ const els = {
   summaryMatchesPlayed: document.querySelector("#summaryMatchesPlayed"),
   summaryWins: document.querySelector("#summaryWins"),
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
+  portalFeatures: document.querySelector("#portalFeatures"),
   viewsToday: document.querySelector("#viewsToday"),
   uniqueVisitorsToday: document.querySelector("#uniqueVisitorsToday"),
   weeklyViewsAverage: document.querySelector("#weeklyViewsAverage"),
@@ -271,11 +273,17 @@ function displayUploadStatus(uploadedAt) {
   els.parseStatus.textContent = "";
 }
 
+function displayPortalFeatures(features) {
+  if (!els.portalFeatures) return;
+  els.portalFeatures.textContent = features || "No new features noted yet.";
+}
+
 function buildPublishedPayload(
   rows,
   monthlyPlanned,
   monthlyPlayed = state.monthlyPlayed,
   reportSummary = state.reportSummary,
+  portalFeatures = state.portalFeatures,
   uploadedAt = new Date().toISOString()
 ) {
   return {
@@ -284,6 +292,7 @@ function buildPublishedPayload(
     monthlyPlanned,
     monthlyPlayed,
     reportSummary,
+    portalFeatures,
   };
 }
 
@@ -452,6 +461,7 @@ function findSheetName(workbook, predicate) {
 function sheetToRows(workbook) {
   const byDateSheetName = findSheetName(workbook, (name) => name === "by date");
   const leagueResultsSheetName = findSheetName(workbook, (name) => name === "league results");
+  const portalFeaturesSheetName = findSheetName(workbook, (name) => name === "portal features");
 
   if (!byDateSheetName) {
     throw new Error('No "by date" tab found in this workbook.');
@@ -462,11 +472,13 @@ function sheetToRows(workbook) {
 
   const sheet = workbook.Sheets[byDateSheetName];
   const leagueResultsSheet = workbook.Sheets[leagueResultsSheetName];
+  const portalFeaturesSheet = portalFeaturesSheetName ? workbook.Sheets[portalFeaturesSheetName] : null;
   return {
     rows: mapByDateColumns(sheet),
     monthlyPlanned: readMonthlyPlanned(sheet),
     monthlyPlayed: readMonthlyPlayed(sheet),
     reportSummary: readReportSummary(leagueResultsSheet),
+    portalFeatures: portalFeaturesSheet ? cellText(getCell(portalFeaturesSheet, 0, 0)) : "",
   };
 }
 
@@ -816,13 +828,15 @@ function setRows(
   revisedRows = state.revised,
   monthlyPlanned = state.monthlyPlanned,
   monthlyPlayed = state.monthlyPlayed,
-  reportSummary = state.reportSummary
+  reportSummary = state.reportSummary,
+  portalFeatures = state.portalFeatures
 ) {
   state.current = ensureIds(currentRows);
   state.revised = ensureIds(revisedRows);
   state.monthlyPlanned = monthlyPlanned;
   state.monthlyPlayed = monthlyPlayed;
   state.reportSummary = reportSummary || state.reportSummary;
+  state.portalFeatures = portalFeatures || state.portalFeatures;
   state.rows = compareRows(state.current, state.revised);
   renderAll();
 }
@@ -831,9 +845,16 @@ function savePublishedData(
   rows,
   monthlyPlanned,
   monthlyPlayed = state.monthlyPlayed,
-  reportSummary = state.reportSummary
+  reportSummary = state.reportSummary,
+  portalFeatures = state.portalFeatures
 ) {
-  const payload = buildPublishedPayload(rows, monthlyPlanned, monthlyPlayed, reportSummary);
+  const payload = buildPublishedPayload(
+    rows,
+    monthlyPlanned,
+    monthlyPlayed,
+    reportSummary,
+    portalFeatures
+  );
   localStorage.setItem(storageKey, JSON.stringify(payload));
   return payload;
 }
@@ -999,16 +1020,19 @@ if (els.currentFile) {
         workbookData.rows,
         workbookData.monthlyPlanned,
         workbookData.monthlyPlayed,
-        workbookData.reportSummary || state.reportSummary
+        workbookData.reportSummary || state.reportSummary,
+        workbookData.portalFeatures || state.portalFeatures
       );
       setRows(
         published.rows,
         [],
         published.monthlyPlanned,
         published.monthlyPlayed,
-        published.reportSummary
+        published.reportSummary,
+        published.portalFeatures
       );
       displayUploadStatus(published.uploadedAt);
+      displayPortalFeatures(published.portalFeatures);
       if (els.downloadJson) {
         els.downloadJson.disabled = false;
         els.downloadJson.dataset.payload = JSON.stringify(published);
@@ -1027,7 +1051,8 @@ if (els.downloadJson) {
           state.current,
           state.monthlyPlanned,
           state.monthlyPlayed,
-          state.reportSummary
+          state.reportSummary,
+          state.portalFeatures
         );
     downloadJson(payload);
     els.parseStatus.textContent = "fixtures.json download started.";
@@ -1068,9 +1093,11 @@ async function initialisePublishedData() {
       [],
       publishedData.monthlyPlanned || [],
       publishedData.monthlyPlayed || [],
-      publishedData.reportSummary || state.reportSummary
+      publishedData.reportSummary || state.reportSummary,
+      publishedData.portalFeatures || state.portalFeatures
     );
     displayUploadStatus(publishedData.uploadedAt);
+    displayPortalFeatures(publishedData.portalFeatures);
     if (els.downloadJson) {
       els.downloadJson.disabled = false;
       els.downloadJson.dataset.payload = JSON.stringify(publishedData);
