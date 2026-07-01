@@ -18,6 +18,7 @@ const state = {
     highestAvgTeams: [],
     highestAvgRankings: [],
   },
+  homeAwayFilter: "all",
 };
 
 const seasonStart = "2026-04-01";
@@ -128,6 +129,7 @@ const els = {
   searchInput: document.querySelector("#searchInput"),
   teamFilter: document.querySelector("#teamFilter"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
+  homeAwayButtons: document.querySelectorAll("[data-home-away]"),
   exportCsv: document.querySelector("#exportCsv"),
   fixturesBody: document.querySelector("#fixturesBody"),
   visibleCount: document.querySelector("#visibleCount"),
@@ -304,6 +306,7 @@ function mapByDateColumns(sheet) {
     const timeCell = getCell(sheet, rowIndex, 5);
     const homeCell = getCell(sheet, rowIndex, 6);
     const awayCell = getCell(sheet, rowIndex, 7);
+    const homeAwayCell = getCell(sheet, rowIndex, 8);
     const statusCell = getCell(sheet, rowIndex, 11);
     const statusText = cellText(statusCell);
 
@@ -314,7 +317,7 @@ function mapByDateColumns(sheet) {
       time: excelTimeToText(timeCell.v, timeCell.w),
       team: cellText(homeCell),
       opponent: cellText(awayCell),
-      venue: "",
+      venue: cellText(homeAwayCell),
       division: "",
       status: statusText || "Published",
       changeStatus: "unchanged",
@@ -509,6 +512,7 @@ function compareRows(currentRows, revisedRows) {
 function applyFilters() {
   const term = normaliseKey(els.searchInput.value);
   const team = els.teamFilter.value;
+  const homeAway = state.homeAwayFilter;
   const nextDays = Number(els.nextDaysInput.value);
   const useNextDays = els.nextDaysInput.value !== "" && Number.isFinite(nextDays);
   const today = startOfDay(new Date());
@@ -526,6 +530,7 @@ function applyFilters() {
     return (
       (!term || haystack.includes(term)) &&
       (!team || row.team === team || row.opponent === team) &&
+      (homeAway === "all" || normaliseKey(row.venue) === normaliseKey(homeAway)) &&
       matchesNextDays
     );
   });
@@ -552,6 +557,14 @@ function updateFilters() {
     ),
   ].sort((a, b) => a.localeCompare(b));
   updateSelect(els.teamFilter, milfordTeams, "All Milford teams");
+  updateHomeAwayButtons();
+}
+
+function updateHomeAwayButtons() {
+  els.homeAwayButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.homeAway === state.homeAwayFilter);
+    button.setAttribute("aria-pressed", button.dataset.homeAway === state.homeAwayFilter ? "true" : "false");
+  });
 }
 
 function renderFixtures() {
@@ -589,6 +602,7 @@ function rowSearchText(row) {
       row.time,
       row.team,
       row.opponent,
+      row.venue,
       labelStatus(row),
     ].join(" ")
   );
@@ -1028,6 +1042,15 @@ if (els.downloadJson) {
     });
   }
 );
+
+els.homeAwayButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    state.homeAwayFilter = button.dataset.homeAway || "all";
+    updateHomeAwayButtons();
+    renderFixtures();
+    els.visibleCount.textContent = `${applyFilters().length} shown`;
+  });
+});
 
 if (els.exportCsv) {
   els.exportCsv.addEventListener("click", () => {

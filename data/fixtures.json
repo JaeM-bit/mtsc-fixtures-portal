@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-06-30T12:16:23+01:00",
+  "uploadedAt": "2026-07-01T10:26:27+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -7,6 +7,7 @@
       "time": "18:30",
       "team": "Milford M1",
       "opponent": "Hale Gardens M1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -15,6 +16,7 @@
       "time": "10:30",
       "team": "Milford M45",
       "opponent": "Corfe Mullen M45",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -23,6 +25,7 @@
       "time": "10:30",
       "team": "Swanage MXD1",
       "opponent": "Milford MXD1",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -31,6 +34,7 @@
       "time": "10:30",
       "team": "Milford MXD2",
       "opponent": "Bournemouth Gardens MXD1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -39,6 +43,7 @@
       "time": "10:30",
       "team": "Sandleheath M1",
       "opponent": "Milford M3",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -47,6 +52,7 @@
       "time": "11:00",
       "team": "Winton L1",
       "opponent": "Milford L4",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -55,6 +61,7 @@
       "time": "10:30",
       "team": "Christchurch L1",
       "opponent": "Milford L3",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -63,6 +70,7 @@
       "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Christchurch MXD2",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -71,6 +79,7 @@
       "time": "10:30",
       "team": "Milford MXD2",
       "opponent": "DL Ringwood MXD1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -79,6 +88,7 @@
       "time": "10:30",
       "team": "Shillingstone M1",
       "opponent": "Milford M3",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -87,6 +97,7 @@
       "time": "11:00",
       "team": "Milford L1",
       "opponent": "Milford L2",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -95,6 +106,7 @@
       "time": "18:30",
       "team": "Southbourne MXD2",
       "opponent": "Milford MXD3",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -103,6 +115,7 @@
       "time": "10:30",
       "team": "Pythouse MXD2",
       "opponent": "Milford MXD4",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -111,6 +124,7 @@
       "time": "12:00",
       "team": "Dorchester M45",
       "opponent": "Milford M45",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -119,6 +133,7 @@
       "time": "14:30",
       "team": "Swanage L2",
       "opponent": "Milford L4",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -127,6 +142,7 @@
       "time": "18:30",
       "team": "West Hants MXD1",
       "opponent": "Milford MXD1",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -135,6 +151,7 @@
       "time": "18:30",
       "team": "Milford M2",
       "opponent": "Hale Gardens M2",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -143,6 +160,7 @@
       "time": "13:00",
       "team": "Milford L60",
       "opponent": "St Leonards L60",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -151,6 +169,7 @@
       "time": "10:30",
       "team": "Milford L5",
       "opponent": "East Dorset L4",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -159,6 +178,7 @@
       "time": "10:30",
       "team": "Swanage L1",
       "opponent": "Milford L2",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -167,6 +187,7 @@
       "time": "18:30",
       "team": "Milford MXD2",
       "opponent": "Hale Gardens MXD1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -175,6 +196,7 @@
       "time": "10:30",
       "team": "Christchurch MXD1",
       "opponent": "Milford MXD3",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -183,6 +205,7 @@
       "time": "10:30",
       "team": "Milford L3",
       "opponent": "Southbourne L3",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -191,6 +214,7 @@
       "time": "18:30",
       "team": "Hale Gardens L3",
       "opponent": "Milford L5",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -199,6 +223,7 @@
       "time": "18:30",
       "team": "West Hants M1",
       "opponent": "Milford M1",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -207,6 +232,7 @@
       "time": "18:30",
       "team": "Milford L4",
       "opponent": "DL Ringwood L1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -215,6 +241,7 @@
       "time": "10:30",
       "team": "Bournemouth Gardens M1",
       "opponent": "Milford M3",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -223,6 +250,7 @@
       "time": "10:30",
       "team": "Milford L5",
       "opponent": "St Leonards L3",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -231,6 +259,7 @@
       "time": "10:30",
       "team": "Southbourne L60",
       "opponent": "Milford L60",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -239,6 +268,7 @@
       "time": "18:30",
       "team": "Milford L1",
       "opponent": "East Dorset L1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -247,6 +277,7 @@
       "time": "10:30",
       "team": "Milford L3",
       "opponent": "Dorchester L1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -255,6 +286,7 @@
       "time": "11:00",
       "team": "Winton MXD2",
       "opponent": "Milford MXD4",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -263,6 +295,7 @@
       "time": "18:30",
       "team": "Milford M45",
       "opponent": "St Leonards M45 +2",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -271,6 +304,7 @@
       "time": "10:30",
       "team": "Milford M3",
       "opponent": "Bournemouth University M1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -279,6 +313,7 @@
       "time": "18:30",
       "team": "DL Ringwood M1",
       "opponent": "Milford M2",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -287,6 +322,7 @@
       "time": "10:30",
       "team": "Milford M1",
       "opponent": "Dorchester M1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -295,6 +331,7 @@
       "time": "10:30",
       "team": "Ferndown MXD1",
       "opponent": "Milford MXD4",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -303,6 +340,7 @@
       "time": "10:30",
       "team": "Milford MXD3",
       "opponent": "Winton MXD1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -311,6 +349,7 @@
       "time": "18:30",
       "team": "Milford L4",
       "opponent": "Sway L1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -319,6 +358,7 @@
       "time": "18:30",
       "team": "Milford L2",
       "opponent": "East Dorset L2",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -327,6 +367,7 @@
       "time": "10:30",
       "team": "Milford M3",
       "opponent": "DL Poole M3",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -335,6 +376,7 @@
       "time": "18:30",
       "team": "Milford M1",
       "opponent": "East Dorset M2",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -343,6 +385,7 @@
       "time": "18:30",
       "team": "St Leonards M1",
       "opponent": "Milford M2",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -351,6 +394,7 @@
       "time": "11:00",
       "team": "Southbourne L2",
       "opponent": "Milford L3",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -359,6 +403,7 @@
       "time": "10:30",
       "team": "Milford MXD1",
       "opponent": "Southbourne MXD1",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -367,6 +412,7 @@
       "time": "10:30",
       "team": "Milford M3",
       "opponent": "St Leonards M2",
+      "venue": "H",
       "status": "played"
     },
     {
@@ -375,6 +421,7 @@
       "time": "10:30",
       "team": "Hale Gardens MXD4",
       "opponent": "Milford MXD4",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -383,6 +430,7 @@
       "time": "10:30",
       "team": "Sandleheath MXD1",
       "opponent": "Milford MXD2",
+      "venue": "A",
       "status": "played"
     },
     {
@@ -391,6 +439,7 @@
       "time": "18:30",
       "team": "Milford L1",
       "opponent": "West Hants L1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -399,6 +448,7 @@
       "time": "10:30",
       "team": "Victoria Avenue M2",
       "opponent": "Milford M2",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -407,6 +457,7 @@
       "time": "14:30",
       "team": "Wimborne Minster MXD1",
       "opponent": "Milford MXD3",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -415,6 +466,7 @@
       "time": "11:00",
       "team": "Milford L2",
       "opponent": "DL Poole L1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -423,6 +475,7 @@
       "time": "11:00",
       "team": "DL Poole M1",
       "opponent": "Milford M1",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -431,6 +484,7 @@
       "time": "18:30",
       "team": "Milford M3",
       "opponent": "Southbourne M2",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -439,6 +493,7 @@
       "time": "18:30",
       "team": "Southbourne L1",
       "opponent": "Milford L1",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -447,6 +502,7 @@
       "time": "18:30",
       "team": "West Hants L1",
       "opponent": "Milford L2",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -455,6 +511,7 @@
       "time": "18:30",
       "team": "Milford MXD3",
       "opponent": "East Dorset MXD3",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -463,6 +520,7 @@
       "time": "10:30",
       "team": "Milford L4",
       "opponent": "St Leonards L2",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -471,6 +529,7 @@
       "time": "10:30",
       "team": "Milford M2",
       "opponent": "Swanage M1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -479,6 +538,7 @@
       "time": "15:00",
       "team": "Pythouse M45",
       "opponent": "Milford M45",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -487,6 +547,7 @@
       "time": "18:30",
       "team": "Milford L2",
       "opponent": "Southbourne L1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -495,6 +556,7 @@
       "time": "18:30",
       "team": "East Dorset Lawn MXD1",
       "opponent": "Milford MXD1",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -503,6 +565,7 @@
       "time": "13:00",
       "team": "Milford L60",
       "opponent": "East Dorset L60",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -511,6 +574,7 @@
       "time": "10:30",
       "team": "Milford L1",
       "opponent": "Swanage L1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -519,6 +583,7 @@
       "time": "10:30",
       "team": "Victoria Avenue MXD1",
       "opponent": "Milford MXD2",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -527,6 +592,7 @@
       "time": "10:30",
       "team": "DL Ringwood L2",
       "opponent": "Milford L5",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -535,6 +601,7 @@
       "time": "10:30",
       "team": "Milford M45",
       "opponent": "East Dorset M45 +2",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -543,6 +610,7 @@
       "time": "18:30",
       "team": "Southbourne M1",
       "opponent": "Milford M2",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -551,6 +619,7 @@
       "time": "18:30",
       "team": "Milford L3",
       "opponent": "East Dorset L3",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -559,6 +628,7 @@
       "time": "15:30",
       "team": "DL Poole L1",
       "opponent": "Milford L1",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -567,6 +637,7 @@
       "time": "10:30",
       "team": "Milford M2",
       "opponent": "DL Poole M2",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -575,6 +646,7 @@
       "time": "11:00",
       "team": "Wimborne Minster L1",
       "opponent": "Milford L5",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -583,6 +655,7 @@
       "time": "18:30",
       "team": "East Dorset M1",
       "opponent": "Milford M1",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -591,6 +664,7 @@
       "time": "18:30",
       "team": "East Dorset L2",
       "opponent": "Milford L1",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -599,6 +673,7 @@
       "time": "18:30",
       "team": "Milford L5",
       "opponent": "Saint Sebastian L1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -607,6 +682,7 @@
       "time": "15:00",
       "team": "DL Poole L2",
       "opponent": "Milford L3",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -615,6 +691,7 @@
       "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Pythouse MXD1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -623,6 +700,7 @@
       "time": "10:30",
       "team": "Milford MXD3",
       "opponent": "St Leonards MXD2",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -631,6 +709,7 @@
       "time": "18:30",
       "team": "St Leonards L1",
       "opponent": "Milford L3",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -639,6 +718,7 @@
       "time": "13:00",
       "team": "Milford L60",
       "opponent": "West Hants L60 +1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -647,6 +727,7 @@
       "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Wimborne Minster MXD2",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -655,6 +736,7 @@
       "time": "11:15",
       "team": "Pythouse L1",
       "opponent": "Milford L4",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -663,6 +745,7 @@
       "time": "10:30",
       "team": "Corfe Mullen MXD1",
       "opponent": "Milford MXD3",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -671,6 +754,7 @@
       "time": "15:30",
       "team": "DL Poole MXD2",
       "opponent": "Milford MXD1",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -679,6 +763,7 @@
       "time": "11:30",
       "team": "West Hants L60",
       "opponent": "Milford L60",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -687,6 +772,7 @@
       "time": "18:30",
       "team": "St Leonards MXD1",
       "opponent": "Milford MXD2",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -695,6 +781,7 @@
       "time": "13:00",
       "team": "DL Poole L60",
       "opponent": "Milford L60",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -703,6 +790,7 @@
       "time": "18:30",
       "team": "Milford MXD2",
       "opponent": "East Dorset MXD2",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -711,6 +799,7 @@
       "time": "10:30",
       "team": "Milford M1",
       "opponent": "Victoria Avenue M1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -719,6 +808,7 @@
       "time": "10:30",
       "team": "Milford MXD1",
       "opponent": "DL Poole MXD1",
+      "venue": "H",
       "status": "Booked"
     },
     {
@@ -727,6 +817,7 @@
       "time": "",
       "team": "East Dorset L1",
       "opponent": "Milford L2",
+      "venue": "A",
       "status": "rebook"
     },
     {
@@ -735,6 +826,7 @@
       "time": "",
       "team": "Milford MXD1",
       "opponent": "Dorchester MXD1",
+      "venue": "H",
       "status": "rebook"
     }
   ],
@@ -788,19 +880,23 @@
     "highestAvgRankings": [
       {
         "team": "Milford L1",
-        "avgValue": 6.0
+        "avgValue": 6.0,
+        "percentValue": 0.2857142857142857
       },
       {
         "team": "Milford MXD4",
-        "avgValue": 6.0
+        "avgValue": 6.0,
+        "percentValue": 0.7142857142857143
       },
       {
         "team": "Milford L4",
-        "avgValue": 3.5
+        "avgValue": 3.5,
+        "percentValue": 0.6666666666666666
       },
       {
         "team": "Milford MXD2",
-        "avgValue": 3.5
+        "avgValue": 3.5,
+        "percentValue": 0.5714285714285714
       }
     ]
   }

@@ -292,10 +292,11 @@ def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]
         time_value = parse_time_cell(row.get("F", ""))
         home_team = (row.get("G") or "").strip()
         away_team = (row.get("H") or "").strip()
+        home_away = (row.get("I") or "").strip()
         status_value = (row.get("L") or "").strip()
         status = status_value or "Published"
 
-        has_match_data = any([date_value, day_value, time_value, home_team, away_team, status_value])
+        has_match_data = any([date_value, day_value, time_value, home_team, away_team, home_away, status_value])
         if not has_match_data:
             continue
         if date_value and not is_in_season(date_value):
@@ -308,6 +309,7 @@ def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]
                 "time": time_value,
                 "team": home_team,
                 "opponent": away_team,
+                "venue": home_away,
                 "status": status,
             }
         )

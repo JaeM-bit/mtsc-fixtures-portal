@@ -458,6 +458,29 @@ h2 {
   color: var(--ink);
 }
 
+.segmented-control {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-chip {
+  flex: 1 1 0;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f3f5f8;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.filter-chip.is-active {
+  background: var(--court);
+  border-color: var(--court);
+  color: var(--white);
+}
+
 .analytics-card {
   display: grid;
   gap: 8px;

@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=67" />
+    <link rel="stylesheet" href="styles.css?v=68" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
@@ -20,7 +20,7 @@
       data-domain="jaem-bit.github.io"
       src="https://plausible.io/js/script.js"
     ></script>
-    <script defer src="app.js?v=66"></script>
+    <script defer src="app.js?v=67"></script>
   </head>
   <body>
     <header class="app-header">
@@ -108,6 +108,14 @@
             <select id="teamFilter">
               <option value="">All Milford teams</option>
             </select>
+          </div>
+          <div class="filter-block">
+            <label>Home/Away</label>
+            <div class="segmented-control" role="group" aria-label="Home Away filter">
+              <button type="button" class="filter-chip is-active" data-home-away="all">All</button>
+              <button type="button" class="filter-chip" data-home-away="H">H</button>
+              <button type="button" class="filter-chip" data-home-away="A">A</button>
+            </div>
           </div>
           <div class="filter-block">
             <label for="nextDaysInput">Matches in next days</label>
