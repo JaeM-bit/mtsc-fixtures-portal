@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-01T10:42:51+01:00",
+  "uploadedAt": "2026-07-01T10:59:50+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -899,6 +899,5 @@
         "percentValue": 0.5714285714285714
       }
     ]
-  },
-  "portalFeatures": "1.  % Played added to the Highest Teams box\n2.  H/A/All buttons added to the filter to enable search by Home etc. Works with mutlple filters (e.g. H and select Milford Teams L1 to see all L! Home matches"
+  }
 }
