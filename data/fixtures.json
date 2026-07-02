@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-01T11:03:58+01:00",
+  "uploadedAt": "2026-07-02T23:47:34+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -533,15 +533,6 @@
       "status": "Booked"
     },
     {
-      "date": "2026-07-19",
-      "day": "Sun",
-      "time": "15:00",
-      "team": "Pythouse M45",
-      "opponent": "Milford M45",
-      "venue": "A",
-      "status": "Booked"
-    },
-    {
       "date": "2026-07-21",
       "day": "Tue",
       "time": "18:30",
@@ -650,6 +641,15 @@
       "status": "Booked"
     },
     {
+      "date": "2026-08-02",
+      "day": "Sun",
+      "time": "11:00",
+      "team": "Pythouse M45",
+      "opponent": "Milford M45",
+      "venue": "A",
+      "status": "Booked"
+    },
+    {
       "date": "2026-08-04",
       "day": "Tue",
       "time": "18:30",
@@ -657,6 +657,15 @@
       "opponent": "Milford M1",
       "venue": "A",
       "status": "Booked"
+    },
+    {
+      "date": "2026-08-05",
+      "day": "Wed",
+      "time": "18:30",
+      "team": "East Dorset L1",
+      "opponent": "Milford L2",
+      "venue": "A",
+      "status": "rebook"
     },
     {
       "date": "2026-08-06",
@@ -815,15 +824,6 @@
       "date": "",
       "day": "",
       "time": "",
-      "team": "East Dorset L1",
-      "opponent": "Milford L2",
-      "venue": "A",
-      "status": "rebook"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
       "team": "Milford MXD1",
       "opponent": "Dorchester MXD1",
       "venue": "H",
@@ -852,13 +852,13 @@
     {
       "month": "Jul",
       "originalPlanned": 18,
-      "count": 21,
+      "count": 20,
       "played": 0
     },
     {
       "month": "Aug",
       "originalPlanned": 18,
-      "count": 21,
+      "count": 23,
       "played": 0
     }
   ],
