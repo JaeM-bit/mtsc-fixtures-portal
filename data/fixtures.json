@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-04T00:16:33+01:00",
+  "uploadedAt": "2026-07-04T00:27:04+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -899,5 +899,5 @@
       }
     ]
   },
-  "portalFeatures": "1.  % Played added to the Highest Teams box\n2.  H/A/All buttons added to the filter to enable search by Home etc. Works with mutlple filters (e.g. H and select Milford Teams L1 to see all L1 Home matches)"
+  "portalFeatures": "1.  Added Status filters for played and booked to quickly get to see booked\n2.  % Played added to the Highest Teams box\n3.  H/A/All buttons added to the filter to enable search by Home etc. Works with mutlple filters (e.g. H and select Milford Teams L1 to see all L1 Home matches)"
 }
