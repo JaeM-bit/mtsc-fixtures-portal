@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-03T07:07:59+01:00",
+  "uploadedAt": "2026-07-03T07:08:31+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -665,7 +665,7 @@
       "team": "East Dorset L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "status": "rebook"
+      "status": "Booked"
     },
     {
       "date": "2026-08-06",
