@@ -444,6 +444,11 @@ h2 {
   margin-top: 16px;
 }
 
+#fixtures,
+#reports {
+  scroll-margin-top: 72px;
+}
+
 .filters {
   align-self: start;
   display: grid;
