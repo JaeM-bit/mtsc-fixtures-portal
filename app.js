@@ -20,6 +20,7 @@ const state = {
     highestAvgRankings: [],
   },
   homeAwayFilter: "all",
+  statusFilter: "all",
 };
 
 const seasonStart = "2026-04-01";
@@ -132,6 +133,7 @@ const els = {
   teamFilter: document.querySelector("#teamFilter"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
   homeAwayButtons: document.querySelectorAll("[data-home-away]"),
+  statusFilterButtons: document.querySelectorAll("[data-status-filter]"),
   exportCsv: document.querySelector("#exportCsv"),
   fixturesBody: document.querySelector("#fixturesBody"),
   visibleCount: document.querySelector("#visibleCount"),
@@ -525,6 +527,7 @@ function applyFilters() {
   const term = normaliseKey(els.searchInput.value);
   const team = els.teamFilter.value;
   const homeAway = state.homeAwayFilter;
+  const statusFilter = state.statusFilter;
   const nextDays = Number(els.nextDaysInput.value);
   const useNextDays = els.nextDaysInput.value !== "" && Number.isFinite(nextDays);
   const today = startOfDay(new Date());
@@ -543,6 +546,7 @@ function applyFilters() {
       (!term || haystack.includes(term)) &&
       (!team || row.team === team || row.opponent === team) &&
       (homeAway === "all" || normaliseKey(row.venue) === normaliseKey(homeAway)) &&
+      (statusFilter === "all" || normaliseKey(labelStatus(row)) === statusFilter) &&
       matchesNextDays
     );
   });
@@ -570,12 +574,20 @@ function updateFilters() {
   ].sort((a, b) => a.localeCompare(b));
   updateSelect(els.teamFilter, milfordTeams, "All Milford teams");
   updateHomeAwayButtons();
+  updateStatusFilterButtons();
 }
 
 function updateHomeAwayButtons() {
   els.homeAwayButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.homeAway === state.homeAwayFilter);
     button.setAttribute("aria-pressed", button.dataset.homeAway === state.homeAwayFilter ? "true" : "false");
+  });
+}
+
+function updateStatusFilterButtons() {
+  els.statusFilterButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.statusFilter === state.statusFilter);
+    button.setAttribute("aria-pressed", button.dataset.statusFilter === state.statusFilter ? "true" : "false");
   });
 }
 
@@ -1072,6 +1084,15 @@ els.homeAwayButtons.forEach((button) => {
   button.addEventListener("click", () => {
     state.homeAwayFilter = button.dataset.homeAway || "all";
     updateHomeAwayButtons();
+    renderFixtures();
+    els.visibleCount.textContent = `${applyFilters().length} shown`;
+  });
+});
+
+els.statusFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    state.statusFilter = button.dataset.statusFilter || "all";
+    updateStatusFilterButtons();
     renderFixtures();
     els.visibleCount.textContent = `${applyFilters().length} shown`;
   });
