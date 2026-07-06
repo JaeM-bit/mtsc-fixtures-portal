@@ -447,7 +447,14 @@ h2 {
 
 .metric-row .kpi-range {
   grid-column: 1 / -1;
-  margin-top: -8px;
+  grid-row: 2;
+  justify-self: start;
+  margin-top: -6px;
+}
+
+.metric-row-with-range strong {
+  align-self: start;
+  padding-top: 2px;
 }
 
 .overview-card .kpi-label {
