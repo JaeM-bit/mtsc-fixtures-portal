@@ -451,6 +451,14 @@ h2 {
   margin-top: -8px;
 }
 
+.metric-row-has-range {
+  align-items: start;
+}
+
+.metric-row-has-range strong {
+  padding-top: 1px;
+}
+
 .overview-card .kpi-label {
   display: flex;
   align-items: center;
