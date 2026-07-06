@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=79" />
+    <link rel="stylesheet" href="styles.css?v=80" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
@@ -71,39 +71,44 @@
         <span id="portalFeatures">No new features noted yet.</span>
       </section>
 
-      <section class="kpi-grid" aria-label="Fixture summary">
-        <article>
-          <span class="kpi-label kpi-title" id="totalMatchesLabel">TOTAL MATCHES</span>
-          <strong id="totalMatches">0</strong>
+      <section class="overview-grid" aria-label="Fixture summary">
+        <article class="overview-card">
+          <div class="metric-list">
+            <div class="metric-row">
+              <span class="kpi-label kpi-title" id="totalMatchesLabel">TOTAL MATCHES</span>
+              <strong id="totalMatches">0</strong>
+            </div>
+            <div class="metric-row">
+              <span class="kpi-label">Total Matches Played</span>
+              <strong id="summaryMatchesPlayed">-</strong>
+            </div>
+            <div class="metric-row">
+              <span class="kpi-label">Total Wins</span>
+              <strong id="summaryWins">-</strong>
+            </div>
+          </div>
         </article>
-        <article>
-          <span class="kpi-label">Total Matches Played</span>
-          <strong id="summaryMatchesPlayed">-</strong>
+        <article class="overview-card">
+          <div class="metric-list">
+            <div class="metric-row">
+              <span class="kpi-label kpi-title">Milford Teams</span>
+              <strong id="teamCount">0</strong>
+            </div>
+            <div class="metric-row">
+              <span class="kpi-label kpi-title">Home Matches Next 14 Days</span>
+              <strong id="homeNextCount">0</strong>
+              <span class="kpi-range" id="homeNextRange"></span>
+            </div>
+            <div class="metric-row">
+              <span class="kpi-label kpi-title">Away Matches Next 14 Days</span>
+              <strong id="awayNextCount">0</strong>
+              <span class="kpi-range" id="awayNextRange"></span>
+            </div>
+          </div>
         </article>
-        <article>
-          <span class="kpi-label">Total Wins</span>
-          <strong id="summaryWins">-</strong>
-        </article>
-        <article>
+        <article class="overview-card net-points-card">
           <span class="kpi-label kpi-label-two-line">Teams with top 4 scores of<br />highest avg net points/match<br />(All Matches)</span>
           <div class="summary-ranking-list" id="summaryHighestAvg" aria-label="Teams on the top four average net points scores per match"></div>
-        </article>
-      </section>
-
-      <section class="summary-grid" aria-label="Published match summary">
-        <article>
-          <span class="kpi-label kpi-title">Milford Teams</span>
-          <strong id="teamCount">0</strong>
-        </article>
-        <article>
-          <span class="kpi-label kpi-title">Home Matches Next 14 Days</span>
-          <strong id="homeNextCount">0</strong>
-          <span class="kpi-range" id="homeNextRange"></span>
-        </article>
-        <article>
-          <span class="kpi-label kpi-title">Away Matches Next 14 Days</span>
-          <strong id="awayNextCount">0</strong>
-          <span class="kpi-range" id="awayNextRange"></span>
         </article>
       </section>
 
