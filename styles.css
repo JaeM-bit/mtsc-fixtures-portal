@@ -105,9 +105,9 @@ main {
   min-height: 34px;
   margin: 0 0 12px;
   padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  background: rgba(255, 255, 255, 0.16);
-  color: var(--white);
+  border: 1px solid #cfe7d5;
+  background: #f1fbf3;
+  color: #1c523b;
   box-shadow: none;
 }
 
