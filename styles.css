@@ -420,6 +420,11 @@ h2 {
   padding: 18px 20px;
 }
 
+.metric-card {
+  display: grid;
+  align-content: center;
+}
+
 .metric-list {
   display: grid;
   gap: 12px;
@@ -429,7 +434,7 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 14px;
-  align-items: end;
+  align-items: center;
   min-height: 42px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(216, 225, 218, 0.72);
@@ -447,7 +452,7 @@ h2 {
 
 .overview-card .kpi-label {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   color: var(--muted);
   min-height: 2.2em;
   font-size: 0.76rem !important;
