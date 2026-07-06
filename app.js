@@ -274,7 +274,7 @@ function formatKpiWindow(start, end) {
 
 function displayUploadStatus(uploadedAt) {
   if (!uploadedAt) return;
-  els.fileStatus.textContent = `File Uploaded on ${formatUploadDateTime(new Date(uploadedAt))}`;
+  els.fileStatus.textContent = `Last Refresh on ${formatUploadDateTime(new Date(uploadedAt))}`;
   els.parseStatus.textContent = "";
 }
 
