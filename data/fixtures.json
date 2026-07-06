@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-06T18:08:43+01:00",
+  "uploadedAt": "2026-07-06T18:09:22+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -458,7 +458,7 @@
       "team": "Wimborne Minster MXD1",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-05",
@@ -835,7 +835,7 @@
       "month": "Apr",
       "originalPlanned": 18,
       "count": 17,
-      "played": 17
+      "played": 18
     },
     {
       "month": "May",
@@ -863,14 +863,14 @@
     }
   ],
   "monthlyPlayed": [
-    17,
+    18,
     15,
     16,
     4,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "53",
+    "totalMatchesPlayed": "54",
     "totalWins": "33",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
