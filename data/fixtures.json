@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-06T09:47:30+01:00",
+  "uploadedAt": "2026-07-06T10:16:23+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -896,28 +896,8 @@
         "team": "Milford L3",
         "avgValue": 3.0,
         "percentValue": 0.5714285714285714
-      },
-      {
-        "team": "Milford M2",
-        "avgValue": 3.0,
-        "percentValue": 0.5
-      },
-      {
-        "team": "Milford L1",
-        "avgValue": 2.0,
-        "percentValue": 0.42857142857142855
-      },
-      {
-        "team": "Milford M3",
-        "avgValue": 2.0,
-        "percentValue": 0.8571428571428571
-      },
-      {
-        "team": "Milford MXD1",
-        "avgValue": 2.0,
-        "percentValue": 0.5
       }
     ]
   },
-  "portalFeatures": "1.  Added Status filters for played and booked to quickly get to see booked\n2.  % Played added to the Highest Teams box\n3.  H/A/All buttons added to the filter to enable search by Home etc. Works with mutlple filters (e.g. H and select Milford Teams L1 to see all L1 Home matches)"
+  "portalFeatures": "1.  Changed 'Highest Avg Net Points' from Top 4 teams, to Top 4 scores.  Now shows for example 2 teams in 3rd place scoring and 3 in 4th place scoring (as at July 6)\n1.  Added Status filters for played and booked to quickly get to see booked\n2.  % Played added to the Highest Teams box\n3.  H/A/All buttons added to the filter to enable search by Home etc. Works with mutlple filters (e.g. H and select Milford Teams L1 to see all L1 Home matches)"
 }
