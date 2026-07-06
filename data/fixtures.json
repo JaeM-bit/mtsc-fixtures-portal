@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-06T09:36:24+01:00",
+  "uploadedAt": "2026-07-06T09:40:14+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -449,7 +449,7 @@
       "team": "Victoria Avenue M2",
       "opponent": "Milford M2",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-04",
@@ -467,7 +467,7 @@
       "team": "Milford L2",
       "opponent": "DL Poole L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-05",
@@ -476,7 +476,7 @@
       "team": "DL Poole M1",
       "opponent": "Milford M1",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-09",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 1
+      "played": 4
     },
     {
       "month": "Aug",
@@ -866,12 +866,12 @@
     17,
     15,
     16,
-    1,
+    4,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "50",
-    "totalWins": "32",
+    "totalMatchesPlayed": "53",
+    "totalWins": "33",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford MXD4"
