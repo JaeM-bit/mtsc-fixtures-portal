@@ -100,6 +100,17 @@ main {
   width: fit-content;
 }
 
+.toolbar-help {
+  width: fit-content;
+  min-height: 34px;
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--white);
+  box-shadow: none;
+}
+
 .captain-toolbar {
   grid-template-columns: minmax(260px, 1fr) minmax(220px, 1fr);
 }
@@ -250,6 +261,72 @@ h2 {
 .button:disabled {
   cursor: not-allowed;
   opacity: 0.55;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.help-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(23, 32, 28, 0.62);
+}
+
+.help-modal.is-open {
+  display: flex;
+}
+
+.help-dialog {
+  width: min(720px, 100%);
+  max-height: min(720px, calc(100vh - 44px));
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.26);
+}
+
+.help-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.help-head h2 {
+  font-size: 1.35rem;
+}
+
+.help-close {
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+  color: var(--ink);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.help-body {
+  display: grid;
+  gap: 14px;
+  padding: 20px 22px 24px;
+  color: var(--ink);
+}
+
+.help-body p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
 }
 
 .upload-note {

@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=75" />
+    <link rel="stylesheet" href="styles.css?v=76" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
@@ -20,7 +20,7 @@
       data-domain="jaem-bit.github.io"
       src="https://plausible.io/js/script.js"
     ></script>
-    <script defer src="app.js?v=72"></script>
+    <script defer src="app.js?v=73"></script>
   </head>
   <body>
     <header class="app-header">
@@ -45,6 +45,9 @@
           >
             Return to Milford League Tennis Site
           </a>
+          <button class="button toolbar-help" id="openHelp" type="button">
+            How to get the best out of the portal
+          </button>
           <h1>Dorset Summer League 2026 Matches</h1>
         </div>
         <div class="hero-logo-wrap">
@@ -191,5 +194,27 @@
       </section>
     </main>
 
+    <div class="help-modal" id="helpModal" aria-hidden="true">
+      <div class="help-dialog" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+        <div class="help-head">
+          <h2 id="helpTitle">How to get the best out of the portal</h2>
+          <button class="help-close" id="closeHelp" type="button" aria-label="Close help">Close</button>
+        </div>
+        <div class="help-body">
+          <p>
+            The Highest Avg Net Points / Match takes all points FOR less all points AGAINST for each team and divides by the number of matches played, hence the view showing % matches played is an important factor.
+          </p>
+          <p>
+            Use the filter box to filter by column, team, opponent, date, status etc. Then try partial text, e.g. Jul will show only July matches. Hit the Home button below that and it will show July home matches, then try hitting Booked. That will add only the booked matches to the view and so on.
+          </p>
+          <p>
+            Also filter by team to see all matches for a specific team and use further filters if you only want to see Booked.
+          </p>
+          <p>
+            One of the filters is Matches in Next Days. If you type in 4 here, you will see all Milford teams' matches in the next 4 days. You can then filter more as above.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

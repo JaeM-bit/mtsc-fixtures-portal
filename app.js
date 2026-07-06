@@ -125,6 +125,9 @@ const els = {
   summaryWins: document.querySelector("#summaryWins"),
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
   portalFeatures: document.querySelector("#portalFeatures"),
+  openHelp: document.querySelector("#openHelp"),
+  closeHelp: document.querySelector("#closeHelp"),
+  helpModal: document.querySelector("#helpModal"),
   viewsToday: document.querySelector("#viewsToday"),
   uniqueVisitorsToday: document.querySelector("#uniqueVisitorsToday"),
   weeklyViewsAverage: document.querySelector("#weeklyViewsAverage"),
@@ -1032,6 +1035,22 @@ function renderAnalytics() {
   }
 }
 
+function openHelpModal() {
+  if (!els.helpModal) return;
+  els.helpModal.classList.add("is-open");
+  els.helpModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  if (els.closeHelp) els.closeHelp.focus();
+}
+
+function closeHelpModal() {
+  if (!els.helpModal) return;
+  els.helpModal.classList.remove("is-open");
+  els.helpModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  if (els.openHelp) els.openHelp.focus();
+}
+
 if (els.currentFile) {
   els.currentFile.addEventListener("change", async (event) => {
     const [file] = event.target.files;
@@ -1114,6 +1133,26 @@ if (els.exportCsv) {
     downloadCsv(applyFilters());
   });
 }
+
+if (els.openHelp) {
+  els.openHelp.addEventListener("click", openHelpModal);
+}
+
+if (els.closeHelp) {
+  els.closeHelp.addEventListener("click", closeHelpModal);
+}
+
+if (els.helpModal) {
+  els.helpModal.addEventListener("click", (event) => {
+    if (event.target === els.helpModal) closeHelpModal();
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && els.helpModal?.classList.contains("is-open")) {
+    closeHelpModal();
+  }
+});
 
 async function initialisePublishedData() {
   const sharedData = await loadSharedPublishedData();
