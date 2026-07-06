@@ -100,17 +100,6 @@ main {
   width: fit-content;
 }
 
-.toolbar-help {
-  width: fit-content;
-  min-height: 34px;
-  margin: 0 0 12px;
-  padding: 8px 14px;
-  border: 1px solid #cfe7d5;
-  background: #f1fbf3;
-  color: #1c523b;
-  box-shadow: none;
-}
-
 .captain-toolbar {
   grid-template-columns: minmax(260px, 1fr) minmax(220px, 1fr);
 }
@@ -261,6 +250,17 @@ h2 {
 .button:disabled {
   cursor: not-allowed;
   opacity: 0.55;
+}
+
+.toolbar-help {
+  width: fit-content;
+  min-height: 34px;
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  border: 1px solid #cfe7d5;
+  background: #f1fbf3;
+  color: #1c523b;
+  box-shadow: none;
 }
 
 .modal-open {
