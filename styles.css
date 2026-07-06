@@ -106,6 +106,7 @@ main {
 
 .hero-logo-wrap {
   position: relative;
+  display: block;
   width: clamp(150px, 18vw, 210px);
   aspect-ratio: 1 / 1;
   justify-self: center;
@@ -121,6 +122,22 @@ main {
   overflow: hidden;
   transform: perspective(650px) rotateX(6deg) rotateY(-8deg);
   transform-style: preserve-3d;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hero-logo-wrap:hover,
+.hero-logo-wrap:focus-visible {
+  box-shadow:
+    0 30px 42px rgba(0, 0, 0, 0.32),
+    0 12px 16px rgba(0, 0, 0, 0.22),
+    inset 0 6px 10px rgba(255, 255, 255, 0.92),
+    inset 0 -10px 16px rgba(20, 63, 50, 0.18);
+  transform: perspective(650px) rotateX(4deg) rotateY(-5deg) translateY(-2px);
+}
+
+.hero-logo-wrap:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
 }
 
 .hero-logo-wrap::before {
