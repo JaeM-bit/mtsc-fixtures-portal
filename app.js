@@ -424,7 +424,7 @@ function readReportSummary(sheet) {
   }
 
   ranked.sort((a, b) => b.avgValue - a.avgValue || a.team.localeCompare(b.team));
-  const highestAvgRankings = ranked.slice(0, 4);
+  const highestAvgRankings = rankingsForTopScores(ranked, 4);
   const highestAvgPointsPerMatch = highestAvgRankings[0]?.avgValue ?? "";
   const highestAvgTeams = highestAvgRankings
     .filter((item) => item.avgValue === highestAvgPointsPerMatch)
@@ -437,6 +437,17 @@ function readReportSummary(sheet) {
     highestAvgTeams,
     highestAvgRankings,
   };
+}
+
+function rankingsForTopScores(rankings, scoreLimit) {
+  const topScores = [];
+  rankings.forEach((item) => {
+    if (!topScores.includes(item.avgValue)) {
+      topScores.push(item.avgValue);
+    }
+  });
+  const allowedScores = new Set(topScores.slice(0, scoreLimit));
+  return rankings.filter((item) => allowedScores.has(item.avgValue));
 }
 
 function assignStableIds(rows) {
@@ -673,7 +684,7 @@ function renderKpis() {
   }
   if (els.summaryHighestAvg) {
     const rankings = Array.isArray(state.reportSummary.highestAvgRankings)
-      ? state.reportSummary.highestAvgRankings.slice(0, 4)
+      ? rankingsForTopScores(state.reportSummary.highestAvgRankings, 4)
       : [];
     els.summaryHighestAvg.innerHTML = rankings.length
       ? `

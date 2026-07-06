@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-06T09:40:58+01:00",
+  "uploadedAt": "2026-07-06T09:47:30+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -896,6 +896,26 @@
         "team": "Milford L3",
         "avgValue": 3.0,
         "percentValue": 0.5714285714285714
+      },
+      {
+        "team": "Milford M2",
+        "avgValue": 3.0,
+        "percentValue": 0.5
+      },
+      {
+        "team": "Milford L1",
+        "avgValue": 2.0,
+        "percentValue": 0.42857142857142855
+      },
+      {
+        "team": "Milford M3",
+        "avgValue": 2.0,
+        "percentValue": 0.8571428571428571
+      },
+      {
+        "team": "Milford MXD1",
+        "avgValue": 2.0,
+        "percentValue": 0.5
       }
     ]
   },
