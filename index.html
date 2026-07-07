@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=87" />
+    <link rel="stylesheet" href="styles.css?v=88" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
@@ -20,7 +20,7 @@
       data-domain="jaem-bit.github.io"
       src="https://plausible.io/js/script.js"
     ></script>
-    <script defer src="app.js?v=74"></script>
+    <script defer src="app.js?v=75"></script>
   </head>
   <body>
     <header class="app-header">
@@ -71,9 +71,11 @@
         <span id="portalFeatures">No new features noted yet.</span>
       </section>
 
-      <section class="didja-know" tabindex="0" aria-label="Didja know">
-        <span class="didja-title">Didja know</span>
-        <span class="didja-tooltip" role="tooltip">
+      <section class="didja-wrap">
+        <button class="didja-know" id="didjaKnow" type="button" aria-expanded="false" aria-describedby="didjaTooltip">
+          Didja know
+        </button>
+        <span class="didja-tooltip" id="didjaTooltip" role="tooltip" aria-live="polite">
           To save the link on your phone home screen, when on the web site hit the share button and find 'add to home screen'. It will be saved as a web app and an easy click from your mobile home screen.
         </span>
       </section>

@@ -128,6 +128,7 @@ const els = {
   openHelp: document.querySelector("#openHelp"),
   closeHelp: document.querySelector("#closeHelp"),
   helpModal: document.querySelector("#helpModal"),
+  didjaKnow: document.querySelector("#didjaKnow"),
   viewsToday: document.querySelector("#viewsToday"),
   uniqueVisitorsToday: document.querySelector("#uniqueVisitorsToday"),
   weeklyViewsAverage: document.querySelector("#weeklyViewsAverage"),
@@ -1051,6 +1052,18 @@ function closeHelpModal() {
   if (els.openHelp) els.openHelp.focus();
 }
 
+function closeDidjaTooltip() {
+  if (!els.didjaKnow) return;
+  els.didjaKnow.classList.remove("is-open");
+  els.didjaKnow.setAttribute("aria-expanded", "false");
+}
+
+function toggleDidjaTooltip() {
+  if (!els.didjaKnow) return;
+  const isOpen = els.didjaKnow.classList.toggle("is-open");
+  els.didjaKnow.setAttribute("aria-expanded", isOpen ? "true" : "false");
+}
+
 if (els.currentFile) {
   els.currentFile.addEventListener("change", async (event) => {
     const [file] = event.target.files;
@@ -1148,9 +1161,24 @@ if (els.helpModal) {
   });
 }
 
+if (els.didjaKnow) {
+  els.didjaKnow.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleDidjaTooltip();
+  });
+}
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".didja-wrap")) closeDidjaTooltip();
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && els.helpModal?.classList.contains("is-open")) {
     closeHelpModal();
+  }
+  if (event.key === "Escape" && els.didjaKnow?.classList.contains("is-open")) {
+    closeDidjaTooltip();
+    els.didjaKnow.focus();
   }
 });
 
