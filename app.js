@@ -274,9 +274,13 @@ function formatKpiWindow(start, end) {
 }
 
 function displayUploadStatus(uploadedAt) {
-  if (!uploadedAt) return;
+  if (!els.fileStatus) return;
+  if (!uploadedAt) {
+    els.fileStatus.textContent = "Last Refresh unavailable.";
+    return;
+  }
   els.fileStatus.textContent = `Last Refresh on ${formatUploadDateTime(new Date(uploadedAt))}`;
-  els.parseStatus.textContent = "";
+  if (els.parseStatus) els.parseStatus.textContent = "";
 }
 
 function displayPortalFeatures(features) {
@@ -1187,6 +1191,7 @@ async function initialisePublishedData() {
   const publishedData = sharedData || loadPublishedData();
 
   if (publishedData) {
+    displayUploadStatus(publishedData.uploadedAt);
     setRows(
       publishedData.rows || [],
       [],
@@ -1195,7 +1200,6 @@ async function initialisePublishedData() {
       publishedData.reportSummary || state.reportSummary,
       publishedData.portalFeatures || state.portalFeatures
     );
-    displayUploadStatus(publishedData.uploadedAt);
     displayPortalFeatures(publishedData.portalFeatures);
     if (els.downloadJson) {
       els.downloadJson.disabled = false;
