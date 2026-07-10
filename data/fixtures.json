@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-10T13:55:39+01:00",
+  "uploadedAt": "2026-07-10T13:59:32+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -485,7 +485,7 @@
       "team": "Milford M3",
       "opponent": "Southbourne M2",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-14",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 4
+      "played": 5
     },
     {
       "month": "Aug",
@@ -866,11 +866,11 @@
     18,
     15,
     16,
-    4,
+    5,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "54",
+    "totalMatchesPlayed": "55",
     "totalWins": "33",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
@@ -906,11 +906,6 @@
         "team": "Milford L1",
         "avgValue": 2.0,
         "percentValue": 0.42857142857142855
-      },
-      {
-        "team": "Milford M3",
-        "avgValue": 2.0,
-        "percentValue": 0.8571428571428571
       },
       {
         "team": "Milford MXD1",
