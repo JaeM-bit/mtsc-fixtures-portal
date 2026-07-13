@@ -273,7 +273,7 @@ function displayUploadStatus(uploadedAt) {
 
 function displayPortalFeatures(features) {
   if (!els.portalFeatures) return;
-  els.portalFeatures.textContent = features || "No new features noted yet.";
+  els.portalFeatures.textContent = features || "";
 }
 
 function buildPublishedPayload(
@@ -854,7 +854,7 @@ function setRows(
   state.monthlyPlanned = monthlyPlanned;
   state.monthlyPlayed = monthlyPlayed;
   state.reportSummary = reportSummary || state.reportSummary;
-  state.portalFeatures = portalFeatures || state.portalFeatures;
+  state.portalFeatures = portalFeatures ?? state.portalFeatures;
   state.rows = compareRows(state.current, state.revised);
   renderAll();
 }
@@ -1032,7 +1032,7 @@ if (els.currentFile) {
         workbookData.monthlyPlanned,
         workbookData.monthlyPlayed,
         workbookData.reportSummary || state.reportSummary,
-        workbookData.portalFeatures || state.portalFeatures
+        workbookData.portalFeatures
       );
       setRows(
         published.rows,
@@ -1150,7 +1150,7 @@ async function initialisePublishedData() {
       publishedData.monthlyPlanned || [],
       publishedData.monthlyPlayed || [],
       publishedData.reportSummary || state.reportSummary,
-      publishedData.portalFeatures || state.portalFeatures
+      publishedData.portalFeatures ?? state.portalFeatures
     );
     displayPortalFeatures(publishedData.portalFeatures);
     if (els.downloadJson) {

@@ -110,7 +110,7 @@ Multi-line text is supported and displays as line breaks on the site.
 ## Import Rules To Remember
 
 - The workbook must contain `By Date` and `League Results`.
-- `Portal Features` is optional; if missing or blank, the site shows `No new features noted yet.`
+- `Portal Features` is optional; if missing or blank, the site leaves the feature text blank.
 - Dates may be Excel serial dates, ISO dates, or `dd/mm/yyyy` style dates.
 - Times may be Excel time values, `HH:MM`, or compact values like `1830`.
 - Empty status cells are converted to `Published`.
