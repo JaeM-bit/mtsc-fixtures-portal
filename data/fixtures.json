@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-13T14:30:05+01:00",
+  "uploadedAt": "2026-07-13T14:31:05+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -914,5 +914,5 @@
       }
     ]
   },
-  "portalFeatures": "1.  Added a 'didja know' button for hovering to see how to save it to home screen on mobile - 7/6\n2.  Added 'How to...' button at top - 6/7\n3.  Added button to logo to go back to the MTSC main site - 6/7\n4.  Changed 'Highest Avg Net Points' from Top 4 teams, to Top 4 scores.  Now shows for example 2 teams in 3rd place scoring and 3 in 4th place scoring (as at July 6) - 6/7"
+  "portalFeatures": ""
 }
