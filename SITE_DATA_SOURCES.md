@@ -24,7 +24,7 @@ The site import expects these workbook tabs:
 | --- | --- | --- |
 | `By Date` | Yes | Main fixture list and monthly match totals. |
 | `League Results` | Yes | Played/win totals and top average net points rankings. |
-| `Portal Features` | No | Text shown in the `New and Recent Features` box. |
+| `Portal Features` | No | Text shown in the `Recent Features in the Past Week` box. |
 
 Sheet matching is case-insensitive after trimming spaces, so `by date` and `By Date` both work.
 
@@ -82,7 +82,7 @@ The importer reads all rows in this range, sorts by average net points descendin
 
 | Excel cell | JSON field | Site box |
 | --- | --- | --- |
-| `A1` | `portalFeatures` | `New and Recent Features`. |
+| `A1` | `portalFeatures` | `Recent Features in the Past Week`. |
 
 Multi-line text is supported and displays as line breaks on the site.
 
@@ -91,7 +91,7 @@ Multi-line text is supported and displays as line breaks on the site.
 | Site area | Data source |
 | --- | --- |
 | `Last Refresh on ...` status | `data/fixtures.json` field `uploadedAt`. |
-| `New and Recent Features` | `Portal Features!A1` through `portalFeatures`. |
+| `Recent Features in the Past Week` | `Portal Features!A1` through `portalFeatures`. |
 | `TOTAL MATCHES` | Count of imported `rows[]`. |
 | `Total Matches Played` | `League Results!T21`. |
 | `Total Wins` | `League Results!U21`. |
