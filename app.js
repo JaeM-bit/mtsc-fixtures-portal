@@ -4,13 +4,6 @@ const state = {
   rows: [],
   monthlyPlanned: [],
   monthlyPlayed: [],
-  analytics: {
-    viewsToday: "",
-    uniqueVisitorsToday: "",
-    totalViewsThisWeek: "",
-    uniqueVisitorsThisWeek: "",
-    updatedAt: "",
-  },
   portalFeatures: "",
   reportSummary: {
     totalMatchesPlayed: "",
@@ -27,7 +20,6 @@ const seasonStart = "2026-04-01";
 const seasonEnd = "2026-08-31";
 const storageKey = "mtsc-fixtures-published-data";
 const publishedJsonUrl = "data/fixtures.json";
-const analyticsJsonUrl = "data/analytics.json";
 
 const sampleRows = [
   {
@@ -129,10 +121,6 @@ const els = {
   closeHelp: document.querySelector("#closeHelp"),
   helpModal: document.querySelector("#helpModal"),
   didjaKnow: document.querySelector("#didjaKnow"),
-  viewsToday: document.querySelector("#viewsToday"),
-  uniqueVisitorsToday: document.querySelector("#uniqueVisitorsToday"),
-  weeklyViewsAverage: document.querySelector("#weeklyViewsAverage"),
-  uniqueVisitorsThisWeek: document.querySelector("#uniqueVisitorsThisWeek"),
   searchInput: document.querySelector("#searchInput"),
   teamFilter: document.querySelector("#teamFilter"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
@@ -715,7 +703,6 @@ function renderKpis() {
         `
       : '<div class="summary-ranking-empty">-</div>';
   }
-  renderAnalytics();
 }
 
 function renderReport() {
@@ -1005,41 +992,6 @@ function downloadJson(payload) {
   window.setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-async function loadAnalyticsData() {
-  try {
-    const response = await fetch(`${analyticsJsonUrl}?v=${Date.now()}`, {
-      cache: "no-store",
-    });
-    if (!response.ok) return null;
-    const payload = await response.json();
-    if (!payload || typeof payload !== "object") return null;
-    return payload;
-  } catch {
-    return null;
-  }
-}
-
-function renderAnalytics() {
-  if (els.viewsToday) {
-    els.viewsToday.textContent = formatCompactNumber(state.analytics.viewsToday);
-  }
-  if (els.uniqueVisitorsToday) {
-    els.uniqueVisitorsToday.textContent = formatCompactNumber(
-      state.analytics.uniqueVisitorsToday
-    );
-  }
-  if (els.weeklyViewsAverage) {
-    els.weeklyViewsAverage.textContent = formatCompactNumber(
-      state.analytics.totalViewsThisWeek
-    );
-  }
-  if (els.uniqueVisitorsThisWeek) {
-    els.uniqueVisitorsThisWeek.textContent = formatCompactNumber(
-      state.analytics.uniqueVisitorsThisWeek
-    );
-  }
-}
-
 function openHelpModal() {
   if (!els.helpModal) return;
   els.helpModal.classList.add("is-open");
@@ -1208,18 +1160,4 @@ async function initialisePublishedData() {
   }
 }
 
-async function initialiseAnalytics() {
-  const analyticsData = await loadAnalyticsData();
-  if (!analyticsData) return;
-  state.analytics = {
-    viewsToday: analyticsData.viewsToday || "",
-    uniqueVisitorsToday: analyticsData.uniqueVisitorsToday || "",
-    totalViewsThisWeek: analyticsData.totalViewsThisWeek || "",
-    uniqueVisitorsThisWeek: analyticsData.uniqueVisitorsThisWeek || "",
-    updatedAt: analyticsData.updatedAt || "",
-  };
-  renderAnalytics();
-}
-
 initialisePublishedData();
-initialiseAnalytics();

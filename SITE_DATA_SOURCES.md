@@ -15,7 +15,6 @@ That path is stored in `.codex/workbook-watch-path` and is used by `Watch Workbo
 | File | Purpose | Created/updated by |
 | --- | --- | --- |
 | `data/fixtures.json` | Fixture rows, monthly totals, report summary, and portal feature text shown on the site. | `scripts/watch-workbook.py`, or by importing a downloaded `fixtures.json` with `Update Fixtures.command`. |
-| `data/analytics.json` | Plausible pageview/visitor counts shown on the publisher/admin page. | `.github/workflows/update-plausible-analytics.yml` running `scripts/update-plausible-analytics.mjs`. |
 
 ## Workbook Sheets Used
 
@@ -69,9 +68,9 @@ Rows `108:112` feed the `Matches by Month` report.
 
 ### Top Average Net Points Rankings
 
-Rows `7:20` feed the `Top 4 Teams with Highest Avg Net Points/Match (All Matches)` box.
+Rows `7:20` feed the `Teams with top 4 scores of highest avg net points/match (All Matches)` box.
 
-The importer reads all rows in this range, sorts by average net points descending, then displays the top 4 teams.
+The importer reads all rows in this range, sorts by average net points descending, then displays teams in the top 4 distinct scores. Tied teams are included, so the box can show more than 4 teams.
 
 | Excel cells | JSON field | Site column |
 | --- | --- | --- |
@@ -87,37 +86,16 @@ The importer reads all rows in this range, sorts by average net points descendin
 
 Multi-line text is supported and displays as line breaks on the site.
 
-## Analytics Feed
-
-Analytics do not come from the workbook. They come from Plausible and are written to `data/analytics.json`.
-
-The GitHub workflow runs every 15 minutes and reads:
-
-| Plausible query | JSON field | Site/admin use |
-| --- | --- | --- |
-| `pageviews` for `day` | `viewsToday` | Views Today. |
-| `visitors` for `day` | `uniqueVisitorsToday` | Unique Visitors Today. |
-| `pageviews` for Monday-Sunday current week | `totalViewsThisWeek` and `pageviews` | Total Views This Week. |
-| `visitors` for Monday-Sunday current week | `uniqueVisitorsThisWeek` | Unique Visitors This Week. |
-| Current date | `updatedAt` | Last update reference. |
-
-The analytics workflow depends on these GitHub secrets:
-
-| Secret | Purpose |
-| --- | --- |
-| `PLAUSIBLE_SITE_ID` | Plausible site/domain identifier. |
-| `PLAUSIBLE_API_KEY` | Plausible API access token. |
-
 ## Site Display Mapping
 
 | Site area | Data source |
 | --- | --- |
-| `File Uploaded on ...` status | `data/fixtures.json` field `uploadedAt`. |
+| `Last Refresh on ...` status | `data/fixtures.json` field `uploadedAt`. |
 | `New and Recent Features` | `Portal Features!A1` through `portalFeatures`. |
 | `TOTAL MATCHES` | Count of imported `rows[]`. |
 | `Total Matches Played` | `League Results!T21`. |
 | `Total Wins` | `League Results!U21`. |
-| `Top 4 Teams...` | `League Results!K7:K20`, `Z7:Z20`, `AC7:AC20`. |
+| `Teams with top 4 scores...` | `League Results!K7:K20`, `Z7:Z20`, `AC7:AC20`. |
 | `Milford Teams` | Unique imported teams/opponents whose name starts with `Milford`. |
 | `Home Matches Next 14 Days` | Imported rows dated today through the next 13 days where `team` starts with `Milford`. |
 | `Away Matches Next 14 Days` | Imported rows dated today through the next 13 days where `opponent` starts with `Milford`. |

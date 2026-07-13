@@ -698,34 +698,6 @@ h2 {
   color: var(--white);
 }
 
-.analytics-card {
-  display: grid;
-  gap: 8px;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--white);
-  box-shadow: var(--shadow);
-}
-
-.analytics-card strong {
-  display: block;
-  font-size: 1.85rem;
-  line-height: 1;
-}
-
-.analytics-note {
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.analytics-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
 .data-area,
 .report-panel {
   min-width: 0;
