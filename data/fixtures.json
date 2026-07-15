@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-15T15:07:43+01:00",
+  "uploadedAt": "2026-07-15T15:09:24+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -494,7 +494,7 @@
       "team": "Southbourne L1",
       "opponent": "Milford L1",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-14",
@@ -503,7 +503,7 @@
       "team": "West Hants L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-16",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 5
+      "played": 7
     },
     {
       "month": "Aug",
@@ -866,7 +866,7 @@
     18,
     15,
     16,
-    5,
+    7,
     0
   ],
   "reportSummary": {
