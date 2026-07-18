@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-18T23:31:08+01:00",
+  "uploadedAt": "2026-07-18T23:45:30+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -521,7 +521,7 @@
       "team": "Milford L4",
       "opponent": "St Leonards L2",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-18",
@@ -530,7 +530,7 @@
       "team": "Milford M2",
       "opponent": "Swanage M1",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-21",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 7
+      "played": 9
     },
     {
       "month": "Aug",
@@ -866,12 +866,12 @@
     18,
     15,
     16,
-    7,
+    9,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "57",
-    "totalWins": "33",
+    "totalMatchesPlayed": "59",
+    "totalWins": "34",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford MXD4"
@@ -883,9 +883,9 @@
         "percentValue": 0.7142857142857143
       },
       {
-        "team": "Milford L4",
-        "avgValue": 3.5,
-        "percentValue": 0.6666666666666666
+        "team": "Milford M2",
+        "avgValue": 3.6,
+        "percentValue": 0.625
       },
       {
         "team": "Milford MXD2",
@@ -896,16 +896,6 @@
         "team": "Milford L3",
         "avgValue": 3.0,
         "percentValue": 0.5714285714285714
-      },
-      {
-        "team": "Milford M2",
-        "avgValue": 3.0,
-        "percentValue": 0.5
-      },
-      {
-        "team": "Milford MXD1",
-        "avgValue": 2.0,
-        "percentValue": 0.5
       }
     ]
   },
