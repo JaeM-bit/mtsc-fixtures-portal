@@ -116,6 +116,8 @@ const els = {
   summaryMatchesPlayed: document.querySelector("#summaryMatchesPlayed"),
   summaryWins: document.querySelector("#summaryWins"),
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
+  featureLine: document.querySelector("#featureLine"),
+  featureLabel: document.querySelector("#featureLabel"),
   portalFeatures: document.querySelector("#portalFeatures"),
   openHelp: document.querySelector("#openHelp"),
   closeHelp: document.querySelector("#closeHelp"),
@@ -273,7 +275,10 @@ function displayUploadStatus(uploadedAt) {
 
 function displayPortalFeatures(features) {
   if (!els.portalFeatures) return;
-  els.portalFeatures.textContent = features || "";
+  const text = features || "";
+  els.portalFeatures.textContent = text;
+  if (els.featureLine) els.featureLine.classList.toggle("is-empty", !text.trim());
+  if (els.featureLabel) els.featureLabel.hidden = !text.trim();
 }
 
 function buildPublishedPayload(

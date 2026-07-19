@@ -15,7 +15,7 @@
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=78"></script>
+    <script defer src="app.js?v=79"></script>
   </head>
   <body>
     <header class="app-header">
@@ -61,8 +61,8 @@
         <span id="parseStatus"></span>
       </section>
 
-      <section class="feature-line" aria-live="polite">
-        <span class="feature-label">Recent Features in the Past Week</span>
+      <section class="feature-line is-empty" id="featureLine" aria-live="polite">
+        <span class="feature-label" id="featureLabel" hidden>Recent Features in the Past Week</span>
         <span id="portalFeatures"></span>
       </section>
 

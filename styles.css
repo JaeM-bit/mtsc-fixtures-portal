@@ -378,6 +378,10 @@ h2 {
   font-size: 0.92rem;
 }
 
+.feature-line.is-empty {
+  min-height: 45px;
+}
+
 .didja-wrap {
   position: relative;
   width: fit-content;
