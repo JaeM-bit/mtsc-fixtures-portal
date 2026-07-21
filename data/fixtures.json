@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-21T16:13:01+01:00",
+  "uploadedAt": "2026-07-21T16:16:12+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -512,7 +512,7 @@
       "team": "Milford MXD3",
       "opponent": "East Dorset MXD3",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-18",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 9
+      "played": 10
     },
     {
       "month": "Aug",
@@ -866,11 +866,11 @@
     18,
     15,
     16,
-    9,
+    10,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "59",
+    "totalMatchesPlayed": "60",
     "totalWins": "34",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
