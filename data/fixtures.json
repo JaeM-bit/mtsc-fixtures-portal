@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-23T16:31:11+01:00",
+  "uploadedAt": "2026-07-23T16:31:17+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -539,7 +539,7 @@
       "team": "Milford L2",
       "opponent": "Southbourne L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-23",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 0
+      "played": 1
     }
   ],
   "monthlyPlayed": [
@@ -867,7 +867,7 @@
     15,
     16,
     10,
-    0
+    1
   ],
   "reportSummary": {
     "totalMatchesPlayed": "61",
