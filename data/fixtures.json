@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-25T19:10:19+01:00",
+  "uploadedAt": "2026-07-25T19:11:39+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -557,7 +557,7 @@
       "team": "Milford L60",
       "opponent": "East Dorset L60",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-25",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 10
+      "played": 11
     },
     {
       "month": "Aug",
@@ -866,12 +866,12 @@
     18,
     15,
     16,
-    10,
+    11,
     1
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "61",
-    "totalWins": "34",
+    "totalMatchesPlayed": "62",
+    "totalWins": "35",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford MXD4"
