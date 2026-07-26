@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-26T11:49:20+01:00",
+  "uploadedAt": "2026-07-26T11:49:52+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -566,7 +566,7 @@
       "team": "Milford L1",
       "opponent": "Swanage L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-25",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 11
+      "played": 12
     },
     {
       "month": "Aug",
@@ -866,12 +866,12 @@
     18,
     15,
     16,
-    11,
+    12,
     1
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "62",
-    "totalWins": "35",
+    "totalMatchesPlayed": "63",
+    "totalWins": "36",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford MXD4"
