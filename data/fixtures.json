@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-26T22:54:42+01:00",
+  "uploadedAt": "2026-07-26T22:55:28+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -584,7 +584,7 @@
       "team": "DL Ringwood L2",
       "opponent": "Milford L5",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-26",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 12
+      "played": 13
     },
     {
       "month": "Aug",
@@ -866,11 +866,11 @@
     18,
     15,
     16,
-    12,
+    13,
     1
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "63",
+    "totalMatchesPlayed": "64",
     "totalWins": "36",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
