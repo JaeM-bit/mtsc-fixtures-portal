@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-27T14:37:34+01:00",
+  "uploadedAt": "2026-07-27T14:38:49+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -593,7 +593,7 @@
       "team": "Milford M45",
       "opponent": "East Dorset M45 +2",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-28",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 13
+      "played": 14
     },
     {
       "month": "Aug",
@@ -866,11 +866,11 @@
     18,
     15,
     16,
-    13,
+    14,
     1
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "64",
+    "totalMatchesPlayed": "65",
     "totalWins": "36",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
