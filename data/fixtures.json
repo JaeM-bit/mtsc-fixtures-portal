@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-30T12:38:08+01:00",
+  "uploadedAt": "2026-07-30T12:41:27+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -575,7 +575,7 @@
       "team": "Victoria Avenue MXD1",
       "opponent": "Milford MXD2",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-26",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 16
+      "played": 17
     },
     {
       "month": "Aug",
@@ -866,11 +866,11 @@
     17,
     15,
     16,
-    16,
+    17,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "65",
+    "totalMatchesPlayed": "66",
     "totalWins": "36",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
@@ -888,14 +888,14 @@
         "percentValue": 0.625
       },
       {
-        "team": "Milford MXD2",
-        "avgValue": 3.5,
-        "percentValue": 0.5714285714285714
-      },
-      {
         "team": "Milford L3",
         "avgValue": 3.0,
         "percentValue": 0.5714285714285714
+      },
+      {
+        "team": "Milford L4",
+        "avgValue": 2.6,
+        "percentValue": 0.8333333333333334
       }
     ]
   },
