@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-07-31T12:59:37+01:00",
+  "uploadedAt": "2026-07-31T13:01:14+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -611,7 +611,7 @@
       "team": "Milford L3",
       "opponent": "East Dorset L3",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-02",
@@ -853,7 +853,7 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 20,
-      "played": 17
+      "played": 18
     },
     {
       "month": "Aug",
@@ -866,11 +866,11 @@
     17,
     15,
     16,
-    17,
+    18,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "66",
+    "totalMatchesPlayed": "67",
     "totalWins": "36",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
@@ -888,14 +888,19 @@
         "percentValue": 0.625
       },
       {
-        "team": "Milford L3",
-        "avgValue": 3.0,
-        "percentValue": 0.5714285714285714
-      },
-      {
         "team": "Milford L4",
         "avgValue": 2.6,
         "percentValue": 0.8333333333333334
+      },
+      {
+        "team": "Milford L1",
+        "avgValue": 2.2,
+        "percentValue": 0.7142857142857143
+      },
+      {
+        "team": "Milford L3",
+        "avgValue": 2.2,
+        "percentValue": 0.7142857142857143
       }
     ]
   },
