@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-02T12:42:30+01:00",
+  "uploadedAt": "2026-08-02T12:43:32+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -614,6 +614,15 @@
       "status": "played"
     },
     {
+      "date": "2026-07-31",
+      "day": "Fri",
+      "time": "10:30",
+      "team": "Milford MXD1",
+      "opponent": "Dorchester MXD1",
+      "venue": "H",
+      "status": "played"
+    },
+    {
       "date": "2026-08-02",
       "day": "Sun",
       "time": "15:30",
@@ -819,15 +828,6 @@
       "opponent": "DL Poole MXD1",
       "venue": "H",
       "status": "Booked"
-    },
-    {
-      "date": "2026-07-31",
-      "day": "Fri",
-      "time": "10:30",
-      "team": "Milford MXD1",
-      "opponent": "Dorchester MXD1",
-      "venue": "H",
-      "status": "played"
     }
   ],
   "monthlyPlanned": [
