@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-02T12:56:22+01:00",
+  "uploadedAt": "2026-08-02T12:57:23+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -295,15 +295,6 @@
       "time": "18:30",
       "team": "Milford M45",
       "opponent": "St Leonards M45 +2",
-      "venue": "H",
-      "status": "played"
-    },
-    {
-      "date": "2026-06-06",
-      "day": "Sat",
-      "time": "10:30",
-      "team": "Milford MXD1",
-      "opponent": "Dorchester MXD1",
       "venue": "H",
       "status": "played"
     },
@@ -623,6 +614,15 @@
       "status": "played"
     },
     {
+      "date": "2026-07-31",
+      "day": "Fri",
+      "time": "10:30",
+      "team": "Milford MXD1",
+      "opponent": "Dorchester MXD1",
+      "venue": "H",
+      "status": "played"
+    },
+    {
       "date": "2026-08-02",
       "day": "Sun",
       "time": "15:30",
@@ -846,14 +846,14 @@
     {
       "month": "Jun",
       "originalPlanned": 22,
-      "count": 17,
-      "played": 17
+      "count": 16,
+      "played": 16
     },
     {
       "month": "Jul",
       "originalPlanned": 18,
-      "count": 20,
-      "played": 19
+      "count": 21,
+      "played": 20
     },
     {
       "month": "Aug",
@@ -865,43 +865,42 @@
   "monthlyPlayed": [
     17,
     15,
-    17,
-    19,
+    16,
+    20,
     0
   ],
   "reportSummary": {
     "totalMatchesPlayed": "69",
-    "totalWins": "37",
-    "highestAvgPointsPerMatch": 3.6,
+    "totalWins": "36",
+    "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
-      "Milford L4",
       "Milford MXD4"
     ],
     "highestAvgRankings": [
       {
-        "team": "Milford L4",
-        "avgValue": 3.6,
-        "percentValue": 0.8333333333333334
-      },
-      {
         "team": "Milford MXD4",
-        "avgValue": 3.6,
+        "avgValue": 6.0,
         "percentValue": 0.7142857142857143
       },
       {
-        "team": "Milford MXD2",
+        "team": "Milford M2",
+        "avgValue": 3.0,
+        "percentValue": 0.75
+      },
+      {
+        "team": "Milford L4",
         "avgValue": 2.6,
-        "percentValue": 0.7142857142857143
-      },
-      {
-        "team": "Milford MXD1",
-        "avgValue": 2.2,
         "percentValue": 0.8333333333333334
       },
       {
-        "team": "Milford L60",
-        "avgValue": 2.0,
-        "percentValue": 0.5
+        "team": "Milford L1",
+        "avgValue": 2.2,
+        "percentValue": 0.7142857142857143
+      },
+      {
+        "team": "Milford L3",
+        "avgValue": 2.2,
+        "percentValue": 0.7142857142857143
       }
     ]
   },
