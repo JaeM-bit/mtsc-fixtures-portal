@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-02T12:16:59+01:00",
+  "uploadedAt": "2026-08-02T12:42:07+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -821,13 +821,13 @@
       "status": "Booked"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-07-31",
+      "day": "Fri",
+      "time": "10:30",
       "team": "Milford MXD1",
       "opponent": "Dorchester MXD1",
       "venue": "H",
-      "status": "rebook"
+      "status": "played"
     }
   ],
   "monthlyPlanned": [
@@ -852,8 +852,8 @@
     {
       "month": "Jul",
       "originalPlanned": 18,
-      "count": 20,
-      "played": 19
+      "count": 21,
+      "played": 20
     },
     {
       "month": "Aug",
@@ -866,7 +866,7 @@
     17,
     15,
     16,
-    19,
+    20,
     0
   ],
   "reportSummary": {
