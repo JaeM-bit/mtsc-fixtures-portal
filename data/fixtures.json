@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-03T11:10:12+01:00",
+  "uploadedAt": "2026-08-03T11:13:49+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -629,7 +629,7 @@
       "team": "DL Poole L1",
       "opponent": "Milford L1",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-02",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 3
+      "played": 4
     }
   ],
   "monthlyPlayed": [
@@ -867,10 +867,10 @@
     15,
     16,
     19,
-    3
+    4
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "72",
+    "totalMatchesPlayed": "73",
     "totalWins": "37",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
@@ -891,11 +891,6 @@
         "team": "Milford L4",
         "avgValue": 2.6,
         "percentValue": 0.8333333333333334
-      },
-      {
-        "team": "Milford L1",
-        "avgValue": 2.2,
-        "percentValue": 0.7142857142857143
       },
       {
         "team": "Milford L3",
