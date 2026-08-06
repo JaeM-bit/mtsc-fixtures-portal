@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-06T14:39:35+01:00",
+  "uploadedAt": "2026-08-06T14:40:43+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -870,8 +870,8 @@
     4
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "73",
-    "totalWins": "37",
+    "totalMatchesPlayed": "74",
+    "totalWins": "38",
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford MXD4"
