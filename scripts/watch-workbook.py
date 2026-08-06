@@ -368,8 +368,24 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
 
 def write_payload(payload: Dict[str, object]) -> bool:
     TARGET_FILE.parent.mkdir(parents=True, exist_ok=True)
-    new_text = json.dumps(payload, indent=2) + "\n"
     existing = TARGET_FILE.read_text(encoding="utf-8") if TARGET_FILE.exists() else None
+
+    # The generated timestamp must not turn an Excel autosave into a new commit.
+    # Compare the actual workbook data first and only update uploadedAt when that
+    # data has changed.
+    if existing is not None:
+        try:
+            existing_payload = json.loads(existing)
+            existing_data = dict(existing_payload)
+            new_data = dict(payload)
+            existing_data.pop("uploadedAt", None)
+            new_data.pop("uploadedAt", None)
+            if existing_data == new_data:
+                return False
+        except (json.JSONDecodeError, TypeError, ValueError):
+            pass
+
+    new_text = json.dumps(payload, indent=2) + "\n"
     if existing == new_text:
         return False
     TARGET_FILE.write_text(new_text, encoding="utf-8")
