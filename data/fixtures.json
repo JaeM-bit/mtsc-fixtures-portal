@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-06T14:41:47+01:00",
+  "uploadedAt": "2026-08-06T14:42:50+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -548,7 +548,7 @@
       "team": "East Dorset Lawn MXD1",
       "opponent": "Milford MXD1",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-07-24",
@@ -665,7 +665,7 @@
       "team": "East Dorset M1",
       "opponent": "Milford M1",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-05",
@@ -674,7 +674,7 @@
       "team": "East Dorset L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-06",
@@ -853,21 +853,21 @@
       "month": "Jul",
       "originalPlanned": 18,
       "count": 21,
-      "played": 19
+      "played": 20
     },
     {
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 4
+      "played": 6
     }
   ],
   "monthlyPlayed": [
     17,
     15,
     16,
-    19,
-    4
+    20,
+    6
   ],
   "reportSummary": {
     "totalMatchesPlayed": "76",
