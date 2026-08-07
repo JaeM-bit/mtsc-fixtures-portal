@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-07T13:23:48+01:00",
+  "uploadedAt": "2026-08-07T17:49:09+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -971,5 +971,5 @@
       }
     ]
   },
-  "portalFeatures": ""
+  "portalFeatures": "Added Played vs Remaining by Team in the Captain Summary Area"
 }
