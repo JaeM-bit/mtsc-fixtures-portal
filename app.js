@@ -11,6 +11,7 @@ const state = {
     highestAvgPointsPerMatch: "",
     highestAvgTeams: [],
     highestAvgRankings: [],
+    teamProgress: [],
   },
   homeAwayFilter: "all",
   statusFilter: "all",
@@ -413,13 +414,25 @@ function readReportSummary(sheet) {
   const totalMatchesPlayed = cellText(getCell(sheet, 20, 19));
   const totalWins = cellText(getCell(sheet, 20, 20));
   const ranked = [];
+  const teamProgress = [];
 
   for (let rowIndex = 6; rowIndex <= 19; rowIndex += 1) {
     const team = cellText(getCell(sheet, rowIndex, 10));
+    const playedText = cellText(getCell(sheet, rowIndex, 19));
+    const remainingText = cellText(getCell(sheet, rowIndex, 18));
+    const played = Number(String(playedText).replace(/,/g, ""));
+    const remaining = Number(String(remainingText).replace(/,/g, ""));
     const avgText = cellText(getCell(sheet, rowIndex, 25));
     const percentText = cellText(getCell(sheet, rowIndex, 28));
     const avgValue = Number(String(avgText).replace(/,/g, ""));
     const percentValue = Number(String(percentText).replace(/,/g, ""));
+    if (team && (Number.isFinite(played) || Number.isFinite(remaining))) {
+      teamProgress.push({
+        team,
+        played: Number.isFinite(played) ? played : 0,
+        remaining: Number.isFinite(remaining) ? remaining : 0,
+      });
+    }
     if (!team || !Number.isFinite(avgValue)) continue;
     ranked.push({ team, avgValue, percentValue: Number.isFinite(percentValue) ? percentValue : "" });
   }
@@ -434,6 +447,7 @@ function readReportSummary(sheet) {
   return {
     totalMatchesPlayed,
     totalWins,
+    teamProgress,
     highestAvgPointsPerMatch,
     highestAvgTeams,
     highestAvgRankings,
@@ -718,8 +732,53 @@ function renderReport() {
   }
 
   els.reportBody.innerHTML = `
+    ${renderTeamProgressChart()}
     ${renderMonthlyPlanned()}
     ${renderNextSevenDays()}
+  `;
+}
+
+function renderTeamProgressChart() {
+  const rows = Array.isArray(state.reportSummary.teamProgress)
+    ? state.reportSummary.teamProgress.filter((item) => item?.team)
+    : [];
+  if (!rows.length) return "";
+
+  const maxTotal = Math.max(
+    1,
+    ...rows.map((item) => Number(item.played || 0) + Number(item.remaining || 0))
+  );
+
+  return `
+    <div class="summary-item summary-item-wide team-progress-chart">
+      <div class="team-progress-head">
+        <strong>Matches Played vs Remaining by Team</strong>
+        <div class="team-progress-legend" aria-label="Chart legend">
+          <span><i class="legend-swatch played"></i>Played</span>
+          <span><i class="legend-swatch remaining"></i>Remaining</span>
+        </div>
+      </div>
+      <div class="team-progress-rows" role="img" aria-label="Matches played and remaining for each team">
+        ${rows
+          .map((item) => {
+            const played = Number(item.played || 0);
+            const remaining = Number(item.remaining || 0);
+            const playedWidth = (played / maxTotal) * 100;
+            const remainingWidth = (remaining / maxTotal) * 100;
+            return `
+              <div class="team-progress-row">
+                <span class="team-progress-name">${escapeHtml(item.team)}</span>
+                <div class="team-progress-track">
+                  <span class="team-progress-bar played" style="width:${playedWidth}%" title="${played} played">${played || ""}</span>
+                  <span class="team-progress-bar remaining" style="width:${remainingWidth}%" title="${remaining} remaining">${remaining || ""}</span>
+                </div>
+                <span class="team-progress-total">${played + remaining}</span>
+              </div>
+            `;
+          })
+          .join("")}
+      </div>
+    </div>
   `;
 }
 

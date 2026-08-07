@@ -250,12 +250,23 @@ def read_report_summary(league_rows: Dict[int, Dict[str, str]]) -> Dict[str, obj
     total_matches_played = (sheet_row_values(league_rows, 21).get("T") or "").strip()
     total_wins = (sheet_row_values(league_rows, 21).get("U") or "").strip()
     ranked: List[Tuple[str, float, Optional[float]]] = []
+    team_progress: List[Dict[str, object]] = []
 
     for row_num in range(7, 21):
         row = sheet_row_values(league_rows, row_num)
         team = (row.get("K") or "").strip()
+        played_value = parse_number(row.get("T", ""))
+        remaining_value = parse_number(row.get("S", ""))
         avg_value = parse_number(row.get("Z", ""))
         percent_value = parse_number(row.get("AC", ""))
+        if team and (played_value is not None or remaining_value is not None):
+            team_progress.append(
+                {
+                    "team": team,
+                    "played": int(played_value) if played_value is not None else 0,
+                    "remaining": int(remaining_value) if remaining_value is not None else 0,
+                }
+            )
         if team and avg_value is not None:
             ranked.append((team, avg_value, percent_value))
 
@@ -273,6 +284,7 @@ def read_report_summary(league_rows: Dict[int, Dict[str, str]]) -> Dict[str, obj
     return {
         "totalMatchesPlayed": total_matches_played,
         "totalWins": total_wins,
+        "teamProgress": team_progress,
         "highestAvgPointsPerMatch": highest_avg_points,
         "highestAvgTeams": highest_avg_teams,
         "highestAvgRankings": [

@@ -830,6 +830,102 @@ td {
   grid-column: 1 / -1;
 }
 
+.team-progress-chart {
+  padding: 18px;
+}
+
+.team-progress-head,
+.team-progress-legend,
+.team-progress-row {
+  display: flex;
+  align-items: center;
+}
+
+.team-progress-head {
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.team-progress-head strong {
+  margin: 0;
+}
+
+.team-progress-legend {
+  gap: 14px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.team-progress-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}
+
+.legend-swatch.played,
+.team-progress-bar.played {
+  background: var(--court);
+}
+
+.legend-swatch.remaining,
+.team-progress-bar.remaining {
+  background: #b9c5d2;
+}
+
+.team-progress-rows {
+  display: grid;
+  gap: 8px;
+}
+
+.team-progress-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 170px) minmax(160px, 1fr) 28px;
+  gap: 10px;
+  min-height: 24px;
+}
+
+.team-progress-name {
+  overflow: hidden;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-progress-track {
+  display: flex;
+  height: 22px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #edf1f4;
+}
+
+.team-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.team-progress-total {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: right;
+}
+
 .summary-item-wide .results-table-wrap {
   width: 100%;
   margin: 0;
@@ -1007,6 +1103,16 @@ footer {
 
   .net-points-card {
     grid-column: auto;
+  }
+
+  .team-progress-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .team-progress-row {
+    grid-template-columns: 92px minmax(120px, 1fr) 24px;
+    gap: 7px;
   }
 }
 

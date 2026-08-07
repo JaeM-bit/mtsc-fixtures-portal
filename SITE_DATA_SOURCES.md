@@ -66,6 +66,16 @@ Rows `108:112` feed the `Matches by Month` report.
 | `T21` | `reportSummary.totalMatchesPlayed` | Total Matches Played. |
 | `U21` | `reportSummary.totalWins` | Total Wins. |
 
+### Team Match Progress Chart
+
+Rows `7:20` feed the automatic horizontal chart showing matches played versus remaining by team.
+
+| Excel cells | JSON field | Chart use |
+|---|---|---|
+| `K7:K20` | `reportSummary.teamProgress[].team` | Team label. |
+| `T7:T20` | `reportSummary.teamProgress[].played` | Played section of each bar. |
+| `S7:S20` | `reportSummary.teamProgress[].remaining` | Remaining section of each bar. |
+
 ### Top Average Net Points Rankings
 
 Rows `7:20` feed the `Teams with top 4 scores of highest avg net points/match (All Matches)` box.

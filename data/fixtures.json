@@ -1,1109 +1,833 @@
 {
-  "uploadedAt": "2026-08-06T14:16:25.395Z",
+  "uploadedAt": "2026-08-07T13:23:48+01:00",
   "rows": [
     {
-      "id": "milford m1|hale gardens m1#1",
       "date": "2026-04-09",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford M1",
       "opponent": "Hale Gardens M1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m45|corfe mullen m45#1",
       "date": "2026-04-11",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford M45",
       "opponent": "Corfe Mullen M45",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "swanage mxd1|milford mxd1#1",
       "date": "2026-04-11",
       "day": "Sat",
       "time": "10:30",
       "team": "Swanage MXD1",
       "opponent": "Milford MXD1",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford mxd2|bournemouth gardens mxd1#1",
       "date": "2026-04-12",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford MXD2",
       "opponent": "Bournemouth Gardens MXD1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "sandleheath m1|milford m3#1",
       "date": "2026-04-12",
       "day": "Sun",
       "time": "10:30",
       "team": "Sandleheath M1",
       "opponent": "Milford M3",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "winton l1|milford l4#1",
       "date": "2026-04-12",
       "day": "Sun",
       "time": "11:00",
       "team": "Winton L1",
       "opponent": "Milford L4",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "christchurch l1|milford l3#1",
       "date": "2026-04-18",
       "day": "Sat",
       "time": "10:30",
       "team": "Christchurch L1",
       "opponent": "Milford L3",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford mxd4|christchurch mxd2#1",
       "date": "2026-04-18",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Christchurch MXD2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford mxd2|dl ringwood mxd1#1",
       "date": "2026-04-18",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford MXD2",
       "opponent": "DL Ringwood MXD1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "shillingstone m1|milford m3#1",
       "date": "2026-04-18",
       "day": "Sat",
       "time": "10:30",
       "team": "Shillingstone M1",
       "opponent": "Milford M3",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l1|milford l2#1",
       "date": "2026-04-19",
       "day": "Sun",
       "time": "11:00",
       "team": "Milford L1",
       "opponent": "Milford L2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "southbourne mxd2|milford mxd3#1",
       "date": "2026-04-21",
       "day": "Tue",
       "time": "18:30",
       "team": "Southbourne MXD2",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "pythouse mxd2|milford mxd4#1",
       "date": "2026-04-25",
       "day": "Sat",
       "time": "10:30",
       "team": "Pythouse MXD2",
       "opponent": "Milford MXD4",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "dorchester m45|milford m45#1",
       "date": "2026-04-26",
       "day": "Sun",
       "time": "12:00",
       "team": "Dorchester M45",
       "opponent": "Milford M45",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "swanage l2|milford l4#1",
       "date": "2026-04-26",
       "day": "Sun",
       "time": "14:30",
       "team": "Swanage L2",
       "opponent": "Milford L4",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "west hants mxd1|milford mxd1#1",
       "date": "2026-04-27",
       "day": "Mon",
       "time": "18:30",
       "team": "West Hants MXD1",
       "opponent": "Milford MXD1",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m2|hale gardens m2#1",
       "date": "2026-04-30",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford M2",
       "opponent": "Hale Gardens M2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l60|st leonards l60#1",
       "date": "2026-05-01",
       "day": "Fri",
       "time": "13:00",
       "team": "Milford L60",
       "opponent": "St Leonards L60",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l5|east dorset l4#1",
       "date": "2026-05-02",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford L5",
       "opponent": "East Dorset L4",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "swanage l1|milford l2#1",
       "date": "2026-05-03",
       "day": "Sun",
       "time": "10:30",
       "team": "Swanage L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford mxd2|hale gardens mxd1#1",
       "date": "2026-05-07",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford MXD2",
       "opponent": "Hale Gardens MXD1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "christchurch mxd1|milford mxd3#1",
       "date": "2026-05-10",
       "day": "Sun",
       "time": "10:30",
       "team": "Christchurch MXD1",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l3|southbourne l3#1",
       "date": "2026-05-10",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford L3",
       "opponent": "Southbourne L3",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "hale gardens l3|milford l5#1",
       "date": "2026-05-12",
       "day": "Tue",
       "time": "18:30",
       "team": "Hale Gardens L3",
       "opponent": "Milford L5",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "west hants m1|milford m1#1",
       "date": "2026-05-18",
       "day": "Mon",
       "time": "18:30",
       "team": "West Hants M1",
       "opponent": "Milford M1",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l4|dl ringwood l1#1",
       "date": "2026-05-19",
       "day": "Tue",
       "time": "18:30",
       "team": "Milford L4",
       "opponent": "DL Ringwood L1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "bournemouth gardens m1|milford m3#1",
       "date": "2026-05-24",
       "day": "Sun",
       "time": "10:30",
       "team": "Bournemouth Gardens M1",
       "opponent": "Milford M3",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l5|st leonards l3#1",
       "date": "2026-05-24",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford L5",
       "opponent": "St Leonards L3",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "southbourne l60|milford l60#1",
       "date": "2026-05-28",
       "day": "Thu",
       "time": "10:30",
       "team": "Southbourne L60",
       "opponent": "Milford L60",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l1|east dorset l1#1",
       "date": "2026-05-28",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford L1",
       "opponent": "East Dorset L1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l3|dorchester l1#1",
       "date": "2026-05-30",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford L3",
       "opponent": "Dorchester L1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "winton mxd2|milford mxd4#1",
       "date": "2026-05-31",
       "day": "Sun",
       "time": "11:00",
       "team": "Winton MXD2",
       "opponent": "Milford MXD4",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m45|st leonards m45 +2#1",
       "date": "2026-06-04",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford M45",
       "opponent": "St Leonards M45 +2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m3|bournemouth university m1#1",
       "date": "2026-06-07",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford M3",
       "opponent": "Bournemouth University M1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "dl ringwood m1|milford m2#1",
       "date": "2026-06-08",
       "day": "Mon",
       "time": "18:30",
       "team": "DL Ringwood M1",
       "opponent": "Milford M2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m1|dorchester m1#1",
       "date": "2026-06-13",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford M1",
       "opponent": "Dorchester M1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "ferndown mxd1|milford mxd4#1",
       "date": "2026-06-13",
       "day": "Sat",
       "time": "10:30",
       "team": "Ferndown MXD1",
       "opponent": "Milford MXD4",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford mxd3|winton mxd1#1",
       "date": "2026-06-14",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford MXD3",
       "opponent": "Winton MXD1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l4|sway l1#1",
       "date": "2026-06-16",
       "day": "Tue",
       "time": "18:30",
       "team": "Milford L4",
       "opponent": "Sway L1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l2|east dorset l2#1",
       "date": "2026-06-18",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford L2",
       "opponent": "East Dorset L2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m3|dl poole m3#1",
       "date": "2026-06-20",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford M3",
       "opponent": "DL Poole M3",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m1|east dorset m2#1",
       "date": "2026-06-23",
       "day": "Tue",
       "time": "18:30",
       "team": "Milford M1",
       "opponent": "East Dorset M2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "st leonards m1|milford m2#1",
       "date": "2026-06-25",
       "day": "Thu",
       "time": "18:30",
       "team": "St Leonards M1",
       "opponent": "Milford M2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "southbourne l2|milford l3#1",
       "date": "2026-06-27",
       "day": "Sat",
       "time": "11:00",
       "team": "Southbourne L2",
       "opponent": "Milford L3",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford mxd1|southbourne mxd1#1",
       "date": "2026-06-28",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford MXD1",
       "opponent": "Southbourne MXD1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m3|st leonards m2#1",
       "date": "2026-06-28",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford M3",
       "opponent": "St Leonards M2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "hale gardens mxd4|milford mxd4#1",
       "date": "2026-06-28",
       "day": "Sun",
       "time": "10:30",
       "team": "Hale Gardens MXD4",
       "opponent": "Milford MXD4",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "sandleheath mxd1|milford mxd2#1",
       "date": "2026-06-28",
       "day": "Sun",
       "time": "10:30",
       "team": "Sandleheath MXD1",
       "opponent": "Milford MXD2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l1|west hants l1#1",
       "date": "2026-07-02",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford L1",
       "opponent": "West Hants L1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "victoria avenue m2|milford m2#1",
       "date": "2026-07-04",
       "day": "Sat",
       "time": "10:30",
       "team": "Victoria Avenue M2",
       "opponent": "Milford M2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "wimborne minster mxd1|milford mxd3#1",
       "date": "2026-07-04",
       "day": "Sat",
       "time": "14:30",
       "team": "Wimborne Minster MXD1",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l2|dl poole l1#1",
       "date": "2026-07-05",
       "day": "Sun",
       "time": "11:00",
       "team": "Milford L2",
       "opponent": "DL Poole L1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "dl poole m1|milford m1#1",
       "date": "2026-07-05",
       "day": "Sun",
       "time": "11:00",
       "team": "DL Poole M1",
       "opponent": "Milford M1",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m3|southbourne m2#1",
       "date": "2026-07-09",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford M3",
       "opponent": "Southbourne M2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "southbourne l1|milford l1#1",
       "date": "2026-07-14",
       "day": "Tue",
       "time": "18:30",
       "team": "Southbourne L1",
       "opponent": "Milford L1",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "west hants l1|milford l2#1",
       "date": "2026-07-14",
       "day": "Tue",
       "time": "18:30",
       "team": "West Hants L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford mxd3|east dorset mxd3#1",
       "date": "2026-07-16",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford MXD3",
       "opponent": "East Dorset MXD3",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l4|st leonards l2#1",
       "date": "2026-07-18",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford L4",
       "opponent": "St Leonards L2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m2|swanage m1#1",
       "date": "2026-07-18",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford M2",
       "opponent": "Swanage M1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l2|southbourne l1#1",
       "date": "2026-07-21",
       "day": "Tue",
       "time": "18:30",
       "team": "Milford L2",
       "opponent": "Southbourne L1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "east dorset lawn mxd1|milford mxd1#1",
       "date": "2026-07-23",
       "day": "Thu",
       "time": "18:30",
       "team": "East Dorset Lawn MXD1",
       "opponent": "Milford MXD1",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l60|east dorset l60#1",
       "date": "2026-07-24",
       "day": "Fri",
       "time": "13:00",
       "team": "Milford L60",
       "opponent": "East Dorset L60",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l1|swanage l1#1",
       "date": "2026-07-25",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford L1",
       "opponent": "Swanage L1",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "victoria avenue mxd1|milford mxd2#1",
       "date": "2026-07-25",
       "day": "Sat",
       "time": "10:30",
       "team": "Victoria Avenue MXD1",
       "opponent": "Milford MXD2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "dl ringwood l2|milford l5#1",
       "date": "2026-07-26",
       "day": "Sun",
       "time": "10:30",
       "team": "DL Ringwood L2",
       "opponent": "Milford L5",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m45|east dorset m45 +2#1",
       "date": "2026-07-26",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford M45",
       "opponent": "East Dorset M45 +2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "southbourne m1|milford m2#1",
       "date": "2026-07-28",
       "day": "Tue",
       "time": "18:30",
       "team": "Southbourne M1",
       "opponent": "Milford M2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l3|east dorset l3#1",
       "date": "2026-07-30",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford L3",
       "opponent": "East Dorset L3",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford mxd1|dorchester mxd1#1",
       "date": "2026-07-31",
       "day": "Fri",
       "time": "10:30",
       "team": "Milford MXD1",
       "opponent": "Dorchester MXD1",
       "venue": "H",
-      "division": "",
-      "status": "cancelled",
-      "changeStatus": "unchanged"
+      "status": "cancelled"
     },
     {
-      "id": "dl poole l1|milford l1#1",
       "date": "2026-08-02",
       "day": "Sun",
       "time": "15:30",
       "team": "DL Poole L1",
       "opponent": "Milford L1",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford m2|dl poole m2#1",
       "date": "2026-08-02",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford M2",
       "opponent": "DL Poole M2",
       "venue": "H",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "wimborne minster l1|milford l5#1",
       "date": "2026-08-02",
       "day": "Sun",
       "time": "11:00",
       "team": "Wimborne Minster L1",
       "opponent": "Milford L5",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "pythouse m45|milford m45#1",
       "date": "2026-08-02",
       "day": "Sun",
       "time": "11:00",
       "team": "Pythouse M45",
       "opponent": "Milford M45",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "east dorset m1|milford m1#1",
       "date": "2026-08-04",
       "day": "Tue",
       "time": "18:30",
       "team": "East Dorset M1",
       "opponent": "Milford M1",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "east dorset l1|milford l2#1",
       "date": "2026-08-05",
       "day": "Wed",
       "time": "18:30",
       "team": "East Dorset L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "division": "",
-      "status": "played",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "east dorset l2|milford l1#1",
       "date": "2026-08-06",
       "day": "Thu",
       "time": "18:30",
       "team": "East Dorset L2",
       "opponent": "Milford L1",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "played"
     },
     {
-      "id": "milford l5|saint sebastian l1#1",
-      "date": "2026-08-06",
-      "day": "Thu",
-      "time": "18:30",
-      "team": "Milford L5",
-      "opponent": "Saint Sebastian L1",
-      "venue": "H",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
-    },
-    {
-      "id": "dl poole l2|milford l3#1",
       "date": "2026-08-08",
       "day": "Sat",
       "time": "15:00",
       "team": "DL Poole L2",
       "opponent": "Milford L3",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "milford mxd4|pythouse mxd1#1",
       "date": "2026-08-08",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Pythouse MXD1",
       "venue": "H",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "milford mxd3|st leonards mxd2#1",
       "date": "2026-08-09",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford MXD3",
       "opponent": "St Leonards MXD2",
       "venue": "H",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "st leonards l1|milford l3#1",
       "date": "2026-08-12",
       "day": "Wed",
       "time": "18:30",
       "team": "St Leonards L1",
       "opponent": "Milford L3",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "milford l60|west hants l60 +1#1",
       "date": "2026-08-14",
       "day": "Fri",
       "time": "13:00",
       "team": "Milford L60",
       "opponent": "West Hants L60 +1",
       "venue": "H",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "milford mxd4|wimborne minster mxd2#1",
       "date": "2026-08-15",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Wimborne Minster MXD2",
       "venue": "H",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "pythouse l1|milford l4#1",
       "date": "2026-08-16",
       "day": "Sun",
       "time": "11:15",
       "team": "Pythouse L1",
       "opponent": "Milford L4",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "corfe mullen mxd1|milford mxd3#1",
       "date": "2026-08-16",
       "day": "Sun",
       "time": "10:30",
       "team": "Corfe Mullen MXD1",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "dl poole mxd2|milford mxd1#1",
       "date": "2026-08-16",
       "day": "Sun",
       "time": "15:30",
       "team": "DL Poole MXD2",
       "opponent": "Milford MXD1",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "west hants l60|milford l60#1",
       "date": "2026-08-19",
       "day": "Wed",
       "time": "11:30",
       "team": "West Hants L60",
       "opponent": "Milford L60",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "st leonards mxd1|milford mxd2#1",
       "date": "2026-08-19",
       "day": "Wed",
       "time": "18:30",
       "team": "St Leonards MXD1",
       "opponent": "Milford MXD2",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "dl poole l60|milford l60#1",
+      "date": "2026-08-23",
+      "day": "Sun",
+      "time": "13:00",
+      "team": "Milford L5",
+      "opponent": "Saint Sebastian L1",
+      "venue": "H",
+      "status": "Booked"
+    },
+    {
       "date": "2026-08-26",
       "day": "Wed",
       "time": "13:00",
       "team": "DL Poole L60",
       "opponent": "Milford L60",
       "venue": "A",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "milford mxd2|east dorset mxd2#1",
       "date": "2026-08-27",
       "day": "Thu",
       "time": "18:30",
       "team": "Milford MXD2",
       "opponent": "East Dorset MXD2",
       "venue": "H",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "milford m1|victoria avenue m1#1",
       "date": "2026-08-29",
       "day": "Sat",
       "time": "10:30",
       "team": "Milford M1",
       "opponent": "Victoria Avenue M1",
       "venue": "H",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     },
     {
-      "id": "milford mxd1|dl poole mxd1#1",
       "date": "2026-08-30",
       "day": "Sun",
       "time": "10:30",
       "team": "Milford MXD1",
       "opponent": "DL Poole MXD1",
       "venue": "H",
-      "division": "",
-      "status": "Booked",
-      "changeStatus": "unchanged"
+      "status": "Booked"
     }
   ],
   "monthlyPlanned": [
@@ -1135,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 6
+      "played": 7
     }
   ],
   "monthlyPlayed": [
@@ -1143,35 +867,107 @@
     15,
     16,
     20,
-    6
+    7
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "76",
-    "totalWins": "38",
-    "highestAvgPointsPerMatch": 6,
+    "totalMatchesPlayed": "77",
+    "totalWins": "39",
+    "teamProgress": [
+      {
+        "team": "Milford L1",
+        "played": 7,
+        "remaining": 0
+      },
+      {
+        "team": "Milford L2",
+        "played": 7,
+        "remaining": 0
+      },
+      {
+        "team": "Milford L3",
+        "played": 5,
+        "remaining": 2
+      },
+      {
+        "team": "Milford L4",
+        "played": 5,
+        "remaining": 1
+      },
+      {
+        "team": "Milford L5",
+        "played": 5,
+        "remaining": 1
+      },
+      {
+        "team": "Milford L60",
+        "played": 3,
+        "remaining": 3
+      },
+      {
+        "team": "Milford MXD1",
+        "played": 5,
+        "remaining": 1
+      },
+      {
+        "team": "Milford MXD2",
+        "played": 5,
+        "remaining": 2
+      },
+      {
+        "team": "Milford MXD3",
+        "played": 5,
+        "remaining": 2
+      },
+      {
+        "team": "Milford MXD4",
+        "played": 5,
+        "remaining": 2
+      },
+      {
+        "team": "Milford M1",
+        "played": 6,
+        "remaining": 1
+      },
+      {
+        "team": "Milford M2",
+        "played": 7,
+        "remaining": 1
+      },
+      {
+        "team": "Milford M3",
+        "played": 7,
+        "remaining": 0
+      },
+      {
+        "team": "Milford M45",
+        "played": 5,
+        "remaining": 0
+      }
+    ],
+    "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford MXD4"
     ],
     "highestAvgRankings": [
       {
         "team": "Milford MXD4",
-        "avgValue": 6,
-        "percentValue": ""
+        "avgValue": 6.0,
+        "percentValue": 0.7142857142857143
       },
       {
         "team": "Milford M2",
-        "avgValue": 3.4,
-        "percentValue": ""
+        "avgValue": 3.4285714285714284,
+        "percentValue": 0.875
       },
       {
         "team": "Milford L4",
         "avgValue": 2.6,
-        "percentValue": ""
+        "percentValue": 0.8333333333333334
       },
       {
         "team": "Milford L3",
         "avgValue": 2.2,
-        "percentValue": ""
+        "percentValue": 0.7142857142857143
       }
     ]
   },
