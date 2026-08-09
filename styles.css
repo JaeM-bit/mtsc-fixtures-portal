@@ -500,7 +500,7 @@ h2 {
 }
 
 .metric-row .kpi-range {
-  grid-column: 1 / -1;
+  grid-column: 1;
   justify-self: start;
   margin-top: -8px;
 }
@@ -510,6 +510,8 @@ h2 {
 }
 
 .metric-row-has-range strong {
+  grid-column: 2;
+  grid-row: 1 / 3;
   align-self: center;
   padding-top: 0;
 }
