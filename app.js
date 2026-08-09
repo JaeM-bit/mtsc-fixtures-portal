@@ -459,12 +459,15 @@ function readReportSummary(sheet) {
 function rankingsForTopScores(rankings, scoreLimit) {
   const topScores = [];
   rankings.forEach((item) => {
-    if (!topScores.includes(item.avgValue)) {
-      topScores.push(item.avgValue);
+    const displayedScore = Math.round(Number(item.avgValue) * 10) / 10;
+    if (!topScores.includes(displayedScore)) {
+      topScores.push(displayedScore);
     }
   });
   const allowedScores = new Set(topScores.slice(0, scoreLimit));
-  return rankings.filter((item) => allowedScores.has(item.avgValue));
+  return rankings.filter((item) =>
+    allowedScores.has(Math.round(Number(item.avgValue) * 10) / 10)
+  );
 }
 
 function assignStableIds(rows) {

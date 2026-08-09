@@ -273,11 +273,12 @@ def read_report_summary(league_rows: Dict[int, Dict[str, str]]) -> Dict[str, obj
     ranked.sort(key=lambda item: (-item[1], item[0].lower()))
     top_scores = []
     for _, avg, _ in ranked:
-        if avg not in top_scores:
-            top_scores.append(avg)
+        displayed_avg = round(avg, 1)
+        if displayed_avg not in top_scores:
+            top_scores.append(displayed_avg)
         if len(top_scores) == 4:
             break
-    top_rankings = [item for item in ranked if item[1] in top_scores]
+    top_rankings = [item for item in ranked if round(item[1], 1) in top_scores]
     highest_avg_points = top_rankings[0][1] if top_rankings else ""
     highest_avg_teams = [team for team, avg, _ in top_rankings if avg == highest_avg_points] if top_rankings else []
 
