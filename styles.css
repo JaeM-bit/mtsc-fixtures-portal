@@ -670,6 +670,14 @@ h2 {
   padding: 18px;
 }
 
+.filters-title {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
 .filter-block {
   display: grid;
   gap: 7px;
