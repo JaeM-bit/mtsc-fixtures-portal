@@ -510,7 +510,8 @@ h2 {
 }
 
 .metric-row-has-range strong {
-  padding-top: 1px;
+  align-self: center;
+  padding-top: 0;
 }
 
 .overview-card .kpi-label {
