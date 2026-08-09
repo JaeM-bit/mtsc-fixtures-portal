@@ -747,7 +747,6 @@ h2 {
   pointer-events: none;
   text-align: left;
   transform: translateY(3px);
-  transition: opacity 80ms ease, transform 80ms ease;
   visibility: hidden;
 }
 
