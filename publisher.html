@@ -15,7 +15,7 @@
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=80"></script>
+    <script defer src="app.js?v=81"></script>
   </head>
   <body>
     <header class="app-header">
@@ -127,6 +127,11 @@
             <select id="teamFilter">
               <option value="">All Milford teams</option>
             </select>
+          </div>
+          <div class="filter-block">
+            <button class="filter-chip" id="derbyFilterButton" type="button" aria-pressed="false">
+              Show Derby Matches
+            </button>
           </div>
           <div class="filter-block">
             <label>Home/Away</label>

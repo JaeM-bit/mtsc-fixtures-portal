@@ -15,6 +15,7 @@ const state = {
   },
   homeAwayFilter: "all",
   statusFilter: "all",
+  derbyFilter: false,
 };
 
 const seasonStart = "2026-04-01";
@@ -126,6 +127,7 @@ const els = {
   didjaKnow: document.querySelector("#didjaKnow"),
   searchInput: document.querySelector("#searchInput"),
   teamFilter: document.querySelector("#teamFilter"),
+  derbyFilterButton: document.querySelector("#derbyFilterButton"),
   nextDaysInput: document.querySelector("#nextDaysInput"),
   homeAwayButtons: document.querySelectorAll("[data-home-away]"),
   statusFilterButtons: document.querySelectorAll("[data-status-filter]"),
@@ -571,6 +573,9 @@ function applyFilters() {
     return (
       (!term || haystack.includes(term)) &&
       (!team || row.team === team || row.opponent === team) &&
+      (!state.derbyFilter ||
+        (normaliseKey(row.team).split(" ")[0] === "milford" &&
+          normaliseKey(row.opponent).split(" ")[0] === "milford")) &&
       (homeAway === "all" || normaliseKey(row.venue) === normaliseKey(homeAway)) &&
       (statusFilter === "all" || normaliseKey(labelStatus(row)) === statusFilter) &&
       matchesNextDays
@@ -1151,6 +1156,15 @@ els.homeAwayButtons.forEach((button) => {
     els.visibleCount.textContent = `${applyFilters().length} shown`;
   });
 });
+
+if (els.derbyFilterButton) {
+  els.derbyFilterButton.addEventListener("click", () => {
+    state.derbyFilter = !state.derbyFilter;
+    els.derbyFilterButton.classList.toggle("is-active", state.derbyFilter);
+    els.derbyFilterButton.setAttribute("aria-pressed", String(state.derbyFilter));
+    renderFixtures();
+  });
+}
 
 els.statusFilterButtons.forEach((button) => {
   button.addEventListener("click", () => {
