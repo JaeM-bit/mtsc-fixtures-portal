@@ -524,6 +524,20 @@ h2 {
   text-transform: uppercase;
 }
 
+.overview-card .kpi-label-with-note {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.overview-card .kpi-note {
+  font-size: 0.68rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: none;
+}
+
 .kpi-label-two-line {
   line-height: 1.08 !important;
   min-height: 3.05em !important;
