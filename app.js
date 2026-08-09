@@ -856,7 +856,7 @@ function renderNextSevenDays() {
   if (!upcoming.length) {
     return `
       <div class="summary-item">
-        <strong>All match fixtures for the next 7 days</strong>
+        <strong>All fixtures for the next 7 days</strong>
         <p>No fixtures scheduled in the next 7 days.</p>
       </div>
     `;
@@ -876,7 +876,7 @@ function renderNextSevenDays() {
 
   return `
     <div class="summary-item">
-      <strong>All match fixtures for the next 7 days</strong>
+      <strong>All fixtures for the next 7 days</strong>
       <ul class="next-fixtures">${fixtures}</ul>
     </div>
   `;

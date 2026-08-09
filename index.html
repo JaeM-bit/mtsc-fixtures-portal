@@ -15,7 +15,7 @@
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=83"></script>
+    <script defer src="app.js?v=84"></script>
   </head>
   <body>
     <header class="app-header">
@@ -102,12 +102,12 @@
               <strong id="teamCount">0</strong>
             </div>
             <div class="metric-row metric-row-has-range">
-              <span class="kpi-label kpi-title">Home Matches Next 14 Days</span>
+              <span class="kpi-label kpi-title">Home Fixtures Next 14 Days</span>
               <strong id="homeNextCount">0</strong>
               <span class="kpi-range" id="homeNextRange"></span>
             </div>
             <div class="metric-row metric-row-has-range">
-              <span class="kpi-label kpi-title">Away Matches Next 14 Days</span>
+              <span class="kpi-label kpi-title">Away Fixtures Next 14 Days</span>
               <strong id="awayNextCount">0</strong>
               <span class="kpi-range" id="awayNextRange"></span>
             </div>
@@ -138,7 +138,7 @@
           </div>
           <div class="filter-block">
             <button class="filter-chip derby-filter-button" id="derbyFilterButton" type="button" aria-pressed="false" data-tooltip="Derby Match - when 2 Milford Teams are in the same division and therefore have to play each other">
-              Show Derby Matches
+              Show Derby Fixtures
             </button>
           </div>
           <div class="filter-block">
@@ -158,7 +158,7 @@
             </div>
           </div>
           <div class="filter-block">
-            <label for="nextDaysInput">Matches in next days</label>
+            <label for="nextDaysInput">Fixtures in next days</label>
             <input
               id="nextDaysInput"
               type="number"

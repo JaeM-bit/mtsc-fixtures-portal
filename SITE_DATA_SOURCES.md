@@ -107,15 +107,15 @@ Multi-line text is supported and displays as line breaks on the site.
 | `Total Wins` | `League Results!U21`. |
 | `Teams with top 4 scores...` | `League Results!K7:K20`, `Z7:Z20`, `AC7:AC20`. |
 | `Milford Teams` | Unique imported teams/opponents whose name starts with `Milford`. |
-| `Home Matches Next 14 Days` | Imported rows dated today through the next 13 days where `team` starts with `Milford`. |
-| `Away Matches Next 14 Days` | Imported rows dated today through the next 13 days where `opponent` starts with `Milford`. |
+| `Home Fixtures Next 14 Days` | Imported rows dated today through the next 13 days where `team` starts with `Milford`. |
+| `Away Fixtures Next 14 Days` | Imported rows dated today through the next 13 days where `opponent` starts with `Milford`. |
 | `All Matches` table | Imported fixture rows from `By Date!C2:L93`. |
 | `Filter by Column` | Search text built from date, day, time, home team, away team, venue, and status. |
 | `Milford Team` filter | Imported teams/opponents whose name starts with `Milford`. |
 | `Home/Away` filter | `By Date!I2:I93`, usually `H` or `A`. |
-| `Matches in next days` filter | Imported fixture dates. |
+| `Fixtures in next days` filter | Imported fixture dates. |
 | `Matches by Month` report | `By Date!B108:H112`. |
-| `All match fixtures for the next 7 days` report | Imported fixture rows dated today through the next 7 days. |
+| `All fixtures for the next 7 days` report | Imported fixture rows dated today through the next 7 days. |
 
 ## Import Rules To Remember
 
