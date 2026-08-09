@@ -831,12 +831,12 @@ function renderMonthlyPlanned() {
   return `
     <div class="summary-item monthly-summary">
       <div class="monthly-summary-head">
-        <strong>Matches by Month</strong>
+        <strong>Fixtures by Month</strong>
         <span>Originally Planned</span>
         <span>Currently Planned</span>
         <span>Played</span>
       </div>
-      <div class="monthly-planned" aria-label="Matches by month">${items}</div>
+      <div class="monthly-planned" aria-label="Fixtures by month">${items}</div>
     </div>
   `;
 }
