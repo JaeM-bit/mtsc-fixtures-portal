@@ -792,7 +792,7 @@ function renderMonthlyPlanned() {
     return `
       <div class="summary-item monthly-summary">
         <div class="monthly-summary-head">
-          <strong>Matches by Month</strong>
+          <strong>Fixtures by Month</strong>
           <span>Originally Planned</span>
           <span>Currently Planned</span>
           <span>Played</span>
