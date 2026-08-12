@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-09T16:22:10+01:00",
+  "uploadedAt": "2026-08-12T20:49:01+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -755,7 +755,7 @@
       "team": "Corfe Mullen MXD1",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-16",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 10
+      "played": 11
     }
   ],
   "monthlyPlayed": [
@@ -867,11 +867,11 @@
     15,
     16,
     21,
-    10
+    11
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "80",
-    "totalWins": "40",
+    "totalMatchesPlayed": "81",
+    "totalWins": "41",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -915,8 +915,8 @@
       },
       {
         "team": "Milford MXD3",
-        "played": 6,
-        "remaining": 1
+        "played": 7,
+        "remaining": 0
       },
       {
         "team": "Milford MXD4",
