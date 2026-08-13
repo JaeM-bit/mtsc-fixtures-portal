@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-12T20:49:01+01:00",
+  "uploadedAt": "2026-08-13T09:21:54+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -719,7 +719,7 @@
       "team": "St Leonards L1",
       "opponent": "Milford L3",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-14",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 11
+      "played": 12
     }
   ],
   "monthlyPlayed": [
@@ -867,10 +867,10 @@
     15,
     16,
     21,
-    11
+    12
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "81",
+    "totalMatchesPlayed": "82",
     "totalWins": "41",
     "teamProgress": [
       {
@@ -885,8 +885,8 @@
       },
       {
         "team": "Milford L3",
-        "played": 6,
-        "remaining": 1
+        "played": 7,
+        "remaining": 0
       },
       {
         "team": "Milford L4",
