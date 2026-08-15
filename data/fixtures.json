@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-13T09:21:54+01:00",
+  "uploadedAt": "2026-08-15T18:19:40+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -737,7 +737,7 @@
       "team": "Milford MXD4",
       "opponent": "Wimborne Minster MXD2",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-16",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 12
+      "played": 13
     }
   ],
   "monthlyPlayed": [
@@ -867,11 +867,11 @@
     15,
     16,
     21,
-    12
+    13
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "82",
-    "totalWins": "41",
+    "totalMatchesPlayed": "83",
+    "totalWins": "42",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -920,8 +920,8 @@
       },
       {
         "team": "Milford MXD4",
-        "played": 6,
-        "remaining": 1
+        "played": 7,
+        "remaining": 0
       },
       {
         "team": "Milford M1",
@@ -944,15 +944,15 @@
         "remaining": 0
       }
     ],
-    "highestAvgPointsPerMatch": 4.833333333333333,
+    "highestAvgPointsPerMatch": 5.0,
     "highestAvgTeams": [
       "Milford MXD4"
     ],
     "highestAvgRankings": [
       {
         "team": "Milford MXD4",
-        "avgValue": 4.833333333333333,
-        "percentValue": 0.8571428571428571
+        "avgValue": 5.0,
+        "percentValue": 1.0
       },
       {
         "team": "Milford M2",
