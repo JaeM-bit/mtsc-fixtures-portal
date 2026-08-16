@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-15T18:19:40+01:00",
+  "uploadedAt": "2026-08-16T23:59:04+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -728,7 +728,7 @@
       "team": "Milford L60",
       "opponent": "West Hants L60 +1",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-15",
@@ -746,7 +746,7 @@
       "team": "Pythouse L1",
       "opponent": "Milford L4",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-16",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 13
+      "played": 15
     }
   ],
   "monthlyPlayed": [
@@ -867,11 +867,11 @@
     15,
     16,
     21,
-    13
+    15
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "83",
-    "totalWins": "42",
+    "totalMatchesPlayed": "85",
+    "totalWins": "43",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -890,8 +890,8 @@
       },
       {
         "team": "Milford L4",
-        "played": 5,
-        "remaining": 1
+        "played": 6,
+        "remaining": 0
       },
       {
         "team": "Milford L5",
@@ -900,8 +900,8 @@
       },
       {
         "team": "Milford L60",
-        "played": 3,
-        "remaining": 3
+        "played": 4,
+        "remaining": 2
       },
       {
         "team": "Milford MXD1",
@@ -961,8 +961,8 @@
       },
       {
         "team": "Milford L4",
-        "avgValue": 2.6,
-        "percentValue": 0.8333333333333334
+        "avgValue": 3.1666666666666665,
+        "percentValue": 1.0
       },
       {
         "team": "Milford MXD2",
