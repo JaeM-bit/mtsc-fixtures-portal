@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-17T15:48:35+01:00",
+  "uploadedAt": "2026-08-17T15:55:52+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -906,7 +906,7 @@
       {
         "team": "Milford MXD1",
         "played": 6,
-        "remaining": 0
+        "remaining": 1
       },
       {
         "team": "Milford MXD2",
@@ -967,7 +967,7 @@
       {
         "team": "Milford MXD1",
         "avgValue": 2.1666666666666665,
-        "percentValue": 1.0
+        "percentValue": 0.8571428571428571
       }
     ]
   },
