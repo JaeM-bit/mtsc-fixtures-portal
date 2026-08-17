@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <sheetPr><tabColor rgb="FFA5A5A5"/></sheetPr>
+  <sheetViews><sheetView workbookViewId="0" showGridLines="0"></sheetView></sheetViews>
+  <sheetFormatPr defaultRowHeight="18"/>
+  <cols><col min="1" max="1" width="80" customWidth="1"/></cols>
+  <sheetData><row r="1" ht="180" customHeight="1"><c r="A1" s="19"><f>IF('Portal Updates'!A5=&quot;&quot;,&quot;&quot;,'Portal Updates'!A5)</f><v></v></c></row><row r="3" ><c r="A3" s="8" t="inlineStr"><is><t>Portal reads A1 only — update the blue input cell on Portal Updates.</t></is></c></row></sheetData>
+  
+  
+  
+  <pageMargins left="0.3" right="0.3" top="0.5" bottom="0.5" header="0.2" footer="0.2"/>
+</worksheet>
