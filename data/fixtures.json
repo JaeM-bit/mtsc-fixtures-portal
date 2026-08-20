@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-20T12:53:49+01:00",
+  "uploadedAt": "2026-08-20T23:31:39+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -782,7 +782,7 @@
       "team": "St Leonards MXD1",
       "opponent": "Milford MXD2",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-23",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 17
+      "played": 18
     }
   ],
   "monthlyPlayed": [
@@ -867,10 +867,10 @@
     15,
     16,
     21,
-    17
+    18
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "87",
+    "totalMatchesPlayed": "88",
     "totalWins": "43",
     "teamProgress": [
       {
@@ -910,8 +910,8 @@
       },
       {
         "team": "Milford MXD2",
-        "played": 5,
-        "remaining": 2
+        "played": 6,
+        "remaining": 1
       },
       {
         "team": "Milford MXD3",
