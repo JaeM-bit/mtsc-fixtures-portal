@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-17T15:55:52+01:00",
+  "uploadedAt": "2026-08-20T12:53:49+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -773,7 +773,7 @@
       "team": "West Hants L60",
       "opponent": "Milford L60",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-19",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 16
+      "played": 17
     }
   ],
   "monthlyPlayed": [
@@ -867,10 +867,10 @@
     15,
     16,
     21,
-    16
+    17
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "86",
+    "totalMatchesPlayed": "87",
     "totalWins": "43",
     "teamProgress": [
       {
@@ -900,8 +900,8 @@
       },
       {
         "team": "Milford L60",
-        "played": 4,
-        "remaining": 2
+        "played": 5,
+        "remaining": 1
       },
       {
         "team": "Milford MXD1",
