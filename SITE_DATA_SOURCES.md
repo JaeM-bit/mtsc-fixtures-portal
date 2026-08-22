@@ -56,6 +56,7 @@ Rows `108:112` feed the `Matches by Month` report.
 | `C108:C112` | `monthlyPlanned[].originalPlanned` | Originally Planned. |
 | `H108:H112` | `monthlyPlanned[].count` | Currently Planned. |
 | `E108:E112` | `monthlyPlanned[].played` and `monthlyPlayed[]` | Played. |
+| `N108` | `reportSummary.totalFixturesPlayed` | Total Fixtures Played in the top summary box. |
 
 ## `League Results` Sheet
 
@@ -103,6 +104,7 @@ Multi-line text is supported and displays as line breaks on the site.
 | `Last Refresh on ...` status | `data/fixtures.json` field `uploadedAt`. |
 | `Recent Features in the Past Week` | `Portal Features!A1` through `portalFeatures`. |
 | `TOTAL MATCHES` | Count of imported `rows[]`. |
+| `Total Fixtures Played` | `By Date!N108`. |
 | `Total Matches Played` | `League Results!T21`. |
 | `Total Wins` | `League Results!U21`. |
 | `Teams with top 4 scores...` | `League Results!K7:K20`, `Z7:Z20`, `AC7:AC20`. |

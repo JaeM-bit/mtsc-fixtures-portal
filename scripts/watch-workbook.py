@@ -368,6 +368,9 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
         portal_rows = parse_sheet_rows(zf, portal_features_sheet, shared_strings) if portal_features_sheet else {}
         monthly_planned, monthly_played = read_monthly_totals(by_date_rows)
         report_summary = read_report_summary(league_rows)
+        report_summary["totalFixturesPlayed"] = (
+            sheet_row_values(by_date_rows, 108).get("N") or ""
+        ).strip()
 
         return {
             "uploadedAt": datetime.now().astimezone().isoformat(timespec="seconds"),

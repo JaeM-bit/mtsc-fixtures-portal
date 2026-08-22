@@ -6,6 +6,7 @@ const state = {
   monthlyPlayed: [],
   portalFeatures: "",
   reportSummary: {
+    totalFixturesPlayed: "",
     totalMatchesPlayed: "",
     totalWins: "",
     highestAvgPointsPerMatch: "",
@@ -110,6 +111,7 @@ const els = {
   parseStatus: document.querySelector("#parseStatus"),
   downloadJson: document.querySelector("#downloadJson"),
   totalMatches: document.querySelector("#totalMatches"),
+  totalFixturesPlayed: document.querySelector("#totalFixturesPlayed"),
   teamCount: document.querySelector("#teamCount"),
   homeNextCount: document.querySelector("#homeNextCount"),
   awayNextCount: document.querySelector("#awayNextCount"),
@@ -506,11 +508,13 @@ function sheetToRows(workbook) {
   const sheet = workbook.Sheets[byDateSheetName];
   const leagueResultsSheet = workbook.Sheets[leagueResultsSheetName];
   const portalFeaturesSheet = portalFeaturesSheetName ? workbook.Sheets[portalFeaturesSheetName] : null;
+  const reportSummary = readReportSummary(leagueResultsSheet);
+  reportSummary.totalFixturesPlayed = cellText(getCell(sheet, 107, 13));
   return {
     rows: mapByDateColumns(sheet),
     monthlyPlanned: readMonthlyPlanned(sheet),
     monthlyPlayed: readMonthlyPlayed(sheet),
-    reportSummary: readReportSummary(leagueResultsSheet),
+    reportSummary,
     portalFeatures: portalFeaturesSheet ? cellText(getCell(portalFeaturesSheet, 0, 0)) : "",
   };
 }
@@ -693,6 +697,9 @@ function renderKpis() {
   const awayMatches = upcoming.filter((row) => normaliseKey(row.opponent).startsWith("milford"));
 
   els.totalMatches.textContent = state.rows.length;
+  if (els.totalFixturesPlayed) {
+    els.totalFixturesPlayed.textContent = state.reportSummary.totalFixturesPlayed || "-";
+  }
   els.teamCount.textContent = milfordTeams.size;
   els.homeNextCount.textContent = homeMatches.length;
   els.awayNextCount.textContent = awayMatches.length;
