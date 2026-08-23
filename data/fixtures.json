@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-20T23:31:39+01:00",
+  "uploadedAt": "2026-08-23T23:13:48+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -791,7 +791,7 @@
       "team": "Milford L5",
       "opponent": "Saint Sebastian L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-26",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 18
+      "played": 19
     }
   ],
   "monthlyPlayed": [
@@ -867,11 +867,10 @@
     15,
     16,
     21,
-    18
+    19
   ],
   "reportSummary": {
-    "totalFixturesPlayed": "87",
-    "totalMatchesPlayed": "88",
+    "totalMatchesPlayed": "89",
     "totalWins": "43",
     "teamProgress": [
       {
@@ -896,8 +895,8 @@
       },
       {
         "team": "Milford L5",
-        "played": 5,
-        "remaining": 1
+        "played": 6,
+        "remaining": 0
       },
       {
         "team": "Milford L60",
@@ -970,7 +969,8 @@
         "avgValue": 2.1666666666666665,
         "percentValue": 0.8571428571428571
       }
-    ]
+    ],
+    "totalFixturesPlayed": "88"
   },
   "portalFeatures": ""
 }
