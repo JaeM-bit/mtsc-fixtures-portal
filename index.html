@@ -10,12 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=98" />
+    <link rel="stylesheet" href="styles.css?v=99" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=86"></script>
+    <script defer src="app.js?v=87"></script>
   </head>
   <body>
     <header class="app-header">
@@ -31,6 +31,10 @@
     <main id="dashboard">
       <section class="toolbar captain-toolbar" aria-label="Fixtures overview">
         <div>
+          <div class="season-picker" role="group" aria-label="Choose fixture season">
+            <button class="season-button is-active" type="button" data-season="summer-2026" aria-pressed="true">Summer 2026</button>
+            <button class="season-button" type="button" data-season="winter-2026-27" aria-pressed="false">Winter 2026/27</button>
+          </div>
           <a
             class="button toolbar-link"
             style="display:inline-flex;align-items:center;justify-content:center;width:fit-content;margin:0 0 6px;padding:8px 14px;min-height:34px;background:#f1fbf3;color:#1c523b;border:1px solid #cfe7d5;border-radius:6px;box-shadow:none;font-weight:700;"
@@ -43,7 +47,7 @@
           <button class="button toolbar-help" id="openHelp" type="button">
             How to Get the Best out of the Portal
           </button>
-          <h1>Dorset Summer League 2026 Matches</h1>
+          <h1 id="seasonTitle">Dorset Summer League 2026 Matches</h1>
         </div>
         <a
           class="hero-logo-wrap"

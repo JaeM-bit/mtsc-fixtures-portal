@@ -16,6 +16,32 @@ PROJECT_DIR = Path(__file__).resolve().parents[1]
 TARGET_FILE = PROJECT_DIR / "data" / "fixtures.json"
 SEASON_START = "2026-04-01"
 SEASON_END = "2026-08-31"
+SEASON_LABEL = "Summer 2026"
+
+
+def configure_season(workbook_path: Path) -> None:
+    global TARGET_FILE, SEASON_START, SEASON_END, SEASON_LABEL
+    normalized_name = re.sub(r"[^a-z0-9]+", " ", workbook_path.stem.lower()).strip()
+    if normalized_name.startswith("summer 2026 master fixture list"):
+        TARGET_FILE = PROJECT_DIR / "data" / "fixtures.json"
+        SEASON_START = "2026-04-01"
+        SEASON_END = "2026-08-31"
+        SEASON_LABEL = "Summer 2026"
+        return
+    if normalized_name.startswith("winter 2026 27 master fixture list"):
+        TARGET_FILE = PROJECT_DIR / "data" / "winter-fixtures.json"
+        SEASON_START = "2026-09-01"
+        SEASON_END = "2027-03-31"
+        SEASON_LABEL = "Winter 2026/27"
+        return
+    raise ValueError(
+        "Workbook name must begin with 'Summer 2026 Master Fixture List' "
+        "or 'Winter 2026-27 Master Fixture List'."
+    )
+
+
+def target_relative_path() -> str:
+    return TARGET_FILE.relative_to(PROJECT_DIR).as_posix()
 
 
 def local_name(tag: str) -> str:
@@ -406,7 +432,7 @@ def write_payload(payload: Dict[str, object]) -> bool:
         return False
     TARGET_FILE.write_text(new_text, encoding="utf-8")
     print(
-        f"Updated data/fixtures.json ({len(payload['rows'])} rows, {len(payload['monthlyPlanned'])} monthly rows)."
+        f"Updated {target_relative_path()} ({len(payload['rows'])} rows, {len(payload['monthlyPlanned'])} monthly rows)."
     )
     return True
 
@@ -422,16 +448,17 @@ def run_git(*args: str) -> subprocess.CompletedProcess[str]:
 
 
 def commit_and_push(message: str) -> None:
-    add_result = run_git("add", "data/fixtures.json")
+    target_path = target_relative_path()
+    add_result = run_git("add", target_path)
     if add_result.returncode != 0:
         raise RuntimeError(add_result.stderr.strip() or add_result.stdout.strip() or "git add failed")
 
-    status_result = run_git("status", "--porcelain", "--", "data/fixtures.json")
+    status_result = run_git("status", "--porcelain", "--", target_path)
     if status_result.returncode != 0:
         raise RuntimeError(status_result.stderr.strip() or status_result.stdout.strip() or "git status failed")
 
     if not status_result.stdout.strip():
-        print("No fixtures.json changes to commit.")
+        print(f"No {target_path} changes to commit.")
         return
 
     commit_result = run_git("commit", "-m", message)
@@ -442,7 +469,7 @@ def commit_and_push(message: str) -> None:
     if push_result.returncode != 0:
         raise RuntimeError(push_result.stderr.strip() or push_result.stdout.strip() or "git push failed")
 
-    print("Committed and pushed data/fixtures.json to origin/main.")
+    print(f"Committed and pushed {target_path} to origin/main.")
 
 
 def generate_once(workbook_path: Path) -> None:
@@ -451,7 +478,7 @@ def generate_once(workbook_path: Path) -> None:
     payload = build_payload(workbook_path)
     changed = write_payload(payload)
     if changed:
-        commit_and_push("Update fixtures.json from workbook")
+        commit_and_push(f"Update {SEASON_LABEL} fixtures from workbook")
 
 
 def watch(workbook_path: Path) -> None:
@@ -493,6 +520,7 @@ def main() -> int:
 
     workbook_path = Path(sys.argv[1]).expanduser().resolve()
     try:
+        configure_season(workbook_path)
         watch(workbook_path)
     except KeyboardInterrupt:
         return 0

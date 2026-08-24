@@ -100,6 +100,35 @@ main {
   width: fit-content;
 }
 
+.season-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.season-button {
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.season-button:hover,
+.season-button:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.season-button.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--ink);
+}
+
 .captain-toolbar {
   grid-template-columns: minmax(260px, 1fr) minmax(220px, 1fr);
 }

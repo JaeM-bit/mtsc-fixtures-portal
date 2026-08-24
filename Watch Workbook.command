@@ -13,6 +13,12 @@ fi
 workbook_path="${workbook_path#file://}"
 workbook_path="${workbook_path#file:/}"
 
+if [[ -n "$workbook_path" && ! -f "$workbook_path" ]]; then
+  echo "The previously selected workbook has moved or been renamed:"
+  echo "$workbook_path"
+  workbook_path=""
+fi
+
 if [[ -z "$workbook_path" || "$workbook_path" == http://* || "$workbook_path" == https://* ]]; then
   printf 'Enter the full path to your .xlsm workbook: '
   read -r workbook_path

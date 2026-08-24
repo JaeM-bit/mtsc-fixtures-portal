@@ -19,10 +19,29 @@ const state = {
   derbyFilter: false,
 };
 
-const seasonStart = "2026-04-01";
-const seasonEnd = "2026-08-31";
-const storageKey = "mtsc-fixtures-published-data";
-const publishedJsonUrl = "data/fixtures.json";
+const seasons = {
+  "summer-2026": {
+    title: "Dorset Summer League 2026 Matches",
+    start: "2026-04-01",
+    end: "2026-08-31",
+    jsonUrl: "data/fixtures.json",
+    jsonFilename: "fixtures.json",
+    storageKey: "mtsc-fixtures-published-data-summer-2026",
+  },
+  "winter-2026-27": {
+    title: "Dorset Winter League 2026/27 Matches",
+    start: "2026-09-01",
+    end: "2027-03-31",
+    jsonUrl: "data/winter-fixtures.json",
+    jsonFilename: "winter-fixtures.json",
+    storageKey: "mtsc-fixtures-published-data-winter-2026-27",
+  },
+};
+let activeSeasonKey = "summer-2026";
+
+function activeSeason() {
+  return seasons[activeSeasonKey];
+}
 
 const sampleRows = [
   {
@@ -137,6 +156,10 @@ const els = {
   fixturesBody: document.querySelector("#fixturesBody"),
   visibleCount: document.querySelector("#visibleCount"),
   reportBody: document.querySelector("#reportBody"),
+  seasonTitle: document.querySelector("#seasonTitle"),
+  seasonButtons: document.querySelectorAll("[data-season]"),
+  downloadJsonLabel: document.querySelector("#downloadJsonLabel"),
+  publisherFileHelp: document.querySelector("#publisherFileHelp"),
 };
 
 function normaliseKey(value) {
@@ -357,7 +380,7 @@ function mapByDateColumns(sheet) {
 }
 
 function isInSeason(dateValue) {
-  return dateValue >= seasonStart && dateValue <= seasonEnd;
+  return dateValue >= activeSeason().start && dateValue <= activeSeason().end;
 }
 
 function monthLabelFromCell(cell) {
@@ -952,13 +975,13 @@ function savePublishedData(
     reportSummary,
     portalFeatures
   );
-  localStorage.setItem(storageKey, JSON.stringify(payload));
+  localStorage.setItem(activeSeason().storageKey, JSON.stringify(payload));
   return payload;
 }
 
 async function loadSharedPublishedData() {
   try {
-    const response = await fetch(`${publishedJsonUrl}?v=${Date.now()}`, {
+    const response = await fetch(`${activeSeason().jsonUrl}?v=${Date.now()}`, {
       cache: "no-store",
     });
     if (!response.ok) return null;
@@ -971,13 +994,13 @@ async function loadSharedPublishedData() {
 }
 
 function loadPublishedData() {
-  const raw = localStorage.getItem(storageKey);
+  const raw = localStorage.getItem(activeSeason().storageKey);
   if (!raw) return null;
 
   try {
     return JSON.parse(raw);
   } catch {
-    localStorage.removeItem(storageKey);
+    localStorage.removeItem(activeSeason().storageKey);
     return null;
   }
 }
@@ -1063,7 +1086,7 @@ function downloadJson(payload) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "fixtures.json";
+  link.download = activeSeason().jsonFilename;
   link.style.display = "none";
   document.body.appendChild(link);
   link.click();
@@ -1145,7 +1168,7 @@ if (els.downloadJson) {
           state.portalFeatures
         );
     downloadJson(payload);
-    els.parseStatus.textContent = "fixtures.json download started.";
+    els.parseStatus.textContent = `${activeSeason().jsonFilename} download started.`;
   });
 }
 
@@ -1245,7 +1268,63 @@ async function initialisePublishedData() {
       els.downloadJson.disabled = false;
       els.downloadJson.dataset.payload = JSON.stringify(publishedData);
     }
+  } else {
+    setRows([], [], [], [], {
+      totalFixturesPlayed: "",
+      totalMatchesPlayed: "",
+      totalWins: "",
+      highestAvgPointsPerMatch: "",
+      highestAvgTeams: [],
+      highestAvgRankings: [],
+      teamProgress: [],
+    }, "");
+    displayUploadStatus("");
+    displayPortalFeatures("");
+    els.fileStatus.textContent = `No published ${activeSeasonKey === "summer-2026" ? "Summer 2026" : "Winter 2026/27"} fixture data available yet.`;
+    if (els.downloadJson) {
+      els.downloadJson.disabled = true;
+      delete els.downloadJson.dataset.payload;
+    }
   }
 }
 
+function updateSeasonControls() {
+  const season = activeSeason();
+  if (els.seasonTitle) els.seasonTitle.textContent = season.title;
+  els.seasonButtons.forEach((button) => {
+    const isActive = button.dataset.season === activeSeasonKey;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+  if (els.downloadJsonLabel) {
+    els.downloadJsonLabel.textContent = `Download ${season.jsonFilename}`;
+  }
+  if (els.publisherFileHelp) {
+    els.publisherFileHelp.textContent = `Replace data/${season.jsonFilename} with this download, then push to GitHub for captains.`;
+  }
+}
+
+els.seasonButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    const requestedSeason = button.dataset.season;
+    if (!requestedSeason || requestedSeason === activeSeasonKey || !seasons[requestedSeason]) return;
+    activeSeasonKey = requestedSeason;
+    state.homeAwayFilter = "all";
+    state.statusFilter = "all";
+    state.derbyFilter = false;
+    if (els.searchInput) els.searchInput.value = "";
+    if (els.teamFilter) els.teamFilter.value = "";
+    if (els.nextDaysInput) els.nextDaysInput.value = "";
+    updateHomeAwayButtons();
+    updateStatusFilterButtons();
+    if (els.derbyFilterButton) {
+      els.derbyFilterButton.classList.remove("is-active");
+      els.derbyFilterButton.setAttribute("aria-pressed", "false");
+    }
+    updateSeasonControls();
+    await initialisePublishedData();
+  });
+});
+
+updateSeasonControls();
 initialisePublishedData();

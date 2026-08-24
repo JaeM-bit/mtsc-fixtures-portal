@@ -10,12 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=98" />
+    <link rel="stylesheet" href="styles.css?v=99" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=86"></script>
+    <script defer src="app.js?v=87"></script>
   </head>
   <body>
     <header class="app-header">
@@ -32,6 +32,10 @@
     <main id="dashboard">
       <section class="toolbar" aria-label="Workbook upload">
         <div>
+          <div class="season-picker" role="group" aria-label="Choose fixture season">
+            <button class="season-button is-active" type="button" data-season="summer-2026" aria-pressed="true">Summer 2026</button>
+            <button class="season-button" type="button" data-season="winter-2026-27" aria-pressed="false">Winter 2026/27</button>
+          </div>
           <a
             class="button toolbar-link"
             style="display:inline-flex;align-items:center;justify-content:center;width:fit-content;margin:0 0 6px;padding:8px 14px;min-height:34px;background:#f1fbf3;color:#1c523b;border:1px solid #cfe7d5;border-radius:6px;box-shadow:none;font-weight:700;"
@@ -42,7 +46,7 @@
             Return to Milford League Tennis Site
           </a>
           <p class="eyebrow">Publisher view</p>
-          <h1>Dorset Summer League 2026 Matches</h1>
+          <h1 id="seasonTitle">Dorset Summer League 2026 Matches</h1>
         </div>
         <div class="upload-panel">
           <label class="file-drop" for="currentFile">
@@ -50,10 +54,10 @@
             <input id="currentFile" type="file" accept=".xlsx,.xlsm,.xls" />
           </label>
           <button class="button ghost full" id="downloadJson" type="button" disabled>
-            Download fixtures.json
+            <span id="downloadJsonLabel">Download fixtures.json</span>
           </button>
           <p class="upload-note">
-            Replace data/fixtures.json with this download, then push to GitHub for captains.
+            <span id="publisherFileHelp">Replace data/fixtures.json with this download, then push to GitHub for captains.</span>
           </p>
         </div>
       </section>
