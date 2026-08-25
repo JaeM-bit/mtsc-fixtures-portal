@@ -130,7 +130,13 @@ main {
 }
 
 .captain-toolbar {
-  grid-template-columns: minmax(260px, 1fr) minmax(220px, 1fr);
+  grid-template-columns: minmax(0, 3fr) minmax(220px, 1fr);
+}
+
+#seasonTitle {
+  max-width: none;
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  white-space: nowrap;
 }
 
 .hero-logo-wrap {
@@ -1159,6 +1165,10 @@ footer {
 }
 
 @media (max-width: 680px) {
+  #seasonTitle {
+    white-space: normal;
+  }
+
   .app-header,
   .status-line,
   footer {
