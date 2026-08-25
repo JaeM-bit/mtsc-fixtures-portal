@@ -48,14 +48,15 @@ Only rows with at least one match field are imported. Rows outside the season da
 
 ### Monthly Totals
 
-Rows `108:112` feed the `Matches by Month` report.
+Rows `108:112` feed the Summer `Matches by Month` report. Rows `108:113`
+feed the Winter report.
 
 | Excel cells | JSON field | Site label |
 | --- | --- | --- |
-| `B108:B112` | `monthlyPlanned[].month` | Month name. |
-| `C108:C112` | `monthlyPlanned[].originalPlanned` | Originally Planned. |
-| `H108:H112` | `monthlyPlanned[].count` | Currently Planned. |
-| `E108:E112` | `monthlyPlanned[].played` and `monthlyPlayed[]` | Played. |
+| `B108:B112` (Summer), `B108:B113` (Winter) | `monthlyPlanned[].month` | Month name. |
+| `C108:C112` (Summer), `C108:C113` (Winter) | `monthlyPlanned[].originalPlanned` | Originally Planned. |
+| `H108:H112` (Summer), `H108:H113` (Winter) | `monthlyPlanned[].count` | Currently Planned. |
+| `E108:E112` (Summer), `E108:E113` (Winter) | `monthlyPlanned[].played` and `monthlyPlayed[]` | Played. |
 | `N108` | `reportSummary.totalFixturesPlayed` | Total Fixtures Played in the top summary box. |
 
 ## `League Results` Sheet
@@ -116,7 +117,7 @@ Multi-line text is supported and displays as line breaks on the site.
 | `Milford Team` filter | Imported teams/opponents whose name starts with `Milford`. |
 | `Home/Away` filter | `By Date!I2:I93`, usually `H` or `A`. |
 | `Fixtures in next days` filter | Imported fixture dates. |
-| `Matches by Month` report | `By Date!B108:H112`. |
+| `Matches by Month` report | Summer: `By Date!B108:H112`; Winter: `By Date!B108:H113`. |
 | `All fixtures for the next 7 days` report | Imported fixture rows dated today through the next 7 days. |
 
 ## Import Rules To Remember

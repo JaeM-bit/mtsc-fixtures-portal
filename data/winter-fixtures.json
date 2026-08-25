@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-25T09:38:34+01:00",
+  "uploadedAt": "2026-08-25T09:47:24+01:00",
   "rows": [
     {
       "date": "",
@@ -862,7 +862,7 @@
       "played": 0
     },
     {
-      "month": "n/a",
+      "month": "March",
       "originalPlanned": 0,
       "count": 0,
       "played": 0
@@ -956,5 +956,5 @@
     "highestAvgRankings": [],
     "totalFixturesPlayed": "0"
   },
-  "portalFeatures": ""
+  "portalFeatures": "2 new buttons at the top 'Summer 2026' and 'Winter 2026/27' to enable visibility of the new season (Winter).  This will show mostly blank for a few weeks as the fixtures are scheduled are being agreed with other clubs.  The goal is to have the first month done as soon as possible to allow Team Captains to organise players for these early matches"
 }

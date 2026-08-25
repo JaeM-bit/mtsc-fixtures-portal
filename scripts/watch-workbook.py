@@ -250,8 +250,9 @@ def sheet_row_values(rows: Dict[int, Dict[str, str]], row_num: int) -> Dict[str,
 def read_monthly_totals(by_date_rows: Dict[int, Dict[str, str]]) -> Tuple[List[Dict[str, object]], List[float]]:
     planned: List[Dict[str, object]] = []
     played_rows: List[float] = []
+    last_row = 113 if SEASON_LABEL == "Winter 2026/27" else 112
 
-    for row_num in range(108, 113):
+    for row_num in range(108, last_row + 1):
         row = sheet_row_values(by_date_rows, row_num)
         month = (row.get("B") or "").strip()
         original_value = parse_number(row.get("C", ""))

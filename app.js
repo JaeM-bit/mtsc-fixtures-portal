@@ -397,10 +397,18 @@ function monthLabelFromCell(cell) {
   return cellText(cell);
 }
 
+function monthlyReportRowIndexes() {
+  return activeSeasonKey === "winter-2026-27"
+    ? { first: 107, last: 112 }
+    : { first: 107, last: 111 };
+}
+
 function readMonthlyPlanned(sheet) {
   const rows = [];
 
-  for (let rowIndex = 107; rowIndex <= 111; rowIndex += 1) {
+  const { first, last } = monthlyReportRowIndexes();
+
+  for (let rowIndex = first; rowIndex <= last; rowIndex += 1) {
     const month = monthLabelFromCell(getCell(sheet, rowIndex, 1));
     const originalText = cellText(getCell(sheet, rowIndex, 2));
     const countText = cellText(getCell(sheet, rowIndex, 7));
@@ -425,7 +433,9 @@ function readMonthlyPlanned(sheet) {
 function readMonthlyPlayed(sheet) {
   const rows = [];
 
-  for (let rowIndex = 107; rowIndex <= 111; rowIndex += 1) {
+  const { first, last } = monthlyReportRowIndexes();
+
+  for (let rowIndex = first; rowIndex <= last; rowIndex += 1) {
     const playedText = cellText(getCell(sheet, rowIndex, 4));
     const played = Number(String(playedText).replace(/,/g, ""));
 
@@ -830,7 +840,7 @@ function renderMonthlyPlanned() {
           <span>Currently Planned</span>
           <span>Played</span>
         </div>
-        <p>No monthly totals found in by date cells C108:C112, E108:E112 and H108:H112.</p>
+        <p>No monthly totals found in the selected season's By Date monthly-summary cells.</p>
       </div>
     `;
   }
