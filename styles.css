@@ -110,23 +110,23 @@ main {
 .season-button {
   min-height: 38px;
   padding: 8px 14px;
-  border: 1px solid #f3a4b2;
+  border: 1px solid #ead77b;
   border-radius: 999px;
-  background: #f8d6dc;
-  color: #712638;
+  background: #fff7c7;
+  color: #594a0b;
   font-weight: 800;
   cursor: pointer;
 }
 
 .season-button:hover,
 .season-button:focus-visible {
-  background: #efb8c2;
+  background: #f7e99b;
 }
 
 .season-button.is-active {
-  border-color: #c8425c;
-  background: #d95770;
-  color: var(--white);
+  border-color: #e2c94f;
+  background: #f5df72;
+  color: #403500;
 }
 
 .captain-toolbar {
