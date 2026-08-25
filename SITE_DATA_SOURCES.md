@@ -14,7 +14,7 @@ That path is stored in `.codex/workbook-watch-path` and is used by `Watch Workbo
 
 | File | Purpose | Created/updated by |
 | --- | --- | --- |
-| `data/fixtures.json` | Fixture rows, monthly totals, report summary, and portal feature text shown on the site. | `scripts/watch-workbook.py`, or by importing a downloaded `fixtures.json` with `Update Fixtures.command`. |
+| `data/fixtures.json` | Summer fixture rows, monthly totals, report summary, and the portal-wide update text shown for every season. | `scripts/watch-workbook.py`, or by importing a downloaded `fixtures.json` with `Update Fixtures.command`. |
 
 ## Workbook Sheets Used
 
@@ -94,7 +94,7 @@ The importer reads all rows in this range, sorts by average net points descendin
 
 | Excel cell | JSON field | Site box |
 | --- | --- | --- |
-| `A1` | `portalFeatures` | `Recent Features in the Past Week`. |
+| `A1` in the Summer workbook | `portalFeatures` | Portal-wide update shown for every selected season. |
 
 Multi-line text is supported and displays as line breaks on the site.
 
@@ -103,7 +103,7 @@ Multi-line text is supported and displays as line breaks on the site.
 | Site area | Data source |
 | --- | --- |
 | `Last Refresh on ...` status | `data/fixtures.json` field `uploadedAt`. |
-| `Recent Features in the Past Week` | `Portal Features!A1` through `portalFeatures`. |
+| `Recent Features in the Past Week` | Summer workbook `Portal Features!A1` through `data/fixtures.json` → `portalFeatures`; shown for every season. |
 | `TOTAL MATCHES` | Count of imported `rows[]`. |
 | `Total Fixtures Played` | `By Date!N108`. |
 | `Total Matches Played` | `League Results!T21`. |
