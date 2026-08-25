@@ -310,10 +310,10 @@ function displayPortalFeatures(features) {
 }
 
 async function loadPortalWideFeatures() {
-  const summerSeason = seasons["summer-2026"];
+  const winterSeason = seasons["winter-2026-27"];
 
   try {
-    const response = await fetch(`${summerSeason.jsonUrl}?v=${Date.now()}`, {
+    const response = await fetch(`${winterSeason.jsonUrl}?v=${Date.now()}`, {
       cache: "no-store",
     });
     if (response.ok) {
@@ -321,11 +321,11 @@ async function loadPortalWideFeatures() {
       return published.portalFeatures || "";
     }
   } catch (error) {
-    // Fall back to the last locally saved Summer workbook data below.
+    // Fall back to the last locally saved Winter workbook data below.
   }
 
   try {
-    const saved = JSON.parse(localStorage.getItem(summerSeason.storageKey) || "null");
+    const saved = JSON.parse(localStorage.getItem(winterSeason.storageKey) || "null");
     return saved?.portalFeatures || "";
   } catch (error) {
     return "";
@@ -1178,7 +1178,7 @@ if (els.currentFile) {
         published.portalFeatures
       );
       displayUploadStatus(published.uploadedAt);
-      const portalWideFeatures = activeSeasonKey === "summer-2026"
+      const portalWideFeatures = activeSeasonKey === "winter-2026-27"
         ? published.portalFeatures
         : await loadPortalWideFeatures();
       displayPortalFeatures(portalWideFeatures);
@@ -1299,7 +1299,7 @@ async function initialisePublishedData() {
       publishedData.reportSummary || state.reportSummary,
       publishedData.portalFeatures ?? state.portalFeatures
     );
-    const portalWideFeatures = activeSeasonKey === "summer-2026"
+    const portalWideFeatures = activeSeasonKey === "winter-2026-27"
       ? publishedData.portalFeatures
       : await loadPortalWideFeatures();
     displayPortalFeatures(portalWideFeatures);
