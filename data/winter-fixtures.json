@@ -1,23 +1,23 @@
 {
-  "uploadedAt": "2026-08-25T09:47:24+01:00",
+  "uploadedAt": "2026-08-27T12:40:50+01:00",
   "rows": [
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-15",
+      "day": "Thu",
+      "time": "18:30",
       "team": "Milford MXD2",
       "opponent": "Bournemouth Gardens MXD1",
       "venue": "H",
-      "status": "To Do"
+      "status": "Done"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-04",
+      "day": "Sun",
+      "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Bournemouth Gardens MXD2",
       "venue": "H",
-      "status": "To Do"
+      "status": "Done"
     },
     {
       "date": "",
@@ -25,7 +25,7 @@
       "time": "",
       "team": "Broadstone L1",
       "opponent": "Milford L5",
-      "venue": "H",
+      "venue": "A",
       "status": "To Do"
     },
     {
@@ -124,7 +124,7 @@
       "time": "",
       "team": "DL Poole L1",
       "opponent": "Milford L1",
-      "venue": "H",
+      "venue": "A",
       "status": "To Do"
     },
     {
@@ -134,7 +134,7 @@
       "team": "Milford L1",
       "opponent": "DL Poole L2",
       "venue": "H",
-      "status": "To Do"
+      "status": "Offer"
     },
     {
       "date": "",
@@ -143,7 +143,7 @@
       "team": "Milford L4",
       "opponent": "DL Poole L3",
       "venue": "H",
-      "status": "To Do"
+      "status": "Offer"
     },
     {
       "date": "",
@@ -152,7 +152,7 @@
       "team": "Milford L60",
       "opponent": "DL Poole L60",
       "venue": "H",
-      "status": "To Do"
+      "status": "Offer"
     },
     {
       "date": "",
@@ -161,7 +161,7 @@
       "team": "Milford M1",
       "opponent": "DL Poole M1",
       "venue": "H",
-      "status": "To Do"
+      "status": "Offer"
     },
     {
       "date": "",
@@ -179,7 +179,7 @@
       "team": "Milford MXD1",
       "opponent": "DL Poole MXD1",
       "venue": "H",
-      "status": "To Do"
+      "status": "Offer"
     },
     {
       "date": "",
@@ -188,7 +188,7 @@
       "team": "Milford MXD2",
       "opponent": "DL Poole MXD2",
       "venue": "H",
-      "status": "To Do"
+      "status": "Offer"
     },
     {
       "date": "",
@@ -227,49 +227,49 @@
       "status": "To Do"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-11-28",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Milford L3",
       "opponent": "Dorchester L1",
       "venue": "H",
-      "status": "To Do"
+      "status": "Done"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-11-07",
+      "day": "Sat",
+      "time": "13:00",
       "team": "Dorchester L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "status": "To Do"
+      "status": "Done"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-11-29",
+      "day": "Sun",
+      "time": "10:30",
       "team": "Milford M1",
       "opponent": "Dorchester M1",
       "venue": "H",
-      "status": "To Do"
+      "status": "Done"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-03",
+      "day": "Sat",
+      "time": "13:00",
       "team": "Dorchester M45",
       "opponent": "Milford M45",
       "venue": "A",
-      "status": "To Do"
+      "status": "Done"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-12-13",
+      "day": "Sun",
+      "time": "10:30",
       "team": "Milford MXD1",
       "opponent": "Dorchester MXD1",
       "venue": "H",
-      "status": "To Do"
+      "status": "Done"
     },
     {
       "date": "",
@@ -416,13 +416,13 @@
       "status": "To Do"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-08",
+      "day": "Thu",
+      "time": "18:30",
       "team": "Milford L2",
       "opponent": "Milford L3",
       "venue": "H",
-      "status": "To Do"
+      "status": "Done"
     },
     {
       "date": "",
@@ -650,31 +650,31 @@
       "status": "To Do"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-10",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Milford L1",
       "opponent": "Swanage L1",
       "venue": "H",
-      "status": "To Do"
+      "status": "Done"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-12-05",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Swanage MXD1",
       "opponent": "Milford MXD2",
       "venue": "A",
-      "status": "To Do"
+      "status": "Done"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-03",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Swanage MXD2",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "status": "To Do"
+      "status": "Done"
     },
     {
       "date": "",
@@ -686,8 +686,8 @@
       "status": "To Do"
     },
     {
-      "date": "",
-      "day": "",
+      "date": "2026-10-24",
+      "day": "Sat",
       "time": "",
       "team": "Milford L3",
       "opponent": "Victoria Avenue L1",
@@ -695,36 +695,36 @@
       "status": "To Do"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-17",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Victoria Avenue L1",
       "opponent": "Milford L2",
       "venue": "A",
       "status": "To Do"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-11-07",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Victoria Avenue M1",
       "opponent": "Milford M2",
       "venue": "A",
       "status": "To Do"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-24",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Victoria Avenue M2",
       "opponent": "Milford M3",
       "venue": "A",
       "status": "To Do"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-11-01",
+      "day": "Sun",
+      "time": "10:30",
       "team": "Victoria Avenue MXD1",
       "opponent": "Milford MXD3",
       "venue": "A",
@@ -834,19 +834,19 @@
     {
       "month": "October",
       "originalPlanned": 0,
-      "count": 0,
+      "count": 9,
       "played": 0
     },
     {
       "month": "November",
       "originalPlanned": 0,
-      "count": 0,
+      "count": 5,
       "played": 0
     },
     {
       "month": "December",
       "originalPlanned": 0,
-      "count": 0,
+      "count": 2,
       "played": 0
     },
     {
@@ -956,5 +956,5 @@
     "highestAvgRankings": [],
     "totalFixturesPlayed": "0"
   },
-  "portalFeatures": "2 new buttons at the top 'Summer 2026' and 'Winter 2026/27' to enable visibility of the new season (Winter).  This will show mostly blank for a few weeks as the fixtures are scheduled are being agreed with other clubs.  The goal is to have the first month done as soon as possible to allow Team Captains to organise players for these early matches"
+  "portalFeatures": ""
 }
