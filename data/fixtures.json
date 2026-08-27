@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-27T12:38:03+01:00",
+  "uploadedAt": "2026-08-27T12:43:42+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -800,7 +800,7 @@
       "team": "DL Poole L60",
       "opponent": "Milford L60",
       "venue": "A",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-27",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 19
+      "played": 20
     }
   ],
   "monthlyPlayed": [
@@ -867,10 +867,10 @@
     15,
     16,
     21,
-    19
+    20
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "89",
+    "totalMatchesPlayed": "90",
     "totalWins": "43",
     "teamProgress": [
       {
@@ -900,8 +900,8 @@
       },
       {
         "team": "Milford L60",
-        "played": 5,
-        "remaining": 1
+        "played": 6,
+        "remaining": 0
       },
       {
         "team": "Milford MXD1",
@@ -970,7 +970,7 @@
         "percentValue": 0.8571428571428571
       }
     ],
-    "totalFixturesPlayed": "88"
+    "totalFixturesPlayed": "89"
   },
   "portalFeatures": ""
 }
