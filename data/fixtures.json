@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-28T18:25:42+01:00",
+  "uploadedAt": "2026-08-28T18:44:04+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -809,7 +809,7 @@
       "team": "Milford MXD2",
       "opponent": "East Dorset MXD2",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-29",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 20
+      "played": 21
     }
   ],
   "monthlyPlayed": [
@@ -867,7 +867,7 @@
     15,
     16,
     21,
-    20
+    21
   ],
   "reportSummary": {
     "totalMatchesPlayed": "91",
@@ -970,7 +970,7 @@
         "percentValue": 0.8571428571428571
       }
     ],
-    "totalFixturesPlayed": "89"
+    "totalFixturesPlayed": "90"
   },
   "portalFeatures": ""
 }
