@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-28T18:44:04+01:00",
+  "uploadedAt": "2026-08-29T11:03:23+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -818,7 +818,7 @@
       "team": "Milford M1",
       "opponent": "Victoria Avenue M1",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     },
     {
       "date": "2026-08-30",
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 21
+      "played": 22
     }
   ],
   "monthlyPlayed": [
@@ -867,10 +867,10 @@
     15,
     16,
     21,
-    21
+    22
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "91",
+    "totalMatchesPlayed": "92",
     "totalWins": "43",
     "teamProgress": [
       {
@@ -925,8 +925,8 @@
       },
       {
         "team": "Milford M1",
-        "played": 6,
-        "remaining": 1
+        "played": 7,
+        "remaining": 0
       },
       {
         "team": "Milford M2",
@@ -970,7 +970,7 @@
         "percentValue": 0.8571428571428571
       }
     ],
-    "totalFixturesPlayed": "90"
+    "totalFixturesPlayed": "91"
   },
   "portalFeatures": ""
 }
