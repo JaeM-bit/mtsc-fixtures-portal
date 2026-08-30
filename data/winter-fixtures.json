@@ -1,258 +1,6 @@
 {
-  "uploadedAt": "2026-08-27T12:40:50+01:00",
+  "uploadedAt": "2026-08-30T22:40:09+01:00",
   "rows": [
-    {
-      "date": "2026-10-15",
-      "day": "Thu",
-      "time": "18:30",
-      "team": "Milford MXD2",
-      "opponent": "Bournemouth Gardens MXD1",
-      "venue": "H",
-      "status": "Done"
-    },
-    {
-      "date": "2026-10-04",
-      "day": "Sun",
-      "time": "10:30",
-      "team": "Milford MXD4",
-      "opponent": "Bournemouth Gardens MXD2",
-      "venue": "H",
-      "status": "Done"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Broadstone L1",
-      "opponent": "Milford L5",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD4",
-      "opponent": "Broadstone MXD1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Christchurch L1",
-      "opponent": "Milford L3",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Christchurch L1",
-      "opponent": "Milford L2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M3",
-      "opponent": "Christchurch M1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Christchurch MXD1",
-      "opponent": "Milford MXD2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Christchurch MXD2",
-      "opponent": "Milford MXD4",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD4",
-      "opponent": "Christchurch MXD2",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M3",
-      "opponent": "Corfe Mullen M1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M45",
-      "opponent": "Corfe Mullen M45",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Corfe Mullen MXD1",
-      "opponent": "Milford MXD3",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "DL Poole L1",
-      "opponent": "Milford L1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L1",
-      "opponent": "DL Poole L2",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L4",
-      "opponent": "DL Poole L3",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L60",
-      "opponent": "DL Poole L60",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M1",
-      "opponent": "DL Poole M1",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "DL Poole M2",
-      "opponent": "Milford M2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD1",
-      "opponent": "DL Poole MXD1",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD2",
-      "opponent": "DL Poole MXD2",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "DL Ringwood L1",
-      "opponent": "Milford L4",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L5",
-      "opponent": "DL Ringwood L2",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M45",
-      "opponent": "DL Ringwood M45",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "DL Ringwood MXD1",
-      "opponent": "Milford MXD2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "2026-11-28",
-      "day": "Sat",
-      "time": "10:30",
-      "team": "Milford L3",
-      "opponent": "Dorchester L1",
-      "venue": "H",
-      "status": "Done"
-    },
-    {
-      "date": "2026-11-07",
-      "day": "Sat",
-      "time": "13:00",
-      "team": "Dorchester L1",
-      "opponent": "Milford L2",
-      "venue": "A",
-      "status": "Done"
-    },
-    {
-      "date": "2026-11-29",
-      "day": "Sun",
-      "time": "10:30",
-      "team": "Milford M1",
-      "opponent": "Dorchester M1",
-      "venue": "H",
-      "status": "Done"
-    },
     {
       "date": "2026-10-03",
       "day": "Sat",
@@ -260,412 +8,7 @@
       "team": "Dorchester M45",
       "opponent": "Milford M45",
       "venue": "A",
-      "status": "Done"
-    },
-    {
-      "date": "2026-12-13",
-      "day": "Sun",
-      "time": "10:30",
-      "team": "Milford MXD1",
-      "opponent": "Dorchester MXD1",
-      "venue": "H",
-      "status": "Done"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L1",
-      "opponent": "East Dorset L1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "East Dorset L2",
-      "opponent": "Milford L1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "East Dorset M1",
-      "opponent": "Milford M1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M2",
-      "opponent": "East Dorset M2",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M3",
-      "opponent": "East Dorset M3",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "East Dorset MXD1",
-      "opponent": "Milford MXD1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD1",
-      "opponent": "East Dorset MXD2",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD3",
-      "opponent": "East Dorset MXD3",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Ferndown MXD1",
-      "opponent": "Milford MXD4",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Hale Gardens L1",
-      "opponent": "Milford L3",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L2",
-      "opponent": "Hale Gardens L1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M1",
-      "opponent": "Hale Gardens M1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M2",
-      "opponent": "Hale Gardens M2",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Hale Gardens MXD1",
-      "opponent": "Milford MXD2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD4",
-      "opponent": "Hale Gardens MXD4",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Lymington Tennis M1",
-      "opponent": "Milford M3",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "2026-10-08",
-      "day": "Thu",
-      "time": "18:30",
-      "team": "Milford L2",
-      "opponent": "Milford L3",
-      "venue": "H",
-      "status": "Done"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L5",
-      "opponent": "Pythouse L1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD4",
-      "opponent": "Pythouse MXD1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Pythouse MXD2",
-      "opponent": "Milford MXD4",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Saint Sebastian L1",
-      "opponent": "Milford L5",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Saint Sebastian M1",
-      "opponent": "Milford M3",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Sandleheath M1",
-      "opponent": "Milford M1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD3",
-      "opponent": "Sandleheath MXD1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M2",
-      "opponent": "Shillingstone M1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Southbourne L1",
-      "opponent": "Milford L1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L1",
-      "opponent": "Southbourne L2",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L4",
-      "opponent": "Southbourne L3",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Southbourne L60",
-      "opponent": "Milford L60",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M1",
-      "opponent": "Southbourne M1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Southbourne M2",
-      "opponent": "Milford M2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Southbourne MXD1",
-      "opponent": "Milford MXD1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Southbourne MXD2",
-      "opponent": "Milford MXD1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L3",
-      "opponent": "St Leonards L1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L2",
-      "opponent": "St Leonards L1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "St Leonards L2",
-      "opponent": "Milford L4",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "St Leonards L3",
-      "opponent": "Milford L5",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "St Leonards L60",
-      "opponent": "Milford L60",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "St Leonards M1",
-      "opponent": "Milford M2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "St Leonards M45",
-      "opponent": "Milford M45",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD2",
-      "opponent": "St Leonards MXD1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "St Leonards MXD3",
-      "opponent": "Milford MXD4",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "2026-10-10",
-      "day": "Sat",
-      "time": "10:30",
-      "team": "Milford L1",
-      "opponent": "Swanage L1",
-      "venue": "H",
-      "status": "Done"
-    },
-    {
-      "date": "2026-12-05",
-      "day": "Sat",
-      "time": "10:30",
-      "team": "Swanage MXD1",
-      "opponent": "Milford MXD2",
-      "venue": "A",
-      "status": "Done"
+      "status": "Booked"
     },
     {
       "date": "2026-10-03",
@@ -674,25 +17,52 @@
       "team": "Swanage MXD2",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "status": "Done"
+      "status": "Booked"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L4",
-      "opponent": "Sway L1",
+      "date": "2026-10-04",
+      "day": "Sun",
+      "time": "10:30",
+      "team": "Milford MXD4",
+      "opponent": "Bournemouth Gardens MXD2",
       "venue": "H",
-      "status": "To Do"
+      "status": "Booked"
     },
     {
-      "date": "2026-10-24",
+      "date": "2026-10-08",
+      "day": "Thu",
+      "time": "18:30",
+      "team": "Milford L2",
+      "opponent": "Milford L3",
+      "venue": "H",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-10",
       "day": "Sat",
-      "time": "",
-      "team": "Milford L3",
-      "opponent": "Victoria Avenue L1",
+      "time": "10:30",
+      "team": "Milford L1",
+      "opponent": "Swanage L1",
       "venue": "H",
-      "status": "To Do"
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-14",
+      "day": "Wed",
+      "time": "18:30",
+      "team": "St Leonards M1",
+      "opponent": "Milford M2",
+      "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-15",
+      "day": "Thu",
+      "time": "18:30",
+      "team": "Milford MXD2",
+      "opponent": "Bournemouth Gardens MXD1",
+      "venue": "H",
+      "status": "Booked"
     },
     {
       "date": "2026-10-17",
@@ -701,16 +71,61 @@
       "team": "Victoria Avenue L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "status": "To Do"
+      "status": "Booked"
     },
     {
-      "date": "2026-11-07",
+      "date": "2026-10-17",
+      "day": "Sat",
+      "time": "14:00",
+      "team": "St Leonards L2",
+      "opponent": "Milford L4",
+      "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-17",
       "day": "Sat",
       "time": "10:30",
-      "team": "Victoria Avenue M1",
-      "opponent": "Milford M2",
+      "team": "Milford M1",
+      "opponent": "DL Poole M1",
+      "venue": "H",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-18",
+      "day": "Sun",
+      "time": "12:00",
+      "team": "St Leonards L3",
+      "opponent": "Milford L5",
       "venue": "A",
-      "status": "To Do"
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-18",
+      "day": "Sun",
+      "time": "10:30",
+      "team": "Milford MXD4",
+      "opponent": "Hale Gardens MXD4",
+      "venue": "H",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-22",
+      "day": "Thu",
+      "time": "18:30",
+      "team": "Milford L60",
+      "opponent": "DL Poole L60",
+      "venue": "H",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-24",
+      "day": "Sat",
+      "time": "10:30",
+      "team": "Milford L3",
+      "opponent": "Victoria Avenue L1",
+      "venue": "H",
+      "status": "Booked"
     },
     {
       "date": "2026-10-24",
@@ -719,163 +134,38 @@
       "team": "Victoria Avenue M2",
       "opponent": "Milford M3",
       "venue": "A",
-      "status": "To Do"
+      "status": "Booked"
     },
     {
-      "date": "2026-11-01",
-      "day": "Sun",
-      "time": "10:30",
-      "team": "Victoria Avenue MXD1",
-      "opponent": "Milford MXD3",
-      "venue": "A",
-      "status": "To Do"
+      "date": "2026-10-29",
+      "day": "Thu",
+      "time": "18:30",
+      "team": "Milford M1",
+      "opponent": "Hale Gardens M1",
+      "venue": "H",
+      "status": "Booked"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "West Hants L60",
+      "date": "2026-10-29",
+      "day": "Thu",
+      "time": "18:30",
+      "team": "Southbourne L60",
       "opponent": "Milford L60",
       "venue": "A",
-      "status": "To Do"
+      "status": "Booked"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L60",
-      "opponent": "West Hants L60",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "West Hants M1",
-      "opponent": "Milford M1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "West Hants MXD1",
-      "opponent": "Milford MXD1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2026-10-31",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Milford L5",
-      "opponent": "Wimborne L1",
+      "opponent": "Pythouse L1",
       "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford M3",
-      "opponent": "Wimborne M1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD3",
-      "opponent": "Wimborne MXD1",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD4",
-      "opponent": "Wimborne MXD2",
-      "venue": "H",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Winton L1",
-      "opponent": "Milford L4",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Winton MXD1",
-      "opponent": "Milford MXD3",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Winton MXD2",
-      "opponent": "Milford MXD4",
-      "venue": "A",
-      "status": "To Do"
+      "status": "Booked"
     }
   ],
-  "monthlyPlanned": [
-    {
-      "month": "October",
-      "originalPlanned": 0,
-      "count": 9,
-      "played": 0
-    },
-    {
-      "month": "November",
-      "originalPlanned": 0,
-      "count": 5,
-      "played": 0
-    },
-    {
-      "month": "December",
-      "originalPlanned": 0,
-      "count": 2,
-      "played": 0
-    },
-    {
-      "month": "January",
-      "originalPlanned": 0,
-      "count": 0,
-      "played": 0
-    },
-    {
-      "month": "February",
-      "originalPlanned": 0,
-      "count": 0,
-      "played": 0
-    },
-    {
-      "month": "March",
-      "originalPlanned": 0,
-      "count": 0,
-      "played": 0
-    }
-  ],
-  "monthlyPlayed": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
+  "monthlyPlanned": [],
+  "monthlyPlayed": [],
   "reportSummary": {
     "totalMatchesPlayed": "0",
     "totalWins": "0",
@@ -954,7 +244,7 @@
     "highestAvgPointsPerMatch": "",
     "highestAvgTeams": [],
     "highestAvgRankings": [],
-    "totalFixturesPlayed": "0"
+    "totalFixturesPlayed": ""
   },
   "portalFeatures": ""
 }
