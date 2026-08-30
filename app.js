@@ -37,7 +37,7 @@ const seasons = {
     storageKey: "mtsc-fixtures-published-data-winter-2026-27",
   },
 };
-let activeSeasonKey = "summer-2026";
+let activeSeasonKey = "winter-2026-27";
 
 function activeSeason() {
   return seasons[activeSeasonKey];
