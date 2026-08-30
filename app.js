@@ -736,10 +736,15 @@ function statusBadgeClass(row) {
 }
 
 function renderKpis() {
+  const reportTeams = Array.isArray(state.reportSummary.teamProgress)
+    ? state.reportSummary.teamProgress.map((item) => item?.team).filter(Boolean)
+    : [];
   const milfordTeams = new Set(
-    state.rows
-      .flatMap((row) => [row.team, row.opponent])
-      .filter((team) => normaliseKey(team).startsWith("milford"))
+    reportTeams.length
+      ? reportTeams
+      : state.rows
+          .flatMap((row) => [row.team, row.opponent])
+          .filter((team) => normaliseKey(team).startsWith("milford"))
   );
   const today = startOfDay(new Date());
   const future = new Date(today);
