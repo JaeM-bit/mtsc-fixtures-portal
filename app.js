@@ -747,7 +747,12 @@ function renderKpis() {
   future.setHours(23, 59, 59, 999);
   const upcoming = state.rows.filter((row) => {
     const date = new Date(`${row.date}T12:00:00`);
-    return !Number.isNaN(date.getTime()) && date >= today && date <= future;
+    return (
+      normaliseKey(labelStatus(row)) !== "played" &&
+      !Number.isNaN(date.getTime()) &&
+      date >= today &&
+      date <= future
+    );
   });
   const homeMatches = upcoming.filter((row) => normaliseKey(row.team).startsWith("milford"));
   const awayMatches = upcoming.filter((row) => normaliseKey(row.opponent).startsWith("milford"));
@@ -915,7 +920,12 @@ function renderNextSevenDays() {
   const upcoming = state.rows
     .filter((row) => {
       const date = new Date(`${row.date}T12:00:00`);
-      return !Number.isNaN(date.getTime()) && date >= today && date <= endDate;
+      return (
+        normaliseKey(labelStatus(row)) !== "played" &&
+        !Number.isNaN(date.getTime()) &&
+        date >= today &&
+        date <= endDate
+      );
     })
     .sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`));
 
