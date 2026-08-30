@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-29T11:03:23+01:00",
+  "uploadedAt": "2026-08-30T20:41:55+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -827,7 +827,7 @@
       "team": "Milford MXD1",
       "opponent": "DL Poole MXD1",
       "venue": "H",
-      "status": "Booked"
+      "status": "played"
     }
   ],
   "monthlyPlanned": [
@@ -859,7 +859,7 @@
       "month": "Aug",
       "originalPlanned": 18,
       "count": 23,
-      "played": 22
+      "played": 23
     }
   ],
   "monthlyPlayed": [
@@ -867,10 +867,10 @@
     15,
     16,
     21,
-    22
+    23
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "92",
+    "totalMatchesPlayed": "93",
     "totalWins": "43",
     "teamProgress": [
       {
@@ -905,8 +905,8 @@
       },
       {
         "team": "Milford MXD1",
-        "played": 6,
-        "remaining": 1
+        "played": 7,
+        "remaining": 0
       },
       {
         "team": "Milford MXD2",
@@ -966,11 +966,11 @@
       },
       {
         "team": "Milford MXD1",
-        "avgValue": 2.1666666666666665,
-        "percentValue": 0.8571428571428571
+        "avgValue": 2.7142857142857144,
+        "percentValue": 1.0
       }
     ],
-    "totalFixturesPlayed": "91"
+    "totalFixturesPlayed": "92"
   },
   "portalFeatures": ""
 }
