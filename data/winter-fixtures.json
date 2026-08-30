@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-30T23:08:56+01:00",
+  "uploadedAt": "2026-08-30T23:09:58+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -27,6 +27,15 @@
       "opponent": "Bournemouth Gardens MXD2",
       "venue": "H",
       "status": "Booked"
+    },
+    {
+      "date": "2026-10-04",
+      "day": "Sun",
+      "time": "13:00",
+      "team": "DL Poole M2",
+      "opponent": "Milford M2",
+      "venue": "A",
+      "status": "To Do"
     },
     {
       "date": "2026-10-08",
@@ -162,15 +171,6 @@
       "opponent": "Pythouse L1",
       "venue": "H",
       "status": "Booked"
-    },
-    {
-      "date": "2026-10-04",
-      "day": "Sun",
-      "time": "13:00",
-      "team": "DL Poole M2",
-      "opponent": "Milford M2",
-      "venue": "A",
-      "status": "To Do"
     }
   ],
   "monthlyPlanned": [],
