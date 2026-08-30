@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-30T23:09:58+01:00",
+  "uploadedAt": "2026-08-30T23:17:05+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -35,7 +35,7 @@
       "team": "DL Poole M2",
       "opponent": "Milford M2",
       "venue": "A",
-      "status": "To Do"
+      "status": "Booked"
     },
     {
       "date": "2026-10-08",
@@ -182,72 +182,72 @@
       {
         "team": "Milford L1",
         "played": 0,
-        "remaining": 0
+        "remaining": 7
       },
       {
         "team": "Milford L2",
         "played": 0,
-        "remaining": 0
+        "remaining": 6
       },
       {
         "team": "Milford L3",
         "played": 0,
-        "remaining": 0
+        "remaining": 5
       },
       {
         "team": "Milford L4",
         "played": 0,
-        "remaining": 0
+        "remaining": 6
       },
       {
         "team": "Milford L5",
         "played": 0,
-        "remaining": 0
+        "remaining": 6
       },
       {
         "team": "Milford L60",
         "played": 0,
-        "remaining": 0
+        "remaining": 5
       },
       {
         "team": "Milford MXD1",
         "played": 0,
-        "remaining": 0
+        "remaining": 7
       },
       {
         "team": "Milford MXD2",
         "played": 0,
-        "remaining": 0
+        "remaining": 7
       },
       {
         "team": "Milford MXD3",
         "played": 0,
-        "remaining": 0
+        "remaining": 7
       },
       {
         "team": "Milford MXD4",
         "played": 0,
-        "remaining": 0
+        "remaining": 6
       },
       {
         "team": "Milford M1",
         "played": 0,
-        "remaining": 0
+        "remaining": 7
       },
       {
         "team": "Milford M2",
         "played": 0,
-        "remaining": 0
+        "remaining": 7
       },
       {
         "team": "Milford M3",
         "played": 0,
-        "remaining": 0
+        "remaining": 7
       },
       {
         "team": "Milford M45",
         "played": 0,
-        "remaining": 0
+        "remaining": 4
       }
     ],
     "highestAvgPointsPerMatch": "",
