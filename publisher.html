@@ -33,7 +33,8 @@
       <section class="toolbar" aria-label="Workbook upload">
         <div>
           <div class="season-picker" role="group" aria-label="Choose fixture season">
-            <button class="season-button is-active" type="button" data-season="summer-2026" aria-pressed="true">Summer 2026</button>
+            <button class="season-button" type="button" data-season="summer-2026" aria-pressed="false">Summer 2026</button>
+            <button class="season-button is-active" type="button" data-season="winter-2026-27" aria-pressed="true">Winter 2026/27</button>
           </div>
           <a
             class="button toolbar-link"
@@ -45,7 +46,7 @@
             Return to Milford League Tennis Site
           </a>
           <p class="eyebrow">Publisher view</p>
-          <h1 id="seasonTitle">Dorset Summer League 2026 Matches</h1>
+          <h1 id="seasonTitle">Dorset Winter League 2026/27 Matches</h1>
         </div>
         <div class="upload-panel">
           <label class="file-drop" for="currentFile">
@@ -53,10 +54,10 @@
             <input id="currentFile" type="file" accept=".xlsx,.xlsm,.xls" />
           </label>
           <button class="button ghost full" id="downloadJson" type="button" disabled>
-            <span id="downloadJsonLabel">Download fixtures.json</span>
+            <span id="downloadJsonLabel">Download winter-fixtures.json</span>
           </button>
           <p class="upload-note">
-            <span id="publisherFileHelp">Replace data/fixtures.json with this download, then push to GitHub for captains.</span>
+            <span id="publisherFileHelp">Replace data/winter-fixtures.json with this download, then push to GitHub for captains.</span>
           </p>
         </div>
       </section>
