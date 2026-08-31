@@ -17,22 +17,36 @@ TARGET_FILE = PROJECT_DIR / "data" / "fixtures.json"
 SEASON_START = "2026-04-01"
 SEASON_END = "2026-08-31"
 SEASON_LABEL = "Summer 2026"
+PUBLISH_START: Optional[str] = None
+PUBLISH_END: Optional[str] = None
+PUBLISHED_MONTHS: Optional[set[str]] = None
+EXTRACT_MONTHLY_TOTALS = True
 
 
 def configure_season(workbook_path: Path) -> None:
     global TARGET_FILE, SEASON_START, SEASON_END, SEASON_LABEL
+    global PUBLISH_START, PUBLISH_END, PUBLISHED_MONTHS
+    global EXTRACT_MONTHLY_TOTALS
     normalized_name = re.sub(r"[^a-z0-9]+", " ", workbook_path.stem.lower()).strip()
     if normalized_name.startswith("summer 2026 master fixture list"):
         TARGET_FILE = PROJECT_DIR / "data" / "fixtures.json"
         SEASON_START = "2026-04-01"
         SEASON_END = "2026-08-31"
         SEASON_LABEL = "Summer 2026"
+        PUBLISH_START = None
+        PUBLISH_END = None
+        PUBLISHED_MONTHS = None
+        EXTRACT_MONTHLY_TOTALS = True
         return
     if normalized_name.startswith("winter 2026 27 master fixture list"):
         TARGET_FILE = PROJECT_DIR / "data" / "winter-fixtures.json"
         SEASON_START = "2026-09-01"
         SEASON_END = "2027-03-31"
         SEASON_LABEL = "Winter 2026/27"
+        PUBLISH_START = "2026-10-01"
+        PUBLISH_END = "2026-10-31"
+        PUBLISHED_MONTHS = {"october"}
+        EXTRACT_MONTHLY_TOTALS = False
         return
     raise ValueError(
         "Workbook name must begin with 'Summer 2026 Master Fixture List' "
@@ -243,6 +257,18 @@ def is_in_season(date_value: str) -> bool:
     return SEASON_START <= date_value <= SEASON_END
 
 
+def is_publishable_date(date_value: str) -> bool:
+    if not date_value:
+        return PUBLISH_START is None and PUBLISH_END is None
+    if not is_in_season(date_value):
+        return False
+    if PUBLISH_START is not None and date_value < PUBLISH_START:
+        return False
+    if PUBLISH_END is not None and date_value > PUBLISH_END:
+        return False
+    return True
+
+
 def sheet_row_values(rows: Dict[int, Dict[str, str]], row_num: int) -> Dict[str, str]:
     return rows.get(row_num, {})
 
@@ -251,10 +277,19 @@ def read_monthly_totals(by_date_rows: Dict[int, Dict[str, str]]) -> Tuple[List[D
     planned: List[Dict[str, object]] = []
     played_rows: List[float] = []
     last_row = 113 if SEASON_LABEL == "Winter 2026/27" else 112
+    row_numbers = (
+        range(94, 131)
+        if PUBLISHED_MONTHS is not None
+        else range(108, last_row + 1)
+    )
 
-    for row_num in range(108, last_row + 1):
+    for row_num in row_numbers:
         row = sheet_row_values(by_date_rows, row_num)
         month = (row.get("B") or "").strip()
+        if PUBLISHED_MONTHS is not None and month.lower() not in PUBLISHED_MONTHS:
+            continue
+        if PUBLISHED_MONTHS is not None and not (row.get("H") or "").strip():
+            continue
         original_value = parse_number(row.get("C", ""))
         planned_value = parse_number(row.get("H", ""))
         played_value = parse_number(row.get("E", ""))
@@ -349,7 +384,7 @@ def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]
         has_match_data = any([date_value, day_value, time_value, home_team, away_team, home_away, status_value])
         if not has_match_data:
             continue
-        if date_value and not is_in_season(date_value):
+        if not is_publishable_date(date_value):
             continue
 
         rows.append(
@@ -393,7 +428,10 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
         by_date_rows = parse_sheet_rows(zf, by_date_sheet, shared_strings)
         league_rows = parse_sheet_rows(zf, league_sheet, shared_strings)
         portal_rows = parse_sheet_rows(zf, portal_features_sheet, shared_strings) if portal_features_sheet else {}
-        monthly_planned, monthly_played = read_monthly_totals(by_date_rows)
+        if EXTRACT_MONTHLY_TOTALS:
+            monthly_planned, monthly_played = read_monthly_totals(by_date_rows)
+        else:
+            monthly_planned, monthly_played = [], []
         report_summary = read_report_summary(league_rows)
         report_summary["totalFixturesPlayed"] = (
             sheet_row_values(by_date_rows, 108).get("N") or ""
