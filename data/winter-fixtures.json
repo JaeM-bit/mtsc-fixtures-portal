@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-30T23:17:05+01:00",
+  "uploadedAt": "2026-08-31T08:40:30+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -173,8 +173,17 @@
       "status": "Booked"
     }
   ],
-  "monthlyPlanned": [],
-  "monthlyPlayed": [],
+  "monthlyPlanned": [
+    {
+      "month": "October",
+      "originalPlanned": 18,
+      "count": 19,
+      "played": 0
+    }
+  ],
+  "monthlyPlayed": [
+    0
+  ],
   "reportSummary": {
     "totalMatchesPlayed": "0",
     "totalWins": "0",
