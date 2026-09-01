@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-08-31T08:51:54+01:00",
+  "uploadedAt": "2026-09-01T10:26:50+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -26,15 +26,6 @@
       "team": "Milford MXD4",
       "opponent": "Bournemouth Gardens MXD2",
       "venue": "H",
-      "status": "Booked"
-    },
-    {
-      "date": "2026-10-04",
-      "day": "Sun",
-      "time": "13:00",
-      "team": "DL Poole M2",
-      "opponent": "Milford M2",
-      "venue": "A",
       "status": "Booked"
     },
     {
