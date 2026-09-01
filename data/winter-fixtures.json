@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-01T10:26:50+01:00",
+  "uploadedAt": "2026-09-01T10:39:48+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -178,12 +178,12 @@
       {
         "team": "Milford L2",
         "played": 0,
-        "remaining": 6
+        "remaining": 7
       },
       {
         "team": "Milford L3",
         "played": 0,
-        "remaining": 5
+        "remaining": 6
       },
       {
         "team": "Milford L4",
