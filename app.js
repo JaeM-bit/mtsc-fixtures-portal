@@ -690,18 +690,17 @@ function updateStatusFilterButtons() {
 }
 
 function updateFixtureDisclosure() {
-  const isSummer = activeSeasonKey === "summer-2026";
-  const isExpanded = !isSummer || state.fixturesExpanded;
+  const isExpanded = state.fixturesExpanded;
   if (els.fixtureTableWrap) els.fixtureTableWrap.hidden = !isExpanded;
   if (els.fixtureToggle) {
-    els.fixtureToggle.hidden = !isSummer;
+    els.fixtureToggle.hidden = false;
     els.fixtureToggle.setAttribute("aria-expanded", String(isExpanded));
     els.fixtureToggle.textContent = isExpanded ? "▲ Collapse fixtures" : "▼ Show fixtures";
   }
 }
 
-function expandSummerFixtures() {
-  if (activeSeasonKey !== "summer-2026" || state.fixturesExpanded) return;
+function expandFixtures() {
+  if (state.fixturesExpanded) return;
   state.fixturesExpanded = true;
   updateFixtureDisclosure();
 }
@@ -1280,7 +1279,7 @@ if (els.downloadJson) {
 [els.searchInput, els.teamFilter, els.nextDaysInput].forEach(
   (input) => {
     input.addEventListener("input", () => {
-      expandSummerFixtures();
+      expandFixtures();
       renderFixtures();
       els.visibleCount.textContent = `${applyFilters().length} shown`;
     });
@@ -1289,7 +1288,7 @@ if (els.downloadJson) {
 
 els.homeAwayButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    expandSummerFixtures();
+    expandFixtures();
     state.homeAwayFilter = button.dataset.homeAway || "all";
     updateHomeAwayButtons();
     renderFixtures();
@@ -1299,7 +1298,7 @@ els.homeAwayButtons.forEach((button) => {
 
 if (els.derbyFilterButton) {
   els.derbyFilterButton.addEventListener("click", () => {
-    expandSummerFixtures();
+    expandFixtures();
     state.derbyFilter = !state.derbyFilter;
     els.derbyFilterButton.classList.toggle("is-active", state.derbyFilter);
     els.derbyFilterButton.setAttribute("aria-pressed", String(state.derbyFilter));
@@ -1309,7 +1308,7 @@ if (els.derbyFilterButton) {
 
 els.statusFilterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    expandSummerFixtures();
+    expandFixtures();
     state.statusFilter = button.dataset.statusFilter || "all";
     updateStatusFilterButtons();
     renderFixtures();
