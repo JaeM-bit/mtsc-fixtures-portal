@@ -1171,7 +1171,7 @@ td {
 .team-month-table {
   width: 59%;
   min-width: 0;
-  margin: 0 auto;
+  margin: 0;
   table-layout: fixed;
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
