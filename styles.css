@@ -1169,7 +1169,8 @@ td {
 }
 
 .team-month-table {
-  width: 70%;
+  width: 49%;
+  min-width: 0;
   margin: 0 auto;
   table-layout: fixed;
   border-collapse: collapse;
