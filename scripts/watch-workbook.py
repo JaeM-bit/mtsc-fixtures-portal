@@ -20,12 +20,13 @@ SEASON_LABEL = "Summer 2026"
 PUBLISH_START: Optional[str] = None
 PUBLISH_END: Optional[str] = None
 PUBLISHED_MONTHS: Optional[set[str]] = None
+PUBLISHED_STATUSES: Optional[set[str]] = None
 EXTRACT_MONTHLY_TOTALS = True
 
 
 def configure_season(workbook_path: Path) -> None:
     global TARGET_FILE, SEASON_START, SEASON_END, SEASON_LABEL
-    global PUBLISH_START, PUBLISH_END, PUBLISHED_MONTHS
+    global PUBLISH_START, PUBLISH_END, PUBLISHED_MONTHS, PUBLISHED_STATUSES
     global EXTRACT_MONTHLY_TOTALS
     normalized_name = re.sub(r"[^a-z0-9]+", " ", workbook_path.stem.lower()).strip()
     if normalized_name.startswith("summer 2026 master fixture list"):
@@ -36,6 +37,7 @@ def configure_season(workbook_path: Path) -> None:
         PUBLISH_START = None
         PUBLISH_END = None
         PUBLISHED_MONTHS = None
+        PUBLISHED_STATUSES = None
         EXTRACT_MONTHLY_TOTALS = True
         return
     if normalized_name.startswith("winter 2026 27 master fixture list"):
@@ -46,6 +48,7 @@ def configure_season(workbook_path: Path) -> None:
         PUBLISH_START = "2026-10-01"
         PUBLISH_END = "2026-10-31"
         PUBLISHED_MONTHS = {"october"}
+        PUBLISHED_STATUSES = {"booked"}
         EXTRACT_MONTHLY_TOTALS = False
         return
     raise ValueError(
@@ -385,6 +388,8 @@ def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]
         if not has_match_data:
             continue
         if not is_publishable_date(date_value):
+            continue
+        if PUBLISHED_STATUSES is not None and status_value.lower() not in PUBLISHED_STATUSES:
             continue
 
         rows.append(

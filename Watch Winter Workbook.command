@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-winter_workbook="/Users/johnmacpherson/Library/CloudStorage/OneDrive-Personal/Pers/Tennis/Fixtures/Winter 2026 to 2027/Winter 2026-27 Master Fixture List v1.59.xlsm"
+winter_workbook="/Users/johnmacpherson/Library/CloudStorage/OneDrive-Personal (01-09-2026 12:39)/Pers/Tennis/Fixtures/Winter 2026 to 2027/Winter 2026-27 Master Fixture List v1.59.xlsm"
 
 if [[ ! -f "$winter_workbook" ]]; then
   echo "Winter workbook not found:"
