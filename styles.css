@@ -1152,10 +1152,18 @@ td {
 
 .team-month-table th,
 .team-month-table td {
-  padding: 8px 12px;
+  padding: 4px 10px;
   border-top: 1px solid var(--line);
   text-align: right;
   white-space: nowrap;
+}
+
+.team-month-table td.count-two {
+  background: #fff4bf;
+}
+
+.team-month-table td.count-three {
+  background: #f8d2d2;
 }
 
 .team-month-table th:first-child {

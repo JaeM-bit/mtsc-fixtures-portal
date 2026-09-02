@@ -939,7 +939,7 @@ function renderFixturesByTeamMonth() {
                   <tr>${row
                     .map((value, index) => index === 0
                       ? `<th scope="row">${escapeHtml(value)}</th>`
-                      : `<td>${escapeHtml(value)}</td>`)
+                      : `<td class="${value === "2" ? "count-two" : value === "3" ? "count-three" : ""}">${escapeHtml(value)}</td>`)
                     .join("")}</tr>
                 `
               )
