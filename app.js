@@ -814,7 +814,7 @@ function renderReport() {
 
   els.reportBody.innerHTML = `
     ${renderTeamProgressChart()}
-    ${renderMonthlyPlanned()}
+    ${activeSeasonKey === "summer-2026" ? renderMonthlyPlanned() : ""}
     ${renderNextSevenDays()}
   `;
 }
