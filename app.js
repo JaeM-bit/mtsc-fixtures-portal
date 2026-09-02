@@ -864,17 +864,6 @@ function renderTeamProgressChart() {
 }
 
 function renderMonthlyPlanned() {
-  if (!els.currentFile) {
-    return `
-      <div class="summary-item monthly-summary">
-        <div class="monthly-summary-head">
-          <strong>Fixtures by Month</strong>
-        </div>
-        <p>Monthly fixture figures will be shown once all fixtures are ready and fully booked.</p>
-      </div>
-    `;
-  }
-
   if (!state.monthlyPlanned.length) {
     return `
       <div class="summary-item monthly-summary">
