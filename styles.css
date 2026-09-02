@@ -1285,6 +1285,16 @@ footer {
     grid-template-columns: 92px minmax(120px, 1fr) 24px;
     gap: 7px;
   }
+
+  .team-month-table {
+    width: 100%;
+  }
+
+  .team-month-table th,
+  .team-month-table td {
+    padding: 4px 2px;
+    font-size: 0.78rem;
+  }
 }
 
 @media print {
