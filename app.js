@@ -833,7 +833,7 @@ function renderReport() {
   }
 
   els.reportBody.innerHTML = `
-    ${renderTeamProgressChart()}
+    ${activeSeasonKey === "winter-2026-27" ? renderTeamProgressChart() : ""}
     ${activeSeasonKey === "summer-2026" ? renderMonthlyPlanned() : ""}
     ${activeSeasonKey === "summer-2026" ? renderFixturesByTeamMonth() : renderNextSevenDays()}
   `;
