@@ -368,6 +368,28 @@ def read_portal_features(portal_rows: Dict[int, Dict[str, str]]) -> str:
     return (sheet_row_values(portal_rows, 1).get("A") or "").strip()
 
 
+def read_fixtures_by_team_month(by_date_rows: Dict[int, Dict[str, str]]) -> Dict[str, object]:
+    if SEASON_LABEL != "Summer 2026":
+        return {}
+
+    columns = ["Y", "Z", "AA", "AB", "AC", "AD", "AF"]
+    title = (sheet_row_values(by_date_rows, 117).get("Y") or "Months by Teams").strip()
+    headers = [
+        (sheet_row_values(by_date_rows, 118).get(column) or "").strip()
+        for column in columns
+    ]
+    rows: List[List[str]] = []
+    for row_num in range(119, 135):
+        values = [
+            (sheet_row_values(by_date_rows, row_num).get(column) or "").strip()
+            for column in columns
+        ]
+        if any(values):
+            rows.append(values)
+
+    return {"title": title, "headers": headers, "rows": rows}
+
+
 def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]]:
     rows: List[Dict[str, str]] = []
 
@@ -449,6 +471,7 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
             "monthlyPlayed": monthly_played,
             "reportSummary": report_summary,
             "portalFeatures": read_portal_features(portal_rows) if portal_rows else "",
+            "fixturesByTeamMonth": read_fixtures_by_team_month(by_date_rows),
         }
 
 

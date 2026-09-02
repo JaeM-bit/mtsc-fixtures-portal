@@ -4,6 +4,7 @@ const state = {
   rows: [],
   monthlyPlanned: [],
   monthlyPlayed: [],
+  fixturesByTeamMonth: {},
   portalFeatures: "",
   reportSummary: {
     totalFixturesPlayed: "",
@@ -815,7 +816,7 @@ function renderReport() {
   els.reportBody.innerHTML = `
     ${renderTeamProgressChart()}
     ${activeSeasonKey === "summer-2026" ? renderMonthlyPlanned() : ""}
-    ${renderNextSevenDays()}
+    ${activeSeasonKey === "summer-2026" ? renderFixturesByTeamMonth() : renderNextSevenDays()}
   `;
 }
 
@@ -913,6 +914,39 @@ function renderMonthlyPlanned() {
         <span>Played</span>
       </div>
       <div class="monthly-planned" aria-label="Fixtures by month">${items}</div>
+    </div>
+  `;
+}
+
+function renderFixturesByTeamMonth() {
+  const table = state.fixturesByTeamMonth || {};
+  const headers = Array.isArray(table.headers) ? table.headers : [];
+  const rows = Array.isArray(table.rows) ? table.rows : [];
+  if (!headers.length || !rows.length) return "";
+
+  return `
+    <div class="summary-item team-month-summary">
+      <strong>${escapeHtml(table.title || "Months by Teams")}</strong>
+      <div class="team-month-table-wrap">
+        <table class="team-month-table">
+          <thead>
+            <tr>${headers.map((header) => `<th scope="col">${escapeHtml(header)}</th>`).join("")}</tr>
+          </thead>
+          <tbody>
+            ${rows
+              .map(
+                (row) => `
+                  <tr>${row
+                    .map((value, index) => index === 0
+                      ? `<th scope="row">${escapeHtml(value)}</th>`
+                      : `<td>${escapeHtml(value)}</td>`)
+                    .join("")}</tr>
+                `
+              )
+              .join("")}
+          </tbody>
+        </table>
+      </div>
     </div>
   `;
 }
@@ -1306,6 +1340,7 @@ async function initialisePublishedData() {
 
   if (publishedData) {
     displayUploadStatus(publishedData.uploadedAt);
+    state.fixturesByTeamMonth = publishedData.fixturesByTeamMonth || {};
     setRows(
       publishedData.rows || [],
       [],
@@ -1323,6 +1358,7 @@ async function initialisePublishedData() {
       els.downloadJson.dataset.payload = JSON.stringify(publishedData);
     }
   } else {
+    state.fixturesByTeamMonth = {};
     setRows([], [], [], [], {
       totalFixturesPlayed: "",
       totalMatchesPlayed: "",

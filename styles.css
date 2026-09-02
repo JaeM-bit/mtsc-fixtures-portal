@@ -1135,6 +1135,40 @@ td {
   white-space: nowrap;
 }
 
+.team-month-summary > strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.team-month-table-wrap {
+  overflow-x: auto;
+}
+
+.team-month-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.team-month-table th,
+.team-month-table td {
+  padding: 8px 12px;
+  border-top: 1px solid var(--line);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.team-month-table th:first-child {
+  text-align: left;
+}
+
+.team-month-table thead th,
+.team-month-table tbody tr:last-child th,
+.team-month-table tbody tr:last-child td {
+  color: var(--text);
+  font-weight: 800;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
