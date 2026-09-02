@@ -1146,16 +1146,22 @@ td {
 
 .team-month-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
 }
 
 .team-month-table th,
 .team-month-table td {
-  padding: 4px 10px;
+  padding: 4px 3px;
   border-top: 1px solid var(--line);
-  text-align: right;
+  text-align: center;
   white-space: nowrap;
+}
+
+.team-month-table th:first-child,
+.team-month-table td:first-child {
+  width: 18%;
 }
 
 .team-month-table td.count-two {
@@ -1167,7 +1173,7 @@ td {
 }
 
 .team-month-table th:first-child {
-  text-align: left;
+  text-align: center;
 }
 
 .team-month-table thead th,
