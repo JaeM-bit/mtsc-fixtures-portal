@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-02T11:41:32+01:00",
+  "uploadedAt": "2026-09-02T11:51:58+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -162,6 +162,15 @@
       "opponent": "Pythouse L1",
       "venue": "H",
       "status": "Booked"
+    },
+    {
+      "date": "2026-10-25",
+      "day": "Sun",
+      "time": "10:30",
+      "team": "Milford MXD1",
+      "opponent": "East Dorset MXD2",
+      "venue": "H",
+      "status": "Offer"
     }
   ],
   "monthlyPlanned": [],
@@ -246,6 +255,5 @@
     "highestAvgRankings": [],
     "totalFixturesPlayed": ""
   },
-  "portalFeatures": "A show/collapse arrow at the top of Fixtures to reduce the number showing by default.  Use that arrow to see all or keep it collapsed and use the filters\n\nA table at the bottom of the Summer page shows final fixtrues by teams by month, showing the impact of the weather on reschedules\n\n2 new buttons at the top 'Summer 2026' and 'Winter 2026/27' to enable visibility of the new season (Winter).  This will show mostly blank for a few weeks as \nthe fixtures are scheduled with other clubs.  The goal is to have the first month done as soon as possible to allow Team Captains to organise players for these early matches",
-  "fixturesByTeamMonth": {}
+  "portalFeatures": "A show/collapse arrow at the top of Fixtures to reduce the number showing by default.  Use that arrow to see all or keep it collapsed and use the filters\n\nA table at the bottom of the Summer page shows final fixtrues by teams by month, showing the impact of the weather on reschedules\n\n2 new buttons at the top 'Summer 2026' and 'Winter 2026/27' to enable visibility of the new season (Winter).  This will show mostly blank for a few weeks as \nthe fixtures are scheduled with other clubs.  The goal is to have the first month done as soon as possible to allow Team Captains to organise players for these early matches"
 }
