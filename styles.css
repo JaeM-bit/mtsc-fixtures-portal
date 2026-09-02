@@ -818,6 +818,30 @@ h2 {
   color: var(--court);
 }
 
+.fixtures-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fixture-toggle {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.fixture-toggle:hover,
+.fixture-toggle:focus-visible {
+  border-color: var(--court);
+  outline: none;
+}
+
 #visibleCount {
   color: var(--muted);
   font-size: 0.92rem;

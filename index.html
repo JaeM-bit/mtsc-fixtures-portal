@@ -181,11 +181,23 @@
           <div class="section-head">
             <div>
               <p class="eyebrow">Fixtures</p>
-              <h2>All Fixtures</h2>
+              <div class="fixtures-title-row">
+                <h2>All Fixtures</h2>
+                <button
+                  class="fixture-toggle"
+                  id="fixtureToggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="fixtureTableWrap"
+                  hidden
+                >
+                  ▼ Show fixtures
+                </button>
+              </div>
             </div>
             <span id="visibleCount">0 shown</span>
           </div>
-          <div class="table-wrap">
+          <div class="table-wrap" id="fixtureTableWrap">
             <table>
               <thead>
                 <tr>

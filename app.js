@@ -18,6 +18,7 @@ const state = {
   homeAwayFilter: "all",
   statusFilter: "all",
   derbyFilter: false,
+  fixturesExpanded: false,
 };
 
 const seasons = {
@@ -155,6 +156,8 @@ const els = {
   statusFilterButtons: document.querySelectorAll("[data-status-filter]"),
   exportCsv: document.querySelector("#exportCsv"),
   fixturesBody: document.querySelector("#fixturesBody"),
+  fixtureToggle: document.querySelector("#fixtureToggle"),
+  fixtureTableWrap: document.querySelector("#fixtureTableWrap"),
   visibleCount: document.querySelector("#visibleCount"),
   reportBody: document.querySelector("#reportBody"),
   seasonTitle: document.querySelector("#seasonTitle"),
@@ -684,6 +687,23 @@ function updateStatusFilterButtons() {
     button.classList.toggle("is-active", button.dataset.statusFilter === state.statusFilter);
     button.setAttribute("aria-pressed", button.dataset.statusFilter === state.statusFilter ? "true" : "false");
   });
+}
+
+function updateFixtureDisclosure() {
+  const isSummer = activeSeasonKey === "summer-2026";
+  const isExpanded = !isSummer || state.fixturesExpanded;
+  if (els.fixtureTableWrap) els.fixtureTableWrap.hidden = !isExpanded;
+  if (els.fixtureToggle) {
+    els.fixtureToggle.hidden = !isSummer;
+    els.fixtureToggle.setAttribute("aria-expanded", String(isExpanded));
+    els.fixtureToggle.textContent = isExpanded ? "▲ Collapse fixtures" : "▼ Show fixtures";
+  }
+}
+
+function expandSummerFixtures() {
+  if (activeSeasonKey !== "summer-2026" || state.fixturesExpanded) return;
+  state.fixturesExpanded = true;
+  updateFixtureDisclosure();
 }
 
 function renderFixtures() {
@@ -1260,6 +1280,7 @@ if (els.downloadJson) {
 [els.searchInput, els.teamFilter, els.nextDaysInput].forEach(
   (input) => {
     input.addEventListener("input", () => {
+      expandSummerFixtures();
       renderFixtures();
       els.visibleCount.textContent = `${applyFilters().length} shown`;
     });
@@ -1268,6 +1289,7 @@ if (els.downloadJson) {
 
 els.homeAwayButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    expandSummerFixtures();
     state.homeAwayFilter = button.dataset.homeAway || "all";
     updateHomeAwayButtons();
     renderFixtures();
@@ -1277,6 +1299,7 @@ els.homeAwayButtons.forEach((button) => {
 
 if (els.derbyFilterButton) {
   els.derbyFilterButton.addEventListener("click", () => {
+    expandSummerFixtures();
     state.derbyFilter = !state.derbyFilter;
     els.derbyFilterButton.classList.toggle("is-active", state.derbyFilter);
     els.derbyFilterButton.setAttribute("aria-pressed", String(state.derbyFilter));
@@ -1286,12 +1309,20 @@ if (els.derbyFilterButton) {
 
 els.statusFilterButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    expandSummerFixtures();
     state.statusFilter = button.dataset.statusFilter || "all";
     updateStatusFilterButtons();
     renderFixtures();
     els.visibleCount.textContent = `${applyFilters().length} shown`;
   });
 });
+
+if (els.fixtureToggle) {
+  els.fixtureToggle.addEventListener("click", () => {
+    state.fixturesExpanded = !state.fixturesExpanded;
+    updateFixtureDisclosure();
+  });
+}
 
 if (els.exportCsv) {
   els.exportCsv.addEventListener("click", () => {
@@ -1392,6 +1423,7 @@ function updateSeasonControls() {
   if (els.publisherFileHelp) {
     els.publisherFileHelp.textContent = `Replace data/${season.jsonFilename} with this download, then push to GitHub for captains.`;
   }
+  updateFixtureDisclosure();
 }
 
 els.seasonButtons.forEach((button) => {
@@ -1399,6 +1431,7 @@ els.seasonButtons.forEach((button) => {
     const requestedSeason = button.dataset.season;
     if (!requestedSeason || requestedSeason === activeSeasonKey || !seasons[requestedSeason]) return;
     activeSeasonKey = requestedSeason;
+    state.fixturesExpanded = false;
     state.homeAwayFilter = "all";
     state.statusFilter = "all";
     state.derbyFilter = false;
