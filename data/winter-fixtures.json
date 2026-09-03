@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-02T11:52:29+01:00",
+  "uploadedAt": "2026-09-03T21:44:33+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -134,6 +134,15 @@
       "team": "Victoria Avenue M2",
       "opponent": "Milford M3",
       "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-10-25",
+      "day": "Sun",
+      "time": "10:30",
+      "team": "Milford MXD1",
+      "opponent": "East Dorset MXD2",
+      "venue": "H",
       "status": "Booked"
     },
     {
