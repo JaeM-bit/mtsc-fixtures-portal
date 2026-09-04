@@ -1052,8 +1052,15 @@ function setRows(
   reportSummary = state.reportSummary,
   portalFeatures = state.portalFeatures
 ) {
-  state.current = ensureIds(currentRows);
-  state.revised = ensureIds(revisedRows);
+  const publishedStatuses = new Set(["booked", "played"]);
+  const visibleRows = activeSeasonKey === "winter-2026-27"
+    ? currentRows.filter((row) => publishedStatuses.has(normaliseKey(row.status)))
+    : currentRows;
+  const visibleRevisedRows = activeSeasonKey === "winter-2026-27"
+    ? revisedRows.filter((row) => publishedStatuses.has(normaliseKey(row.status)))
+    : revisedRows;
+  state.current = ensureIds(visibleRows);
+  state.revised = ensureIds(visibleRevisedRows);
   state.monthlyPlanned = monthlyPlanned;
   state.monthlyPlayed = monthlyPlayed;
   state.reportSummary = reportSummary || state.reportSummary;

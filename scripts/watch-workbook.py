@@ -48,7 +48,7 @@ def configure_season(workbook_path: Path) -> None:
         PUBLISH_START = None
         PUBLISH_END = None
         PUBLISHED_MONTHS = None
-        PUBLISHED_STATUSES = {"to do", "offer", "booked", "rebook", "played"}
+        PUBLISHED_STATUSES = {"booked", "played"}
         EXTRACT_MONTHLY_TOTALS = False
         return
     raise ValueError(
