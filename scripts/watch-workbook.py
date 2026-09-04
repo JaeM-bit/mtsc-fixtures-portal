@@ -45,10 +45,10 @@ def configure_season(workbook_path: Path) -> None:
         SEASON_START = "2026-09-01"
         SEASON_END = "2027-03-31"
         SEASON_LABEL = "Winter 2026/27"
-        PUBLISH_START = "2026-10-01"
-        PUBLISH_END = "2026-10-31"
-        PUBLISHED_MONTHS = {"october"}
-        PUBLISHED_STATUSES = {"booked"}
+        PUBLISH_START = None
+        PUBLISH_END = None
+        PUBLISHED_MONTHS = None
+        PUBLISHED_STATUSES = {"to do", "offer", "booked", "rebook", "played"}
         EXTRACT_MONTHLY_TOTALS = False
         return
     raise ValueError(
