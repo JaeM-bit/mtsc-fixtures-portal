@@ -15,7 +15,7 @@
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=91"></script>
+    <script defer src="app.js?v=92"></script>
   </head>
   <body>
     <header class="app-header">
@@ -131,48 +131,11 @@
         <aside class="filters" aria-label="Fixture filters">
           <h2 class="filters-title">Filters</h2>
           <div class="filter-block">
-            <label for="searchInput">Filter by Column</label>
-            <input
-              id="searchInput"
-              type="search"
-              placeholder="Search any column"
-            />
-          </div>
-          <div class="filter-block">
-            <label for="teamFilter">Milford Team</label>
-            <select id="teamFilter">
-              <option value="">All Milford teams</option>
-            </select>
-          </div>
-          <div class="filter-block">
-            <button class="filter-chip derby-filter-button" id="derbyFilterButton" type="button" aria-pressed="false" data-tooltip="Derby Match - when 2 Milford Teams are in the same division and therefore have to play each other">
-              Show Derby Fixtures
-            </button>
-          </div>
-          <div class="filter-block">
-            <label>Home/Away</label>
-            <div class="segmented-control" role="group" aria-label="Home Away filter">
-              <button type="button" class="filter-chip is-active" data-home-away="all">All</button>
-              <button type="button" class="filter-chip" data-home-away="H">H</button>
-              <button type="button" class="filter-chip" data-home-away="A">A</button>
-            </div>
-          </div>
-          <div class="filter-block">
             <label>Status</label>
             <div class="segmented-control" role="group" aria-label="Status preset filter">
               <button type="button" class="filter-chip" data-status-filter="booked">Booked</button>
               <button type="button" class="filter-chip" data-status-filter="played">Played</button>
             </div>
-          </div>
-          <div class="filter-block">
-            <label for="nextDaysInput">Fixtures in next days</label>
-            <input
-              id="nextDaysInput"
-              type="number"
-              min="0"
-              step="1"
-              placeholder="Any number of days"
-            />
           </div>
         </aside>
 

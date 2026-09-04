@@ -166,6 +166,12 @@ const els = {
   publisherFileHelp: document.querySelector("#publisherFileHelp"),
 };
 
+// Remove superseded filter controls when an older cached copy of index.html is
+// paired with the current script.
+document.querySelectorAll(".filters .filter-block").forEach((block) => {
+  if (!block.querySelector("[data-status-filter]")) block.remove();
+});
+
 function normaliseKey(value) {
   return String(value || "")
     .trim()
@@ -619,12 +625,13 @@ function compareRows(currentRows, revisedRows) {
 }
 
 function applyFilters() {
-  const term = normaliseKey(els.searchInput.value);
-  const team = els.teamFilter.value;
+  const term = normaliseKey(els.searchInput?.value || "");
+  const team = els.teamFilter?.value || "";
   const homeAway = state.homeAwayFilter;
   const statusFilter = state.statusFilter;
-  const nextDays = Number(els.nextDaysInput.value);
-  const useNextDays = els.nextDaysInput.value !== "" && Number.isFinite(nextDays);
+  const nextDaysValue = els.nextDaysInput?.value || "";
+  const nextDays = Number(nextDaysValue);
+  const useNextDays = nextDaysValue !== "" && Number.isFinite(nextDays);
   const today = startOfDay(new Date());
   const endDate = new Date(today);
   endDate.setDate(today.getDate() + Math.max(0, nextDays - 1));
@@ -670,7 +677,7 @@ function updateFilters() {
         .filter((team) => normaliseKey(team).startsWith("milford"))
     ),
   ].sort((a, b) => a.localeCompare(b));
-  updateSelect(els.teamFilter, milfordTeams, "All Milford teams");
+  if (els.teamFilter) updateSelect(els.teamFilter, milfordTeams, "All Milford teams");
   updateHomeAwayButtons();
   updateStatusFilterButtons();
 }
@@ -1283,7 +1290,7 @@ if (els.downloadJson) {
   });
 }
 
-[els.searchInput, els.teamFilter, els.nextDaysInput].forEach(
+[els.searchInput, els.teamFilter, els.nextDaysInput].filter(Boolean).forEach(
   (input) => {
     input.addEventListener("input", () => {
       expandFixtures();
