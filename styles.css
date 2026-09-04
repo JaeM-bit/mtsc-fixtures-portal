@@ -705,6 +705,7 @@ h2 {
   align-self: start;
   display: grid;
   gap: 16px;
+  min-width: 0;
   padding: 18px;
 }
 
@@ -719,6 +720,7 @@ h2 {
 .filter-block {
   display: grid;
   gap: 7px;
+  min-width: 0;
 }
 
 .filter-block label {
@@ -731,6 +733,8 @@ h2 {
 .filter-block input,
 .filter-block select {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 40px;
   padding: 8px 10px;
   border: 1px solid var(--line);
@@ -740,12 +744,15 @@ h2 {
 }
 
 .segmented-control {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
+  min-width: 0;
 }
 
 .filter-chip {
-  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
   min-height: 38px;
   border: 1px solid var(--line);
   border-radius: 6px;
