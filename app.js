@@ -166,12 +166,6 @@ const els = {
   publisherFileHelp: document.querySelector("#publisherFileHelp"),
 };
 
-// Remove superseded filter controls when an older cached copy of index.html is
-// paired with the current script.
-document.querySelectorAll(".filters .filter-block").forEach((block) => {
-  if (!block.querySelector("[data-status-filter]")) block.remove();
-});
-
 function normaliseKey(value) {
   return String(value || "")
     .trim()
