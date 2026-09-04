@@ -126,6 +126,22 @@ const sampleMonthlyPlanned = [
   { month: "October", count: 14 },
 ];
 
+const statusControl = document.querySelector('[aria-label="Status preset filter"]');
+if (statusControl) {
+  const permittedStatuses = new Set(["all", "booked", "played"]);
+  statusControl.querySelectorAll("[data-status-filter]").forEach((button) => {
+    if (!permittedStatuses.has(button.dataset.statusFilter)) button.remove();
+  });
+  if (!statusControl.querySelector('[data-status-filter="all"]')) {
+    const allButton = document.createElement("button");
+    allButton.type = "button";
+    allButton.className = "filter-chip is-active";
+    allButton.dataset.statusFilter = "all";
+    allButton.textContent = "All";
+    statusControl.prepend(allButton);
+  }
+}
+
 const els = {
   currentFile: document.querySelector("#currentFile"),
   fileStatus: document.querySelector("#fileStatus"),

@@ -15,7 +15,7 @@
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=93"></script>
+    <script defer src="app.js?v=94"></script>
   </head>
   <body>
     <header class="app-header">
@@ -160,6 +160,7 @@
           <div class="filter-block">
             <label>Status</label>
             <div class="segmented-control" role="group" aria-label="Status preset filter">
+              <button type="button" class="filter-chip is-active" data-status-filter="all">All</button>
               <button type="button" class="filter-chip" data-status-filter="booked">Booked</button>
               <button type="button" class="filter-chip" data-status-filter="played">Played</button>
             </div>
