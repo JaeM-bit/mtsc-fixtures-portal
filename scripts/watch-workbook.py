@@ -37,7 +37,7 @@ def configure_season(workbook_path: Path) -> None:
         PUBLISH_START = None
         PUBLISH_END = None
         PUBLISHED_MONTHS = None
-        PUBLISHED_STATUSES = None
+        PUBLISHED_STATUSES = {"booked", "played"}
         EXTRACT_MONTHLY_TOTALS = True
         return
     if normalized_name.startswith("winter 2026 27 master fixture list"):
