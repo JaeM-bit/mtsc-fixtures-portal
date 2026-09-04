@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-04T23:52:25+01:00",
+  "uploadedAt": "2026-09-05T00:06:54+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -867,6 +867,6 @@
     "highestAvgRankings": [],
     "totalFixturesPlayed": ""
   },
-  "portalFeatures": "A show/collapse arrow at the top of Fixtures to reduce the number showing by default.  Use that arrow to see all or keep it collapsed and use the filters\n\nA table at the bottom of the Summer page shows final fixtrues by teams by month, showing the impact of the weather on reschedules\n\n2 new buttons at the top 'Summer 2026' and 'Winter 2026/27' to enable visibility of the new season (Winter).  This will show mostly blank for a few weeks as \nthe fixtures are scheduled with other clubs.  The goal is to have the first month done as soon as possible to allow Team Captains to organise players for these early matches",
+  "portalFeatures": "Filters exposed to show all status of Fixtures (e.g. offer, To do, etc.)\n\nA show/collapse arrow at the top of Fixtures to reduce the number showing by default.  Use that arrow to see all or keep it collapsed and use the filters\n\nA table at the bottom of the Summer page shows final fixtrues by teams by month, showing the impact of the weather on reschedules\n\n2 new buttons at the top 'Summer 2026' and 'Winter 2026/27' to enable visibility of the new season (Winter).  This will show mostly blank for a few weeks as \nthe fixtures are scheduled with other clubs.  The goal is to have the first month done as soon as possible to allow Team Captains to organise players for these early matches",
   "fixturesByTeamMonth": {}
 }
