@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-05T08:49:15+01:00",
+  "uploadedAt": "2026-09-05T10:01:00+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -106,15 +106,6 @@
       "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Hale Gardens MXD4",
-      "venue": "H",
-      "status": "Booked"
-    },
-    {
-      "date": "2026-10-22",
-      "day": "Thu",
-      "time": "13:00",
-      "team": "Milford L60",
-      "opponent": "DL Poole L60",
       "venue": "H",
       "status": "Booked"
     },
