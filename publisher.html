@@ -10,12 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=102" />
+    <link rel="stylesheet" href="styles.css?v=108" />
     <script
       defer
       src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
     ></script>
-    <script defer src="app.js?v=87"></script>
+    <script defer src="app.js?v=95"></script>
   </head>
   <body>
     <header class="app-header">
@@ -80,8 +80,8 @@
               <strong id="totalMatches">0</strong>
             </div>
             <div class="metric-row">
-              <span class="kpi-label">Total Fixtures Played</span>
-              <strong id="totalFixturesPlayed">-</strong>
+              <span class="kpi-label">Total Fixtures Booked</span>
+              <strong id="totalFixturesBooked">-</strong>
             </div>
             <div class="metric-row">
               <span class="kpi-label kpi-label-with-note">
@@ -154,10 +154,7 @@
             <label>Status</label>
             <div class="segmented-control" role="group" aria-label="Status preset filter">
               <button type="button" class="filter-chip is-active" data-status-filter="all">All</button>
-              <button type="button" class="filter-chip" data-status-filter="to do">To Do</button>
-              <button type="button" class="filter-chip" data-status-filter="offer">Offer</button>
               <button type="button" class="filter-chip" data-status-filter="booked">Booked</button>
-              <button type="button" class="filter-chip" data-status-filter="rebook">Rebook</button>
               <button type="button" class="filter-chip" data-status-filter="played">Played</button>
             </div>
           </div>
