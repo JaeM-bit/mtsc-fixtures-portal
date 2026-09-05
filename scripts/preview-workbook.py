@@ -160,6 +160,7 @@ def build_input_template_payload(workbook_path: Path, importer) -> dict[str, obj
         "monthlyPlanned": monthly_planned,
         "monthlyPlayed": monthly_played,
         "reportSummary": {
+            "totalFixtures": str(len(fixtures)),
             "totalMatchesPlayed": len(played_results),
             "totalWins": sum(1 for item in played_results if item["won"]),
             "teamProgress": team_progress,

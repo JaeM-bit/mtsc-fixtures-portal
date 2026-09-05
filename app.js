@@ -7,6 +7,7 @@ const state = {
   fixturesByTeamMonth: {},
   portalFeatures: "",
   reportSummary: {
+    totalFixtures: "",
     totalFixturesPlayed: "",
     totalMatchesPlayed: "",
     totalWins: "",
@@ -148,7 +149,7 @@ const els = {
   parseStatus: document.querySelector("#parseStatus"),
   downloadJson: document.querySelector("#downloadJson"),
   totalMatches: document.querySelector("#totalMatches"),
-  totalFixturesPlayed: document.querySelector("#totalFixturesPlayed"),
+  totalFixturesBooked: document.querySelector("#totalFixturesBooked"),
   teamCount: document.querySelector("#teamCount"),
   homeNextCount: document.querySelector("#homeNextCount"),
   awayNextCount: document.querySelector("#awayNextCount"),
@@ -585,6 +586,7 @@ function sheetToRows(workbook) {
   const leagueResultsSheet = workbook.Sheets[leagueResultsSheetName];
   const portalFeaturesSheet = portalFeaturesSheetName ? workbook.Sheets[portalFeaturesSheetName] : null;
   const reportSummary = readReportSummary(leagueResultsSheet);
+  reportSummary.totalFixtures = cellText(getCell(sheet, 99, 8));
   reportSummary.totalFixturesPlayed = cellText(getCell(sheet, 107, 13));
   return {
     rows: mapByDateColumns(sheet),
@@ -799,9 +801,9 @@ function renderKpis() {
   const homeMatches = upcoming.filter((row) => normaliseKey(row.team).startsWith("milford"));
   const awayMatches = upcoming.filter((row) => normaliseKey(row.opponent).startsWith("milford"));
 
-  els.totalMatches.textContent = state.rows.length;
-  if (els.totalFixturesPlayed) {
-    els.totalFixturesPlayed.textContent = state.reportSummary.totalFixturesPlayed || "-";
+  els.totalMatches.textContent = state.reportSummary.totalFixtures || "-";
+  if (els.totalFixturesBooked) {
+    els.totalFixturesBooked.textContent = state.rows.length;
   }
   els.teamCount.textContent = milfordTeams.size;
   els.homeNextCount.textContent = homeMatches.length;
@@ -1414,6 +1416,7 @@ async function initialisePublishedData() {
   } else {
     state.fixturesByTeamMonth = {};
     setRows([], [], [], [], {
+      totalFixtures: "",
       totalFixturesPlayed: "",
       totalMatchesPlayed: "",
       totalWins: "",
