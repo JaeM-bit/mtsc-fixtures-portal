@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-05T00:20:18+01:00",
+  "uploadedAt": "2026-09-05T08:49:15+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -362,15 +362,6 @@
       "status": "Booked"
     },
     {
-      "date": "2026-12-03",
-      "day": "Thu",
-      "time": "18:30",
-      "team": "Milford M3",
-      "opponent": "Christchurch M1",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
       "date": "2026-12-05",
       "day": "Sat",
       "time": "10:30",
@@ -425,15 +416,6 @@
       "status": "Booked"
     },
     {
-      "date": "2026-12-13",
-      "day": "Sun",
-      "time": "10:30",
-      "team": "Milford L5",
-      "opponent": "DL Ringwood L2",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
       "date": "2026-12-17",
       "day": "Thu",
       "time": "18:30",
@@ -468,15 +450,6 @@
       "opponent": "Milford L1",
       "venue": "A",
       "status": "Booked"
-    },
-    {
-      "date": "2027-01-09",
-      "day": "Sat",
-      "time": "10:30",
-      "team": "Milford M45",
-      "opponent": "DL Ringwood M45",
-      "venue": "H",
-      "status": "Offer"
     },
     {
       "date": "2027-01-10",
@@ -558,24 +531,6 @@
       "opponent": "Broadstone MXD1",
       "venue": "H",
       "status": "Booked"
-    },
-    {
-      "date": "2027-02-05",
-      "day": "Fri",
-      "time": "11:30",
-      "team": "Milford L60",
-      "opponent": "West Hants L60 - 1",
-      "venue": "H",
-      "status": "Offer"
-    },
-    {
-      "date": "2027-02-06",
-      "day": "Sat",
-      "time": "10:30",
-      "team": "Milford L5",
-      "opponent": "Wimborne L1",
-      "venue": "H",
-      "status": "Offer"
     },
     {
       "date": "2027-02-06",
@@ -693,96 +648,6 @@
       "opponent": "Milford M3",
       "venue": "A",
       "status": "Booked"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Christchurch L1",
-      "opponent": "Milford L3",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Christchurch L1",
-      "opponent": "Milford L2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "DL Ringwood L1",
-      "opponent": "Milford L4",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "West Hants L60 - 2",
-      "opponent": "Milford L60",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "West Hants M1",
-      "opponent": "Milford M1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Lymington Tennis M1",
-      "opponent": "Milford M3",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "West Hants MXD1",
-      "opponent": "Milford MXD1",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Christchurch MXD1",
-      "opponent": "Milford MXD2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "DL Ringwood MXD1",
-      "opponent": "Milford MXD2",
-      "venue": "A",
-      "status": "To Do"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Christchurch MXD2",
-      "opponent": "Milford MXD4",
-      "venue": "A",
-      "status": "To Do"
     }
   ],
   "monthlyPlanned": [],
@@ -865,6 +730,7 @@
     "highestAvgPointsPerMatch": "",
     "highestAvgTeams": [],
     "highestAvgRankings": [],
+    "totalFixtures": "87",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "A show/collapse arrow at the top of Fixtures to reduce the number showing by default.  Use that arrow to see all or keep it collapsed and use the filters\n\nA table at the bottom of the Summer page shows final fixtrues by teams by month, showing the impact of the weather on reschedules\n\n2 new buttons at the top 'Summer 2026' and 'Winter 2026/27' to enable visibility of the new season (Winter).  This will show mostly blank for a few weeks as \nthe fixtures are scheduled with other clubs.  The goal is to have the first month done as soon as possible to allow Team Captains to organise players for these early matches",
