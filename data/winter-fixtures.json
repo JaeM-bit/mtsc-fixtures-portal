@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-06T19:37:00+01:00",
+  "uploadedAt": "2026-09-06T19:47:49+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -655,6 +655,15 @@
       "time": "10:30",
       "team": "Saint Sebastian M1",
       "opponent": "Milford M3",
+      "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2027-02-07",
+      "day": "Sun",
+      "time": "10:30",
+      "team": "Christchurch L1",
+      "opponent": "Milford L3",
       "venue": "A",
       "status": "Booked"
     }
