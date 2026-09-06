@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-06T19:35:36+01:00",
+  "uploadedAt": "2026-09-06T19:37:00+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -359,6 +359,15 @@
       "team": "Southbourne MXD2",
       "opponent": "Milford MXD1",
       "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-12-03",
+      "day": "Thu",
+      "time": "18:30",
+      "team": "Milford M3",
+      "opponent": "Christchurch M1",
+      "venue": "H",
       "status": "Booked"
     },
     {
