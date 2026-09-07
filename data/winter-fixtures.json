@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-07T15:56:09+01:00",
+  "uploadedAt": "2026-09-07T16:33:48+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -317,15 +317,6 @@
       "status": "Booked"
     },
     {
-      "date": "2026-12-20",
-      "day": "Sun",
-      "time": "10:30",
-      "team": "Milford M45",
-      "opponent": "Corfe Mullen M45",
-      "venue": "H",
-      "status": "Booked"
-    },
-    {
       "date": "2026-11-28",
       "day": "Sat",
       "time": "10:30",
@@ -431,6 +422,15 @@
       "team": "Milford L4",
       "opponent": "Southbourne L3",
       "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-12-20",
+      "day": "Sun",
+      "time": "10:30",
+      "team": "Milford M45",
+      "opponent": "Corfe Mullen M45",
+      "venue": "H",
       "status": "Booked"
     },
     {
