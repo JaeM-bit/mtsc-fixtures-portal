@@ -368,6 +368,7 @@ function buildPublishedPayload(
     monthlyPlayed,
     reportSummary,
     portalFeatures,
+    fixturesByTeamMonth: state.fixturesByTeamMonth,
   };
 }
 
@@ -491,6 +492,31 @@ function readMonthlyPlayed(sheet) {
   return rows;
 }
 
+function readFixturesByTeamMonth(sheet) {
+  const winter = activeSeasonKey === "winter-2026-27";
+  const columnIndexes = winter
+    ? [25, 26, 27, 28, 29, 30, 31]
+    : [24, 25, 26, 27, 28, 29, 31];
+  const headerRowIndex = winter ? 112 : 117;
+  const firstRowIndex = winter ? 113 : 118;
+  const lastRowIndex = winter ? 128 : 133;
+  const headers = columnIndexes.map((columnIndex) =>
+    cellText(getCell(sheet, headerRowIndex, columnIndex))
+  );
+  const rows = [];
+
+  for (let rowIndex = firstRowIndex; rowIndex <= lastRowIndex; rowIndex += 1) {
+    const values = columnIndexes.map((columnIndex) =>
+      cellText(getCell(sheet, rowIndex, columnIndex))
+    );
+    if (values.some(Boolean)) rows.push(values);
+  }
+
+  return headers.some(Boolean) && rows.length
+    ? { title: "Fixtures by Month by Team", headers, rows }
+    : {};
+}
+
 function readReportSummary(sheet) {
   const totalMatchesPlayed = cellText(getCell(sheet, 20, 19));
   const totalWins = cellText(getCell(sheet, 20, 20));
@@ -594,6 +620,7 @@ function sheetToRows(workbook) {
     monthlyPlayed: readMonthlyPlayed(sheet),
     reportSummary,
     portalFeatures: portalFeaturesSheet ? cellText(getCell(portalFeaturesSheet, 0, 0)) : "",
+    fixturesByTeamMonth: readFixturesByTeamMonth(sheet),
   };
 }
 
@@ -854,7 +881,8 @@ function renderReport() {
   els.reportBody.innerHTML = `
     ${activeSeasonKey === "winter-2026-27" ? renderTeamProgressChart() : ""}
     ${activeSeasonKey === "summer-2026" ? renderMonthlyPlanned() : ""}
-    ${activeSeasonKey === "summer-2026" ? renderFixturesByTeamMonth() : renderNextSevenDays()}
+    ${activeSeasonKey === "winter-2026-27" ? renderNextSevenDays() : ""}
+    ${renderFixturesByTeamMonth()}
   `;
 }
 
@@ -964,7 +992,7 @@ function renderFixturesByTeamMonth() {
 
   return `
     <div class="summary-item team-month-summary">
-      <strong>${escapeHtml(table.title || "Months by Teams")}</strong>
+      <strong>Fixtures by Month by Team</strong>
       <div class="team-month-table-wrap">
         <table class="team-month-table">
           <thead>
@@ -1256,6 +1284,7 @@ if (els.currentFile) {
     try {
       els.fileStatus.textContent = `Loading ${file.name}...`;
       const workbookData = await readWorkbook(file);
+      state.fixturesByTeamMonth = workbookData.fixturesByTeamMonth || {};
       const published = savePublishedData(
         workbookData.rows,
         workbookData.monthlyPlanned,

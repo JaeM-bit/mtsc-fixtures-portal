@@ -369,17 +369,17 @@ def read_portal_features(portal_rows: Dict[int, Dict[str, str]]) -> str:
 
 
 def read_fixtures_by_team_month(by_date_rows: Dict[int, Dict[str, str]]) -> Dict[str, object]:
-    if SEASON_LABEL != "Summer 2026":
-        return {}
-
-    columns = ["Y", "Z", "AA", "AB", "AC", "AD", "AF"]
-    title = (sheet_row_values(by_date_rows, 117).get("Y") or "Months by Teams").strip()
+    winter = SEASON_LABEL == "Winter 2026/27"
+    columns = ["Z", "AA", "AB", "AC", "AD", "AE", "AF"] if winter else ["Y", "Z", "AA", "AB", "AC", "AD", "AF"]
+    header_row = 113 if winter else 118
+    first_data_row = 114 if winter else 119
+    last_data_row = 129 if winter else 134
     headers = [
-        (sheet_row_values(by_date_rows, 118).get(column) or "").strip()
+        (sheet_row_values(by_date_rows, header_row).get(column) or "").strip()
         for column in columns
     ]
     rows: List[List[str]] = []
-    for row_num in range(119, 135):
+    for row_num in range(first_data_row, last_data_row + 1):
         values = [
             (sheet_row_values(by_date_rows, row_num).get(column) or "").strip()
             for column in columns
@@ -387,7 +387,7 @@ def read_fixtures_by_team_month(by_date_rows: Dict[int, Dict[str, str]]) -> Dict
         if any(values):
             rows.append(values)
 
-    return {"title": title, "headers": headers, "rows": rows}
+    return {"title": "Fixtures by Month by Team", "headers": headers, "rows": rows}
 
 
 def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]]:
