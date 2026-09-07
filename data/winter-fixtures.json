@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-07T09:53:57+01:00",
+  "uploadedAt": "2026-09-07T09:59:59+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -682,6 +682,15 @@
       "time": "10:30",
       "team": "Christchurch L1",
       "opponent": "Milford L3",
+      "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2027-02-01",
+      "day": "Mon",
+      "time": "18:30",
+      "team": "DL Ringwood MXD1",
+      "opponent": "Milford MXD2",
       "venue": "A",
       "status": "Booked"
     }
