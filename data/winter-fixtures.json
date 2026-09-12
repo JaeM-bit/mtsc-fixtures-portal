@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-12T09:55:17+01:00",
+  "uploadedAt": "2026-09-12T09:56:27+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -287,15 +287,6 @@
       "team": "Winton L1",
       "opponent": "Milford L4",
       "venue": "A",
-      "status": "Booked"
-    },
-    {
-      "date": "2026-11-22",
-      "day": "Sun",
-      "time": "10:30",
-      "team": "Milford MXD3",
-      "opponent": "East Dorset MXD3",
-      "venue": "H",
       "status": "Booked"
     },
     {
