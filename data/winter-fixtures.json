@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-15T09:53:12+01:00",
+  "uploadedAt": "2026-09-15T09:54:44+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -868,7 +868,7 @@
     "totalFixtures": "87",
     "totalFixturesPlayed": ""
   },
-  "portalFeatures": "",
+  "portalFeatures": "Added short Info/News section for Teams",
   "latestInfo": "1.  All Home Fixtures now booked on the LTA tab\n2.  All Home fixtures have courts booked\n3.  Please double check for your team and let me know if you see any discrepancies",
   "fixturesByTeamMonth": {
     "title": "Fixtures by Month by Team",
