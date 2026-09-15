@@ -474,6 +474,7 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
             "monthlyPlayed": monthly_played,
             "reportSummary": report_summary,
             "portalFeatures": read_portal_features(portal_rows) if portal_rows else "",
+            "latestInfo": (sheet_row_values(portal_rows, 1).get("B") or "").strip(),
             "fixturesByTeamMonth": read_fixtures_by_team_month(by_date_rows),
         }
 

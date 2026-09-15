@@ -97,6 +97,8 @@ The importer reads all rows in this range, sorts by average net points descendin
 | --- | --- | --- |
 | `A1` in each page’s workbook | `portalFeatures` | Update shown only on the page linked to that workbook. |
 
+| `B1` in the Winter workbook | `latestInfo` | `Latest Info/News`, immediately below Last Refresh on the Winter page only. Blank or missing B1 leaves the section blank and hides its title. |
+
 Multi-line text is supported and displays as line breaks on the site.
 
 ## Site Display Mapping

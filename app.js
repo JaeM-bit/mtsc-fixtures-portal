@@ -6,6 +6,7 @@ const state = {
   monthlyPlayed: [],
   fixturesByTeamMonth: {},
   portalFeatures: "",
+  latestInfo: "",
   reportSummary: {
     totalFixtures: "",
     totalFixturesPlayed: "",
@@ -158,6 +159,9 @@ const els = {
   summaryMatchesPlayed: document.querySelector("#summaryMatchesPlayed"),
   summaryWins: document.querySelector("#summaryWins"),
   summaryHighestAvg: document.querySelector("#summaryHighestAvg"),
+  latestInfoLine: document.querySelector("#latestInfoLine"),
+  latestInfoLabel: document.querySelector("#latestInfoLabel"),
+  latestInfo: document.querySelector("#latestInfo"),
   featureLine: document.querySelector("#featureLine"),
   featureLabel: document.querySelector("#featureLabel"),
   portalFeatures: document.querySelector("#portalFeatures"),
@@ -330,6 +334,16 @@ function displayPortalFeatures(features) {
   if (els.featureLabel) els.featureLabel.hidden = !text.trim();
 }
 
+function displayLatestInfo(info) {
+  const text = activeSeasonKey === "winter-2026-27" ? (info || "") : "";
+  if (els.latestInfo) els.latestInfo.textContent = text;
+  if (els.latestInfoLine) {
+    els.latestInfoLine.hidden = activeSeasonKey !== "winter-2026-27";
+    els.latestInfoLine.classList.toggle("is-empty", !text.trim());
+  }
+  if (els.latestInfoLabel) els.latestInfoLabel.hidden = !text.trim();
+}
+
 function buildPublishedPayload(
   rows,
   monthlyPlanned,
@@ -345,6 +359,7 @@ function buildPublishedPayload(
     monthlyPlayed,
     reportSummary,
     portalFeatures,
+    latestInfo: state.latestInfo,
     fixturesByTeamMonth: state.fixturesByTeamMonth,
   };
 }
@@ -597,6 +612,7 @@ function sheetToRows(workbook) {
     monthlyPlayed: readMonthlyPlayed(sheet),
     reportSummary,
     portalFeatures: portalFeaturesSheet ? cellText(getCell(portalFeaturesSheet, 0, 0)) : "",
+    latestInfo: portalFeaturesSheet ? cellText(getCell(portalFeaturesSheet, 0, 1)) : "",
     fixturesByTeamMonth: readFixturesByTeamMonth(sheet),
   };
 }
@@ -1262,6 +1278,7 @@ if (els.currentFile) {
       els.fileStatus.textContent = `Loading ${file.name}...`;
       const workbookData = await readWorkbook(file);
       state.fixturesByTeamMonth = workbookData.fixturesByTeamMonth || {};
+      state.latestInfo = workbookData.latestInfo || "";
       const published = savePublishedData(
         workbookData.rows,
         workbookData.monthlyPlanned,
@@ -1279,6 +1296,7 @@ if (els.currentFile) {
       );
       displayUploadStatus(published.uploadedAt);
       displayPortalFeatures(published.portalFeatures);
+      displayLatestInfo(published.latestInfo);
       if (els.downloadJson) {
         els.downloadJson.disabled = false;
         els.downloadJson.dataset.payload = JSON.stringify(published);
@@ -1396,12 +1414,16 @@ document.addEventListener("keydown", (event) => {
 async function initialisePublishedData() {
   const requestedSeasonKey = activeSeasonKey;
   state.portalFeatures = "";
+  state.latestInfo = "";
+  displayLatestInfo("");
   displayPortalFeatures("");
   const sharedData = await loadSharedPublishedData();
   if (requestedSeasonKey !== activeSeasonKey) return;
   const publishedData = sharedData || loadPublishedData();
 
   if (publishedData) {
+    state.latestInfo = publishedData.latestInfo || "";
+    displayLatestInfo(state.latestInfo);
     displayUploadStatus(publishedData.uploadedAt);
     state.fixturesByTeamMonth = publishedData.fixturesByTeamMonth || {};
     setRows(

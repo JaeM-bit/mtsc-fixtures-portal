@@ -471,7 +471,12 @@ h2 {
   font-weight: 800;
 }
 
-#portalFeatures {
+#latestInfoLine[hidden] {
+  display: none;
+}
+
+#portalFeatures,
+#latestInfo {
   text-align: left;
   font-size: 0.92rem;
   font-weight: 400;
