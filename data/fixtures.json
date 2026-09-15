@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-02T11:52:14+01:00",
+  "uploadedAt": "2026-09-15T09:21:43+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -870,7 +870,6 @@
     23
   ],
   "reportSummary": {
-    "totalFixtures": "92",
     "totalMatchesPlayed": "93",
     "totalWins": "43",
     "teamProgress": [
@@ -971,11 +970,12 @@
         "percentValue": 1.0
       }
     ],
+    "totalFixtures": "",
     "totalFixturesPlayed": "92"
   },
   "portalFeatures": "",
   "fixturesByTeamMonth": {
-    "title": "Matches by Months by Teams",
+    "title": "Fixtures by Month by Team",
     "headers": [
       "Team",
       "Apr",
