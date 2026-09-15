@@ -330,29 +330,6 @@ function displayPortalFeatures(features) {
   if (els.featureLabel) els.featureLabel.hidden = !text.trim();
 }
 
-async function loadPortalWideFeatures() {
-  const winterSeason = seasons["winter-2026-27"];
-
-  try {
-    const response = await fetch(`${winterSeason.jsonUrl}?v=${Date.now()}`, {
-      cache: "no-store",
-    });
-    if (response.ok) {
-      const published = await response.json();
-      return published.portalFeatures || "";
-    }
-  } catch (error) {
-    // Fall back to the last locally saved Winter workbook data below.
-  }
-
-  try {
-    const saved = JSON.parse(localStorage.getItem(winterSeason.storageKey) || "null");
-    return saved?.portalFeatures || "";
-  } catch (error) {
-    return "";
-  }
-}
-
 function buildPublishedPayload(
   rows,
   monthlyPlanned,
@@ -1301,10 +1278,7 @@ if (els.currentFile) {
         published.portalFeatures
       );
       displayUploadStatus(published.uploadedAt);
-      const portalWideFeatures = activeSeasonKey === "winter-2026-27"
-        ? published.portalFeatures
-        : await loadPortalWideFeatures();
-      displayPortalFeatures(portalWideFeatures);
+      displayPortalFeatures(published.portalFeatures);
       if (els.downloadJson) {
         els.downloadJson.disabled = false;
         els.downloadJson.dataset.payload = JSON.stringify(published);
@@ -1420,7 +1394,11 @@ document.addEventListener("keydown", (event) => {
 });
 
 async function initialisePublishedData() {
+  const requestedSeasonKey = activeSeasonKey;
+  state.portalFeatures = "";
+  displayPortalFeatures("");
   const sharedData = await loadSharedPublishedData();
+  if (requestedSeasonKey !== activeSeasonKey) return;
   const publishedData = sharedData || loadPublishedData();
 
   if (publishedData) {
@@ -1432,12 +1410,9 @@ async function initialisePublishedData() {
       publishedData.monthlyPlanned || [],
       publishedData.monthlyPlayed || [],
       publishedData.reportSummary || state.reportSummary,
-      publishedData.portalFeatures ?? state.portalFeatures
+      publishedData.portalFeatures ?? ""
     );
-    const portalWideFeatures = activeSeasonKey === "winter-2026-27"
-      ? publishedData.portalFeatures
-      : await loadPortalWideFeatures();
-    displayPortalFeatures(portalWideFeatures);
+    displayPortalFeatures(state.portalFeatures);
     if (els.downloadJson) {
       els.downloadJson.disabled = false;
       els.downloadJson.dataset.payload = JSON.stringify(publishedData);
@@ -1455,7 +1430,7 @@ async function initialisePublishedData() {
       teamProgress: [],
     }, "");
     displayUploadStatus("");
-    displayPortalFeatures(await loadPortalWideFeatures());
+    displayPortalFeatures("");
     els.fileStatus.textContent = `No published ${activeSeasonKey === "summer-2026" ? "Summer 2026" : "Winter 2026/27"} fixture data available yet.`;
     if (els.downloadJson) {
       els.downloadJson.disabled = true;

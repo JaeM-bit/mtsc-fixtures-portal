@@ -95,7 +95,7 @@ The importer reads all rows in this range, sorts by average net points descendin
 
 | Excel cell | JSON field | Site box |
 | --- | --- | --- |
-| `A1` in the Winter workbook | `portalFeatures` | Portal-wide update shown for every selected season. |
+| `A1` in each page’s workbook | `portalFeatures` | Update shown only on the page linked to that workbook. |
 
 Multi-line text is supported and displays as line breaks on the site.
 
@@ -104,7 +104,7 @@ Multi-line text is supported and displays as line breaks on the site.
 | Site area | Data source |
 | --- | --- |
 | `Last Refresh on ...` status | `data/fixtures.json` field `uploadedAt`. |
-| `Recent Features in the Past Week` | Winter workbook `Portal Features!A1` through `data/winter-fixtures.json` → `portalFeatures`; shown for every season. |
+| `Recent Features in the Past Week` | Selected page’s workbook `Portal Features!A1` through its configured JSON file → `portalFeatures`; shown only on that page (including future pages with their own files). |
 | `TOTAL MATCHES` | Count of imported `rows[]`. |
 | `Total Fixtures Played` | `By Date!N108`. |
 | `Total Matches Played` | `League Results!T21`. |
