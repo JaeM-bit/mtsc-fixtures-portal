@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-15T09:22:30+01:00",
+  "uploadedAt": "2026-09-15T09:22:48+01:00",
   "rows": [
     {
       "date": "2026-04-09",
@@ -973,7 +973,7 @@
     "totalFixtures": "",
     "totalFixturesPlayed": "92"
   },
-  "portalFeatures": "This shows historic fixtures from the Dorset League of Summer 2026",
+  "portalFeatures": "This shows historic fixtures of the Dorset League from Summer 2026",
   "fixturesByTeamMonth": {
     "title": "Fixtures by Month by Team",
     "headers": [
