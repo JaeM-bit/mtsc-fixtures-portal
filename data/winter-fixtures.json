@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-15T09:54:44+01:00",
+  "uploadedAt": "2026-09-25T13:51:31+03:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -106,15 +106,6 @@
       "time": "10:30",
       "team": "Milford MXD4",
       "opponent": "Hale Gardens MXD4",
-      "venue": "H",
-      "status": "Booked"
-    },
-    {
-      "date": "2026-10-21",
-      "day": "Wed",
-      "time": "11:30",
-      "team": "Milford L60",
-      "opponent": "DL Poole L60",
       "venue": "H",
       "status": "Booked"
     },
@@ -869,7 +860,7 @@
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "Added short Info/News section for Teams",
-  "latestInfo": "1.  All Home Fixtures now booked on the LTA tab\n2.  All Home fixtures have courts booked\n3.  Please double check for your team and let me know if you see any discrepancies",
+  "latestInfo": "1.  All booked Home fixtures have courts booked\n2.  Please double check for your team and let me know if you see any discrepancies",
   "fixturesByTeamMonth": {
     "title": "Fixtures by Month by Team",
     "headers": [
