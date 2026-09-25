@@ -400,6 +400,11 @@ function mapByDateColumns(sheet) {
       changeStatus: "unchanged",
     };
 
+    // Exclude workbook totals rows containing counts in both team columns.
+    if (row.team && row.opponent && Number.isFinite(Number(row.team)) && Number.isFinite(Number(row.opponent))) {
+      continue;
+    }
+
     const dateKey = normaliseKey(row.date);
     const isHeader = dateKey === "date" || dateKey === "match date";
     const hasMatchData = row.date || row.day || row.time || row.team || row.opponent || statusText;
@@ -1094,10 +1099,10 @@ function setRows(
 ) {
   const publishedStatuses = new Set(["booked", "played"]);
   const visibleRows = currentRows.filter((row) =>
-    publishedStatuses.has(normaliseKey(row.status))
+    activeSeasonKey === "winter-2026-27" || publishedStatuses.has(normaliseKey(row.status))
   );
   const visibleRevisedRows = revisedRows.filter((row) =>
-    publishedStatuses.has(normaliseKey(row.status))
+    activeSeasonKey === "winter-2026-27" || publishedStatuses.has(normaliseKey(row.status))
   );
   state.current = ensureIds(visibleRows);
   state.revised = ensureIds(visibleRevisedRows);

@@ -48,7 +48,7 @@ def configure_season(workbook_path: Path) -> None:
         PUBLISH_START = None
         PUBLISH_END = None
         PUBLISHED_MONTHS = None
-        PUBLISHED_STATUSES = {"booked", "played"}
+        PUBLISHED_STATUSES = None
         EXTRACT_MONTHLY_TOTALS = False
         return
     raise ValueError(
@@ -405,6 +405,10 @@ def read_matches(by_date_rows: Dict[int, Dict[str, str]]) -> List[Dict[str, str]
         home_away = (row.get("I") or "").strip()
         status_value = (row.get("L") or "").strip()
         status = status_value or "Published"
+
+        # The fixture range can include a totals row with numeric team cells.
+        if parse_number(home_team) is not None and parse_number(away_team) is not None:
+            continue
 
         has_match_data = any([date_value, day_value, time_value, home_team, away_team, home_away, status_value])
         if not has_match_data:

@@ -45,7 +45,7 @@ Only rows with at least one match field are imported. Rows outside the season da
 | `G2:G93` | `rows[].team` | Home Team column, Milford team filter, home match counts. |
 | `H2:H93` | `rows[].opponent` | Away Team column, Milford team filter, away match counts. |
 | `I2:I93` | `rows[].venue` | Home/Away filter. Expected values are usually `H` or `A`. |
-| `L2:L93` | `rows[].status` | Status badge. Winter publishes `To Do`, `Offer`, `Booked`, `Rebook`, and `Played`; blank Summer cells become `Published`. |
+| `L2:L93` | `rows[].status` | Status badge. Winter publishes every status, including `To Do`, `Offer`, `Booked`, `Rebook`, `In Progress`, and `Played`; blank statuses become `Published`. Summer publishes only `Booked` and `Played`. |
 
 ### Monthly Totals
 
