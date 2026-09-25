@@ -467,6 +467,9 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
         report_summary["totalFixtures"] = (
             sheet_row_values(by_date_rows, 100).get("I") or ""
         ).strip()
+        report_summary["totalFixturesBooked"] = (
+            sheet_row_values(by_date_rows, 99).get("N") or ""
+        ).strip()
         report_summary["totalFixturesPlayed"] = (
             sheet_row_values(by_date_rows, 108).get("N") or ""
         ).strip()

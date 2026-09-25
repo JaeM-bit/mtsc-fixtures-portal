@@ -610,6 +610,7 @@ function sheetToRows(workbook) {
   const portalFeaturesSheet = portalFeaturesSheetName ? workbook.Sheets[portalFeaturesSheetName] : null;
   const reportSummary = readReportSummary(leagueResultsSheet);
   reportSummary.totalFixtures = cellText(getCell(sheet, 99, 8));
+  reportSummary.totalFixturesBooked = cellText(getCell(sheet, 98, 13));
   reportSummary.totalFixturesPlayed = cellText(getCell(sheet, 107, 13));
   return {
     rows: mapByDateColumns(sheet),
@@ -828,7 +829,9 @@ function renderKpis() {
 
   els.totalMatches.textContent = state.reportSummary.totalFixtures || "-";
   if (els.totalFixturesBooked) {
-    els.totalFixturesBooked.textContent = state.rows.length;
+    els.totalFixturesBooked.textContent = activeSeasonKey === "winter-2026-27"
+      ? (state.reportSummary.totalFixturesBooked ?? "-")
+      : state.rows.length;
   }
   els.teamCount.textContent = milfordTeams.size;
   els.homeNextCount.textContent = homeMatches.length;
