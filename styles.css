@@ -918,6 +918,11 @@ td {
   color: #124f86;
 }
 
+.badge.not-booked {
+  background: #fff0d6;
+  color: #79551d;
+}
+
 .badge.played {
   background: #dff2df;
   color: #1f6b2a;

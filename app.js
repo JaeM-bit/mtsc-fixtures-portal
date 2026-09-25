@@ -797,7 +797,8 @@ function labelStatus(row) {
 
 function statusBadgeClass(row) {
   const status = normaliseKey(labelStatus(row));
-  return status === "played" ? "played" : "";
+  if (status === "booked") return "";
+  return status === "played" ? "played" : "not-booked";
 }
 
 function renderKpis() {
