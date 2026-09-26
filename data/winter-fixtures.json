@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-25T14:00:40+03:00",
+  "uploadedAt": "2026-09-26T09:34:09+03:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -108,15 +108,6 @@
       "opponent": "Hale Gardens MXD4",
       "venue": "H",
       "status": "Booked"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "11:30",
-      "team": "Milford L60",
-      "opponent": "DL Poole L60",
-      "venue": "H",
-      "status": "Rebook"
     },
     {
       "date": "2026-10-24",
@@ -340,6 +331,15 @@
       "time": "10:30",
       "team": "Milford M1",
       "opponent": "Dorchester M1",
+      "venue": "H",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-12-02",
+      "day": "Wed",
+      "time": "11:30",
+      "team": "Milford L60",
+      "opponent": "DL Poole L60",
       "venue": "H",
       "status": "Booked"
     },
@@ -866,7 +866,7 @@
     "highestAvgTeams": [],
     "highestAvgRankings": [],
     "totalFixtures": "87",
-    "totalFixturesBooked": "86",
+    "totalFixturesBooked": "87",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "Added short Info/News section for Teams",
@@ -932,7 +932,7 @@
         "L60",
         "1",
         "1",
-        "0",
+        "1",
         "1",
         "1",
         "0"
@@ -1013,7 +1013,7 @@
         "Total",
         "18",
         "19",
-        "11",
+        "12",
         "15",
         "17",
         "6"
