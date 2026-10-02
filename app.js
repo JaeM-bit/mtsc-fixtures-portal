@@ -874,6 +874,7 @@ function renderKpis() {
 }
 
 function renderReport() {
+  els.reportBody.classList.toggle("winter-report", activeSeasonKey === "winter-2026-27");
   if (!state.rows.length) {
     els.reportBody.innerHTML =
       '<p class="empty-copy">Load fixtures to see monthly planned matches and matches for the next 7 days.</p>';

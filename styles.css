@@ -1226,6 +1226,47 @@ td {
   font-weight: 800;
 }
 
+.winter-report {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 10px;
+  padding: 14px;
+}
+
+.winter-report > .summary-item {
+  min-width: 0;
+  padding: 10px;
+}
+
+.winter-report .monthly-summary-head,
+.winter-report .monthly-row {
+  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 1fr)) minmax(0, 0.65fr);
+  gap: 6px;
+}
+
+.winter-report .monthly-summary-head span {
+  font-size: 0.8rem;
+}
+
+.winter-report .monthly-row {
+  padding: 7px 0;
+  font-size: 0.88rem;
+}
+
+.winter-report .team-month-table {
+  width: 100%;
+  font-size: 0.82rem;
+}
+
+.winter-report .next-fixtures {
+  gap: 6px;
+  font-size: 0.88rem;
+}
+
+.winter-report .next-fixtures li {
+  padding: 7px 0;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
