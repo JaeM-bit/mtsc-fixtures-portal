@@ -465,7 +465,7 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
             monthly_planned, monthly_played = [], []
         report_summary = read_report_summary(league_rows)
         report_summary["totalFixtures"] = (
-            sheet_row_values(by_date_rows, 100).get("I") or ""
+            sheet_row_values(by_date_rows, 106 if SEASON_LABEL == "Summer 2026" else 100).get("I") or ""
         ).strip()
         report_summary["totalFixturesBooked"] = (
             sheet_row_values(by_date_rows, 99).get("N") or ""

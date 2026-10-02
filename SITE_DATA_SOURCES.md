@@ -59,6 +59,7 @@ feed the Winter report.
 | `H108:H112` (Summer), `H108:H113` (Winter) | `monthlyPlanned[].count` | Currently Planned. |
 | `E108:E112` (Summer), `E108:E113` (Winter) | `monthlyPlanned[].played` and `monthlyPlayed[]` | Played. |
 | `N99` | `reportSummary.totalFixturesBooked` | Winter Total Fixtures Booked in the top summary box. |
+| `I106` (Summer), `I100` (Winter) | `reportSummary.totalFixtures` | Total Fixtures in the top summary box. |
 | `N108` | `reportSummary.totalFixturesPlayed` | Total Fixtures Played in the top summary box. |
 
 ## `League Results` Sheet

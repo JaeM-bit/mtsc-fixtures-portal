@@ -609,7 +609,7 @@ function sheetToRows(workbook) {
   const leagueResultsSheet = workbook.Sheets[leagueResultsSheetName];
   const portalFeaturesSheet = portalFeaturesSheetName ? workbook.Sheets[portalFeaturesSheetName] : null;
   const reportSummary = readReportSummary(leagueResultsSheet);
-  reportSummary.totalFixtures = cellText(getCell(sheet, 99, 8));
+  reportSummary.totalFixtures = cellText(getCell(sheet, activeSeasonKey === "summer-2026" ? 105 : 99, 8));
   reportSummary.totalFixturesBooked = cellText(getCell(sheet, 98, 13));
   reportSummary.totalFixturesPlayed = cellText(getCell(sheet, 107, 13));
   return {
