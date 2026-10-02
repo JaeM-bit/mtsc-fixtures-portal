@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-09-26T09:34:09+03:00",
+  "uploadedAt": "2026-10-02T10:11:02+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -319,15 +319,6 @@
     {
       "date": "2026-11-29",
       "day": "Sun",
-      "time": "13:00",
-      "team": "DL Poole M2",
-      "opponent": "Milford M2",
-      "venue": "A",
-      "status": "Booked"
-    },
-    {
-      "date": "2026-11-29",
-      "day": "Sun",
       "time": "10:30",
       "team": "Milford M1",
       "opponent": "Dorchester M1",
@@ -395,6 +386,15 @@
       "team": "Milford L2",
       "opponent": "Hale Gardens L1",
       "venue": "H",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-12-13",
+      "day": "Sun",
+      "time": "13:00",
+      "team": "DL Poole M2",
+      "opponent": "Milford M2",
+      "venue": "A",
       "status": "Booked"
     },
     {
@@ -985,8 +985,8 @@
       [
         "M2",
         "1",
-        "2",
-        "0",
+        "1",
+        "1",
         "2",
         "1",
         "1"
@@ -1012,8 +1012,8 @@
       [
         "Total",
         "18",
-        "19",
-        "12",
+        "18",
+        "13",
         "15",
         "17",
         "6"
