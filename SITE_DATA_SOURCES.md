@@ -49,15 +49,15 @@ Only rows with at least one match field are imported. Rows outside the season da
 
 ### Monthly Totals
 
-Rows `108:112` feed the Summer `Matches by Month` report. Rows `108:113`
+Rows `108:112` feed the Summer `Matches by Month` report. Rows `102:107`
 feed the Winter report.
 
 | Excel cells | JSON field | Site label |
 | --- | --- | --- |
-| `B108:B112` (Summer), `B108:B113` (Winter) | `monthlyPlanned[].month` | Month name. |
-| `C108:C112` (Summer), `C108:C113` (Winter) | `monthlyPlanned[].originalPlanned` | Originally Planned. |
-| `H108:H112` (Summer), `H108:H113` (Winter) | `monthlyPlanned[].count` | Currently Planned. |
-| `E108:E112` (Summer), `E108:E113` (Winter) | `monthlyPlanned[].played` and `monthlyPlayed[]` | Played. |
+| `B108:B112` (Summer), `B102:B107` (Winter) | `monthlyPlanned[].month` | Month name. |
+| `C108:C112` (Summer), `C102:C107` (Winter) | `monthlyPlanned[].originalPlanned` | Originally Planned. |
+| `H108:H112` (Summer), `H102:H107` (Winter) | `monthlyPlanned[].count` | Currently Planned. |
+| `E108:E112` (Summer), `E102:E107` (Winter) | `monthlyPlanned[].played` and `monthlyPlayed[]` | Played. |
 | `N99` | `reportSummary.totalFixturesBooked` | Winter Total Fixtures Booked in the top summary box. |
 | `I106` (Summer), `I100` (Winter) | `reportSummary.totalFixtures` | Total Fixtures in the top summary box. |
 | `N108` | `reportSummary.totalFixturesPlayed` | Total Fixtures Played in the top summary box. |

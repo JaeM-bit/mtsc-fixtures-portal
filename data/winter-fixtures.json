@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-02T10:11:02+01:00",
+  "uploadedAt": "2026-10-02T10:25:17+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -785,8 +785,52 @@
       "status": "Booked"
     }
   ],
-  "monthlyPlanned": [],
-  "monthlyPlayed": [],
+  "monthlyPlanned": [
+    {
+      "month": "October",
+      "originalPlanned": 18,
+      "count": 18,
+      "played": 0
+    },
+    {
+      "month": "November",
+      "originalPlanned": 18,
+      "count": 18,
+      "played": 0
+    },
+    {
+      "month": "December",
+      "originalPlanned": 13,
+      "count": 13,
+      "played": 0
+    },
+    {
+      "month": "January",
+      "originalPlanned": 15,
+      "count": 15,
+      "played": 0
+    },
+    {
+      "month": "February",
+      "originalPlanned": 17,
+      "count": 17,
+      "played": 0
+    },
+    {
+      "month": "March",
+      "originalPlanned": 6,
+      "count": 6,
+      "played": 0
+    }
+  ],
+  "monthlyPlayed": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
   "reportSummary": {
     "totalMatchesPlayed": "0",
     "totalWins": "0",

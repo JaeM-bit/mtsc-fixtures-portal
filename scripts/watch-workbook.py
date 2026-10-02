@@ -49,7 +49,7 @@ def configure_season(workbook_path: Path) -> None:
         PUBLISH_END = None
         PUBLISHED_MONTHS = None
         PUBLISHED_STATUSES = None
-        EXTRACT_MONTHLY_TOTALS = False
+        EXTRACT_MONTHLY_TOTALS = True
         return
     raise ValueError(
         "Workbook name must begin with 'Summer 2026 Master Fixture List' "
@@ -279,11 +279,11 @@ def sheet_row_values(rows: Dict[int, Dict[str, str]], row_num: int) -> Dict[str,
 def read_monthly_totals(by_date_rows: Dict[int, Dict[str, str]]) -> Tuple[List[Dict[str, object]], List[float]]:
     planned: List[Dict[str, object]] = []
     played_rows: List[float] = []
-    last_row = 113 if SEASON_LABEL == "Winter 2026/27" else 112
+    first_row, last_row = (102, 107) if SEASON_LABEL == "Winter 2026/27" else (108, 112)
     row_numbers = (
         range(94, 131)
         if PUBLISHED_MONTHS is not None
-        else range(108, last_row + 1)
+        else range(first_row, last_row + 1)
     )
 
     for row_num in row_numbers:

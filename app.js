@@ -441,7 +441,7 @@ function monthLabelFromCell(cell) {
 
 function monthlyReportRowIndexes() {
   return activeSeasonKey === "winter-2026-27"
-    ? { first: 107, last: 112 }
+    ? { first: 101, last: 106 }
     : { first: 107, last: 111 };
 }
 
@@ -882,7 +882,7 @@ function renderReport() {
 
   els.reportBody.innerHTML = `
     ${activeSeasonKey === "winter-2026-27" ? renderTeamProgressChart() : ""}
-    ${activeSeasonKey === "summer-2026" ? renderMonthlyPlanned() : ""}
+    ${renderMonthlyPlanned()}
     ${activeSeasonKey === "winter-2026-27" ? renderNextSevenDays() : ""}
     ${renderFixturesByTeamMonth()}
   `;
