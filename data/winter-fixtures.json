@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-02T10:25:17+01:00",
+  "uploadedAt": "2026-10-03T23:21:21+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -8,7 +8,7 @@
       "team": "Dorchester M45",
       "opponent": "Milford M45",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-03",
@@ -790,7 +790,7 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 18,
-      "played": 0
+      "played": 1
     },
     {
       "month": "November",
@@ -824,7 +824,7 @@
     }
   ],
   "monthlyPlayed": [
-    0,
+    1,
     0,
     0,
     0,
@@ -832,8 +832,8 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "0",
-    "totalWins": "0",
+    "totalMatchesPlayed": "1",
+    "totalWins": "1",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -902,15 +902,23 @@
       },
       {
         "team": "Milford M45",
-        "played": 0,
-        "remaining": 4
+        "played": 1,
+        "remaining": 3
       }
     ],
-    "highestAvgPointsPerMatch": "",
-    "highestAvgTeams": [],
-    "highestAvgRankings": [],
+    "highestAvgPointsPerMatch": 6.0,
+    "highestAvgTeams": [
+      "Milford M45"
+    ],
+    "highestAvgRankings": [
+      {
+        "team": "Milford M45",
+        "avgValue": 6.0,
+        "percentValue": 0.25
+      }
+    ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "87",
+    "totalFixturesBooked": "86",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "Added short Info/News section for Teams",
