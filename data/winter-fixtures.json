@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-03T23:21:21+01:00",
+  "uploadedAt": "2026-10-04T09:13:47+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -17,7 +17,7 @@
       "team": "Swanage MXD2",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-04",
@@ -790,7 +790,7 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 18,
-      "played": 1
+      "played": 2
     },
     {
       "month": "November",
@@ -824,7 +824,7 @@
     }
   ],
   "monthlyPlayed": [
-    1,
+    2,
     0,
     0,
     0,
@@ -832,8 +832,8 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "1",
-    "totalWins": "1",
+    "totalMatchesPlayed": "2",
+    "totalWins": "2",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -877,8 +877,8 @@
       },
       {
         "team": "Milford MXD3",
-        "played": 0,
-        "remaining": 7
+        "played": 1,
+        "remaining": 6
       },
       {
         "team": "Milford MXD4",
@@ -915,10 +915,15 @@
         "team": "Milford M45",
         "avgValue": 6.0,
         "percentValue": 0.25
+      },
+      {
+        "team": "Milford MXD3",
+        "avgValue": 1.0,
+        "percentValue": 0.14285714285714285
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "86",
+    "totalFixturesBooked": "85",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "Added short Info/News section for Teams",
