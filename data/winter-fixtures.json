@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-04T09:13:47+01:00",
+  "uploadedAt": "2026-10-04T23:12:46+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -927,7 +927,7 @@
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "Added short Info/News section for Teams",
-  "latestInfo": "1.  All booked Home fixtures have courts booked\n2.  Please double check for your team and let me know if you see any discrepancies",
+  "latestInfo": "",
   "fixturesByTeamMonth": {
     "title": "Fixtures by Month by Team",
     "headers": [
