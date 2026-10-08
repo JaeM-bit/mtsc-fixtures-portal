@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-04T23:18:16+01:00",
+  "uploadedAt": "2026-10-08T23:32:16+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -35,7 +35,7 @@
       "team": "Milford L2",
       "opponent": "Milford L3",
       "venue": "H",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-10",
@@ -790,7 +790,7 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 18,
-      "played": 3
+      "played": 4
     },
     {
       "month": "November",
@@ -824,7 +824,7 @@
     }
   ],
   "monthlyPlayed": [
-    3,
+    4,
     0,
     0,
     0,
@@ -832,8 +832,8 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "3",
-    "totalWins": "3",
+    "totalMatchesPlayed": "5",
+    "totalWins": "5",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -842,13 +842,13 @@
       },
       {
         "team": "Milford L2",
-        "played": 0,
-        "remaining": 7
+        "played": 1,
+        "remaining": 6
       },
       {
         "team": "Milford L3",
-        "played": 0,
-        "remaining": 6
+        "played": 1,
+        "remaining": 5
       },
       {
         "team": "Milford L4",
@@ -923,13 +923,23 @@
         "percentValue": 0.16666666666666666
       },
       {
+        "team": "Milford L2",
+        "avgValue": 1.0,
+        "percentValue": 0.14285714285714285
+      },
+      {
         "team": "Milford MXD3",
         "avgValue": 1.0,
         "percentValue": 0.14285714285714285
+      },
+      {
+        "team": "Milford L3",
+        "avgValue": -1.0,
+        "percentValue": 0.16666666666666666
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "84",
+    "totalFixturesBooked": "83",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "Added short Info/News section for Teams",
