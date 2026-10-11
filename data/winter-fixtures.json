@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-08T23:32:16+01:00",
+  "uploadedAt": "2026-10-11T10:53:46+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -44,7 +44,7 @@
       "team": "Milford L1",
       "opponent": "Swanage L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-14",
@@ -790,7 +790,7 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 18,
-      "played": 4
+      "played": 5
     },
     {
       "month": "November",
@@ -824,7 +824,7 @@
     }
   ],
   "monthlyPlayed": [
-    4,
+    5,
     0,
     0,
     0,
@@ -832,13 +832,13 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "5",
-    "totalWins": "5",
+    "totalMatchesPlayed": "6",
+    "totalWins": "6",
     "teamProgress": [
       {
         "team": "Milford L1",
-        "played": 0,
-        "remaining": 7
+        "played": 1,
+        "remaining": 6
       },
       {
         "team": "Milford L2",
@@ -908,10 +908,16 @@
     ],
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
+      "Milford L1",
       "Milford M45",
       "Milford MXD4"
     ],
     "highestAvgRankings": [
+      {
+        "team": "Milford L1",
+        "avgValue": 6.0,
+        "percentValue": 0.14285714285714285
+      },
       {
         "team": "Milford M45",
         "avgValue": 6.0,
@@ -939,7 +945,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "83",
+    "totalFixturesBooked": "82",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "Added short Info/News section for Teams",
