@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-11T10:53:46+01:00",
+  "uploadedAt": "2026-10-11T10:55:30+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -948,7 +948,7 @@
     "totalFixturesBooked": "82",
     "totalFixturesPlayed": ""
   },
-  "portalFeatures": "Added short Info/News section for Teams",
+  "portalFeatures": "",
   "latestInfo": "",
   "fixturesByTeamMonth": {
     "title": "Fixtures by Month by Team",
