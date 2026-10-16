@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-16T22:55:24+01:00",
+  "uploadedAt": "2026-10-16T22:56:06+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -98,15 +98,6 @@
       "team": "St Leonards L3",
       "opponent": "Milford L5",
       "venue": "A",
-      "status": "Booked"
-    },
-    {
-      "date": "2027-03-21",
-      "day": "Sun",
-      "time": "10:30",
-      "team": "Milford MXD4",
-      "opponent": "Hale Gardens MXD4",
-      "venue": "H",
       "status": "Booked"
     },
     {
@@ -782,6 +773,15 @@
       "team": "West Hants M1",
       "opponent": "Milford M1",
       "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2027-03-21",
+      "day": "Sun",
+      "time": "10:30",
+      "team": "Milford MXD4",
+      "opponent": "Hale Gardens MXD4",
+      "venue": "H",
       "status": "Booked"
     }
   ],
