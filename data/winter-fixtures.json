@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-16T18:16:29+01:00",
+  "uploadedAt": "2026-10-16T18:23:55+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -62,7 +62,7 @@
       "team": "Milford MXD2",
       "opponent": "Bournemouth Gardens MXD1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-17",
@@ -790,7 +790,7 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 17,
-      "played": 5
+      "played": 6
     },
     {
       "month": "November",
@@ -824,7 +824,7 @@
     }
   ],
   "monthlyPlayed": [
-    5,
+    6,
     0,
     0,
     0,
@@ -832,8 +832,8 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "6",
-    "totalWins": "6",
+    "totalMatchesPlayed": "7",
+    "totalWins": "7",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -872,8 +872,8 @@
       },
       {
         "team": "Milford MXD2",
-        "played": 0,
-        "remaining": 7
+        "played": 1,
+        "remaining": 6
       },
       {
         "team": "Milford MXD3",
@@ -910,6 +910,7 @@
     "highestAvgTeams": [
       "Milford L1",
       "Milford M45",
+      "Milford MXD2",
       "Milford MXD4"
     ],
     "highestAvgRankings": [
@@ -922,6 +923,11 @@
         "team": "Milford M45",
         "avgValue": 6.0,
         "percentValue": 0.25
+      },
+      {
+        "team": "Milford MXD2",
+        "avgValue": 6.0,
+        "percentValue": 0.14285714285714285
       },
       {
         "team": "Milford MXD4",
@@ -945,7 +951,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "81",
+    "totalFixturesBooked": "80",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
