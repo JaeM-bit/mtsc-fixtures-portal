@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-11T10:55:30+01:00",
+  "uploadedAt": "2026-10-16T18:16:29+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -101,13 +101,13 @@
       "status": "Booked"
     },
     {
-      "date": "2026-10-18",
-      "day": "Sun",
-      "time": "10:30",
+      "date": "",
+      "day": "",
+      "time": "",
       "team": "Milford MXD4",
       "opponent": "Hale Gardens MXD4",
       "venue": "H",
-      "status": "Booked"
+      "status": "Rebook"
     },
     {
       "date": "2026-10-24",
@@ -789,7 +789,7 @@
     {
       "month": "October",
       "originalPlanned": 18,
-      "count": 18,
+      "count": 17,
       "played": 5
     },
     {
@@ -945,7 +945,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "82",
+    "totalFixturesBooked": "81",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -1045,7 +1045,7 @@
       ],
       [
         "MXD4",
-        "2",
+        "1",
         "1",
         "0",
         "1",
@@ -1090,7 +1090,7 @@
       ],
       [
         "Total",
-        "18",
+        "17",
         "18",
         "13",
         "15",
