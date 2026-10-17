@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-16T22:56:06+01:00",
+  "uploadedAt": "2026-10-17T23:43:15+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -89,7 +89,7 @@
       "team": "Milford M1",
       "opponent": "DL Poole M1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-18",
@@ -790,7 +790,7 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 17,
-      "played": 6
+      "played": 7
     },
     {
       "month": "November",
@@ -824,7 +824,7 @@
     }
   ],
   "monthlyPlayed": [
-    6,
+    7,
     0,
     0,
     0,
@@ -832,8 +832,8 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "7",
-    "totalWins": "7",
+    "totalMatchesPlayed": "8",
+    "totalWins": "8",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -887,8 +887,8 @@
       },
       {
         "team": "Milford M1",
-        "played": 0,
-        "remaining": 7
+        "played": 1,
+        "remaining": 6
       },
       {
         "team": "Milford M2",
@@ -909,6 +909,7 @@
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford L1",
+      "Milford M1",
       "Milford M45",
       "Milford MXD2",
       "Milford MXD4"
@@ -916,6 +917,11 @@
     "highestAvgRankings": [
       {
         "team": "Milford L1",
+        "avgValue": 6.0,
+        "percentValue": 0.14285714285714285
+      },
+      {
+        "team": "Milford M1",
         "avgValue": 6.0,
         "percentValue": 0.14285714285714285
       },
@@ -951,7 +957,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "81",
+    "totalFixturesBooked": "80",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
