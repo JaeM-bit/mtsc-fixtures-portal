@@ -475,6 +475,21 @@ h2 {
   display: none;
 }
 
+#latestInfoLine:not([hidden]):not(.is-empty) {
+  animation: news-attention 1.2s ease-in-out 3;
+}
+
+@keyframes news-attention {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #latestInfoLine:not([hidden]):not(.is-empty) {
+    animation: none;
+  }
+}
+
 #portalFeatures,
 #latestInfo {
   text-align: left;
