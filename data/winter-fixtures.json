@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-19T23:02:43+01:00",
+  "uploadedAt": "2026-10-19T23:03:14+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -71,7 +71,7 @@
       "team": "Victoria Avenue L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-17",
@@ -790,7 +790,7 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 17,
-      "played": 8
+      "played": 9
     },
     {
       "month": "November",
@@ -824,7 +824,7 @@
     }
   ],
   "monthlyPlayed": [
-    8,
+    9,
     0,
     0,
     0,
@@ -957,7 +957,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "79",
+    "totalFixturesBooked": "78",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
