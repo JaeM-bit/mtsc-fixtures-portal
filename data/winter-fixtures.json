@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-21T10:21:12+01:00",
+  "uploadedAt": "2026-10-21T23:15:10+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -98,7 +98,7 @@
       "team": "St Leonards L3",
       "opponent": "Milford L5",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-24",
@@ -790,7 +790,7 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 17,
-      "played": 10
+      "played": 11
     },
     {
       "month": "November",
@@ -824,7 +824,7 @@
     }
   ],
   "monthlyPlayed": [
-    10,
+    11,
     0,
     0,
     0,
@@ -832,7 +832,7 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "11",
+    "totalMatchesPlayed": "12",
     "totalWins": "9",
     "teamProgress": [
       {
@@ -857,8 +857,8 @@
       },
       {
         "team": "Milford L5",
-        "played": 0,
-        "remaining": 6
+        "played": 1,
+        "remaining": 5
       },
       {
         "team": "Milford L60",
@@ -957,7 +957,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "77",
+    "totalFixturesBooked": "76",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
