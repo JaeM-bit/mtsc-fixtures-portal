@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-21T23:15:10+01:00",
+  "uploadedAt": "2026-10-23T14:58:13+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -110,13 +110,13 @@
       "status": "Booked"
     },
     {
-      "date": "2026-10-24",
-      "day": "Sat",
-      "time": "10:30",
+      "date": "",
+      "day": "",
+      "time": "",
       "team": "Victoria Avenue M2",
       "opponent": "Milford M3",
       "venue": "A",
-      "status": "Booked"
+      "status": "Rebook"
     },
     {
       "date": "2026-10-25",
@@ -789,7 +789,7 @@
     {
       "month": "October",
       "originalPlanned": 18,
-      "count": 17,
+      "count": 16,
       "played": 11
     },
     {
@@ -957,7 +957,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "76",
+    "totalFixturesBooked": "75",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -1084,7 +1084,7 @@
       ],
       [
         "M3",
-        "1",
+        "0",
         "1",
         "2",
         "2",
@@ -1102,7 +1102,7 @@
       ],
       [
         "Total",
-        "17",
+        "16",
         "18",
         "13",
         "15",
