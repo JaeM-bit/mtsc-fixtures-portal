@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-23T14:58:13+01:00",
+  "uploadedAt": "2026-10-24T09:50:37+01:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -101,13 +101,13 @@
       "status": "Played"
     },
     {
-      "date": "2026-10-24",
-      "day": "Sat",
-      "time": "10:30",
+      "date": "",
+      "day": "",
+      "time": "",
       "team": "Milford L3",
       "opponent": "Victoria Avenue L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Rebook"
     },
     {
       "date": "",
@@ -116,16 +116,16 @@
       "team": "Victoria Avenue M2",
       "opponent": "Milford M3",
       "venue": "A",
-      "status": "Rebook"
+      "status": "In Progress"
     },
     {
-      "date": "2026-10-25",
-      "day": "Sun",
-      "time": "10:30",
+      "date": "",
+      "day": "",
+      "time": "",
       "team": "Milford MXD1",
       "opponent": "East Dorset MXD2",
       "venue": "H",
-      "status": "Booked"
+      "status": "Rebook"
     },
     {
       "date": "2026-10-29",
@@ -789,7 +789,7 @@
     {
       "month": "October",
       "originalPlanned": 18,
-      "count": 16,
+      "count": 14,
       "played": 11
     },
     {
@@ -957,7 +957,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "75",
+    "totalFixturesBooked": "73",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -994,7 +994,7 @@
       ],
       [
         "L3",
-        "1",
+        "0",
         "2",
         "1",
         "0",
@@ -1030,7 +1030,7 @@
       ],
       [
         "MXD1",
-        "1",
+        "0",
         "1",
         "1",
         "1",
@@ -1102,7 +1102,7 @@
       ],
       [
         "Total",
-        "16",
+        "14",
         "18",
         "13",
         "15",
