@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-26T10:12:08+00:00",
+  "uploadedAt": "2026-10-26T10:19:32+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -961,7 +961,7 @@
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
-  "latestInfo": "Remember clocks go back overnight Saturday 24th October.  An extra hour rest for Sunday matches",
+  "latestInfo": "",
   "fixturesByTeamMonth": {
     "title": "Fixtures by Month by Team",
     "headers": [
