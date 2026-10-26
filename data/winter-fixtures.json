@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-24T10:00:00+01:00",
+  "uploadedAt": "2026-10-26T10:12:08+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -99,33 +99,6 @@
       "opponent": "Milford L5",
       "venue": "A",
       "status": "Played"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L3",
-      "opponent": "Victoria Avenue L1",
-      "venue": "H",
-      "status": "Rebook"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Victoria Avenue M2",
-      "opponent": "Milford M3",
-      "venue": "A",
-      "status": "Rebook"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD1",
-      "opponent": "East Dorset MXD2",
-      "venue": "H",
-      "status": "Rebook"
     },
     {
       "date": "2026-10-29",
@@ -250,6 +223,15 @@
       "time": "10:30",
       "team": "Milford L5",
       "opponent": "DL Ringwood L2",
+      "venue": "H",
+      "status": "Booked"
+    },
+    {
+      "date": "2026-11-22",
+      "day": "Sun",
+      "time": "10:30",
+      "team": "Milford L3",
+      "opponent": "Victoria Avenue L1",
       "venue": "H",
       "status": "Booked"
     },
@@ -783,6 +765,24 @@
       "opponent": "Hale Gardens MXD4",
       "venue": "H",
       "status": "Booked"
+    },
+    {
+      "date": "",
+      "day": "",
+      "time": "",
+      "team": "Victoria Avenue M2",
+      "opponent": "Milford M3",
+      "venue": "A",
+      "status": "Rebook"
+    },
+    {
+      "date": "",
+      "day": "",
+      "time": "",
+      "team": "Milford MXD1",
+      "opponent": "East Dorset MXD2",
+      "venue": "H",
+      "status": "Rebook"
     }
   ],
   "monthlyPlanned": [
@@ -795,7 +795,7 @@
     {
       "month": "November",
       "originalPlanned": 18,
-      "count": 18,
+      "count": 19,
       "played": 0
     },
     {
@@ -957,7 +957,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "73",
+    "totalFixturesBooked": "74",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -995,7 +995,7 @@
       [
         "L3",
         "0",
-        "2",
+        "3",
         "1",
         "0",
         "1",
@@ -1103,7 +1103,7 @@
       [
         "Total",
         "14",
-        "18",
+        "19",
         "13",
         "15",
         "17",
