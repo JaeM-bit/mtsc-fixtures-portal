@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-10-29T09:04:43+00:00",
+  "uploadedAt": "2026-10-29T18:36:27+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -776,13 +776,13 @@
       "status": "Booked"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2027-03-20",
+      "day": "Sat",
+      "time": "10:30",
       "team": "Milford MXD1",
       "opponent": "East Dorset MXD2",
       "venue": "H",
-      "status": "Rebook"
+      "status": "Booked"
     }
   ],
   "monthlyPlanned": [
@@ -819,7 +819,7 @@
     {
       "month": "March",
       "originalPlanned": 6,
-      "count": 7,
+      "count": 8,
       "played": 0
     }
   ],
@@ -957,7 +957,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "75",
+    "totalFixturesBooked": "76",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -1035,7 +1035,7 @@
         "1",
         "1",
         "2",
-        "1"
+        "2"
       ],
       [
         "MXD2",
@@ -1107,7 +1107,7 @@
         "13",
         "15",
         "18",
-        "7"
+        "8"
       ]
     ]
   }
