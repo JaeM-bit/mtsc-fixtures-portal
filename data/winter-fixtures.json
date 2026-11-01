@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-01T09:02:30+00:00",
+  "uploadedAt": "2026-11-01T19:54:50+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -832,7 +832,7 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "13",
+    "totalMatchesPlayed": "15",
     "totalWins": "10",
     "teamProgress": [
       {
@@ -872,8 +872,8 @@
       },
       {
         "team": "Milford MXD2",
-        "played": 1,
-        "remaining": 6
+        "played": 2,
+        "remaining": 5
       },
       {
         "team": "Milford MXD3",
@@ -887,8 +887,8 @@
       },
       {
         "team": "Milford M1",
-        "played": 1,
-        "remaining": 6
+        "played": 2,
+        "remaining": 5
       },
       {
         "team": "Milford M2",
@@ -909,9 +909,7 @@
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford L1",
-      "Milford M1",
       "Milford M45",
-      "Milford MXD2",
       "Milford MXD4"
     ],
     "highestAvgRankings": [
@@ -921,19 +919,9 @@
         "percentValue": 0.14285714285714285
       },
       {
-        "team": "Milford M1",
-        "avgValue": 6.0,
-        "percentValue": 0.14285714285714285
-      },
-      {
         "team": "Milford M45",
         "avgValue": 6.0,
         "percentValue": 0.25
-      },
-      {
-        "team": "Milford MXD2",
-        "avgValue": 6.0,
-        "percentValue": 0.14285714285714285
       },
       {
         "team": "Milford MXD4",
@@ -946,14 +934,14 @@
         "percentValue": 0.2857142857142857
       },
       {
+        "team": "Milford MXD2",
+        "avgValue": 2.5,
+        "percentValue": 0.2857142857142857
+      },
+      {
         "team": "Milford MXD3",
         "avgValue": 1.0,
         "percentValue": 0.14285714285714285
-      },
-      {
-        "team": "Milford L5",
-        "avgValue": 0.0,
-        "percentValue": 0.3333333333333333
       }
     ],
     "totalFixtures": "87",
