@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-01T19:54:50+00:00",
+  "uploadedAt": "2026-11-01T19:55:11+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -107,7 +107,7 @@
       "team": "Milford M1",
       "opponent": "Hale Gardens M1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-29",
@@ -134,7 +134,7 @@
       "team": "Hale Gardens MXD1",
       "opponent": "Milford MXD2",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-11-01",
@@ -790,13 +790,13 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 14,
-      "played": 12
+      "played": 13
     },
     {
       "month": "November",
       "originalPlanned": 18,
       "count": 19,
-      "played": 0
+      "played": 1
     },
     {
       "month": "December",
@@ -824,8 +824,8 @@
     }
   ],
   "monthlyPlayed": [
-    12,
-    0,
+    13,
+    1,
     0,
     0,
     0,
@@ -945,7 +945,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "75",
+    "totalFixturesBooked": "73",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
