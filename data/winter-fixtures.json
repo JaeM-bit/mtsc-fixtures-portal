@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-01T19:55:11+00:00",
+  "uploadedAt": "2026-11-03T12:16:53+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -143,7 +143,7 @@
       "team": "Victoria Avenue MXD1",
       "opponent": "Milford MXD3",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-11-05",
@@ -796,7 +796,7 @@
       "month": "November",
       "originalPlanned": 18,
       "count": 19,
-      "played": 1
+      "played": 2
     },
     {
       "month": "December",
@@ -825,14 +825,14 @@
   ],
   "monthlyPlayed": [
     13,
-    1,
+    2,
     0,
     0,
     0,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "15",
+    "totalMatchesPlayed": "16",
     "totalWins": "10",
     "teamProgress": [
       {
@@ -877,8 +877,8 @@
       },
       {
         "team": "Milford MXD3",
-        "played": 1,
-        "remaining": 6
+        "played": 2,
+        "remaining": 5
       },
       {
         "team": "Milford MXD4",
@@ -939,13 +939,18 @@
         "percentValue": 0.2857142857142857
       },
       {
-        "team": "Milford MXD3",
-        "avgValue": 1.0,
-        "percentValue": 0.14285714285714285
+        "team": "Milford L5",
+        "avgValue": 0.0,
+        "percentValue": 0.3333333333333333
+      },
+      {
+        "team": "Milford M1",
+        "avgValue": 0.0,
+        "percentValue": 0.2857142857142857
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "73",
+    "totalFixturesBooked": "72",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
