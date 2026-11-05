@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-03T12:16:53+00:00",
+  "uploadedAt": "2026-11-05T23:40:14+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -116,7 +116,7 @@
       "team": "Southbourne L60",
       "opponent": "Milford L60",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-10-31",
@@ -152,7 +152,7 @@
       "team": "Milford L4",
       "opponent": "Sway L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-11-07",
@@ -790,13 +790,13 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 14,
-      "played": 13
+      "played": 14
     },
     {
       "month": "November",
       "originalPlanned": 18,
       "count": 19,
-      "played": 2
+      "played": 3
     },
     {
       "month": "December",
@@ -824,16 +824,16 @@
     }
   ],
   "monthlyPlayed": [
-    13,
-    2,
+    14,
+    3,
     0,
     0,
     0,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "16",
-    "totalWins": "10",
+    "totalMatchesPlayed": "18",
+    "totalWins": "11",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -852,8 +852,8 @@
       },
       {
         "team": "Milford L4",
-        "played": 1,
-        "remaining": 5
+        "played": 2,
+        "remaining": 4
       },
       {
         "team": "Milford L5",
@@ -862,8 +862,8 @@
       },
       {
         "team": "Milford L60",
-        "played": 0,
-        "remaining": 5
+        "played": 1,
+        "remaining": 4
       },
       {
         "team": "Milford MXD1",
@@ -939,6 +939,11 @@
         "percentValue": 0.2857142857142857
       },
       {
+        "team": "Milford L4",
+        "avgValue": 0.0,
+        "percentValue": 0.3333333333333333
+      },
+      {
         "team": "Milford L5",
         "avgValue": 0.0,
         "percentValue": 0.3333333333333333
@@ -950,7 +955,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "72",
+    "totalFixturesBooked": "70",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
