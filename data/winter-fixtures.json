@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-07T19:39:29+00:00",
+  "uploadedAt": "2026-11-08T09:09:27+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -161,7 +161,7 @@
       "team": "Dorchester L1",
       "opponent": "Milford L2",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-11-10",
@@ -796,7 +796,7 @@
       "month": "November",
       "originalPlanned": 18,
       "count": 18,
-      "played": 3
+      "played": 4
     },
     {
       "month": "December",
@@ -825,15 +825,15 @@
   ],
   "monthlyPlayed": [
     14,
-    3,
+    4,
     0,
     0,
     0,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "18",
-    "totalWins": "11",
+    "totalMatchesPlayed": "19",
+    "totalWins": "12",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -842,8 +842,8 @@
       },
       {
         "team": "Milford L2",
-        "played": 2,
-        "remaining": 5
+        "played": 3,
+        "remaining": 4
       },
       {
         "team": "Milford L3",
@@ -930,8 +930,8 @@
       },
       {
         "team": "Milford L2",
-        "avgValue": 3.5,
-        "percentValue": 0.2857142857142857
+        "avgValue": 4.333333333333333,
+        "percentValue": 0.42857142857142855
       },
       {
         "team": "Milford MXD2",
@@ -955,7 +955,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "70",
+    "totalFixturesBooked": "69",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
