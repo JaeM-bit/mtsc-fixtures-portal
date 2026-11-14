@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-12T10:17:06+00:00",
+  "uploadedAt": "2026-11-14T12:59:13+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -164,13 +164,13 @@
       "status": "Played"
     },
     {
-      "date": "",
-      "day": "",
-      "time": "",
+      "date": "2027-03-16",
+      "day": "Tue",
+      "time": "18:30",
       "team": "Hale Gardens L1",
       "opponent": "Milford L3",
       "venue": "A",
-      "status": "Rebook"
+      "status": "Booked"
     },
     {
       "date": "2026-11-13",
@@ -819,7 +819,7 @@
     {
       "month": "March",
       "originalPlanned": 6,
-      "count": 8,
+      "count": 9,
       "played": 0
     }
   ],
@@ -955,7 +955,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "68",
+    "totalFixturesBooked": "69",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -997,7 +997,7 @@
         "1",
         "0",
         "1",
-        "0"
+        "1"
       ],
       [
         "L4",
@@ -1105,7 +1105,7 @@
         "13",
         "15",
         "19",
-        "8"
+        "9"
       ]
     ]
   }
