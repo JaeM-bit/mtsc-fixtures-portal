@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-14T12:59:13+00:00",
+  "uploadedAt": "2026-11-14T13:00:43+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -162,15 +162,6 @@
       "opponent": "Milford L2",
       "venue": "A",
       "status": "Played"
-    },
-    {
-      "date": "2027-03-16",
-      "day": "Tue",
-      "time": "18:30",
-      "team": "Hale Gardens L1",
-      "opponent": "Milford L3",
-      "venue": "A",
-      "status": "Booked"
     },
     {
       "date": "2026-11-13",
@@ -763,6 +754,15 @@
       "time": "10:30",
       "team": "West Hants M1",
       "opponent": "Milford M1",
+      "venue": "A",
+      "status": "Booked"
+    },
+    {
+      "date": "2027-03-16",
+      "day": "Tue",
+      "time": "18:30",
+      "team": "Hale Gardens L1",
+      "opponent": "Milford L3",
       "venue": "A",
       "status": "Booked"
     },
