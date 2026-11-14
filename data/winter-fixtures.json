@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-14T13:04:09+00:00",
+  "uploadedAt": "2026-11-14T13:06:05+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -170,7 +170,7 @@
       "team": "St Leonards L60",
       "opponent": "Milford L60",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-11-14",
@@ -796,7 +796,7 @@
       "month": "November",
       "originalPlanned": 18,
       "count": 17,
-      "played": 4
+      "played": 5
     },
     {
       "month": "December",
@@ -825,7 +825,7 @@
   ],
   "monthlyPlayed": [
     14,
-    4,
+    5,
     0,
     0,
     0,
@@ -955,7 +955,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "69",
+    "totalFixturesBooked": "68",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
