@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-15T09:09:25+00:00",
+  "uploadedAt": "2026-11-15T09:12:01+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -180,15 +180,6 @@
       "opponent": "DL Poole MXD2",
       "venue": "H",
       "status": "Played"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford MXD1",
-      "opponent": "DL Poole MXD1",
-      "venue": "H",
-      "status": "Rebook"
     },
     {
       "date": "2026-11-19",
@@ -783,6 +774,15 @@
       "opponent": "Hale Gardens MXD4",
       "venue": "H",
       "status": "Booked"
+    },
+    {
+      "date": "",
+      "day": "",
+      "time": "",
+      "team": "Milford MXD1",
+      "opponent": "DL Poole MXD1",
+      "venue": "H",
+      "status": "Rebook"
     }
   ],
   "monthlyPlanned": [
