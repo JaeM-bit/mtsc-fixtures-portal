@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-15T09:08:53+00:00",
+  "uploadedAt": "2026-11-15T09:09:25+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -832,8 +832,8 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "20",
-    "totalWins": "12",
+    "totalMatchesPlayed": "21",
+    "totalWins": "13",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -872,8 +872,8 @@
       },
       {
         "team": "Milford MXD2",
-        "played": 2,
-        "remaining": 5
+        "played": 3,
+        "remaining": 4
       },
       {
         "team": "Milford MXD3",
@@ -935,8 +935,8 @@
       },
       {
         "team": "Milford MXD2",
-        "avgValue": 2.5,
-        "percentValue": 0.2857142857142857
+        "avgValue": 3.6666666666666665,
+        "percentValue": 0.42857142857142855
       },
       {
         "team": "Milford L4",
