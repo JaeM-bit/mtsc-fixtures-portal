@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-17T09:56:09+00:00",
+  "uploadedAt": "2026-11-17T09:57:38+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -638,7 +638,7 @@
       "team": "Milford MXD1",
       "opponent": "DL Poole MXD1",
       "venue": "H",
-      "status": "Rebook"
+      "status": "Booked"
     },
     {
       "date": "2027-02-18",
@@ -955,7 +955,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesBooked": "66",
+    "totalFixturesBooked": "67",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
