@@ -956,7 +956,8 @@
     ],
     "totalFixtures": "87",
     "totalFixturesBooked": "67",
-    "totalFixturesPlayed": ""
+    "totalFixturesPlayed": "",
+    "totalFixturesRescheduled": "6"
   },
   "portalFeatures": "",
   "latestInfo": "",

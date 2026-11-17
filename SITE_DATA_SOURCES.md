@@ -58,6 +58,7 @@ feed the Winter report.
 | `C108:C112` (Summer), `C102:C107` (Winter) | `monthlyPlanned[].originalPlanned` | Originally Planned. |
 | `H108:H112` (Summer), `H102:H107` (Winter) | `monthlyPlanned[].count` | Currently Planned. |
 | `E108:E112` (Summer), `E102:E107` (Winter) | `monthlyPlanned[].played` and `monthlyPlayed[]` | Played. |
+| `G109` (Winter only) | `reportSummary.totalFixturesRescheduled` | Total Fixtures Rescheduled beneath Fixtures by Month. |
 | `N99` | `reportSummary.totalFixturesBooked` | Winter Total Fixtures Booked in the top summary box. |
 | `I106` (Summer), `I100` (Winter) | `reportSummary.totalFixtures` | Total Fixtures in the top summary box. |
 | `N108` | `reportSummary.totalFixturesPlayed` | Total Fixtures Played in the top summary box. |

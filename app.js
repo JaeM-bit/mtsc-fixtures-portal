@@ -610,6 +610,9 @@ function sheetToRows(workbook) {
   const portalFeaturesSheet = portalFeaturesSheetName ? workbook.Sheets[portalFeaturesSheetName] : null;
   const reportSummary = readReportSummary(leagueResultsSheet);
   reportSummary.totalFixtures = cellText(getCell(sheet, activeSeasonKey === "summer-2026" ? 105 : 99, 8));
+  if (activeSeasonKey === "winter-2026-27") {
+    reportSummary.totalFixturesRescheduled = cellText(getCell(sheet, 108, 6));
+  }
   reportSummary.totalFixturesBooked = cellText(getCell(sheet, 98, 13));
   reportSummary.totalFixturesPlayed = cellText(getCell(sheet, 107, 13));
   return {
@@ -934,6 +937,9 @@ function renderTeamProgressChart() {
 }
 
 function renderMonthlyPlanned() {
+  const rescheduledLine = activeSeasonKey === "winter-2026-27"
+    ? `<p class="fixtures-rescheduled">Total Fixtures Rescheduled ${escapeHtml(formatCompactNumber(state.reportSummary.totalFixturesRescheduled))}</p>`
+    : "";
   if (!state.monthlyPlanned.length) {
     return `
       <div class="summary-item monthly-summary">
@@ -944,6 +950,7 @@ function renderMonthlyPlanned() {
           <span>Played</span>
         </div>
         <p>No monthly totals found in the selected season's By Date monthly-summary cells.</p>
+        ${rescheduledLine}
       </div>
     `;
   }
@@ -983,6 +990,7 @@ function renderMonthlyPlanned() {
         <span>Played</span>
       </div>
       <div class="monthly-planned" aria-label="Fixtures by month">${items}</div>
+      ${rescheduledLine}
     </div>
   `;
 }

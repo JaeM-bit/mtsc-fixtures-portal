@@ -467,6 +467,10 @@ def build_payload(workbook_path: Path) -> Dict[str, object]:
         report_summary["totalFixtures"] = (
             sheet_row_values(by_date_rows, 106 if SEASON_LABEL == "Summer 2026" else 100).get("I") or ""
         ).strip()
+        if SEASON_LABEL == "Winter 2026/27":
+            report_summary["totalFixturesRescheduled"] = (
+                sheet_row_values(by_date_rows, 109).get("G") or ""
+            ).strip()
         report_summary["totalFixturesBooked"] = (
             sheet_row_values(by_date_rows, 99).get("N") or ""
         ).strip()
