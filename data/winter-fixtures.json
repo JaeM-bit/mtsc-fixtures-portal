@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-17T10:30:51+00:00",
+  "uploadedAt": "2026-11-19T23:31:03+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -188,7 +188,7 @@
       "team": "Milford M3",
       "opponent": "Wimborne M1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-11-21",
@@ -796,7 +796,7 @@
       "month": "November",
       "originalPlanned": 18,
       "count": 16,
-      "played": 6
+      "played": 7
     },
     {
       "month": "December",
@@ -825,15 +825,15 @@
   ],
   "monthlyPlayed": [
     14,
-    6,
+    7,
     0,
     0,
     0,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "21",
-    "totalWins": "13",
+    "totalMatchesPlayed": "22",
+    "totalWins": "14",
     "teamProgress": [
       {
         "team": "Milford L1",
@@ -897,8 +897,8 @@
       },
       {
         "team": "Milford M3",
-        "played": 0,
-        "remaining": 7
+        "played": 1,
+        "remaining": 6
       },
       {
         "team": "Milford M45",
@@ -909,12 +909,18 @@
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
       "Milford L1",
+      "Milford M3",
       "Milford M45",
       "Milford MXD4"
     ],
     "highestAvgRankings": [
       {
         "team": "Milford L1",
+        "avgValue": 6.0,
+        "percentValue": 0.14285714285714285
+      },
+      {
+        "team": "Milford M3",
         "avgValue": 6.0,
         "percentValue": 0.14285714285714285
       },
@@ -956,7 +962,7 @@
     ],
     "totalFixtures": "87",
     "totalFixturesRescheduled": "7",
-    "totalFixturesBooked": "67",
+    "totalFixturesBooked": "66",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
