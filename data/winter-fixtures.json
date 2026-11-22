@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-21T21:20:35+00:00",
+  "uploadedAt": "2026-11-22T08:52:44+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -206,7 +206,7 @@
       "team": "Milford L3",
       "opponent": "Victoria Avenue L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Rebook"
     },
     {
       "date": "2026-11-22",
@@ -957,7 +957,7 @@
     ],
     "totalFixtures": "87",
     "totalFixturesRescheduled": "7",
-    "totalFixturesBooked": "65",
+    "totalFixturesBooked": "64",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
