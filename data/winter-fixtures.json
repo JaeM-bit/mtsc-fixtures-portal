@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-23T23:45:51+00:00",
+  "uploadedAt": "2026-11-23T23:46:37+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -198,15 +198,6 @@
       "opponent": "DL Ringwood L2",
       "venue": "H",
       "status": "Played"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L3",
-      "opponent": "Victoria Avenue L1",
-      "venue": "H",
-      "status": "Rebook"
     },
     {
       "date": "2026-11-22",
@@ -783,6 +774,15 @@
       "opponent": "Hale Gardens MXD4",
       "venue": "H",
       "status": "Booked"
+    },
+    {
+      "date": "",
+      "day": "",
+      "time": "",
+      "team": "Milford L3",
+      "opponent": "Victoria Avenue L1",
+      "venue": "H",
+      "status": "Rebook"
     }
   ],
   "monthlyPlanned": [
@@ -832,13 +832,13 @@
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "23",
+    "totalMatchesPlayed": "24",
     "totalWins": "14",
     "teamProgress": [
       {
         "team": "Milford L1",
-        "played": 1,
-        "remaining": 6
+        "played": 2,
+        "remaining": 5
       },
       {
         "team": "Milford L2",
@@ -908,17 +908,11 @@
     ],
     "highestAvgPointsPerMatch": 6.0,
     "highestAvgTeams": [
-      "Milford L1",
       "Milford M3",
       "Milford M45",
       "Milford MXD4"
     ],
     "highestAvgRankings": [
-      {
-        "team": "Milford L1",
-        "avgValue": 6.0,
-        "percentValue": 0.14285714285714285
-      },
       {
         "team": "Milford M3",
         "avgValue": 6.0,
@@ -943,6 +937,11 @@
         "team": "Milford MXD2",
         "avgValue": 3.6666666666666665,
         "percentValue": 0.42857142857142855
+      },
+      {
+        "team": "Milford L1",
+        "avgValue": 0.0,
+        "percentValue": 0.2857142857142857
       },
       {
         "team": "Milford L4",
