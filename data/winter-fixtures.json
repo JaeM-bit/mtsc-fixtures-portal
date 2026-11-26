@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-23T23:46:37+00:00",
+  "uploadedAt": "2026-11-26T09:31:40+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -209,13 +209,13 @@
       "status": "Played"
     },
     {
-      "date": "2026-11-22",
-      "day": "Sun",
-      "time": "11:00",
+      "date": "",
+      "day": "",
+      "time": "",
       "team": "Winton L1",
       "opponent": "Milford L4",
       "venue": "A",
-      "status": "Booked"
+      "status": "Rebook"
     },
     {
       "date": "2026-11-24",
@@ -233,7 +233,7 @@
       "team": "St Leonards MXD3",
       "opponent": "Milford MXD4",
       "venue": "A",
-      "status": "Booked"
+      "status": "Played"
     },
     {
       "date": "2026-11-26",
@@ -795,8 +795,8 @@
     {
       "month": "November",
       "originalPlanned": 18,
-      "count": 15,
-      "played": 9
+      "count": 14,
+      "played": 10
     },
     {
       "month": "December",
@@ -825,7 +825,7 @@
   ],
   "monthlyPlayed": [
     14,
-    9,
+    10,
     0,
     0,
     0,
@@ -956,7 +956,7 @@
     ],
     "totalFixtures": "87",
     "totalFixturesRescheduled": "8",
-    "totalFixturesBooked": "63",
+    "totalFixturesBooked": "61",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -1003,7 +1003,7 @@
       [
         "L4",
         "1",
-        "2",
+        "1",
         "2",
         "1",
         "0",
@@ -1102,7 +1102,7 @@
       [
         "Total",
         "14",
-        "15",
+        "14",
         "13",
         "15",
         "20",
