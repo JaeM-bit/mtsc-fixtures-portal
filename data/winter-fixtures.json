@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-26T09:34:16+00:00",
+  "uploadedAt": "2026-11-26T18:49:17+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -367,6 +367,15 @@
       "time": "10:30",
       "team": "Milford M45",
       "opponent": "Corfe Mullen M45",
+      "venue": "H",
+      "status": "Booked"
+    },
+    {
+      "date": "2027-01-02",
+      "day": "Sat",
+      "time": "10:30",
+      "team": "Milford L3",
+      "opponent": "Victoria Avenue L1",
       "venue": "H",
       "status": "Booked"
     },
@@ -774,15 +783,6 @@
       "opponent": "Milford L4",
       "venue": "A",
       "status": "Rebook"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L3",
-      "opponent": "Victoria Avenue L1",
-      "venue": "H",
-      "status": "Rebook"
     }
   ],
   "monthlyPlanned": [
@@ -807,7 +807,7 @@
     {
       "month": "January",
       "originalPlanned": 15,
-      "count": 15,
+      "count": 16,
       "played": 0
     },
     {
@@ -956,7 +956,7 @@
     ],
     "totalFixtures": "87",
     "totalFixturesRescheduled": "9",
-    "totalFixturesBooked": "61",
+    "totalFixturesBooked": "62",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -996,7 +996,7 @@
         "0",
         "1",
         "1",
-        "0",
+        "1",
         "1",
         "1"
       ],
@@ -1104,7 +1104,7 @@
         "14",
         "14",
         "13",
-        "15",
+        "16",
         "20",
         "9"
       ]
