@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-26T09:31:40+00:00",
+  "uploadedAt": "2026-11-26T09:32:10+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -955,7 +955,7 @@
       }
     ],
     "totalFixtures": "87",
-    "totalFixturesRescheduled": "8",
+    "totalFixturesRescheduled": "9",
     "totalFixturesBooked": "61",
     "totalFixturesPlayed": ""
   },
