@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-28T09:46:50+00:00",
+  "uploadedAt": "2026-11-28T10:38:58+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -790,37 +790,43 @@
       "month": "October",
       "originalPlanned": 18,
       "count": 14,
-      "played": 14
+      "played": 14,
+      "rescheduled": 4
     },
     {
       "month": "November",
       "originalPlanned": 18,
       "count": 13,
-      "played": 12
+      "played": 12,
+      "rescheduled": 6
     },
     {
       "month": "December",
       "originalPlanned": 13,
       "count": 13,
-      "played": 0
+      "played": 0,
+      "rescheduled": 0
     },
     {
       "month": "January",
       "originalPlanned": 15,
       "count": 16,
-      "played": 0
+      "played": 0,
+      "rescheduled": 0
     },
     {
       "month": "February",
       "originalPlanned": 17,
       "count": 20,
-      "played": 0
+      "played": 0,
+      "rescheduled": 0
     },
     {
       "month": "March",
       "originalPlanned": 6,
       "count": 9,
-      "played": 0
+      "played": 0,
+      "rescheduled": 0
     }
   ],
   "monthlyPlayed": [

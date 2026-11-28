@@ -460,12 +460,16 @@ function readMonthlyPlanned(sheet) {
     const played = Number(String(playedText).replace(/,/g, ""));
 
     if (month || originalText || countText || playedText) {
-      rows.push({
+      const monthlyRow = {
         month: month || "Unspecified",
         originalPlanned: Number.isFinite(original) ? original : "",
         count: Number.isFinite(count) ? count : 0,
         played: Number.isFinite(played) ? played : "",
-      });
+      };
+      if (activeSeasonKey === "winter-2026-27") {
+        monthlyRow.rescheduled = getCell(sheet, rowIndex, 6).v ?? "";
+      }
+      rows.push(monthlyRow);
     }
   }
 
@@ -937,7 +941,8 @@ function renderTeamProgressChart() {
 }
 
 function renderMonthlyPlanned() {
-  const rescheduledLine = activeSeasonKey === "winter-2026-27"
+  const winter = activeSeasonKey === "winter-2026-27";
+  const rescheduledLine = winter
     ? `<p class="fixtures-rescheduled">Total Fixtures Rescheduled ${escapeHtml(formatCompactNumber(state.reportSummary.totalFixturesRescheduled))}</p>`
     : "";
   if (!state.monthlyPlanned.length) {
@@ -946,6 +951,7 @@ function renderMonthlyPlanned() {
         <div class="monthly-summary-head">
           <strong>Fixtures by Month</strong>
           <span>Originally Planned</span>
+          ${winter ? "<span>Rescheduled</span>" : ""}
           <span>Currently Planned</span>
           <span>Played</span>
         </div>
@@ -974,6 +980,7 @@ function renderMonthlyPlanned() {
         <div class="monthly-row">
           <div class="monthly-month">${escapeHtml(row.month)}</div>
           <div class="monthly-original-count">${escapeHtml(original)}</div>
+          ${winter ? `<div class="monthly-original-count">${escapeHtml(formatCompactNumber(row.rescheduled))}</div>` : ""}
           <div class="monthly-planned-count">${escapeHtml(planned)}</div>
           <div class="monthly-played monthly-played-count">${escapeHtml(played)}</div>
         </div>
@@ -986,6 +993,7 @@ function renderMonthlyPlanned() {
       <div class="monthly-summary-head">
         <strong>Fixtures by Month</strong>
         <span>Originally Planned</span>
+        ${winter ? "<span>Rescheduled</span>" : ""}
         <span>Currently Planned</span>
         <span>Played</span>
       </div>

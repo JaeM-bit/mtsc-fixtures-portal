@@ -306,6 +306,9 @@ def read_monthly_totals(by_date_rows: Dict[int, Dict[str, str]]) -> Tuple[List[D
                     "played": int(played_value) if played_value is not None else "",
                 }
             )
+            if SEASON_LABEL == "Winter 2026/27":
+                rescheduled = parse_number(row.get("G", ""))
+                planned[-1]["rescheduled"] = int(rescheduled) if rescheduled is not None else ""
             played_rows.append(int(played_value) if played_value is not None else 0)
 
     return planned, played_rows

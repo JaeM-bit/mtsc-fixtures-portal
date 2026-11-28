@@ -1260,11 +1260,17 @@ td {
 
 .winter-report .monthly-summary-head,
 .winter-report .monthly-row {
-  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 1fr)) minmax(0, 0.65fr);
+  grid-template-columns: minmax(5rem, 1.2fr) repeat(4, minmax(0, 1fr));
   gap: 6px;
 }
 
+.winter-report .monthly-row > :not(.monthly-month),
 .winter-report .monthly-summary-head span {
+  text-align: center;
+}
+
+.winter-report .monthly-summary-head span {
+  overflow-wrap: anywhere;
   font-size: 0.8rem;
 }
 
