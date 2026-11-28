@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-27T10:31:37+00:00",
+  "uploadedAt": "2026-11-28T09:22:09+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -233,16 +233,16 @@
       "team": "Milford L2",
       "opponent": "St Leonards L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Played"
     },
     {
-      "date": "2026-11-28",
-      "day": "Sat",
-      "time": "10:30",
+      "date": "",
+      "day": "",
+      "time": "",
       "team": "Milford L3",
       "opponent": "Dorchester L1",
       "venue": "H",
-      "status": "Booked"
+      "status": "Rain Date"
     },
     {
       "date": "2026-11-29",
@@ -795,8 +795,8 @@
     {
       "month": "November",
       "originalPlanned": 18,
-      "count": 14,
-      "played": 11
+      "count": 13,
+      "played": 12
     },
     {
       "month": "December",
@@ -825,14 +825,14 @@
   ],
   "monthlyPlayed": [
     14,
-    11,
+    12,
     0,
     0,
     0,
     0
   ],
   "reportSummary": {
-    "totalMatchesPlayed": "25",
+    "totalMatchesPlayed": "26",
     "totalWins": "15",
     "teamProgress": [
       {
@@ -842,8 +842,8 @@
       },
       {
         "team": "Milford L2",
-        "played": 3,
-        "remaining": 4
+        "played": 4,
+        "remaining": 3
       },
       {
         "team": "Milford L3",
@@ -929,14 +929,14 @@
         "percentValue": 0.3333333333333333
       },
       {
-        "team": "Milford L2",
-        "avgValue": 4.333333333333333,
-        "percentValue": 0.42857142857142855
-      },
-      {
         "team": "Milford MXD2",
         "avgValue": 3.6666666666666665,
         "percentValue": 0.42857142857142855
+      },
+      {
+        "team": "Milford L2",
+        "avgValue": 1.75,
+        "percentValue": 0.5714285714285714
       },
       {
         "team": "Milford L1",
@@ -956,7 +956,7 @@
     ],
     "totalFixtures": "87",
     "totalFixturesRescheduled": "9",
-    "totalFixturesBooked": "61",
+    "totalFixturesBooked": "59",
     "totalFixturesPlayed": ""
   },
   "portalFeatures": "",
@@ -994,7 +994,7 @@
       [
         "L3",
         "0",
-        "1",
+        "0",
         "1",
         "1",
         "1",
@@ -1102,7 +1102,7 @@
       [
         "Total",
         "14",
-        "14",
+        "13",
         "13",
         "16",
         "20",
