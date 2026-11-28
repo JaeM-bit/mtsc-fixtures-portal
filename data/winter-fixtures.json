@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-28T09:22:09+00:00",
+  "uploadedAt": "2026-11-28T09:22:53+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -234,15 +234,6 @@
       "opponent": "St Leonards L1",
       "venue": "H",
       "status": "Played"
-    },
-    {
-      "date": "",
-      "day": "",
-      "time": "",
-      "team": "Milford L3",
-      "opponent": "Dorchester L1",
-      "venue": "H",
-      "status": "Rain Date"
     },
     {
       "date": "2026-11-29",
@@ -774,6 +765,15 @@
       "opponent": "Hale Gardens MXD4",
       "venue": "H",
       "status": "Booked"
+    },
+    {
+      "date": "",
+      "day": "",
+      "time": "",
+      "team": "Milford L3",
+      "opponent": "Dorchester L1",
+      "venue": "H",
+      "status": "Rebook"
     },
     {
       "date": "",
