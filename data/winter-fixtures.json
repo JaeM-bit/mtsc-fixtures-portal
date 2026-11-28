@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-28T10:45:11+00:00",
+  "uploadedAt": "2026-11-28T10:55:00+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -965,7 +965,7 @@
     "totalFixturesBooked": "58",
     "totalFixturesPlayed": ""
   },
-  "portalFeatures": "",
+  "portalFeatures": "Added a new column in the 'Fixtures by Month' report to make it easier to see the number of rescheduled matches by month",
   "latestInfo": "",
   "fixturesByTeamMonth": {
     "title": "Fixtures by Month by Team",
