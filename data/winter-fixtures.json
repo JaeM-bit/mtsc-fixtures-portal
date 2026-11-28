@@ -1,5 +1,5 @@
 {
-  "uploadedAt": "2026-11-28T09:46:32+00:00",
+  "uploadedAt": "2026-11-28T09:46:50+00:00",
   "rows": [
     {
       "date": "2026-10-03",
@@ -782,7 +782,7 @@
       "team": "Winton L1",
       "opponent": "Milford L4",
       "venue": "A",
-      "status": "Offer"
+      "status": "Rebook"
     }
   ],
   "monthlyPlanned": [
